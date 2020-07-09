@@ -11,13 +11,16 @@ from brainio_base.assemblies import DataAssembly, walk_coords, merge_data_arrays
 from numpy.random.mtrand import RandomState
 from scipy.stats import median_absolute_deviation
 from tqdm import tqdm
-
+import sys
+from neural_nlp.benchmarks.weight_extract_utils import CrossRegressedCorrelationWithWeights, linear_regression_with_weights
 from brainscore.benchmarks import Benchmark
 from brainscore.metrics import Score
+
 from brainscore.metrics.rdm import RDM, RDMSimilarity, RDMCrossValidated
 from brainscore.metrics.regression import linear_regression, pearsonr_correlation, CrossRegressedCorrelation
 from brainscore.metrics.transformations import CartesianProduct, CrossValidation, apply_aggregate
 from brainscore.utils import LazyLoad
+
 from neural_nlp.benchmarks.ceiling import ExtrapolationCeiling, HoldoutSubjectCeiling
 from neural_nlp.neural_data.ecog import load_Fedorenko2016
 from neural_nlp.neural_data.fmri import load_voxels, load_rdm_sentences, \
@@ -25,6 +28,11 @@ from neural_nlp.neural_data.fmri import load_voxels, load_rdm_sentences, \
 from neural_nlp.stimuli import load_stimuli, StimulusSet
 from neural_nlp.utils import ordered_set
 from result_caching import store
+import numpy as np
+from brainio_base.assemblies import NeuroidAssembly, array_is_element, walk_coords
+from sklearn.linear_model import LinearRegression
+from brainscore.metrics import Score
+from scipy.stats import median_absolute_deviation
 
 _logger = logging.getLogger(__name__)
 
@@ -36,7 +44,6 @@ class Invert:
     def __call__(self, source, target):
         source, target = target, source
         return self._metric(source, target)
-
 
 class StoriesRDMBenchmark:
     def __init__(self, bold_shift=4):
@@ -73,7 +80,6 @@ class StoriesRDMBenchmark:
         score = apply_aggregate(lambda score: score.mean('region'), score)
         return score
 
-
 class RDMSimilarityCrossValidated:
     # adapted from
     # https://github.com/brain-score/brain-score/blob/3d59d7a841fca63a5d346e599143f547560b5082/brainscore/metrics/rdm.py#L8
@@ -108,7 +114,6 @@ class RDMSimilarityCrossValidated:
         target_rdm = target_rdm.drop(drop_coords)
         return self._cross_validation(model_rdm, target_rdm, apply=leave_one_out)
 
-
 def align(source, target, on):
     source_values, target_values = source[on].values.tolist(), target[on].values
     indices = [source_values.index(value) for value in target_values]
@@ -117,7 +122,6 @@ def align(source, target, on):
     dim_indices = {_dim: slice(None) if _dim != dim else indices for _dim in source.dims}
     aligned = source.isel(**dim_indices)
     return aligned
-
 
 class Blank2014VoxelEncoding(Benchmark):
     """
@@ -175,7 +179,6 @@ class Blank2014VoxelEncoding(Benchmark):
         score = ceil_neuroids(raw_neuroids, self.ceiling, subject_column='subject_UID')
         return score
 
-
 class Blank2014fROIEncoding(Blank2014VoxelEncoding):
     """
     data source:
@@ -222,7 +225,6 @@ class Blank2014fROIEncoding(Blank2014VoxelEncoding):
             averaged_assembly[coord].values for coord in ['subject_UID', 'fROI_area']])]
         return averaged_assembly
 
-
 class Blank2014SentencesfROIEncoding(Blank2014fROIEncoding):
     def __init__(self, *args, num_sentences, **kwargs):
         super(Blank2014SentencesfROIEncoding, self).__init__(*args, **kwargs)
@@ -250,7 +252,6 @@ class Blank2014SentencesfROIEncoding(Blank2014fROIEncoding):
                 raw_neuroids[coord].values for coord in ['subject_UID', 'fROI_area']])]
         score = ceil_neuroids(raw_neuroids, self.ceiling, subject_column='subject_UID')
         return score
-
 
 class Blank2014fROIRDM(Blank2014fROIEncoding):
     """
@@ -285,7 +286,6 @@ class Blank2014fROIRDM(Blank2014fROIEncoding):
 
     def post_process_ceilings(self, scores):
         return scores
-
 
 class _PereiraBenchmark(Benchmark):
     """
@@ -419,7 +419,6 @@ class _PereiraBenchmark(Benchmark):
             # use only a subset of subjects
             return self._rng.choice(list(subjects), size=self._num_bootstraps)
 
-
 def listen_to(candidate, stimulus_set, reset_column='story', average_sentence=True):
     """
     Pass a `stimulus_set` through a model `candidate`.
@@ -438,7 +437,6 @@ def listen_to(candidate, stimulus_set, reset_column='story', average_sentence=Tr
     assert len(set(idx)) == len(idx), "Found duplicate indices to order activations"
     model_activations = model_activations[{'presentation': idx}]
     return model_activations
-
 
 def read_words(candidate, stimulus_set, reset_column='sentence_id', copy_columns=(), average_sentence=False):
     """
@@ -466,7 +464,6 @@ def read_words(candidate, stimulus_set, reset_column='sentence_id', copy_columns
 
     return model_activations
 
-
 class PereiraEncoding(_PereiraBenchmark):
     """
     data source:
@@ -480,7 +477,6 @@ class PereiraEncoding(_PereiraBenchmark):
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
             crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
         super(PereiraEncoding, self).__init__(metric=metric, **kwargs)
-
 
 class _PereiraSubjectWise(_PereiraBenchmark):
     def __init__(self, **kwargs):
@@ -508,7 +504,6 @@ class _PereiraSubjectWise(_PereiraBenchmark):
             # skip parent implementation, go straight to parent's parent
             return super(_PereiraBenchmark.PereiraExtrapolationCeiling, self).extrapolate(ceilings)
 
-
 class PereiraDecoding(_PereiraSubjectWise):
     """
     data source:
@@ -524,7 +519,6 @@ class PereiraDecoding(_PereiraSubjectWise):
         metric = Invert(metric)
         super(PereiraDecoding, self).__init__(metric=metric, **kwargs)
 
-
 class PereiraRDM(_PereiraSubjectWise):
     """
     data source:
@@ -538,7 +532,6 @@ class PereiraRDM(_PereiraSubjectWise):
             crossvalidation_kwargs=dict(split_coord='stimulus_id', stratification_coord=None, splits=5,
                                         kfold=True, test_size=None))
         super(PereiraRDM, self).__init__(metric=metric, **kwargs)
-
 
 class _Fedorenko2016:
     """
@@ -634,6 +627,98 @@ class _Fedorenko2016:
             choices = [self._rng.choice(electrodes, size=num_electrodes, replace=False) for _ in range(num_choices)]
             return choices
 
+class _Fedorenko2016v2:
+    """
+    data source:
+        Fedorenko et al., PNAS 2016
+        https://www.pnas.org/content/113/41/E6256
+    """
+
+    def __init__(self, identifier, metric):
+        self._identifier = identifier
+        assembly = LazyLoad(lambda: load_Fedorenko2016(electrodes='language', version=1))
+        self._target_assembly = assembly
+        self._metric = metric
+        self._average_sentence = False
+        self._ceiler = ExtrapolationCeiling(subject_column='subject_UID')
+        self._electrode_ceiler = self.ElectrodeExtrapolation(subject_column='subject_UID')
+
+    @property
+    def identifier(self):
+        return self._identifier
+
+    def __call__(self, candidate):
+        _logger.info('Computing activations')
+        stimulus_set = self._target_assembly.attrs['stimulus_set']
+        model_activations = read_words(candidate, stimulus_set,
+                                       average_sentence=self._average_sentence, copy_columns=['stimulus_id'])
+        assert (model_activations['stimulus_id'].values == self._target_assembly['stimulus_id'].values).all()
+        score, weights = self._metric(model_activations, self._target_assembly)
+        score = self.ceiling_normalize(score)
+        return score
+
+
+
+    def ceiling_normalize(self, score):
+        raw_neuroids = apply_aggregate(lambda values: values.mean('split'), score.raw)
+        score = ceil_neuroids(raw_neuroids, self.ceiling, subject_column='subject_UID')
+        return score
+
+    @property
+    def ceiling(self):
+        return self._ceiler(identifier=self.identifier, assembly=self._target_assembly, metric=self._metric)
+
+    @property
+    def electrode_ceiling(self):
+        return self._electrode_ceiler(identifier=self.identifier, assembly=self._target_assembly, metric=self._metric)
+
+    class ElectrodeExtrapolation(ExtrapolationCeiling):
+        """ extrapolate to infinitely many electrodes """
+
+        def __init__(self, *args, **kwargs):
+            super(_Fedorenko2016v2.ElectrodeExtrapolation, self).__init__(*args, **kwargs)
+            self._rng = RandomState(0)
+            self._num_samples = 15  # number of samples per electrode selection
+
+        def collect(self, identifier, assembly, metric):
+            """ Instead of iterating over subject combinations and then afterwards over holdout subjects,
+            we here iterate over holdout subjects and then over electrode sub-combinations of the remaining pool. """
+            subjects = set(assembly[self.subject_column].values)
+            scores = []
+            for holdout_subject in tqdm(subjects, desc='subjects'):
+                subject_pool = subjects - {holdout_subject}
+                subject_pool_assembly = assembly[{'neuroid': [subject in subject_pool
+                                                              for subject in assembly[self.subject_column].values]}]
+                holdout_subject_assembly = assembly[{'neuroid': [subject == holdout_subject
+                                                                 for subject in assembly[self.subject_column].values]}]
+
+                electrodes = subject_pool_assembly['neuroid_id'].values
+                electrodes_range = np.arange(5, len(electrodes), 5)
+                for num_electrodes in tqdm(electrodes_range, desc='num electrodes'):
+                    electrodes_combinations = self._choose_electrodes(electrodes, num_electrodes,
+                                                                      num_choices=self._num_samples)
+                    for electrodes_split, electrodes_selection in enumerate(electrodes_combinations):
+                        electrodes_assembly = subject_pool_assembly[{'neuroid': [
+                            neuroid_id in electrodes_selection
+                            for neuroid_id in subject_pool_assembly['neuroid_id'].values]}]
+                        score = metric(electrodes_assembly, holdout_subject_assembly)
+                        # store scores
+                        score = score.expand_dims(f"sub_{self.subject_column}")
+                        score.__setitem__(f"sub_{self.subject_column}", [holdout_subject])
+                        score = score.expand_dims('num_electrodes').expand_dims('electrodes_split')
+                        score['num_electrodes'] = [num_electrodes]
+                        score['electrodes_split'] = [electrodes_split]
+                        scores.append(score)
+
+            scores = Score.merge(*scores)
+            ceilings = scores.raw
+            ceilings = ceilings.rename({'split': 'subsplit'}).stack(split=['electrodes_split', 'subsplit'])
+            ceilings.attrs['raw'] = scores
+            return ceilings
+
+        def _choose_electrodes(self, electrodes, num_electrodes, num_choices):
+            choices = [self._rng.choice(electrodes, size=num_electrodes, replace=False) for _ in range(num_choices)]
+            return choices
 
 def Fedorenko2016Encoding(identifier):
     """
@@ -650,6 +735,21 @@ def Fedorenko2016Encoding(identifier):
                                                                    stratification_coord='sentence_id'))
     return _Fedorenko2016(identifier=identifier, metric=metric)
 
+def Fedorenko2016EncodingWithWeights(identifier):
+    """
+    Fedorenko encoding which also return regression weights
+
+    data source:
+        Fedorenko et al., PNAS 2016
+        https://www.pnas.org/content/113/41/E6256
+    """
+    regression = linear_regression_with_weights(xarray_kwargs=dict(stimulus_coord='stimulus_id'))  # word
+    correlation = pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id'))
+    metric = CrossRegressedCorrelationWithWeights(regression=regression, correlation=correlation,return_weights=True,
+                                        crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id',
+                                                                    stratification_coord='sentence_id'))
+
+    return _Fedorenko2016v2(identifier=identifier, metric=metric)
 
 def Fedorenko2016V3Encoding(identifier):
     """
@@ -664,6 +764,18 @@ def Fedorenko2016V3Encoding(identifier):
     benchmark._target_assembly = LazyLoad(lambda: load_Fedorenko2016(electrodes='language', version=3))
     return benchmark
 
+def Fedorenko2016V3EncodingWithWeights(identifier):
+    """
+    Fedorenko benchmark, language electrodes
+    Data 03/24/2020: sentence_electrode_lang_elec_max_window_dat (not demeaned across sentences)
+
+    data source:
+        Fedorenko et al., PNAS 2016
+        https://www.pnas.org/content/113/41/E6256
+    """
+    benchmark = Fedorenko2016EncodingWithWeights(identifier)
+    benchmark._target_assembly = LazyLoad(lambda: load_Fedorenko2016(electrodes='language', version=3))
+    return benchmark
 
 def Fedorenko2016V3NonLangEncoding(identifier):
     """
@@ -678,7 +790,6 @@ def Fedorenko2016V3NonLangEncoding(identifier):
     benchmark._target_assembly = LazyLoad(lambda: load_Fedorenko2016(electrodes='non-language', version=3))
     return benchmark
 
-
 def Fedorenko2016V3AllEncoding(identifier):
     """
     Fedorenko benchmark, all electrodes (only sorted based on signal)
@@ -691,7 +802,6 @@ def Fedorenko2016V3AllEncoding(identifier):
     benchmark = Fedorenko2016Encoding(identifier)
     benchmark._target_assembly = LazyLoad(lambda: load_Fedorenko2016(electrodes='all', version=3))
     return benchmark
-
 
 class Fedorenko2016V3RDM(_Fedorenko2016):
     """
@@ -723,7 +833,6 @@ class Fedorenko2016V3RDM(_Fedorenko2016):
         score = aggregate_ceiling(score.raw, ceiling=self.ceiling, subject_column='subject_UID')
         return score
 
-
 def aggregate(score, combine_layers=True):
     if hasattr(score, 'experiment') and score['experiment'].ndim > 0:
         score = score.mean('experiment')
@@ -736,7 +845,6 @@ def aggregate(score, combine_layers=True):
         score = max_score
     return score
 
-
 def ceil_neuroids(raw_neuroids, ceiling, subject_column='subject'):
     ceiled_neuroids = consistency_neuroids(raw_neuroids, ceiling.raw)
     ceiled_neuroids.attrs['raw'] = raw_neuroids
@@ -745,7 +853,6 @@ def ceil_neuroids(raw_neuroids, ceiling, subject_column='subject'):
     score.attrs['ceiling'] = ceiling
     score.attrs['description'] = "per-neuroid ceiling-normalized score"
     return score
-
 
 def aggregate_neuroid_scores(neuroid_scores, subject_column):
     subject_scores = neuroid_scores.groupby(subject_column).median()
@@ -759,7 +866,6 @@ def aggregate_neuroid_scores(neuroid_scores, subject_column):
                                  "then median of subject scores"
     return score
 
-
 def consistency_neuroids(neuroids, ceiling_neuroids):
     assert set(neuroids['neuroid_id'].values) == set(ceiling_neuroids['neuroid_id'].values)
     ceiling_neuroids = ceiling_neuroids[{'neuroid': [neuroids['neuroid_id'].values.tolist().index(neuroid_id)
@@ -770,7 +876,6 @@ def consistency_neuroids(neuroids, ceiling_neuroids):
                               dims=neuroids.dims)
     return neuroids
 
-
 def aggregate_ceiling(neuroid_scores, ceiling, subject_column='subject'):
     aggregate_raw = aggregate_neuroid_scores(neuroid_scores, subject_column=subject_column)
     score = consistency(aggregate_raw, ceiling.sel(aggregation='center'))
@@ -779,15 +884,14 @@ def aggregate_ceiling(neuroid_scores, ceiling, subject_column='subject'):
     score.attrs['description'] = "ceiling-normalized score"
     return score
 
-
 def consistency(score, ceiling):
     return score / ceiling
-
 
 benchmark_pool = [
     # primary benchmarks
     ('Pereira2018-encoding', PereiraEncoding),
     ('Fedorenko2016v3-encoding', Fedorenko2016V3Encoding),
+    ('Fedorenko2016v3-encoding-weights', Fedorenko2016V3EncodingWithWeights),
     ('Blank2014fROI-encoding', Blank2014fROIEncoding),
     # secondary benchmarks
     ('Pereira2018-rdm', PereiraRDM),
