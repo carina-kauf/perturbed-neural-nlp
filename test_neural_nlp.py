@@ -1,6 +1,6 @@
 import argparse
 from neural_nlp.models.implementations import _PytorchTransformerWrapper, word_last, transformer_configurations, model_layers
-from neural_nlp import score as score_function
+from neural_nlp import score  as score_function
 import torch
 import sys
 import os

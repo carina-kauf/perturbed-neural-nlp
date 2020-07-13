@@ -655,6 +655,10 @@ class _Fedorenko2016v2:
         assert (model_activations['stimulus_id'].values == self._target_assembly['stimulus_id'].values).all()
         score, weights = self._metric(model_activations, self._target_assembly)
         score = self.ceiling_normalize(score)
+        if 'weights' not in score.attrs:
+            score.attrs['weights']=weights
+        else:
+            score.attrs['weights'].append(weights)
         return score
 
 

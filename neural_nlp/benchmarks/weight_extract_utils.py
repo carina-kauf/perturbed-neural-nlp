@@ -1,15 +1,16 @@
 import numpy as np
 from brainio_base.assemblies import NeuroidAssembly, array_is_element, walk_coords
 from sklearn.linear_model import LinearRegression
-from brainscore.metrics import Score
+from brainscore.metrics import Score, _logger
 from scipy.stats import median_absolute_deviation
-from brainscore.metrics.transformations import CrossValidation
 from brainscore.metrics.regression import pls_regression
-from brainscore.metrics.transformations import Transformation, Split, enumerate_done, apply_aggregate
-import tqdm
+from brainscore.metrics.transformations import Split, enumerate_done, apply_aggregate
+from tqdm import tqdm
 import logging
+import warnings
 from brainscore.utils import fullname
 from brainio_collection.transform import subset
+from brainio_base.assemblies import DataAssembly, walk_coords, merge_data_arrays
 class Defaults:
     expected_dims = ('presentation', 'neuroid')
     stimulus_coord = 'image_id'
@@ -24,11 +25,12 @@ class TransformationWeight(object):
     """
 
     def __call__(self, *args, apply, aggregate=None, **kwargs):
-        values = self._run_pipe(*args, apply=apply, **kwargs)
-
+        values_weights = self._run_pipe(*args, apply=apply, **kwargs)
+        values=values_weights[0]
+        weights=values_weights[1]
         score = apply_aggregate(aggregate, values) if aggregate is not None else values
         score = apply_aggregate(self.aggregate, score)
-        return score
+        return score, weights
 
     def _run_pipe(self, *args, apply, **kwargs):
         generator = self.pipe(*args, **kwargs)
@@ -57,7 +59,6 @@ class TransformationWeight(object):
 
     def aggregate(self, score):
         return Score(score)
-
 
 class XarrayRegressionWithWeights():
     """
@@ -136,18 +137,6 @@ def linear_regression_with_weights(xarray_kwargs=None):
     regression = XarrayRegressionWithWeights(regression, **xarray_kwargs)
     return regression
 
-def aggregate_neuroid_scores_weights(neuroid_scores, subject_column):
-    subject_scores = neuroid_scores.groupby(subject_column).median()
-    center = subject_scores.median(subject_column)
-    subject_values = np.nan_to_num(subject_scores.values, nan=0)  # mad cannot deal with all-nan in one axis, treat as 0
-    subject_axis = subject_scores.dims.index(subject_scores[subject_column].dims[0])
-    error = median_absolute_deviation(subject_values, axis=subject_axis)
-    score = Score([center, error], coords={'aggregation': ['center', 'error']}, dims=['aggregation'])
-    score.attrs['raw'] = neuroid_scores
-    score.attrs['description'] = "score aggregated by taking median of neuroids per subject, " \
-                                 "then median of subject scores"
-    return score
-
 
 class CrossRegressedCorrelationWithWeights:
     def __init__(self, regression, correlation,return_weights=False, crossvalidation_kwargs=None):
@@ -169,12 +158,13 @@ class CrossRegressedCorrelationWithWeights:
         weights = self.regression.extract_coeff(source_train)
         score = self.correlation(prediction, target_test)
         if self.return_weights:
-            return score, weights
+            return score , weights
         else:
-            return score,[]
+            return score ,[]
 
     def aggregate(self, scores):
         return scores.median(dim='neuroid')
+
 class CrossValidationWithWeight(TransformationWeight):
     """
     Performs multiple splits over a source and target assembly.
@@ -198,6 +188,7 @@ class CrossValidationWithWeight(TransformationWeight):
         cross_validation_values, splits = self._split.build_splits(target_assembly)
 
         split_scores = []
+        split_weights = []
         for split_iterator, (train_indices, test_indices), done \
                 in tqdm(enumerate_done(splits), total=len(splits), desc='cross-validation'):
             train_values, test_values = cross_validation_values[train_indices], cross_validation_values[test_indices]
@@ -208,24 +199,21 @@ class CrossValidationWithWeight(TransformationWeight):
             test_target = subset(target_assembly, test_values, dims_must_match=False)
             assert len(test_source[self._split_coord]) == len(test_target[self._split_coord])
 
-            split_score, split_weight = yield from self._get_result(train_source, train_target, test_source, test_target,
+            split_score,split_weight = yield from self._get_result(train_source, train_target, test_source, test_target,
                                                       done=done)
             split_score = split_score.expand_dims('split')
             split_weight = split_weight.expand_dims('split')
             split_score['split'] = [split_iterator]
             split_weight['split'] = [split_iterator]
             split_scores.append(split_score)
-            split_weight.append(split_weight)
+            split_weights.append(split_weight)
 
         split_scores = Score.merge(*split_scores)
-        yield split_scores
+        split_weights=merge_data_arrays(split_weights)
+
+        yield split_scores, split_weights
 
     def aggregate(self, score):
         return self._split.aggregate(score)
-
-
-
-
-
 
 
