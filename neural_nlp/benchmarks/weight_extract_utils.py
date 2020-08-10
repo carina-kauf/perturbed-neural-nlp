@@ -118,7 +118,8 @@ class XarrayRegressionWithWeights():
         return coef_values
     def _package_coeffs(self, coefficents, source):
         # re-package neuroid coords
-        dims =('electrode',source.dims[1])
+        #dims =('electrode',source.dims[1])
+        dims = ('neuroid_id', source.dims[1])
         coords={}
         coords[source.dims[1]]=source[dims[1]].values
         coords[dims[0]]=self._target_neuroid_values[dims[0]]

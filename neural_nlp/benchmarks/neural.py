@@ -418,6 +418,139 @@ class _PereiraBenchmark(Benchmark):
         def get_subject_iterations(self, subjects):
             # use only a subset of subjects
             return self._rng.choice(list(subjects), size=self._num_bootstraps)
+#TODO change PereiraBenchamrkV2 to accept weight variable
+class _PereiraBenchmarkv2(Benchmark):
+    """
+    data source:
+        Pereira et al., nature communications 2018
+        https://www.nature.com/articles/s41467-018-03068-4?fbclid=IwAR0W7EZrnIFFO1kvANgeOEICaoDG5fhmdHipazy6n-APUJ6lMY98PkvuTyU
+    """
+
+    def __init__(self, identifier, metric, data_version='base'):
+        self._identifier = identifier
+        self._data_version = data_version
+        self._target_assembly = LazyLoad(lambda: self._load_assembly(version=self._data_version))
+        self._single_metric = metric
+        self._ceiler = self.PereiraExtrapolationCeiling(subject_column='subject', num_bootstraps=100)
+        self._cross = CartesianProduct(dividers=['experiment', 'atlas'])
+
+    @property
+    def identifier(self):
+        return self._identifier
+
+    def _metric(self, source_assembly, target_assembly):
+        cross_scores = self._cross(target_assembly, apply=
+        lambda cross_assembly: self._apply_cross(source_assembly, cross_assembly))
+        score = self._average_cross_scores(cross_scores)
+        return score
+
+    def _average_cross_scores(self, cross_scores):
+        return cross_scores.mean(['experiment', 'atlas'])
+
+    def _load_assembly(self, version='base'):
+        assembly = load_Pereira2018_Blank(version=version)
+        assembly = assembly.sel(atlas_selection_lower=90)
+        assembly = assembly[{'neuroid': [filter_strategy in [np.nan, 'HminusE', 'FIXminusH']
+                                         for filter_strategy in assembly['filter_strategy'].values]}]
+        return assembly
+
+    def __call__(self, candidate):
+        _logger.info('Computing activations')
+        stimulus_set = self._target_assembly.attrs['stimulus_set']
+        model_activations = listen_to(candidate, stimulus_set)
+        assert set(model_activations['stimulus_id'].values) == set(self._target_assembly['stimulus_id'].values)
+
+        _logger.info('Scoring across experiments & atlases')
+        cross_scores = self._cross(self._target_assembly, apply=
+        lambda cross_assembly: self._apply_cross(model_activations, cross_assembly))
+        raw_scores = cross_scores.raw
+        raw_neuroids = apply_aggregate(lambda values: values.mean('split').mean('experiment'), raw_scores)
+
+        # normally we would ceil every single neuroid here. To estimate the strongest ceiling possible (i.e. make it as
+        # hard as possible on the models), we used experiment-overlapping neuroids from as many subjects as possible
+        # which means some neuroids got excluded. Since median(r/c) is the same as median(r)/median(c), we just
+        # normalize the neuroid aggregate by the overall ceiling aggregate.
+        # Additionally, the Pereira data also has voxels from DMN, visual etc. but we care about language here.
+        language_neuroids = raw_neuroids.sel(atlas='language', _apply_raw=False)
+        score = aggregate_ceiling(language_neuroids, ceiling=self.ceiling, subject_column='subject')
+        return score
+
+    def _apply_cross(self, source_assembly, cross_assembly):
+        cross_assembly = cross_assembly.dropna('neuroid')  # some subjects have only done one experiment
+        source_assembly = source_assembly.dropna('neuroid')  # only relevant when running audio-visual self as "model"
+        assert len(cross_assembly['presentation']) in [243, 384]
+        assert not np.isnan(cross_assembly).any()
+        source_assembly = source_assembly[{'presentation': [stimulus_id in cross_assembly['stimulus_id'].values
+                                                            for stimulus_id in source_assembly['stimulus_id'].values]}]
+        return self._single_metric(source_assembly, cross_assembly)
+
+    @property
+    def ceiling(self):
+        return self._ceiler(identifier=self.identifier, assembly=self._target_assembly, metric=self._metric)
+
+    class PereiraExtrapolationCeiling(ExtrapolationCeiling):
+        def __init__(self, subject_column, *args, **kwargs):
+            super(_PereiraBenchmark.PereiraExtrapolationCeiling, self).__init__(
+                subject_column, *args, **kwargs)
+            self._num_subsamples = 10
+            self.holdout_ceiling = _PereiraBenchmark.PereiraHoldoutSubjectCeiling(subject_column=subject_column)
+            self._rng = RandomState(0)
+
+        def iterate_subsets(self, assembly, num_subjects):
+            # cross experiment to obtain more subjects to extrapolate.
+            # don't worry about atlases here, cross-metric will take care of it.
+            experiments = set(assembly['experiment'].values)
+            for experiment in sorted(experiments):
+                experiment_assembly = assembly[{'presentation': [
+                    experiment_value == experiment for experiment_value in assembly['experiment'].values]}]
+                experiment_assembly = experiment_assembly.dropna('neuroid')  # drop subjects that haven't done this exp
+                if len(set(experiment_assembly[self.subject_column].values)) < num_subjects:
+                    continue  # not enough subjects
+                for sub_subjects in self._random_combinations(
+                        subjects=set(experiment_assembly[self.subject_column].values),
+                        num_subjects=num_subjects, choice=self._num_subsamples, rng=self._rng):
+                    sub_assembly = assembly[{'neuroid': [subject in sub_subjects
+                                                         for subject in assembly[self.subject_column].values]}]
+                    yield {self.subject_column: sub_subjects, 'experiment': experiment}, sub_assembly
+
+        def _random_combinations(self, subjects, num_subjects, choice, rng):
+            # following https://stackoverflow.com/a/55929159/2225200. Also see similar method in `behavioral.py`.
+            subjects = np.array(list(subjects))
+            combinations = set()
+            while len(combinations) < choice:
+                elements = rng.choice(subjects, size=num_subjects, replace=False)
+                combinations.add(tuple(elements))
+            return combinations
+
+        def extrapolate(self, ceilings):
+            ceiling = super(_PereiraBenchmark.PereiraExtrapolationCeiling, self).extrapolate(ceilings)
+            # compute aggregate ceiling only for language neuroids
+            neuroid_ceilings = ceiling.raw
+            language_ceilings = neuroid_ceilings.sel(atlas='language')
+            ceiling = self.aggregate_neuroid_ceilings(language_ceilings)
+            ceiling.attrs['raw'] = neuroid_ceilings  # reset to all neuroids
+            return ceiling
+
+        def fit(self, subject_subsamples, bootstrapped_scores):
+            valid = ~np.isnan(bootstrapped_scores)
+            if sum(valid) < 1:
+                raise RuntimeError("No valid scores in sample")
+            return super(_PereiraBenchmark.PereiraExtrapolationCeiling, self).fit(
+                np.array(subject_subsamples)[valid], np.array(bootstrapped_scores)[valid])
+
+        def post_process(self, scores):
+            scores = apply_aggregate(lambda values: values.mean('sub_experiment').mean('experiment'), scores)
+            return scores
+
+    class PereiraHoldoutSubjectCeiling(HoldoutSubjectCeiling):
+        def __init__(self, *args, **kwargs):
+            super(_PereiraBenchmark.PereiraHoldoutSubjectCeiling, self).__init__(*args, **kwargs)
+            self._rng = RandomState(0)
+            self._num_bootstraps = 5
+
+        def get_subject_iterations(self, subjects):
+            # use only a subset of subjects
+            return self._rng.choice(list(subjects), size=self._num_bootstraps)
 
 def listen_to(candidate, stimulus_set, reset_column='story', average_sentence=True):
     """
@@ -477,6 +610,21 @@ class PereiraEncoding(_PereiraBenchmark):
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
             crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
         super(PereiraEncoding, self).__init__(metric=metric, **kwargs)
+
+class PereiraEncodingWithWeights(_PereiraBenchmark):
+    """
+    data source:
+        Pereira et al., nature communications 2018
+        https://www.nature.com/articles/s41467-018-03068-4?fbclid=IwAR0W7EZrnIFFO1kvANgeOEICaoDG5fhmdHipazy6n-APUJ6lMY98PkvuTyU
+    """
+
+    def __init__(self, **kwargs):
+
+        metric = CrossRegressedCorrelationWithWeights(
+            regression=linear_regression_with_weights(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
+        super(PereiraEncodingWithWeights, self).__init__(metric=metric, **kwargs)
 
 class _PereiraSubjectWise(_PereiraBenchmark):
     def __init__(self, **kwargs):
@@ -894,6 +1042,7 @@ def consistency(score, ceiling):
 benchmark_pool = [
     # primary benchmarks
     ('Pereira2018-encoding', PereiraEncoding),
+    ('Pereira2018-encoding-weights', PereiraEncodingWithWeights),
     ('Fedorenko2016v3-encoding', Fedorenko2016V3Encoding),
     ('Fedorenko2016v3-encoding-weights', Fedorenko2016V3EncodingWithWeights),
     ('Blank2014fROI-encoding', Blank2014fROIEncoding),
