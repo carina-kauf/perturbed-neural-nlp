@@ -1,10 +1,5 @@
 #!/bin/bash
 
-cd word2vec
-chmod +x setup.sh
-./setup.sh
-cd ..
-
 cd glove
 chmod +x setup.sh
 ./setup.sh
