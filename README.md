@@ -3,6 +3,8 @@
 
 Code accompanying the paper XXX.
 
+The pipeline is an extension of [neural-nlp](https://github.com/mschrimpf/neural-nlp) (Schrimpf et al., 2021, *XX*).
+
 This pipeline compares X
 It builds on the [Brain-Score](www.Brain-Score.org) framework and can easily be extended with new models and datasets.
 
