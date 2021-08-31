@@ -1,17 +1,15 @@
 
-# Language Brain-Score
+# Perturbed Language Brain-Score
 
 Code accompanying the paper XXX.
 
-Large-scale evaluation of neural network language models 
-as predictive models of human language processing.
-This pipeline compares dozens of state-of-the-art models and 4 human datasets (3 neural, 1 behavioral).
+This pipeline compares X
 It builds on the [Brain-Score](www.Brain-Score.org) framework and can easily be extended with new models and datasets.
 
 ## Installation
 ```bash
-conda create -n testenv python=3.6.2
-conda activate testenv
+conda create -n envname python=3.6.2
+conda activate envname
 
 git clone https://github.com/carina-kauf/perturbed-neural-nlp.git
 cd perturbed-neural-nlp
@@ -20,16 +18,15 @@ pip install -e .
 
 
 ## Run
-To score gpt2-xl on the Blank2014fROI-encoding benchmark:
+To score distilgpt on the Pereira2018-encoding-scrambled1 benchmark:
 
 ```bash
-python neural_nlp run --model gpt2-xl --benchmark Blank2014fROI-encoding --log_level DEBUG
+python neural_nlp run --model distilgpt --benchmark Pereira2018-encoding-scrambled1 --log_level DEBUG
 ```
 
-Other available benchmarks are e.g. Pereira2018-encoding (takes a while to compute), and Fedorenko2016v3-encoding.
+Other available benchmarks are e.g. XX
 
-You can also specify different models to run -- 
-note that some of them require additional download of weights (run `ressources/setup.sh` for automated download).
+You can also specify different models to run. Currently, all GPT models from [Huggingface Transformers](https://huggingface.co/transformers/) are supported.
 
 ## Citation
 
