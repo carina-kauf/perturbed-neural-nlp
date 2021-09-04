@@ -439,6 +439,7 @@ class LM1B(BrainModel, TaskModel):
         return np.array(tokens)
 
     def __call__(self, *args, average_sentence=True, **kwargs):
+
         if self.mode == BrainModel.Modes.recording:
             return _call_conditional_average(*args, extractor=self._extractor,
                                              average_sentence=average_sentence, sentence_averaging=word_last, **kwargs)
@@ -547,14 +548,16 @@ class LM1B(BrainModel, TaskModel):
 
 
 def word_last(layer_activations):
+    print('Word last')
     for layer, activations in layer_activations.items():
         assert all(a.shape[0] == 1 for a in activations)
-        activations = [a[0, -1, :] for a in activations]
+        activations = [a[0, -1, :] for a in activations] #(batch, tokens, emb_size)
         layer_activations[layer] = np.array(activations)
     return layer_activations
 
 
 def word_mean(layer_activations):
+    print('Word mean')
     for layer, activations in layer_activations.items():
         activations = [np.mean(a, axis=1) for a in activations]  # average across words within a sentence
         layer_activations[layer] = np.concatenate(activations)
@@ -590,9 +593,17 @@ class Transformer(PytorchWrapper, BrainModel, TaskModel):
             model=self._model_container, reset=lambda: None)  # transformer is feed-forward
 
     def __call__(self, *args, average_sentence=True, **kwargs):
+
+        print('WE ARE NOW IN CALL TRANSFORMERS', os.getenv('AVG_TOKEN_TRANSFORMERS'))
+
+        if os.getenv('AVG_TOKEN_TRANSFORMERS', '0') == '1':
+            avg=word_mean
+        else:
+            avg=word_last
+
         if self.mode == BrainModel.Modes.recording:
             return _call_conditional_average(*args, extractor=self._extractor,
-                                             average_sentence=average_sentence, sentence_averaging=word_last, **kwargs)
+                                             average_sentence=average_sentence, sentence_averaging=avg, **kwargs)
         elif self.mode == TaskModel.Modes.tokens_to_features:
             encodings = self._model_container(*args, **kwargs)
             # the onmt implementation concats things together, undo this
@@ -865,6 +876,7 @@ class _PytorchTransformerWrapper(BrainModel, TaskModel):
                 max_num_words=max_num_words, additional_tokens=additional_tokens, use_special_tokens=use_special_tokens)
             encoded_layers = [[]] * len(self.layer_names)
             for context_ids in aligned_tokens:
+                print("\n", len(context_ids), [self.tokenizer.convert_ids_to_tokens(elm) for elm in context_ids]) #TODO take out (check for token alignment)
                 # Convert inputs to PyTorch tensors
                 tokens_tensor = torch.tensor([context_ids])
                 tokens_tensor = tokens_tensor.to('cuda' if torch.cuda.is_available() else 'cpu')
@@ -1117,6 +1129,7 @@ model_pool = {
     Glove.identifier + '-untrained': LazyLoad(lambda: Glove(random_embeddings=True)),
     Transformer.identifier: LazyLoad(Transformer),
     Transformer.identifier + '-untrained': LazyLoad(lambda: Transformer(untrained=True)),
+    Transformer.identifier + '-avgtoken': LazyLoad(Transformer),
     ETM.identifier: LazyLoad(ETM),
     ETM.identifier + '-untrained': LazyLoad(lambda: ETM(random_embeddings=True)),
 }
@@ -1306,6 +1319,9 @@ for untrained in False, True:
             identifier += '-untrained'
             configuration['trained'] = False
 
+        if os.getenv('AVG_TOKEN_TRANSFORMERS', '0') == '1':
+            identifier += '-avgtoken'
+
         # either use the defined values for config, model and tokenizer or build from prefix
         configuration['config_ctr'] = configuration.get('config_ctr', configuration['prefix'] + 'Config')
         configuration['model_ctr'] = configuration.get('model_ctr', configuration['prefix'] + 'Model')
@@ -1331,11 +1347,17 @@ for untrained in False, True:
             model_wrapper = configuration.get('model_wrapper', None)
             if model_wrapper:
                 model = model_wrapper(model)
+
+            if os.getenv('AVG_TOKEN_TRANSFORMERS', '0') == '1':
+                avg = word_mean
+            else:
+                avg = word_last
+
             transformer = _PytorchTransformerWrapper(
                 identifier=identifier,
                 tokenizer=tokenizer, tokenizer_special_tokens=configuration.get('tokenizer_special_tokens', ()),
                 model=model, layers=configuration['layers'],
-                sentence_average=word_last)
+                sentence_average=avg)
             return transformer
 
 
