@@ -1,0 +1,1944 @@
+0	beekeeping encourages the conservation of local habitats
+1	beekeeping encourages the conservation of habitats local
+2	encourages beekeeping the conservation of habitats local
+3	beekeeping conservation encourages the of habitats local
+4	conservation beekeeping encourages the of habitats local
+5	conservation beekeeping encourages the habitats of local
+6	conservation encourages beekeeping of the habitats local
+7	beekeeping conservation of encourages habitats local the
+0	it is in every beekeeper's interest to conserve local plants that produce pollen
+1	it is in every beekeeper's interest to conserve local plants produce that pollen
+2	it in is every beekeeper's interest to conserve local plants produce that pollen
+3	in it is every beekeeper's interest to conserve local plants produce that pollen
+4	in it is every beekeeper's interest to conserve local plants produce pollen that
+5	in it is every interest beekeeper's to conserve local plants produce pollen that
+6	in it is interest every beekeeper's to conserve local plants produce pollen that
+7	in every it is interest beekeeper's to conserve plants local that pollen produce
+0	as a passive form of agriculture it does not require that native vegetation be cleared to make way for crops
+1	as a passive of form agriculture it does not require that native vegetation be cleared to make way for crops
+2	a as passive of form agriculture it does not require that native vegetation be cleared to make way for crops
+3	a as passive of form agriculture it does require not that native vegetation be cleared to make way for crops
+4	a as passive of form agriculture it require does not that native vegetation be cleared to make way for crops
+5	a as passive agriculture of form it does require not that native vegetation be cleared to make way for crops
+6	a as passive agriculture of form it does require not that native vegetation be cleared to make for way crops
+7	a as agriculture passive of form it does require not that native vegetation be cleared to make for way crops
+0	beekeepers also discourage the use of pesticides on crops because they could kill the honeybees
+1	beekeepers also discourage the use of pesticides on crops because could they kill the honeybees
+2	beekeepers discourage also the use of pesticides on crops because could they kill the honeybees
+3	discourage beekeepers also the use of pesticides on crops because could they kill the honeybees
+4	discourage beekeepers also the use of pesticides on crops because could kill they the honeybees
+5	discourage beekeepers also the of use pesticides on crops because could kill they the honeybees
+6	discourage beekeepers also of the use pesticides on crops because could kill they the honeybees
+7	discourage the beekeepers also of use pesticides on because crops they kill could the honeybees
+0	artisanal beekeepers go to extremes for their craft but their product is worth the effort
+1	artisanal beekeepers go to extremes for their craft but their is product worth the effort
+2	artisanal go beekeepers to extremes for their craft but their is product worth the effort
+3	go artisanal beekeepers to extremes for their craft but their is product worth the effort
+4	go artisanal beekeepers to extremes for their craft but their is worth product the effort
+5	go artisanal beekeepers to for extremes their craft but their is worth product the effort
+6	go artisanal beekeepers for to extremes their craft but their is worth product the effort
+7	go to artisanal beekeepers for extremes their craft their but product worth is the effort
+0	artisanal honey-making emphasizes quality and character over quantity and consistency
+1	artisanal emphasizes honey-making quality and character over quantity and consistency
+2	emphasizes artisanal honey-making quality and character over quantity and consistency
+3	emphasizes artisanal honey-making quality character and over quantity and consistency
+4	emphasizes artisanal honey-making character quality and over quantity and consistency
+5	emphasizes quality artisanal honey-making character and over quantity and consistency
+6	emphasizes quality artisanal honey-making character and over quantity consistency and
+7	emphasizes quality artisanal honey-making character and quantity over consistency and
+0	to produce the finest honey beekeepers become micromanagers of their honeybees
+1	to the produce finest honey beekeepers become micromanagers of their honeybees
+2	the to produce finest honey beekeepers become micromanagers of their honeybees
+3	the to produce finest beekeepers honey become micromanagers of their honeybees
+4	the to produce beekeepers finest honey become micromanagers of their honeybees
+5	the finest to produce beekeepers honey become micromanagers of their honeybees
+6	the finest to produce beekeepers honey become micromanagers their of honeybees
+7	the to finest produce beekeepers honey micromanagers become their honeybees of
+0	they scout the fields know when nectar flows and select the best ways to extract honey
+1	they scout the fields know when nectar flows and select best the ways to extract honey
+2	they the scout fields know when nectar flows and select best the ways to extract honey
+3	the they scout fields know when nectar flows and select best the ways to extract honey
+4	the they scout fields know when nectar flows and select best ways the to extract honey
+5	the they scout fields when know nectar flows and select best ways the to extract honey
+6	the they scout when fields know nectar flows and select best ways the to extract honey
+7	the fields they scout when know nectar flows and select the ways best to honey extract
+0	as the beekeeper opens the hive the deep hum of 40000 bees fills the air
+1	as the beekeeper opens the hive the deep hum of bees 40000 fills the air
+2	as beekeeper the opens the hive the deep hum of bees 40000 fills the air
+3	beekeeper as the opens the hive the deep hum of bees 40000 fills the air
+4	beekeeper as the opens the hive the deep hum of bees fills 40000 the air
+5	beekeeper as the opens hive the the deep hum of bees fills 40000 the air
+6	beekeeper as the hive opens the the deep hum of bees fills 40000 the air
+7	beekeeper opens as the hive the the deep of hum 40000 fills bees the air
+0	the beekeeper checks honey stores pollen supplies and the bee nursery
+1	the checks beekeeper honey stores pollen supplies and the bee nursery
+2	checks the beekeeper honey stores pollen supplies and the bee nursery
+3	checks the beekeeper honey pollen stores supplies and the bee nursery
+4	checks the beekeeper pollen honey stores supplies and the bee nursery
+5	checks honey the beekeeper pollen stores supplies and the bee nursery
+6	checks honey the beekeeper pollen stores supplies and bee the nursery
+7	checks the honey beekeeper pollen stores and supplies bee nursery the
+0	bees crawl across his bare arms and hands but they don't sting because they're gentle
+1	bees crawl across his bare arms and hands but they sting don't because they're gentle
+2	bees across crawl his bare arms and hands but they sting don't because they're gentle
+3	across bees crawl his bare arms and hands but they sting don't because they're gentle
+4	across bees crawl his bare arms and hands but they sting because don't they're gentle
+5	across bees crawl his arms bare and hands but they sting because don't they're gentle
+6	across bees crawl arms his bare and hands but they sting because don't they're gentle
+7	across his bees crawl arms bare and hands they but don't because sting they're gentle
+0	i have a recurring dream about exams even though i'm no longer in college
+1	i have a recurring dream about exams even though i'm longer no in college
+2	i a have recurring dream about exams even though i'm longer no in college
+3	a i have recurring dream about exams even though i'm longer no in college
+4	a i have recurring dream about exams even though i'm longer in no college
+5	a i have recurring about dream exams even though i'm longer in no college
+6	a i have about recurring dream exams even though i'm longer in no college
+7	a recurring i have about dream exams even i'm though no in longer college
+0	in my dream it's the day of my final exam and i suddenly realize i've never gone to class
+1	in my dream the it's day of my final exam and i suddenly realize i've never gone to class
+2	my in dream the it's day of my final exam and i suddenly realize i've never gone to class
+3	my in dream the it's day of my exam final and i suddenly realize i've never gone to class
+4	my in dream the it's day of exam my final and i suddenly realize i've never gone to class
+5	my in dream day the it's of my exam final and i suddenly realize i've never gone to class
+6	my in dream day the it's of my exam final and i suddenly realize i've never gone class to
+7	my in day dream the it's of my exam final and i suddenly realize i've never gone class to
+0	i've never even done any of the reading assignments
+1	i've even never done any of the reading assignments
+2	even i've never done any of the reading assignments
+3	even i've never done of any the reading assignments
+4	even i've never of done any the reading assignments
+5	even done i've never of any the reading assignments
+6	even done i've never of any reading the assignments
+7	even done i've of never any reading the assignments
+0	i know many other people who have the same nightmare
+1	i many know other people who have the same nightmare
+2	many i know other people who have the same nightmare
+3	many i know other who people have the same nightmare
+4	many i know who other people have the same nightmare
+5	many other i know who people have the same nightmare
+6	many other i know who people have the nightmare same
+7	many other i know who people the have nightmare same
+0	each morning participants in the study had to write down their dream experience from the previous night
+1	each morning participants the in study had to write down their dream experience from the previous night
+2	morning each participants the in study had to write down their dream experience from the previous night
+3	morning each participants the in study had to down write their dream experience from the previous night
+4	morning each participants the in study had down to write their dream experience from the previous night
+5	morning each participants study the in had to down write their dream experience from the previous night
+6	morning each study participants the in had to down write their dream experience from the previous night
+7	morning each study participants the in had to down write their dream experience the from previous night
+0	they recorded if they recalled any dreams and described each dream and its emotional intensity
+1	they recorded if they recalled any dreams and described each and dream its emotional intensity
+2	they if recorded they recalled any dreams and described each and dream its emotional intensity
+3	if they recorded they recalled any dreams and described each and dream its emotional intensity
+4	if they recorded they recalled any dreams and described each and its dream emotional intensity
+5	if they recorded they any recalled dreams and described each and its dream emotional intensity
+6	if they recorded any they recalled dreams and described each and its dream emotional intensity
+7	if they they recorded any recalled dreams and each described dream its and emotional intensity
+0	participants then assigned each dream to a category such as a flying dream a bad dream or a nightmare
+1	participants then assigned dream each to a category such as a flying dream a bad dream or a nightmare
+2	then participants assigned dream each to a category such as a flying dream a bad dream or a nightmare
+3	then participants assigned dream each to a category as such a flying dream a bad dream or a nightmare
+4	then participants assigned dream each to a as category such a flying dream a bad dream or a nightmare
+5	then participants assigned to dream each a category as such a flying dream a bad dream or a nightmare
+6	then participants assigned to dream each a category as such a flying dream a bad dream or nightmare a
+7	then participants to assigned dream each a category as such a flying dream a bad dream or nightmare a
+0	every night while we sleep our minds are as active as when we are awake
+1	every night while we sleep our minds are as active when as we are awake
+2	every while night we sleep our minds are as active when as we are awake
+3	while every night we sleep our minds are as active when as we are awake
+4	while every night we sleep our minds are as active when we as are awake
+5	while every night we our sleep minds are as active when we as are awake
+6	while every night our we sleep minds are as active when we as are awake
+7	while we every night our sleep minds are active as as we when are awake
+0	we dream throughout the night in cycles of about ninety minutes each
+1	we dream throughout the night in cycles of about ninety each minutes
+2	we throughout dream the night in cycles of about ninety each minutes
+3	throughout we dream the night in cycles of about ninety each minutes
+4	throughout we dream the in night cycles of about ninety each minutes
+5	throughout we dream in the night cycles of about ninety each minutes
+6	throughout the we dream in night cycles of about ninety each minutes
+7	throughout we the dream in night of cycles ninety minutes about each
+0	images feelings stories and strange combinations of characters and places can fill our dreams
+1	images feelings stories and strange combinations of characters and places fill can our dreams
+2	images stories feelings and strange combinations of characters and places fill can our dreams
+3	stories images feelings and strange combinations of characters and places fill can our dreams
+4	stories images feelings and strange combinations of characters and places fill our can dreams
+5	stories images feelings and combinations strange of characters and places fill our can dreams
+6	stories images feelings combinations and strange of characters and places fill our can dreams
+7	stories and images feelings combinations strange of characters places and can our fill dreams
+0	when i decided to start playing cards things went from bad to worse
+1	when i decided to start playing cards things went from to bad worse
+2	when decided i to start playing cards things went from to bad worse
+3	decided when i to start playing cards things went from to bad worse
+4	decided when i to start playing cards things went from to worse bad
+5	decided when i to playing start cards things went from to worse bad
+6	decided when i playing to start cards things went from to worse bad
+7	decided to when i playing start cards things from went bad worse to
+0	gambling was something i had to do and i had already spent close to $10000 doing it
+1	gambling was something had i to do and i had already spent close to $10000 doing it
+2	was gambling something had i to do and i had already spent close to $10000 doing it
+3	was gambling something had i to do and had i already spent close to $10000 doing it
+4	was gambling something had i to do had and i already spent close to $10000 doing it
+5	was gambling something to had i do and had i already spent close to $10000 doing it
+6	was gambling to something had i do and had i already spent close to $10000 doing it
+7	was gambling to something had i do and had i already spent close $10000 to doing it
+0	my friends were sick of watching me gamble my savings away
+1	my were friends sick of watching me gamble my savings away
+2	were my friends sick of watching me gamble my savings away
+3	were my friends sick watching of me gamble my savings away
+4	were my friends watching sick of me gamble my savings away
+5	were sick my friends watching of me gamble my savings away
+6	were sick my friends watching of me gamble savings my away
+7	were my sick friends watching of gamble me savings away my
+0	the hardest part was the horror of leaving a casino after losing money i did not have
+1	the hardest part the was horror of leaving a casino after losing money i did not have
+2	hardest the part the was horror of leaving a casino after losing money i did not have
+3	hardest the part the was horror of leaving casino a after losing money i did not have
+4	hardest the part the was horror of casino leaving a after losing money i did not have
+5	hardest the part horror the was of leaving casino a after losing money i did not have
+6	hardest the horror part the was of leaving casino a after losing money i did not have
+7	hardest the horror part the was of leaving casino a after losing money did i not have
+0	good data on the social and economic effects of legalized gambling are hard to come by
+1	good data on the social and economic effects of legalized are gambling hard to come by
+2	good on data the social and economic effects of legalized are gambling hard to come by
+3	on good data the social and economic effects of legalized are gambling hard to come by
+4	on good data the social and economic effects of legalized are hard gambling to come by
+5	on good data the and social economic effects of legalized are hard gambling to come by
+6	on good data and the social economic effects of legalized are hard gambling to come by
+7	on the good data and social economic effects of legalized gambling hard are to by come
+0	some studies indicate that having a casino nearby makes gambling problems more likely
+1	some studies indicate that having a casino nearby makes gambling more problems likely
+2	some indicate studies that having a casino nearby makes gambling more problems likely
+3	indicate some studies that having a casino nearby makes gambling more problems likely
+4	indicate some studies that having a casino nearby makes gambling more likely problems
+5	indicate some studies that a having casino nearby makes gambling more likely problems
+6	indicate some studies a that having casino nearby makes gambling more likely problems
+7	indicate that some studies a having casino nearby gambling makes problems likely more
+0	gambling may also be associated with personal bankruptcies and marriage problems
+1	gambling also may be associated with personal bankruptcies and marriage problems
+2	also gambling may be associated with personal bankruptcies and marriage problems
+3	also gambling may be with associated personal bankruptcies and marriage problems
+4	also gambling may with be associated personal bankruptcies and marriage problems
+5	also be gambling may with associated personal bankruptcies and marriage problems
+6	also be gambling may with associated personal bankruptcies marriage and problems
+7	also gambling be may with associated bankruptcies personal marriage problems and
+0	over the past generation there has been a dramatic expansion of legalized gambling
+1	over the past generation there has been a dramatic expansion legalized of gambling
+2	over past the generation there has been a dramatic expansion legalized of gambling
+3	past over the generation there has been a dramatic expansion legalized of gambling
+4	past over the generation there has been a dramatic expansion legalized gambling of
+5	past over the generation has there been a dramatic expansion legalized gambling of
+6	past over the has generation there been a dramatic expansion legalized gambling of
+7	past generation over the has there been a expansion dramatic of gambling legalized
+0	most states have instituted lotteries and many have casinos as well
+1	most have states instituted lotteries and many have casinos as well
+2	have most states instituted lotteries and many have casinos as well
+3	have most states instituted and lotteries many have casinos as well
+4	have most states and instituted lotteries many have casinos as well
+5	have instituted most states and lotteries many have casinos as well
+6	have instituted most states and lotteries many have as casinos well
+7	have most instituted states and lotteries have many as well casinos
+0	gambling has become very big but controversial business
+1	gambling has become very big controversial but business
+2	has gambling become very big controversial but business
+3	gambling very has become big controversial but business
+4	very gambling has become big controversial but business
+5	very gambling has become controversial big but business
+6	very has gambling big become controversial but business
+7	gambling very big has controversial but become business
+0	the wind from the hurricane shook the house shattering a window in the kitchen
+1	the wind from the hurricane shook the house shattering a in window the kitchen
+2	the from wind the hurricane shook the house shattering a in window the kitchen
+3	from the wind the hurricane shook the house shattering a in window the kitchen
+4	from the wind the hurricane shook the house shattering a in the window kitchen
+5	from the wind the shook hurricane the house shattering a in the window kitchen
+6	from the wind shook the hurricane the house shattering a in the window kitchen
+7	from the the wind shook hurricane the house a shattering window the in kitchen
+0	we ran in grabbed some food slammed the door and surrendered the kitchen to the hurricane
+1	we ran in grabbed some food slammed the door and the surrendered kitchen to the hurricane
+2	we in ran grabbed some food slammed the door and the surrendered kitchen to the hurricane
+3	in we ran grabbed some food slammed the door and the surrendered kitchen to the hurricane
+4	in we ran grabbed some food slammed the door and the kitchen surrendered to the hurricane
+5	in we ran grabbed food some slammed the door and the kitchen surrendered to the hurricane
+6	in we ran food grabbed some slammed the door and the kitchen surrendered to the hurricane
+7	in grabbed we ran food some slammed the door and surrendered kitchen the to hurricane the
+0	i was afraid our house would be ripped from its foundation
+1	i afraid was our house would be ripped from its foundation
+2	afraid i was our house would be ripped from its foundation
+3	afraid i was our would house be ripped from its foundation
+4	afraid i was would our house be ripped from its foundation
+5	afraid our i was would house be ripped from its foundation
+6	afraid our i was would house be ripped its from foundation
+7	afraid i our was would house ripped be its foundation from
+0	later that night with the wind shaking the house we fell asleep huddled on the sofa
+1	later that night with the wind shaking the house we asleep fell huddled on the sofa
+2	later night that with the wind shaking the house we asleep fell huddled on the sofa
+3	night later that with the wind shaking the house we asleep fell huddled on the sofa
+4	night later that with the wind shaking the house we asleep huddled fell on the sofa
+5	night later that with wind the shaking the house we asleep huddled fell on the sofa
+6	night later that wind with the shaking the house we asleep huddled fell on the sofa
+7	night with later that wind the shaking the house we fell huddled asleep on sofa the
+0	hurricanes can tear limbs off of trees and suck houses off their foundations
+1	hurricanes can tear limbs off of trees and suck houses their off foundations
+2	hurricanes tear can limbs off of trees and suck houses their off foundations
+3	tear hurricanes can limbs off of trees and suck houses their off foundations
+4	tear hurricanes can limbs off of trees and suck houses their foundations off
+5	tear hurricanes can limbs of off trees and suck houses their foundations off
+6	tear hurricanes can of limbs off trees and suck houses their foundations off
+7	tear limbs hurricanes can of off trees and houses suck off foundations their
+0	they dump heavy rains that can trigger floods and mudslides
+1	they heavy dump rains that can trigger floods and mudslides
+2	heavy they dump rains that can trigger floods and mudslides
+3	heavy they dump rains can that trigger floods and mudslides
+4	heavy they dump can rains that trigger floods and mudslides
+5	heavy rains they dump can that trigger floods and mudslides
+6	heavy rains they dump can that trigger floods mudslides and
+7	heavy rains they dump can that floods trigger mudslides and
+0	hurricanes can also bring a storm surge a wall of ocean water that lurches onto land
+1	hurricanes can also bring a storm surge a wall of water ocean that lurches onto land
+2	hurricanes also can bring a storm surge a wall of water ocean that lurches onto land
+3	also hurricanes can bring a storm surge a wall of water ocean that lurches onto land
+4	also hurricanes can bring a storm surge a wall of water that ocean lurches onto land
+5	also hurricanes can bring storm a surge a wall of water that ocean lurches onto land
+6	also hurricanes can storm bring a surge a wall of water that ocean lurches onto land
+7	also bring hurricanes can storm a surge a wall of ocean that water lurches land onto
+0	scientists use several methods to look for evidence of ancient hurricanes
+1	scientists several use methods to look for evidence of ancient hurricanes
+2	several scientists use methods to look for evidence of ancient hurricanes
+3	several scientists use methods look to for evidence of ancient hurricanes
+4	several scientists use look methods to for evidence of ancient hurricanes
+5	several methods scientists use look to for evidence of ancient hurricanes
+6	several methods scientists use look to for evidence ancient of hurricanes
+7	several scientists methods use look to evidence for ancient hurricanes of
+0	the strongest storms deposited layers of windblown beach sand at the bottoms of coastal lakes
+1	the strongest storms deposited layers of windblown beach sand at bottoms the of coastal lakes
+2	the storms strongest deposited layers of windblown beach sand at bottoms the of coastal lakes
+3	storms the strongest deposited layers of windblown beach sand at bottoms the of coastal lakes
+4	storms the strongest deposited layers of windblown beach sand at bottoms of the coastal lakes
+5	storms the strongest deposited of layers windblown beach sand at bottoms of the coastal lakes
+6	storms the strongest of deposited layers windblown beach sand at bottoms of the coastal lakes
+7	storms deposited the strongest of layers windblown beach at sand the of bottoms coastal lakes
+0	trees drenched by passing hurricanes preserve a record of each storm in their growth rings
+1	trees drenched by passing hurricanes preserve a record of each in storm their growth rings
+2	trees by drenched passing hurricanes preserve a record of each in storm their growth rings
+3	by trees drenched passing hurricanes preserve a record of each in storm their growth rings
+4	by trees drenched passing hurricanes preserve a record of each in their storm growth rings
+5	by trees drenched passing preserve hurricanes a record of each in their storm growth rings
+6	by trees drenched preserve passing hurricanes a record of each in their storm growth rings
+7	by passing trees drenched preserve hurricanes a record each of storm their in growth rings
+0	american ice cream is exported around the world but different countries have different preferences
+1	american ice cream is exported around the world but different have countries different preferences
+2	american cream ice is exported around the world but different have countries different preferences
+3	cream american ice is exported around the world but different have countries different preferences
+4	cream american ice is exported around the world but different have different countries preferences
+5	cream american ice is around exported the world but different have different countries preferences
+6	cream american ice around is exported the world but different have different countries preferences
+7	cream is american ice around exported the world different but countries different have preferences
+0	many people enjoy their ice cream flavored with local delicacies
+1	many enjoy people their ice cream flavored with local delicacies
+2	enjoy many people their ice cream flavored with local delicacies
+3	enjoy many people their cream ice flavored with local delicacies
+4	enjoy many people cream their ice flavored with local delicacies
+5	enjoy their many people cream ice flavored with local delicacies
+6	enjoy their many people cream ice flavored with delicacies local
+7	enjoy their many people cream ice with flavored delicacies local
+0	in some tropical places vanilla ice cream is topped with bananas and fresh mangos
+1	in some tropical places vanilla ice cream is topped with and bananas fresh mangos
+2	in tropical some places vanilla ice cream is topped with and bananas fresh mangos
+3	tropical in some places vanilla ice cream is topped with and bananas fresh mangos
+4	tropical in some places vanilla ice cream is topped with and fresh bananas mangos
+5	tropical in some places ice vanilla cream is topped with and fresh bananas mangos
+6	tropical in some ice places vanilla cream is topped with and fresh bananas mangos
+7	tropical places in some ice vanilla cream is with topped bananas fresh and mangos
+0	i remember making ice cream at home as a child
+1	i making remember ice cream at home as a child
+2	making i remember ice cream at home as a child
+3	making i remember ice at cream home as a child
+4	making i remember at ice cream home as a child
+5	making ice i remember at cream home as a child
+6	making ice i remember at cream home as child a
+7	making ice i remember at cream as home child a
+0	we poured the cream mixture into a frozen tub then start turning the crank to expose it to the cold
+1	we poured the mixture cream into a frozen tub then start turning the crank to expose it to the cold
+2	poured we the mixture cream into a frozen tub then start turning the crank to expose it to the cold
+3	poured we the mixture cream into a frozen then tub start turning the crank to expose it to the cold
+4	poured we the mixture cream into a then frozen tub start turning the crank to expose it to the cold
+5	poured we the into mixture cream a frozen then tub start turning the crank to expose it to the cold
+6	poured we the into mixture cream a frozen then tub start turning the crank to expose it the to cold
+7	poured we into the mixture cream a frozen then tub start turning the crank to expose it the to cold
+0	eventually it froze enough that i couldn't turn the hand crank any more
+1	eventually it froze enough that i couldn't turn the hand any crank more
+2	eventually froze it enough that i couldn't turn the hand any crank more
+3	froze eventually it enough that i couldn't turn the hand any crank more
+4	froze eventually it enough that i couldn't turn the hand any more crank
+5	froze eventually it enough i that couldn't turn the hand any more crank
+6	froze eventually it i enough that couldn't turn the hand any more crank
+7	froze enough eventually it i that couldn't turn hand the crank more any
+0	then i put the container of half-frozen ice cream into the freezer to harden
+1	then i put the container of half-frozen ice cream into freezer the to harden
+2	then put i the container of half-frozen ice cream into freezer the to harden
+3	put then i the container of half-frozen ice cream into freezer the to harden
+4	put then i the container of half-frozen ice cream into freezer to the harden
+5	put then i the of container half-frozen ice cream into freezer to the harden
+6	put then i of the container half-frozen ice cream into freezer to the harden
+7	put the then i of container half-frozen ice into cream the to freezer harden
+0	ice cream is a mixture of milk or cream sugar flavorings and up to half whipped-in air
+1	ice cream is mixture a of milk or cream sugar flavorings and up to half whipped-in air
+2	cream ice is mixture a of milk or cream sugar flavorings and up to half whipped-in air
+3	cream ice is mixture a of milk or sugar cream flavorings and up to half whipped-in air
+4	cream ice is mixture a of milk sugar or cream flavorings and up to half whipped-in air
+5	cream ice is of mixture a milk or sugar cream flavorings and up to half whipped-in air
+6	cream ice of is mixture a milk or sugar cream flavorings and up to half whipped-in air
+7	cream ice of is mixture a milk or sugar cream flavorings and up half to whipped-in air
+0	the butterfat in milk and cream is what makes it smooth and silky
+1	the butterfat in milk and cream is what makes it and smooth silky
+2	the in butterfat milk and cream is what makes it and smooth silky
+3	in the butterfat milk and cream is what makes it and smooth silky
+4	in the butterfat milk and cream is what makes it and silky smooth
+5	in the butterfat milk cream and is what makes it and silky smooth
+6	in the butterfat cream milk and is what makes it and silky smooth
+7	in milk the butterfat cream and is what it makes smooth silky and
+0	high-priced premium ice cream is loaded with butterfat and natural flavorings
+1	high-priced ice premium cream is loaded with butterfat and natural flavorings
+2	ice high-priced premium cream is loaded with butterfat and natural flavorings
+3	ice high-priced premium cream loaded is with butterfat and natural flavorings
+4	ice high-priced premium loaded cream is with butterfat and natural flavorings
+5	ice cream high-priced premium loaded is with butterfat and natural flavorings
+6	ice cream high-priced premium loaded is with butterfat natural and flavorings
+7	ice high-priced cream premium loaded is butterfat with natural flavorings and
+0	when i use the riding lawn mower the uncomfortable chair makes my back hurt
+1	when i use the riding lawn mower the uncomfortable chair my makes back hurt
+2	when use i the riding lawn mower the uncomfortable chair my makes back hurt
+3	use when i the riding lawn mower the uncomfortable chair my makes back hurt
+4	use when i the riding lawn mower the uncomfortable chair my back makes hurt
+5	use when i the lawn riding mower the uncomfortable chair my back makes hurt
+6	use when i lawn the riding mower the uncomfortable chair my back makes hurt
+7	use the when i lawn riding mower the chair uncomfortable makes back my hurt
+0	i use the two levers in front of me to control the machine
+1	i use the two levers in front of me to the control machine
+2	i the use two levers in front of me to the control machine
+3	the i use two levers in front of me to the control machine
+4	the i use two levers in front of me to the machine control
+5	the i use two in levers front of me to the machine control
+6	the i use in two levers front of me to the machine control
+7	the two i use in levers front of to me control machine the
+0	the sharp blades underneath the lawn mower precisely sever each blade of grass
+1	the sharp blades underneath the lawn mower precisely sever each of blade grass
+2	the blades sharp underneath the lawn mower precisely sever each of blade grass
+3	blades the sharp underneath the lawn mower precisely sever each of blade grass
+4	blades the sharp underneath the lawn mower precisely sever each of grass blade
+5	blades the sharp underneath lawn the mower precisely sever each of grass blade
+6	blades the sharp lawn underneath the mower precisely sever each of grass blade
+7	blades underneath the sharp lawn the mower precisely each sever blade grass of
+0	mowing the lawn is a long task and it has taught me patience
+1	mowing the lawn is a long task and it has me taught patience
+2	mowing lawn the is a long task and it has me taught patience
+3	lawn mowing the is a long task and it has me taught patience
+4	lawn mowing the is a long task and it has me patience taught
+5	lawn mowing the is long a task and it has me patience taught
+6	lawn mowing the long is a task and it has me patience taught
+7	lawn is mowing the long a task and has it taught patience me
+0	a lawn mower is a machine with revolving blades that cut grass to an even height
+1	a lawn mower is a machine with revolving blades that grass cut to an even height
+2	a mower lawn is a machine with revolving blades that grass cut to an even height
+3	mower a lawn is a machine with revolving blades that grass cut to an even height
+4	mower a lawn is a machine with revolving blades that grass to cut an even height
+5	mower a lawn is machine a with revolving blades that grass to cut an even height
+6	mower a lawn machine is a with revolving blades that grass to cut an even height
+7	mower is a lawn machine a with revolving blades that cut to grass an height even
+0	the blades may be powered by muscle or the machine may have a motor
+1	the blades may be powered by muscle or the machine have may a motor
+2	the may blades be powered by muscle or the machine have may a motor
+3	may the blades be powered by muscle or the machine have may a motor
+4	may the blades be powered by muscle or the machine have a may motor
+5	may the blades be by powered muscle or the machine have a may motor
+6	may the blades by be powered muscle or the machine have a may motor
+7	may be the blades by powered muscle or machine the may a have motor
+0	the most common power source for lawn mowers is a small gas engine
+1	the most common power source for lawn mowers is a gas small engine
+2	the common most power source for lawn mowers is a gas small engine
+3	common the most power source for lawn mowers is a gas small engine
+4	common the most power source for lawn mowers is a gas engine small
+5	common the most power for source lawn mowers is a gas engine small
+6	common the most for power source lawn mowers is a gas engine small
+7	common power the most for source lawn mowers a is small engine gas
+0	electric lawnmowers are better for the environment because they do not create emissions
+1	electric lawnmowers are better for the environment because they do create not emissions
+2	electric are lawnmowers better for the environment because they do create not emissions
+3	are electric lawnmowers better for the environment because they do create not emissions
+4	are electric lawnmowers better for the environment because they do create emissions not
+5	are electric lawnmowers better the for environment because they do create emissions not
+6	are electric lawnmowers the better for environment because they do create emissions not
+7	are better electric lawnmowers the for environment because do they not emissions create
+0	they also need less maintenance and are less expensive to run
+1	they need also less maintenance and are less expensive to run
+2	need they also less maintenance and are less expensive to run
+3	need they also less and maintenance are less expensive to run
+4	need they also and less maintenance are less expensive to run
+5	need less they also and maintenance are less expensive to run
+6	need less they also and maintenance are less to expensive run
+7	need they less also and maintenance less are to run expensive
+0	electric lawn mowers use as much electricity as an ordinary toaster
+1	electric mowers lawn use as much electricity as an ordinary toaster
+2	mowers electric lawn use as much electricity as an ordinary toaster
+3	mowers electric lawn use much as electricity as an ordinary toaster
+4	mowers electric lawn much use as electricity as an ordinary toaster
+5	mowers use electric lawn much as electricity as an ordinary toaster
+6	mowers use electric lawn much as electricity as ordinary an toaster
+7	mowers electric use lawn much as as electricity ordinary toaster an
+0	astronauts train a long time for their spacewalks
+1	astronauts train a long time their for spacewalks
+2	train astronauts a long time their for spacewalks
+3	astronauts long train a time their for spacewalks
+4	long astronauts train a time their for spacewalks
+5	long astronauts train a their time for spacewalks
+6	long train astronauts time a their for spacewalks
+7	astronauts long time train their for a spacewalks
+0	much of their training is conducted underwater
+1	much of their training is underwater conducted
+2	of much their training is underwater conducted
+3	much training of their is underwater conducted
+4	training much of their is underwater conducted
+5	training much of their underwater is conducted
+6	training of much is their underwater conducted
+7	much training is of underwater conducted their
+0	they may spend 8 to 10 hours in the pool for every hour they will spend floating in space
+1	they may spend to 8 10 hours in the pool for every hour they will spend floating in space
+2	may they spend to 8 10 hours in the pool for every hour they will spend floating in space
+3	may they spend to 8 10 hours in pool the for every hour they will spend floating in space
+4	may they spend to 8 10 hours pool in the for every hour they will spend floating in space
+5	may they spend 10 to 8 hours in pool the for every hour they will spend floating in space
+6	may they spend 10 to 8 hours in pool the for every hour they will spend floating space in
+7	may they 10 spend to 8 hours in pool the for every hour they will spend floating space in
+0	astronauts practice to be able to perform construction and repair work on the outside of the space station
+1	astronauts practice to able be to perform construction and repair work on the outside of the space station
+2	practice astronauts to able be to perform construction and repair work on the outside of the space station
+3	practice astronauts to able be to perform construction repair and work on the outside of the space station
+4	practice astronauts to able be to perform repair construction and work on the outside of the space station
+5	practice astronauts to to able be perform construction repair and work on the outside of the space station
+6	practice astronauts to to able be perform construction repair and work on the outside of the space station
+7	practice astronauts to to able be perform construction repair and work on the of outside the space station
+0	the commanders of shuttle flights are always pilots and many have backgrounds as military test pilots
+1	the commanders of shuttle flights are always pilots and many backgrounds have as military test pilots
+2	the of commanders shuttle flights are always pilots and many backgrounds have as military test pilots
+3	of the commanders shuttle flights are always pilots and many backgrounds have as military test pilots
+4	of the commanders shuttle flights are always pilots and many backgrounds as have military test pilots
+5	of the commanders shuttle are flights always pilots and many backgrounds as have military test pilots
+6	of the commanders are shuttle flights always pilots and many backgrounds as have military test pilots
+7	of shuttle the commanders are flights always pilots and many have as backgrounds military pilots test
+0	other astronauts are trained as doctors engineers and scientists who can run experiments in space
+1	other astronauts are trained as doctors engineers and scientists who run can experiments in space
+2	other are astronauts trained as doctors engineers and scientists who run can experiments in space
+3	are other astronauts trained as doctors engineers and scientists who run can experiments in space
+4	are other astronauts trained as doctors engineers and scientists who run experiments can in space
+5	are other astronauts trained doctors as engineers and scientists who run experiments can in space
+6	are other astronauts doctors trained as engineers and scientists who run experiments can in space
+7	are trained other astronauts doctors as engineers and who scientists can experiments run in space
+0	early crews were all young men but astronauts now are much more diverse
+1	early crews were all young men but astronauts now are more much diverse
+2	early were crews all young men but astronauts now are more much diverse
+3	were early crews all young men but astronauts now are more much diverse
+4	were early crews all young men but astronauts now are more diverse much
+5	were early crews all men young but astronauts now are more diverse much
+6	were early crews men all young but astronauts now are more diverse much
+7	were all early crews men young but astronauts are now much diverse more
+0	the team of astronauts floated out together to the exterior of the space shuttle
+1	the team of astronauts floated out together to the exterior the of space shuttle
+2	the of team astronauts floated out together to the exterior the of space shuttle
+3	of the team astronauts floated out together to the exterior the of space shuttle
+4	of the team astronauts floated out together to the exterior the space of shuttle
+5	of the team astronauts out floated together to the exterior the space of shuttle
+6	of the team out astronauts floated together to the exterior the space of shuttle
+7	of astronauts the team out floated together to exterior the of space the shuttle
+0	they carried tools needed to repair the broken part on the huge telescope
+1	they carried tools needed to repair the broken part on huge the telescope
+2	they tools carried needed to repair the broken part on huge the telescope
+3	tools they carried needed to repair the broken part on huge the telescope
+4	tools they carried needed to repair the broken part on huge telescope the
+5	tools they carried needed repair to the broken part on huge telescope the
+6	tools they carried repair needed to the broken part on huge telescope the
+7	tools needed they carried repair to the broken on part the telescope huge
+0	one astronaut loosened the bolts on the pipe while the other fitted the replacement part into place
+1	one astronaut loosened bolts the on the pipe while the other fitted the replacement part into place
+2	astronaut one loosened bolts the on the pipe while the other fitted the replacement part into place
+3	astronaut one loosened bolts the on the pipe the while other fitted the replacement part into place
+4	astronaut one loosened bolts the on the the pipe while other fitted the replacement part into place
+5	astronaut one loosened on bolts the the pipe the while other fitted the replacement part into place
+6	astronaut one on loosened bolts the the pipe the while other fitted the replacement part into place
+7	astronaut one on loosened bolts the the pipe the while other fitted the part replacement into place
+0	computers have been used in art for a long time by experimental artists
+1	computers have been used in art for a long time experimental by artists
+2	computers been have used in art for a long time experimental by artists
+3	been computers have used in art for a long time experimental by artists
+4	been computers have used in art for a long time experimental artists by
+5	been computers have used art in for a long time experimental artists by
+6	been computers have art used in for a long time experimental artists by
+7	been used computers have art in for a time long by artists experimental
+0	now that computers are more affordable and widespread computer graphics have entered the mainstream art world
+1	now that computers are more affordable and widespread computer graphics entered have the mainstream art world
+2	now computers that are more affordable and widespread computer graphics entered have the mainstream art world
+3	computers now that are more affordable and widespread computer graphics entered have the mainstream art world
+4	computers now that are more affordable and widespread computer graphics entered the have mainstream art world
+5	computers now that are affordable more and widespread computer graphics entered the have mainstream art world
+6	computers now that affordable are more and widespread computer graphics entered the have mainstream art world
+7	computers are now that affordable more and widespread computer graphics have the entered mainstream world art
+0	some computer science conferences have art exhibitions that showcase the latest graphics technology
+1	some computer science conferences have art exhibitions that showcase the graphics latest technology
+2	some science computer conferences have art exhibitions that showcase the graphics latest technology
+3	science some computer conferences have art exhibitions that showcase the graphics latest technology
+4	science some computer conferences have art exhibitions that showcase the graphics technology latest
+5	science some computer conferences art have exhibitions that showcase the graphics technology latest
+6	science some computer art conferences have exhibitions that showcase the graphics technology latest
+7	science conferences some computer art have exhibitions that the showcase latest technology graphics
+0	brand new conferences have sprung up that are devoted to bridging the two cultures
+1	brand new conferences have sprung up that are devoted to the bridging two cultures
+2	brand conferences new have sprung up that are devoted to the bridging two cultures
+3	conferences brand new have sprung up that are devoted to the bridging two cultures
+4	conferences brand new have sprung up that are devoted to the two bridging cultures
+5	conferences brand new have up sprung that are devoted to the two bridging cultures
+6	conferences brand new up have sprung that are devoted to the two bridging cultures
+7	conferences have brand new up sprung that are to devoted bridging two the cultures
+0	the computer graphics specialist works with doctors to visualize medical conditions and surgical procedures
+1	the computer graphics specialist works with doctors to visualize medical and conditions surgical procedures
+2	the graphics computer specialist works with doctors to visualize medical and conditions surgical procedures
+3	graphics the computer specialist works with doctors to visualize medical and conditions surgical procedures
+4	graphics the computer specialist works with doctors to visualize medical and surgical conditions procedures
+5	graphics the computer specialist with works doctors to visualize medical and surgical conditions procedures
+6	graphics the computer with specialist works doctors to visualize medical and surgical conditions procedures
+7	graphics specialist the computer with works doctors to medical visualize conditions surgical and procedures
+0	she uses digital animation to help doctors understand structures within a patient's body
+1	she uses digital animation to help doctors understand structures within patient's a body
+2	she digital uses animation to help doctors understand structures within patient's a body
+3	digital she uses animation to help doctors understand structures within patient's a body
+4	digital she uses animation to help doctors understand structures within patient's body a
+5	digital she uses animation help to doctors understand structures within patient's body a
+6	digital she uses help animation to doctors understand structures within patient's body a
+7	digital animation she uses help to doctors understand within structures a body patient's
+0	seeing the internal structures in an animation on a screen is much clearer than squinting at x-rays
+1	seeing the internal in structures an animation on a screen is much clearer than squinting at x-rays
+2	the seeing internal in structures an animation on a screen is much clearer than squinting at x-rays
+3	the seeing internal in structures an animation on screen a is much clearer than squinting at x-rays
+4	the seeing internal in structures an animation screen on a is much clearer than squinting at x-rays
+5	the seeing internal an in structures animation on screen a is much clearer than squinting at x-rays
+6	the seeing an internal in structures animation on screen a is much clearer than squinting at x-rays
+7	the seeing an internal in structures animation on screen a is much clearer squinting than at x-rays
+0	modern digital animation is a powerful tool for education
+1	modern animation digital is a powerful tool for education
+2	animation modern digital is a powerful tool for education
+3	animation modern digital is powerful a tool for education
+4	animation modern digital powerful is a tool for education
+5	animation is modern digital powerful a tool for education
+6	animation is modern digital powerful a for tool education
+7	animation is modern powerful digital a for tool education
+0	as the field of computer graphics broadens we must ask if graphics actually help students
+1	as the field of computer graphics broadens we must ask graphics if actually help students
+2	as field the of computer graphics broadens we must ask graphics if actually help students
+3	field as the of computer graphics broadens we must ask graphics if actually help students
+4	field as the of computer graphics broadens we must ask graphics actually if help students
+5	field as the of graphics computer broadens we must ask graphics actually if help students
+6	field as the graphics of computer broadens we must ask graphics actually if help students
+7	field of as the graphics computer broadens we ask must if actually graphics help students
+0	research does suggest that vivid and engaging digital imagery can be effective in the classroom
+1	research does suggest that vivid and engaging digital imagery can effective be in the classroom
+2	research suggest does that vivid and engaging digital imagery can effective be in the classroom
+3	suggest research does that vivid and engaging digital imagery can effective be in the classroom
+4	suggest research does that vivid and engaging digital imagery can effective in be the classroom
+5	suggest research does that and vivid engaging digital imagery can effective in be the classroom
+6	suggest research does and that vivid engaging digital imagery can effective in be the classroom
+7	suggest that research does and vivid engaging digital can imagery be in effective the classroom
+0	the reason he came to law school in the first place was cliche
+1	the reason he came to law school in the first was place cliche
+2	the he reason came to law school in the first was place cliche
+3	he the reason came to law school in the first was place cliche
+4	he the reason came to law school in the first was cliche place
+5	he the reason came law to school in the first was cliche place
+6	he the reason law came to school in the first was cliche place
+7	he came the reason law to school in first the place cliche was
+0	he wanted to change things for the better
+1	he wanted to change things the for better
+2	wanted he to change things the for better
+3	he change wanted to things the for better
+4	change he wanted to things the for better
+5	change he wanted to the things for better
+6	change wanted he things to the for better
+7	he change things wanted the for to better
+0	he recalled one evening at law school when he and the program director had pulled an all-nighter
+1	he recalled one at evening law school when he and the program director had pulled an all-nighter
+2	recalled he one at evening law school when he and the program director had pulled an all-nighter
+3	recalled he one at evening law school when and he the program director had pulled an all-nighter
+4	recalled he one at evening law school and when he the program director had pulled an all-nighter
+5	recalled he one law at evening school when and he the program director had pulled an all-nighter
+6	recalled he law one at evening school when and he the program director had pulled an all-nighter
+7	recalled he law one at evening school when and he the program director pulled had an all-nighter
+0	they finally finished drafting a petition for several evicted families at sunrise
+1	they finally finished drafting a petition for several evicted families sunrise at
+2	they finished finally drafting a petition for several evicted families sunrise at
+3	finished they finally drafting a petition for several evicted families sunrise at
+4	finished they finally drafting petition a for several evicted families sunrise at
+5	finished they finally petition drafting a for several evicted families sunrise at
+6	finished drafting they finally petition a for several evicted families sunrise at
+7	finished they drafting finally petition a several for families at evicted sunrise
+0	over the past four decades the cost of legal education has gone up relentlessly
+1	over the past four decades the cost of legal education gone has up relentlessly
+2	over past the four decades the cost of legal education gone has up relentlessly
+3	past over the four decades the cost of legal education gone has up relentlessly
+4	past over the four decades the cost of legal education gone up has relentlessly
+5	past over the four the decades cost of legal education gone up has relentlessly
+6	past over the the four decades cost of legal education gone up has relentlessly
+7	past four over the the decades cost of education legal has up gone relentlessly
+0	private law school tuition increased by a factor of four since the 1970s
+1	private law school tuition increased by a factor of four the since 1970s
+2	private school law tuition increased by a factor of four the since 1970s
+3	school private law tuition increased by a factor of four the since 1970s
+4	school private law tuition increased by a factor of four the 1970s since
+5	school private law tuition by increased a factor of four the 1970s since
+6	school private law by tuition increased a factor of four the 1970s since
+7	school tuition private law by increased a factor four of since 1970s the
+0	the market for admission to law school and for new lawyers could eventually crash
+1	the market for admission to law school and for new could lawyers eventually crash
+2	the for market admission to law school and for new could lawyers eventually crash
+3	for the market admission to law school and for new could lawyers eventually crash
+4	for the market admission to law school and for new could eventually lawyers crash
+5	for the market admission law to school and for new could eventually lawyers crash
+6	for the market law admission to school and for new could eventually lawyers crash
+7	for admission the market law to school and new for lawyers eventually could crash
+0	law school faculty often have minimal experience in actually practicing law
+1	law faculty school often have minimal experience in actually practicing law
+2	faculty law school often have minimal experience in actually practicing law
+3	faculty law school often minimal have experience in actually practicing law
+4	faculty law school minimal often have experience in actually practicing law
+5	faculty often law school minimal have experience in actually practicing law
+6	faculty often law school minimal have experience in practicing actually law
+7	faculty law often school minimal have in experience practicing law actually
+0	professors focus on writing law review articles for prestigious journals
+1	professors on focus writing law review articles for prestigious journals
+2	on professors focus writing law review articles for prestigious journals
+3	on professors focus writing review law articles for prestigious journals
+4	on professors focus review writing law articles for prestigious journals
+5	on writing professors focus review law articles for prestigious journals
+6	on writing professors focus review law articles for journals prestigious
+7	on writing professors focus review law for articles journals prestigious
+0	law schools often emphasize the theoretical with classes on topics like property law in feudal england
+1	law schools often emphasize the theoretical with classes on topics property like law in feudal england
+2	law often schools emphasize the theoretical with classes on topics property like law in feudal england
+3	often law schools emphasize the theoretical with classes on topics property like law in feudal england
+4	often law schools emphasize the theoretical with classes on topics property law like in feudal england
+5	often law schools emphasize theoretical the with classes on topics property law like in feudal england
+6	often law schools theoretical emphasize the with classes on topics property law like in feudal england
+7	often emphasize law schools theoretical the with classes on topics like law property in england feudal
+0	pharmacists are increasingly involved in preventive care
+1	pharmacists are increasingly involved in care preventive
+2	are pharmacists increasingly involved in care preventive
+3	pharmacists involved are increasingly in care preventive
+4	involved pharmacists are increasingly in care preventive
+5	involved pharmacists are increasingly care in preventive
+6	involved are pharmacists in increasingly care preventive
+7	pharmacists involved in are care preventive increasingly
+0	they are becoming front-line health advisers because people go to pharmacies often
+1	they are becoming front-line health advisers because people go to often pharmacies
+2	they becoming are front-line health advisers because people go to often pharmacies
+3	becoming they are front-line health advisers because people go to often pharmacies
+4	becoming they are front-line advisers health because people go to often pharmacies
+5	becoming they are advisers front-line health because people go to often pharmacies
+6	becoming front-line they are advisers health because people go to often pharmacies
+7	becoming they front-line are advisers health people because to pharmacies go often
+0	pharmacists are often a good source of information about public health
+1	pharmacists often are a good source of information about public health
+2	often pharmacists are a good source of information about public health
+3	often pharmacists are a source good of information about public health
+4	often pharmacists are source a good of information about public health
+5	often a pharmacists are source good of information about public health
+6	often a pharmacists are source good of information public about health
+7	often pharmacists a are source good information of public health about
+0	doctors consult with pharmacists because they know a lot about drug interactions and side effects
+1	doctors consult with pharmacists because they know a lot about interactions drug and side effects
+2	doctors with consult pharmacists because they know a lot about interactions drug and side effects
+3	with doctors consult pharmacists because they know a lot about interactions drug and side effects
+4	with doctors consult pharmacists because they know a lot about interactions and drug side effects
+5	with doctors consult pharmacists they because know a lot about interactions and drug side effects
+6	with doctors consult they pharmacists because know a lot about interactions and drug side effects
+7	with pharmacists doctors consult they because know a about lot drug and interactions side effects
+0	pharmacists dispense prescription drugs to patients and offer advice about the safe use of medications
+1	pharmacists dispense prescription drugs to patients and offer advice about safe the use of medications
+2	pharmacists prescription dispense drugs to patients and offer advice about safe the use of medications
+3	prescription pharmacists dispense drugs to patients and offer advice about safe the use of medications
+4	prescription pharmacists dispense drugs to patients and offer advice about safe use the of medications
+5	prescription pharmacists dispense drugs patients to and offer advice about safe use the of medications
+6	prescription pharmacists dispense patients drugs to and offer advice about safe use the of medications
+7	prescription drugs pharmacists dispense patients to and offer about advice the use safe of medications
+0	they also conduct health and wellness screenings and provide vaccines
+1	they conduct also health and wellness screenings and provide vaccines
+2	conduct they also health and wellness screenings and provide vaccines
+3	conduct they also health wellness and screenings and provide vaccines
+4	conduct they also wellness health and screenings and provide vaccines
+5	conduct health they also wellness and screenings and provide vaccines
+6	conduct health they also wellness and screenings and vaccines provide
+7	conduct health they also wellness and and screenings vaccines provide
+0	pharmacists must have professional degrees and pass two exams in order to be licensed
+1	pharmacists must have professional degrees and pass two exams in to order be licensed
+2	pharmacists have must professional degrees and pass two exams in to order be licensed
+3	have pharmacists must professional degrees and pass two exams in to order be licensed
+4	have pharmacists must professional degrees and pass two exams in to be order licensed
+5	have pharmacists must professional and degrees pass two exams in to be order licensed
+6	have pharmacists must and professional degrees pass two exams in to be order licensed
+7	have professional pharmacists must and degrees pass two in exams order be to licensed
+0	i think the pharmacy profession chose me as much as i chose to be a pharmacist
+1	i think the pharmacy profession chose me as much as chose i to be a pharmacist
+2	i the think pharmacy profession chose me as much as chose i to be a pharmacist
+3	the i think pharmacy profession chose me as much as chose i to be a pharmacist
+4	the i think pharmacy profession chose me as much as chose to i be a pharmacist
+5	the i think pharmacy chose profession me as much as chose to i be a pharmacist
+6	the i think chose pharmacy profession me as much as chose to i be a pharmacist
+7	the pharmacy i think chose profession me as much as i to chose be pharmacist a
+0	i was fascinated by the neatly arranged bottles in pharmacies as a child
+1	i was fascinated by the neatly arranged bottles in pharmacies a as child
+2	i fascinated was by the neatly arranged bottles in pharmacies a as child
+3	fascinated i was by the neatly arranged bottles in pharmacies a as child
+4	fascinated i was by the neatly arranged bottles in pharmacies a child as
+5	fascinated i was by neatly the arranged bottles in pharmacies a child as
+6	fascinated i was neatly by the arranged bottles in pharmacies a child as
+7	fascinated by i was neatly the arranged bottles pharmacies in as child a
+0	i know it's cliche but i love the impact that i have on lives of my patients
+1	i know it's but cliche i love the impact that i have on lives of my patients
+2	know i it's but cliche i love the impact that i have on lives of my patients
+3	know i it's but cliche i love the that impact i have on lives of my patients
+4	know i it's but cliche i love that the impact i have on lives of my patients
+5	know i it's i but cliche love the that impact i have on lives of my patients
+6	know i i it's but cliche love the that impact i have on lives of my patients
+7	know i i it's but cliche love the that impact i have on of lives my patients
+0	each person has his or her own response to potentially stressful situations
+1	each person has his or her own response to potentially situations stressful
+2	each has person his or her own response to potentially situations stressful
+3	has each person his or her own response to potentially situations stressful
+4	has each person his her or own response to potentially situations stressful
+5	has each person her his or own response to potentially situations stressful
+6	has his each person her or own response to potentially situations stressful
+7	has each his person her or response own potentially stressful to situations
+0	one person may be devastated by unemployment while another may find working fulltime stressful
+1	one person may be devastated by unemployment while another may working find fulltime stressful
+2	one may person be devastated by unemployment while another may working find fulltime stressful
+3	may one person be devastated by unemployment while another may working find fulltime stressful
+4	may one person be devastated by unemployment while another may working fulltime find stressful
+5	may one person be by devastated unemployment while another may working fulltime find stressful
+6	may one person by be devastated unemployment while another may working fulltime find stressful
+7	may be one person by devastated unemployment while may another find fulltime working stressful
+0	there are everyday stresses like being stuck in traffic
+1	there everyday are stresses like being stuck in traffic
+2	everyday there are stresses like being stuck in traffic
+3	everyday there are stresses being like stuck in traffic
+4	everyday there are being stresses like stuck in traffic
+5	everyday stresses there are being like stuck in traffic
+6	everyday stresses there are being like in stuck traffic
+7	everyday stresses there being are like in stuck traffic
+0	there are also traumatic stresses such as divorce or loss of a child
+1	there are also traumatic stresses such as divorce or loss a of child
+2	there also are traumatic stresses such as divorce or loss a of child
+3	also there are traumatic stresses such as divorce or loss a of child
+4	also there are traumatic stresses such as divorce or loss a child of
+5	also there are traumatic such stresses as divorce or loss a child of
+6	also there are such traumatic stresses as divorce or loss a child of
+7	also traumatic there are such stresses as divorce loss or of child a
+0	some people can adapt to different levels of stress
+1	some can people adapt to different levels of stress
+2	can some people adapt to different levels of stress
+3	can some people adapt different to levels of stress
+4	can some people different adapt to levels of stress
+5	can adapt some people different to levels of stress
+6	can adapt some people different to of levels stress
+7	can adapt some different people to of levels stress
+0	if not dealt with effectively though stress can take a real toll on health
+1	if not dealt with effectively though stress can take a toll real on health
+2	if dealt not with effectively though stress can take a toll real on health
+3	dealt if not with effectively though stress can take a toll real on health
+4	dealt if not with effectively though stress can take a toll on real health
+5	dealt if not with though effectively stress can take a toll on real health
+6	dealt if not though with effectively stress can take a toll on real health
+7	dealt with if not though effectively stress can a take real on toll health
+0	remember that it's your reaction to stress that determines if it will be harmful or beneficial
+1	remember that it's your reaction to stress that determines if will it be harmful or beneficial
+2	remember it's that your reaction to stress that determines if will it be harmful or beneficial
+3	it's remember that your reaction to stress that determines if will it be harmful or beneficial
+4	it's remember that your reaction to stress that determines if will be it harmful or beneficial
+5	it's remember that your to reaction stress that determines if will be it harmful or beneficial
+6	it's remember that to your reaction stress that determines if will be it harmful or beneficial
+7	it's your remember that to reaction stress that determines if it be will harmful beneficial or
+0	when my company was downsizing i felt incredibly stressed and worried
+1	when company my was downsizing i felt incredibly stressed and worried
+2	company when my was downsizing i felt incredibly stressed and worried
+3	company when my was i downsizing felt incredibly stressed and worried
+4	company when my i was downsizing felt incredibly stressed and worried
+5	company was when my i downsizing felt incredibly stressed and worried
+6	company was when my i downsizing felt incredibly and stressed worried
+7	company when was my i downsizing incredibly felt and worried stressed
+0	my heart would race for no reason and i even felt dizzy at times
+1	my heart would race for no reason and i even dizzy felt at times
+2	my would heart race for no reason and i even dizzy felt at times
+3	would my heart race for no reason and i even dizzy felt at times
+4	would my heart race for no reason and i even dizzy at felt times
+5	would my heart race no for reason and i even dizzy at felt times
+6	would my heart no race for reason and i even dizzy at felt times
+7	would race my heart no for reason and even i felt at dizzy times
+0	then i started taking yoga to try to manage my stress level
+1	then i started taking yoga to try to manage my level stress
+2	then started i taking yoga to try to manage my level stress
+3	started then i taking yoga to try to manage my level stress
+4	started then i taking to yoga try to manage my level stress
+5	started then i to taking yoga try to manage my level stress
+6	started taking then i to yoga try to manage my level stress
+7	started then taking i to yoga to try my stress manage level
+0	the man wore a jet black tuxedo with satin stripes
+1	the wore man a jet black tuxedo with satin stripes
+2	wore the man a jet black tuxedo with satin stripes
+3	wore the man a black jet tuxedo with satin stripes
+4	wore the man black a jet tuxedo with satin stripes
+5	wore a the man black jet tuxedo with satin stripes
+6	wore a the man black jet tuxedo with stripes satin
+7	wore a the man black jet with tuxedo stripes satin
+0	it was made with rich fabric cut in the latest style
+1	it made was with rich fabric cut in the latest style
+2	made it was with rich fabric cut in the latest style
+3	made it was with fabric rich cut in the latest style
+4	made it was fabric with rich cut in the latest style
+5	made with it was fabric rich cut in the latest style
+6	made with it was fabric rich cut in latest the style
+7	made it with was fabric rich in cut latest style the
+0	clearly he had it tailored as it fit the man perfectly
+1	clearly had he it tailored as it fit the man perfectly
+2	had clearly he it tailored as it fit the man perfectly
+3	had clearly he it as tailored it fit the man perfectly
+4	had clearly he as it tailored it fit the man perfectly
+5	had it clearly he as tailored it fit the man perfectly
+6	had it clearly he as tailored it fit man the perfectly
+7	had clearly it he as tailored fit it man perfectly the
+0	it looked like something a professional stylist would have picked out for a formal event
+1	it looked like something a professional stylist would have picked for out a formal event
+2	it like looked something a professional stylist would have picked for out a formal event
+3	like it looked something a professional stylist would have picked for out a formal event
+4	like it looked something a professional stylist would have picked for a out formal event
+5	like it looked something professional a stylist would have picked for a out formal event
+6	like it looked professional something a stylist would have picked for a out formal event
+7	like something it looked professional a stylist would picked have out a for formal event
+0	while the tuxedo is still preferred today's grooms are making personal statements in wedding attire
+1	while the tuxedo is still preferred today's grooms are making statements personal in wedding attire
+2	while tuxedo the is still preferred today's grooms are making statements personal in wedding attire
+3	tuxedo while the is still preferred today's grooms are making statements personal in wedding attire
+4	tuxedo while the is still preferred today's grooms are making statements in personal wedding attire
+5	tuxedo while the is preferred still today's grooms are making statements in personal wedding attire
+6	tuxedo while the preferred is still today's grooms are making statements in personal wedding attire
+7	tuxedo is while the preferred still today's grooms making are personal in statements wedding attire
+0	shorter jackets are on the cutting edge of wedding fashion for men
+1	shorter jackets are on the cutting edge of wedding fashion men for
+2	shorter are jackets on the cutting edge of wedding fashion men for
+3	are shorter jackets on the cutting edge of wedding fashion men for
+4	are shorter jackets on cutting the edge of wedding fashion men for
+5	are shorter jackets cutting on the edge of wedding fashion men for
+6	are on shorter jackets cutting the edge of wedding fashion men for
+7	are shorter on jackets cutting the of edge fashion for wedding men
+0	grooms are also jazzing up their tuxedos with colorful shirts and satin ties
+1	grooms are also jazzing up their tuxedos with colorful shirts satin and ties
+2	grooms also are jazzing up their tuxedos with colorful shirts satin and ties
+3	also grooms are jazzing up their tuxedos with colorful shirts satin and ties
+4	also grooms are jazzing up their tuxedos with colorful shirts satin ties and
+5	also grooms are jazzing their up tuxedos with colorful shirts satin ties and
+6	also grooms are their jazzing up tuxedos with colorful shirts satin ties and
+7	also jazzing grooms are their up tuxedos with shirts colorful and ties satin
+0	a tuxedo jacket is a tailless dinner jacket with black silk lapels
+1	a tuxedo jacket is a tailless dinner jacket with black lapels silk
+2	a jacket tuxedo is a tailless dinner jacket with black lapels silk
+3	jacket a tuxedo is a tailless dinner jacket with black lapels silk
+4	jacket a tuxedo is tailless a dinner jacket with black lapels silk
+5	jacket a tuxedo tailless is a dinner jacket with black lapels silk
+6	jacket is a tuxedo tailless a dinner jacket with black lapels silk
+7	jacket a is tuxedo tailless a jacket dinner black silk with lapels
+0	black tie trousers should be a perfect match to the tuxedo jacket
+1	black tie trousers should be a perfect match to the jacket tuxedo
+2	black trousers tie should be a perfect match to the jacket tuxedo
+3	trousers black tie should be a perfect match to the jacket tuxedo
+4	trousers black tie should a be perfect match to the jacket tuxedo
+5	trousers black tie a should be perfect match to the jacket tuxedo
+6	trousers should black tie a be perfect match to the jacket tuxedo
+7	trousers black should tie a be match perfect the tuxedo to jacket
+0	the shirt should always be plain white and the tie should be black and match the jacket lapels
+1	the shirt should be always plain white and the tie should be black and match the jacket lapels
+2	shirt the should be always plain white and the tie should be black and match the jacket lapels
+3	shirt the should be always plain white and tie the should be black and match the jacket lapels
+4	shirt the should be always plain white tie and the should be black and match the jacket lapels
+5	shirt the should plain be always white and tie the should be black and match the jacket lapels
+6	shirt the plain should be always white and tie the should be black and match the jacket lapels
+7	shirt the plain should be always white and tie the should be black match and the jacket lapels
+0	the concert pianist went blind in adulthood
+1	the concert pianist went blind adulthood in
+2	concert the pianist went blind adulthood in
+3	the went concert pianist blind adulthood in
+4	went the concert pianist blind adulthood in
+5	went the concert pianist adulthood blind in
+6	went concert the blind pianist adulthood in
+7	the went blind concert adulthood in pianist
+0	her blindness was caused by a genetic condition that slowly damaged the eyes
+1	her blindness was caused by a genetic condition that slowly the damaged eyes
+2	her was blindness caused by a genetic condition that slowly the damaged eyes
+3	was her blindness caused by a genetic condition that slowly the damaged eyes
+4	was her blindness caused by a genetic condition that slowly the eyes damaged
+5	was her blindness caused a by genetic condition that slowly the eyes damaged
+6	was her blindness a caused by genetic condition that slowly the eyes damaged
+7	was caused her blindness a by genetic condition slowly that damaged eyes the
+0	she told interviewers that being blind was an advantage to a pianist
+1	she told interviewers that being blind was an advantage to pianist a
+2	she interviewers told that being blind was an advantage to pianist a
+3	interviewers she told that being blind was an advantage to pianist a
+4	interviewers she told that blind being was an advantage to pianist a
+5	interviewers she told blind that being was an advantage to pianist a
+6	interviewers that she told blind being was an advantage to pianist a
+7	interviewers she that told blind being an was to a advantage pianist
+0	she had no visual distractions so she could concentrate more fully on her music
+1	she had no visual distractions so she could concentrate more on fully her music
+2	she no had visual distractions so she could concentrate more on fully her music
+3	no she had visual distractions so she could concentrate more on fully her music
+4	no she had visual distractions so she could concentrate more on her fully music
+5	no she had visual so distractions she could concentrate more on her fully music
+6	no she had so visual distractions she could concentrate more on her fully music
+7	no visual she had so distractions she could more concentrate fully her on music
+0	the government defines blindness as vision insufficient for the ordinary activities of life
+1	the government defines blindness as vision insufficient for the ordinary of activities life
+2	the defines government blindness as vision insufficient for the ordinary of activities life
+3	defines the government blindness as vision insufficient for the ordinary of activities life
+4	defines the government blindness as vision insufficient for the ordinary of life activities
+5	defines the government blindness vision as insufficient for the ordinary of life activities
+6	defines the government vision blindness as insufficient for the ordinary of life activities
+7	defines blindness the government vision as insufficient for ordinary the activities life of
+0	by establishing the parameters of legal blindness resources can be focused on the legally blind
+1	by establishing the parameters of legal blindness resources can be on focused the legally blind
+2	by the establishing parameters of legal blindness resources can be on focused the legally blind
+3	the by establishing parameters of legal blindness resources can be on focused the legally blind
+4	the by establishing parameters of legal blindness resources can be on the focused legally blind
+5	the by establishing parameters legal of blindness resources can be on the focused legally blind
+6	the by establishing legal parameters of blindness resources can be on the focused legally blind
+7	the parameters by establishing legal of blindness resources be can focused the on legally blind
+0	this may overlook those who have vision problems but who do not meet the standard
+1	this may overlook those who have vision problems but who not do meet the standard
+2	this overlook may those who have vision problems but who not do meet the standard
+3	overlook this may those who have vision problems but who not do meet the standard
+4	overlook this may those who have vision problems but who not meet do the standard
+5	overlook this may those have who vision problems but who not meet do the standard
+6	overlook this may have those who vision problems but who not meet do the standard
+7	overlook those this may have who vision problems who but do meet not the standard
+0	in developing countries blindness in children is usually caused by infectious disease and nutritional deficiencies
+1	in developing countries blindness in children is usually caused by disease infectious and nutritional deficiencies
+2	in countries developing blindness in children is usually caused by disease infectious and nutritional deficiencies
+3	countries in developing blindness in children is usually caused by disease infectious and nutritional deficiencies
+4	countries in developing blindness in children is usually caused by disease and infectious nutritional deficiencies
+5	countries in developing blindness children in is usually caused by disease and infectious nutritional deficiencies
+6	countries in developing children blindness in is usually caused by disease and infectious nutritional deficiencies
+7	countries blindness in developing children in is usually by caused infectious and disease nutritional deficiencies
+0	these causes can often be prevented by medicine and vitamin supplements
+1	these can causes often be prevented by medicine and vitamin supplements
+2	can these causes often be prevented by medicine and vitamin supplements
+3	can these causes often prevented be by medicine and vitamin supplements
+4	can these causes prevented often be by medicine and vitamin supplements
+5	can often these causes prevented be by medicine and vitamin supplements
+6	can often these causes prevented be by medicine vitamin and supplements
+7	can these often causes prevented be medicine by vitamin supplements and
+0	in developed countries blindness is more likely to be caused by genetic problems
+1	in developed countries blindness is more likely to be caused genetic by problems
+2	in countries developed blindness is more likely to be caused genetic by problems
+3	countries in developed blindness is more likely to be caused genetic by problems
+4	countries in developed blindness is more likely to be caused genetic problems by
+5	countries in developed blindness more is likely to be caused genetic problems by
+6	countries in developed more blindness is likely to be caused genetic problems by
+7	countries blindness in developed more is likely to caused be by problems genetic
+0	no one really knows exactly how a taste gets from your mouth to your brain
+1	no one really knows exactly how a taste gets from mouth your to your brain
+2	no really one knows exactly how a taste gets from mouth your to your brain
+3	really no one knows exactly how a taste gets from mouth your to your brain
+4	really no one knows exactly how a taste gets from mouth to your your brain
+5	really no one knows how exactly a taste gets from mouth to your your brain
+6	really no one how knows exactly a taste gets from mouth to your your brain
+7	really knows no one how exactly a taste from gets your to mouth your brain
+0	scientists think the process begins when a molecule of food touches a taste bud cell
+1	scientists think the process begins when a molecule of food a touches taste bud cell
+2	scientists the think process begins when a molecule of food a touches taste bud cell
+3	the scientists think process begins when a molecule of food a touches taste bud cell
+4	the scientists think process begins when a molecule of food a taste touches bud cell
+5	the scientists think process when begins a molecule of food a taste touches bud cell
+6	the scientists think when process begins a molecule of food a taste touches bud cell
+7	the process scientists think when begins a molecule food of touches taste a bud cell
+0	the cell carries a taste message to taste nerves beneath the cell
+1	the cell carries a taste message to taste nerves beneath cell the
+2	the carries cell a taste message to taste nerves beneath cell the
+3	carries the cell a taste message to taste nerves beneath cell the
+4	carries the cell a message taste to taste nerves beneath cell the
+5	carries the cell message a taste to taste nerves beneath cell the
+6	carries a the cell message taste to taste nerves beneath cell the
+7	carries the a cell message taste taste to beneath the nerves cell
+0	it was once believed that each taste bud responded to one of the four basic tastes
+1	it was once believed that each taste bud responded to of one the four basic tastes
+2	it once was believed that each taste bud responded to of one the four basic tastes
+3	once it was believed that each taste bud responded to of one the four basic tastes
+4	once it was believed that each taste bud responded to of the one four basic tastes
+5	once it was believed each that taste bud responded to of the one four basic tastes
+6	once it was each believed that taste bud responded to of the one four basic tastes
+7	once believed it was each that taste bud responded to one the of four tastes basic
+0	that is a taste bud on the tip of the tongue would respond only if you were eating something sweet
+1	that is a bud taste on the tip of the tongue would respond only if you were eating something sweet
+2	is that a bud taste on the tip of the tongue would respond only if you were eating something sweet
+3	is that a bud taste on the tip the of tongue would respond only if you were eating something sweet
+4	is that a bud taste on the the tip of tongue would respond only if you were eating something sweet
+5	is that a on bud taste the tip the of tongue would respond only if you were eating something sweet
+6	is that a on bud taste the tip the of tongue would respond only if you were something eating sweet
+7	is that on a bud taste the tip the of tongue would respond only if you were something eating sweet
+0	scientists now think that a single taste bud can be sensitive to all of the basic tastes
+1	scientists now think a that single taste bud can be sensitive to all of the basic tastes
+2	now scientists think a that single taste bud can be sensitive to all of the basic tastes
+3	now scientists think a that single taste bud be can sensitive to all of the basic tastes
+4	now scientists think a that single taste be bud can sensitive to all of the basic tastes
+5	now scientists think single a that taste bud be can sensitive to all of the basic tastes
+6	now scientists single think a that taste bud be can sensitive to all of the basic tastes
+7	now scientists single think a that taste bud be can sensitive to all the of basic tastes
+0	my sense of taste isn't very good so i tend to eat foods with very strong flavors
+1	my sense of isn't taste very good so i tend to eat foods with very strong flavors
+2	sense my of isn't taste very good so i tend to eat foods with very strong flavors
+3	sense my of isn't taste very good so tend i to eat foods with very strong flavors
+4	sense my of isn't taste very good tend so i to eat foods with very strong flavors
+5	sense my of very isn't taste good so tend i to eat foods with very strong flavors
+6	sense my very of isn't taste good so tend i to eat foods with very strong flavors
+7	sense my very of isn't taste good so tend i to eat foods very with strong flavors
+0	i like lots of hot sauce and i drink my coffee with no cream so it's very bitter
+1	i like lots hot of sauce and i drink my coffee with no cream so it's very bitter
+2	like i lots hot of sauce and i drink my coffee with no cream so it's very bitter
+3	like i lots hot of sauce and i my drink coffee with no cream so it's very bitter
+4	like i lots hot of sauce and my i drink coffee with no cream so it's very bitter
+5	like i lots sauce hot of and i my drink coffee with no cream so it's very bitter
+6	like i sauce lots hot of and i my drink coffee with no cream so it's very bitter
+7	like i sauce lots hot of and i my drink coffee with no so cream it's very bitter
+0	i can't even taste sweetness well so when i make cookies i add extra sugar
+1	i can't even taste sweetness well so when i make i cookies add extra sugar
+2	i even can't taste sweetness well so when i make i cookies add extra sugar
+3	even i can't taste sweetness well so when i make i cookies add extra sugar
+4	even i can't taste sweetness well so when i make i add cookies extra sugar
+5	even i can't taste well sweetness so when i make i add cookies extra sugar
+6	even i can't well taste sweetness so when i make i add cookies extra sugar
+7	even taste i can't well sweetness so when make i cookies add i extra sugar
+0	hip fractures are a real problem for aging individuals
+1	hip are fractures a real problem for aging individuals
+2	are hip fractures a real problem for aging individuals
+3	are hip fractures a problem real for aging individuals
+4	are hip fractures problem a real for aging individuals
+5	are a hip fractures problem real for aging individuals
+6	are a hip fractures problem real aging for individuals
+7	are a hip problem fractures real aging for individuals
+0	patients are faced with the pain of the break and the difficult process of healing
+1	patients are faced with the pain of the break and difficult the process of healing
+2	patients faced are with the pain of the break and difficult the process of healing
+3	faced patients are with the pain of the break and difficult the process of healing
+4	faced patients are with the pain of the break and difficult process the of healing
+5	faced patients are with pain the of the break and difficult process the of healing
+6	faced patients are pain with the of the break and difficult process the of healing
+7	faced with patients are pain the of the and break the process difficult of healing
+0	families have to adjust to the patient's loss of independence
+1	families to have adjust to the patient's loss of independence
+2	to families have adjust to the patient's loss of independence
+3	to families have adjust the to patient's loss of independence
+4	to families have the adjust to patient's loss of independence
+5	to adjust families have the to patient's loss of independence
+6	to adjust families have the to patient's loss independence of
+7	to adjust families have the to loss patient's independence of
+0	and for society hip fractures involve substantial expense and time in the hospital
+1	and for society hip fractures involve substantial expense and time the in hospital
+2	and society for hip fractures involve substantial expense and time the in hospital
+3	society and for hip fractures involve substantial expense and time the in hospital
+4	society and for hip fractures involve substantial expense and time the hospital in
+5	society and for hip involve fractures substantial expense and time the hospital in
+6	society and for involve hip fractures substantial expense and time the hospital in
+7	society hip and for involve fractures substantial expense time and in hospital the
+0	halfway through the race i heard a sound like someone snapping their fingers
+1	halfway through the race i heard a sound like someone their snapping fingers
+2	halfway the through race i heard a sound like someone their snapping fingers
+3	the halfway through race i heard a sound like someone their snapping fingers
+4	the halfway through race i heard a sound like someone their fingers snapping
+5	the halfway through race heard i a sound like someone their fingers snapping
+6	the halfway through heard race i a sound like someone their fingers snapping
+7	the race halfway through heard i a sound someone like snapping fingers their
+0	i felt a crunch and i knew instantly that my foot was broken
+1	i felt a crunch and i knew instantly that my was foot broken
+2	i a felt crunch and i knew instantly that my was foot broken
+3	a i felt crunch and i knew instantly that my was foot broken
+4	a i felt crunch and i knew instantly that my was broken foot
+5	a i felt crunch i and knew instantly that my was broken foot
+6	a i felt i crunch and knew instantly that my was broken foot
+7	a crunch i felt i and knew instantly my that foot broken was
+0	every step felt like running on spikes
+1	every step felt like running spikes on
+2	step every felt like running spikes on
+3	every like step felt running spikes on
+4	like every step felt running spikes on
+5	like every step felt spikes running on
+6	like step every running felt spikes on
+7	every like running step spikes on felt
+0	at the doctor's office afterward the x-ray clearly showed the fracture
+1	at doctor's the office afterward the x-ray clearly showed the fracture
+2	doctor's at the office afterward the x-ray clearly showed the fracture
+3	doctor's at the office the afterward x-ray clearly showed the fracture
+4	doctor's at the the office afterward x-ray clearly showed the fracture
+5	doctor's office at the the afterward x-ray clearly showed the fracture
+6	doctor's office at the the afterward x-ray clearly the showed fracture
+7	doctor's at office the the afterward clearly x-ray the fracture showed
+0	there are a few different types of bone fracture
+1	there a are few different types of bone fracture
+2	a there are few different types of bone fracture
+3	a there are few types different of bone fracture
+4	a there are types few different of bone fracture
+5	a few there are types different of bone fracture
+6	a few there are types different bone of fracture
+7	a few there types are different bone of fracture
+0	in closed or simple fractures the bone is broken but the skin is intact
+1	in closed or simple fractures the bone is broken but skin the is intact
+2	in or closed simple fractures the bone is broken but skin the is intact
+3	or in closed simple fractures the bone is broken but skin the is intact
+4	or in closed simple fractures the bone is broken but skin is the intact
+5	or in closed simple the fractures bone is broken but skin is the intact
+6	or in closed the simple fractures bone is broken but skin is the intact
+7	or simple in closed the fractures bone is but broken the is skin intact
+0	in open or compound fractures the broken bone has punctured the skin and produced an open wound
+1	in open or fractures compound the broken bone has punctured the skin and produced an open wound
+2	open in or fractures compound the broken bone has punctured the skin and produced an open wound
+3	open in or fractures compound the broken bone punctured has the skin and produced an open wound
+4	open in or fractures compound the broken punctured bone has the skin and produced an open wound
+5	open in or the fractures compound broken bone punctured has the skin and produced an open wound
+6	open in the or fractures compound broken bone punctured has the skin and produced an open wound
+7	open in the or fractures compound broken bone punctured has the skin and an produced open wound
+0	new ear piercings can become infected if they're not carefully cleaned
+1	new piercings ear can become infected if they're not carefully cleaned
+2	piercings new ear can become infected if they're not carefully cleaned
+3	piercings new ear can infected become if they're not carefully cleaned
+4	piercings new ear infected can become if they're not carefully cleaned
+5	piercings can new ear infected become if they're not carefully cleaned
+6	piercings can new ear infected become if they're carefully not cleaned
+7	piercings new can ear infected become they're if carefully cleaned not
+0	signs of infection include tenderness swelling or redness around the earlobe
+1	signs infection of include tenderness swelling or redness around the earlobe
+2	infection signs of include tenderness swelling or redness around the earlobe
+3	infection signs of include swelling tenderness or redness around the earlobe
+4	infection signs of swelling include tenderness or redness around the earlobe
+5	infection include signs of swelling tenderness or redness around the earlobe
+6	infection include signs of swelling tenderness or redness the around earlobe
+7	infection signs include of swelling tenderness redness or the earlobe around
+0	if you see these symptoms clean the area and apply some ointment
+1	if you see these symptoms clean the area and apply ointment some
+2	if see you these symptoms clean the area and apply ointment some
+3	see if you these symptoms clean the area and apply ointment some
+4	see if you these clean symptoms the area and apply ointment some
+5	see if you clean these symptoms the area and apply ointment some
+6	see these if you clean symptoms the area and apply ointment some
+7	see if these you clean symptoms area the apply some and ointment
+0	if the redness and swelling don't go away contact your health care provider
+1	if the redness and swelling don't go away contact your care health provider
+2	if redness the and swelling don't go away contact your care health provider
+3	redness if the and swelling don't go away contact your care health provider
+4	redness if the and swelling don't go away contact your care provider health
+5	redness if the and don't swelling go away contact your care provider health
+6	redness if the don't and swelling go away contact your care provider health
+7	redness and if the don't swelling go away your contact health provider care
+0	a local hospital has initiated new measures to reduce infections
+1	a hospital local has initiated new measures to reduce infections
+2	hospital a local has initiated new measures to reduce infections
+3	hospital a local has new initiated measures to reduce infections
+4	hospital a local new has initiated measures to reduce infections
+5	hospital has a local new initiated measures to reduce infections
+6	hospital has a local new initiated measures to infections reduce
+7	hospital has a local new initiated to measures infections reduce
+0	they have improved hand washing habits and ensured that infected patients are isolated from other patients
+1	they have improved hand washing habits and ensured that infected are patients isolated from other patients
+2	they improved have hand washing habits and ensured that infected are patients isolated from other patients
+3	improved they have hand washing habits and ensured that infected are patients isolated from other patients
+4	improved they have hand washing habits and ensured that infected are isolated patients from other patients
+5	improved they have hand habits washing and ensured that infected are isolated patients from other patients
+6	improved they have habits hand washing and ensured that infected are isolated patients from other patients
+7	improved hand they have habits washing and ensured that infected patients isolated are from patients other
+0	the hospital has seen infection rates drop since the new measures began
+1	the hospital has seen infection rates drop since the new began measures
+2	the has hospital seen infection rates drop since the new began measures
+3	has the hospital seen infection rates drop since the new began measures
+4	has the hospital seen rates infection drop since the new began measures
+5	has the hospital rates seen infection drop since the new began measures
+6	has seen the hospital rates infection drop since the new began measures
+7	has the seen hospital rates infection since drop new measures the began
+0	scrubbing a wound with soap or alcohol delays healing which increases the risk of infection
+1	scrubbing a wound with soap or alcohol delays healing which the increases risk of infection
+2	scrubbing wound a with soap or alcohol delays healing which the increases risk of infection
+3	wound scrubbing a with soap or alcohol delays healing which the increases risk of infection
+4	wound scrubbing a with soap or alcohol delays healing which the risk increases of infection
+5	wound scrubbing a with or soap alcohol delays healing which the risk increases of infection
+6	wound scrubbing a or with soap alcohol delays healing which the risk increases of infection
+7	wound with scrubbing a or soap alcohol delays which healing increases risk the of infection
+0	band-aids can increase the risk of infection by holding in heat and moisture
+1	band-aids can increase the risk of infection by holding in and heat moisture
+2	band-aids increase can the risk of infection by holding in and heat moisture
+3	increase band-aids can the risk of infection by holding in and heat moisture
+4	increase band-aids can the risk of infection by holding in and moisture heat
+5	increase band-aids can the of risk infection by holding in and moisture heat
+6	increase band-aids can of the risk infection by holding in and moisture heat
+7	increase the band-aids can of risk infection by in holding heat moisture and
+0	fortunately most skin infections can easily be treated once they are diagnosed
+1	fortunately most skin infections can easily be treated once they diagnosed are
+2	fortunately skin most infections can easily be treated once they diagnosed are
+3	skin fortunately most infections can easily be treated once they diagnosed are
+4	skin fortunately most infections easily can be treated once they diagnosed are
+5	skin fortunately most easily infections can be treated once they diagnosed are
+6	skin infections fortunately most easily can be treated once they diagnosed are
+7	skin fortunately infections most easily can treated be they are once diagnosed
+0	modern opera started at the end of the sixteenth century
+1	modern started opera at the end of the sixteenth century
+2	started modern opera at the end of the sixteenth century
+3	started modern opera at end the of the sixteenth century
+4	started modern opera end at the of the sixteenth century
+5	started at modern opera end the of the sixteenth century
+6	started at modern opera end the of the century sixteenth
+7	started at modern opera end the the of century sixteenth
+0	it began as an effort to rediscover and imitate greek tragic performance
+1	it began as an effort to rediscover and imitate greek performance tragic
+2	it as began an effort to rediscover and imitate greek performance tragic
+3	as it began an effort to rediscover and imitate greek performance tragic
+4	as it began an to effort rediscover and imitate greek performance tragic
+5	as it began to an effort rediscover and imitate greek performance tragic
+6	as an it began to effort rediscover and imitate greek performance tragic
+7	as it an began to effort and rediscover greek tragic imitate performance
+0	early founders of opera chose tales from antiquity for their subject matter
+1	early founders of opera chose tales from antiquity for their matter subject
+2	early of founders opera chose tales from antiquity for their matter subject
+3	of early founders opera chose tales from antiquity for their matter subject
+4	of early founders opera tales chose from antiquity for their matter subject
+5	of early founders tales opera chose from antiquity for their matter subject
+6	of opera early founders tales chose from antiquity for their matter subject
+7	of early opera founders tales chose antiquity from their subject for matter
+0	later operas branched out into different sources of stories and musical traditions
+1	later operas branched out into different sources of stories and traditions musical
+2	later branched operas out into different sources of stories and traditions musical
+3	branched later operas out into different sources of stories and traditions musical
+4	branched later operas out different into sources of stories and traditions musical
+5	branched later operas different out into sources of stories and traditions musical
+6	branched out later operas different into sources of stories and traditions musical
+7	branched later out operas different into of sources and musical stories traditions
+0	opera is an art form in which singers and musicians perform a play that combines words and music
+1	opera is an form art in which singers and musicians perform a play that combines words and music
+2	is opera an form art in which singers and musicians perform a play that combines words and music
+3	is opera an form art in which singers musicians and perform a play that combines words and music
+4	is opera an form art in which musicians singers and perform a play that combines words and music
+5	is opera an in form art which singers musicians and perform a play that combines words and music
+6	is opera in an form art which singers musicians and perform a play that combines words and music
+7	is opera in an form art which singers musicians and perform a play combines that words and music
+0	it incorporates many of the elements of spoken theatre such as acting scenery and costumes
+1	it incorporates many of the elements of spoken theatre such acting as scenery and costumes
+2	it many incorporates of the elements of spoken theatre such acting as scenery and costumes
+3	many it incorporates of the elements of spoken theatre such acting as scenery and costumes
+4	many it incorporates of the elements of spoken theatre such acting scenery as and costumes
+5	many it incorporates of elements the of spoken theatre such acting scenery as and costumes
+6	many it incorporates elements of the of spoken theatre such acting scenery as and costumes
+7	many of it incorporates elements the of spoken such theatre as scenery acting and costumes
+0	performances are typically given in an opera house and accompanied by an orchestra
+1	performances are typically given in an opera house and accompanied an by orchestra
+2	performances typically are given in an opera house and accompanied an by orchestra
+3	typically performances are given in an opera house and accompanied an by orchestra
+4	typically performances are given in an opera house and accompanied an orchestra by
+5	typically performances are given an in opera house and accompanied an orchestra by
+6	typically performances are an given in opera house and accompanied an orchestra by
+7	typically given performances are an in opera house accompanied and by orchestra an
+0	the opera singer has worked hard to win the role in the new production
+1	the opera singer has worked hard to win the role the in new production
+2	the singer opera has worked hard to win the role the in new production
+3	singer the opera has worked hard to win the role the in new production
+4	singer the opera has worked hard to win the role the new in production
+5	singer the opera has hard worked to win the role the new in production
+6	singer the opera hard has worked to win the role the new in production
+7	singer has the opera hard worked to win role the in new the production
+0	her job is not just about singing
+1	her job is not just singing about
+2	job her is not just singing about
+3	her not job is just singing about
+4	not her job is just singing about
+5	not her job is singing just about
+6	not job her just is singing about
+7	her not just job singing about is
+0	acting stage presence and musical interpretation are all critical
+1	acting presence stage and musical interpretation are all critical
+2	presence acting stage and musical interpretation are all critical
+3	presence acting stage and interpretation musical are all critical
+4	presence acting stage interpretation and musical are all critical
+5	presence and acting stage interpretation musical are all critical
+6	presence and acting stage interpretation musical all are critical
+7	presence and acting interpretation stage musical all are critical
+0	but her pure strong voice is certainly the star of the show
+1	but her pure strong voice is certainly the star of show the
+2	but pure her strong voice is certainly the star of show the
+3	pure but her strong voice is certainly the star of show the
+4	pure but her strong is voice certainly the star of show the
+5	pure but her is strong voice certainly the star of show the
+6	pure strong but her is voice certainly the star of show the
+7	pure but strong her is voice the certainly of the star show
+0	a painter must keep many elements in mind while completing a painting
+1	a painter must keep many elements in mind while completing painting a
+2	a must painter keep many elements in mind while completing painting a
+3	must a painter keep many elements in mind while completing painting a
+4	must a painter keep elements many in mind while completing painting a
+5	must a painter elements keep many in mind while completing painting a
+6	must keep a painter elements many in mind while completing painting a
+7	must a keep painter elements many mind in completing a while painting
+0	she has to use solid elements of design like strong composition and lighting
+1	she has to use solid elements of design like strong and composition lighting
+2	she to has use solid elements of design like strong and composition lighting
+3	to she has use solid elements of design like strong and composition lighting
+4	to she has use solid elements of design like strong and lighting composition
+5	to she has use elements solid of design like strong and lighting composition
+6	to she has elements use solid of design like strong and lighting composition
+7	to use she has elements solid of design strong like composition lighting and
+0	she has to execute the brush strokes with skill
+1	she to has execute the brush strokes with skill
+2	to she has execute the brush strokes with skill
+3	to she has execute brush the strokes with skill
+4	to she has brush execute the strokes with skill
+5	to execute she has brush the strokes with skill
+6	to execute she has brush the with strokes skill
+7	to execute she brush has the with strokes skill
+0	most importantly the content of the painting should reveal a glimpse of the painter's soul
+1	most importantly the content of the painting should reveal a of glimpse the painter's soul
+2	most the importantly content of the painting should reveal a of glimpse the painter's soul
+3	the most importantly content of the painting should reveal a of glimpse the painter's soul
+4	the most importantly content of the painting should reveal a of the glimpse painter's soul
+5	the most importantly content the of painting should reveal a of the glimpse painter's soul
+6	the most importantly the content of painting should reveal a of the glimpse painter's soul
+7	the content most importantly the of painting should a reveal glimpse the of painter's soul
+0	long ago painters were employed more as skilled artisans than as creative artists
+1	long ago painters were employed more as skilled artisans than creative as artists
+2	long painters ago were employed more as skilled artisans than creative as artists
+3	painters long ago were employed more as skilled artisans than creative as artists
+4	painters long ago were employed more as skilled artisans than creative artists as
+5	painters long ago were more employed as skilled artisans than creative artists as
+6	painters long ago more were employed as skilled artisans than creative artists as
+7	painters were long ago more employed as skilled than artisans as artists creative
+0	however prominent painters had the social status of scholars and members of the royal court
+1	however prominent painters had the social status of scholars and of members the royal court
+2	however painters prominent had the social status of scholars and of members the royal court
+3	painters however prominent had the social status of scholars and of members the royal court
+4	painters however prominent had the social status of scholars and of the members royal court
+5	painters however prominent had social the status of scholars and of the members royal court
+6	painters however prominent social had the status of scholars and of the members royal court
+7	painters had however prominent social the status of and scholars members the of royal court
+0	they signed their work decided on its subject and imagery and established a personal relationship with their patrons
+1	they signed their decided work on its subject and imagery and established a personal relationship with their patrons
+2	signed they their decided work on its subject and imagery and established a personal relationship with their patrons
+3	signed they their decided work on its subject imagery and and established a personal relationship with their patrons
+4	signed they their decided work on its imagery subject and and established a personal relationship with their patrons
+5	signed they their on decided work its subject imagery and and established a personal relationship with their patrons
+6	signed they on their decided work its subject imagery and and established a personal relationship with their patrons
+7	signed they on their decided work its subject imagery and and established a relationship personal with their patrons
+0	as a painter i learned to focus less on the actual scene and more on the painting itself
+1	as a painter learned i to focus less on the actual scene and more on the painting itself
+2	a as painter learned i to focus less on the actual scene and more on the painting itself
+3	a as painter learned i to focus less the on actual scene and more on the painting itself
+4	a as painter learned i to focus the less on actual scene and more on the painting itself
+5	a as painter to learned i focus less the on actual scene and more on the painting itself
+6	a as to painter learned i focus less the on actual scene and more on the painting itself
+7	a as to painter learned i focus less the on actual scene and on more the painting itself
+0	an artist's eye is not a camera lens that has to record everything within its field of vision
+1	an artist's eye not is a camera lens that has to record everything within its field of vision
+2	artist's an eye not is a camera lens that has to record everything within its field of vision
+3	artist's an eye not is a camera lens has that to record everything within its field of vision
+4	artist's an eye not is a camera has lens that to record everything within its field of vision
+5	artist's an eye a not is camera lens has that to record everything within its field of vision
+6	artist's an a eye not is camera lens has that to record everything within its field of vision
+7	artist's an a eye not is camera lens has that to record everything its within field of vision
+0	i found nature provides useful information but more than is needed for a good painting
+1	i found nature provides useful information but more than is for needed a good painting
+2	i nature found provides useful information but more than is for needed a good painting
+3	nature i found provides useful information but more than is for needed a good painting
+4	nature i found provides useful information but more than is for a needed good painting
+5	nature i found provides information useful but more than is for a needed good painting
+6	nature i found information provides useful but more than is for a needed good painting
+7	nature provides i found information useful but more is than needed a for good painting
+0	the eagle owl is an impressive bird
+1	the eagle owl is an bird impressive
+2	eagle the owl is an bird impressive
+3	the is eagle owl an bird impressive
+4	is the eagle owl an bird impressive
+5	is the eagle owl bird an impressive
+6	is eagle the an owl bird impressive
+7	the is an eagle bird impressive owl
+0	it has ear tufts that stick up like horns
+1	it ear has tufts that stick up like horns
+2	ear it has tufts that stick up like horns
+3	ear it has tufts stick that up like horns
+4	ear it has stick tufts that up like horns
+5	ear tufts it has stick that up like horns
+6	ear tufts it has stick that like up horns
+7	ear tufts it stick has that like up horns
+0	its large orange eyes are downright creepy and look like they could pierce right through you
+1	its large orange eyes are downright creepy and look like could they pierce right through you
+2	its orange large eyes are downright creepy and look like could they pierce right through you
+3	orange its large eyes are downright creepy and look like could they pierce right through you
+4	orange its large eyes are downright creepy and look like could pierce they right through you
+5	orange its large eyes downright are creepy and look like could pierce they right through you
+6	orange its large downright eyes are creepy and look like could pierce they right through you
+7	orange eyes its large downright are creepy and look like they pierce could right you through
+0	this owl hunts at night flying swiftly and silently through the darkness
+1	this owl hunts at night flying swiftly and silently through darkness the
+2	this hunts owl at night flying swiftly and silently through darkness the
+3	hunts this owl at night flying swiftly and silently through darkness the
+4	hunts this owl at flying night swiftly and silently through darkness the
+5	hunts this owl flying at night swiftly and silently through darkness the
+6	hunts at this owl flying night swiftly and silently through darkness the
+7	hunts this at owl flying night and swiftly through the silently darkness
+0	while some owl species have become endangered others are thriving
+1	while owl some species have become endangered others are thriving
+2	owl while some species have become endangered others are thriving
+3	owl while some species become have endangered others are thriving
+4	owl while some become species have endangered others are thriving
+5	owl species while some become have endangered others are thriving
+6	owl species while some become have endangered others thriving are
+7	owl species while some become have others endangered thriving are
+0	the barred owl has spread well beyond its previous habitat
+1	the owl barred has spread well beyond its previous habitat
+2	owl the barred has spread well beyond its previous habitat
+3	owl the barred has well spread beyond its previous habitat
+4	owl the barred well has spread beyond its previous habitat
+5	owl has the barred well spread beyond its previous habitat
+6	owl has the barred well spread beyond its habitat previous
+7	owl has the barred well spread its beyond habitat previous
+0	early findings suggest that logging may have facilitated the barred owl's invasion
+1	early findings suggest that logging may have facilitated the barred invasion owl's
+2	early suggest findings that logging may have facilitated the barred invasion owl's
+3	suggest early findings that logging may have facilitated the barred invasion owl's
+4	suggest early findings that may logging have facilitated the barred invasion owl's
+5	suggest early findings may that logging have facilitated the barred invasion owl's
+6	suggest that early findings may logging have facilitated the barred invasion owl's
+7	suggest early that findings may logging facilitated have barred owl's the invasion
+0	the owl landed on a thick branch and gripped it with her talons
+1	the owl landed on a thick branch and gripped it her with talons
+2	the landed owl on a thick branch and gripped it her with talons
+3	landed the owl on a thick branch and gripped it her with talons
+4	landed the owl on a thick branch and gripped it her talons with
+5	landed the owl on thick a branch and gripped it her talons with
+6	landed the owl thick on a branch and gripped it her talons with
+7	landed on the owl thick a branch and it gripped with talons her
+0	she pressed her wings to her sides and settled down half-closing an eye
+1	she pressed her wings to her sides and settled down an half-closing eye
+2	she her pressed wings to her sides and settled down an half-closing eye
+3	her she pressed wings to her sides and settled down an half-closing eye
+4	her she pressed wings to her sides and settled down an eye half-closing
+5	her she pressed wings her to sides and settled down an eye half-closing
+6	her she pressed her wings to sides and settled down an eye half-closing
+7	her wings she pressed her to sides and down settled half-closing eye an
+0	she might have been a statue but for the glow of her eyes
+1	she might have been a statue but for the glow her of eyes
+2	she have might been a statue but for the glow her of eyes
+3	have she might been a statue but for the glow her of eyes
+4	have she might been a statue but for the glow her eyes of
+5	have she might been statue a but for the glow her eyes of
+6	have she might statue been a but for the glow her eyes of
+7	have been she might statue a but for glow the of eyes her
+0	it's unnerving to watch a polar bear stalk across floating sea ice
+1	it's unnerving to watch a polar bear stalk across floating ice sea
+2	it's to unnerving watch a polar bear stalk across floating ice sea
+3	to it's unnerving watch a polar bear stalk across floating ice sea
+4	to it's unnerving watch polar a bear stalk across floating ice sea
+5	to it's unnerving polar watch a bear stalk across floating ice sea
+6	to watch it's unnerving polar a bear stalk across floating ice sea
+7	to it's watch unnerving polar a stalk bear floating sea across ice
+0	it's even worse when you are submerged in the frigid waters directly beneath the huge animal
+1	it's even worse when you are submerged in the frigid directly waters beneath the huge animal
+2	it's worse even when you are submerged in the frigid directly waters beneath the huge animal
+3	worse it's even when you are submerged in the frigid directly waters beneath the huge animal
+4	worse it's even when you are submerged in the frigid directly beneath waters the huge animal
+5	worse it's even when are you submerged in the frigid directly beneath waters the huge animal
+6	worse it's even are when you submerged in the frigid directly beneath waters the huge animal
+7	worse when it's even are you submerged in the frigid waters beneath directly the animal huge
+0	overhead giant paws set down on the ice as the polar bear pursued its prey
+1	overhead giant paws set down on the ice as the bear polar pursued its prey
+2	overhead paws giant set down on the ice as the bear polar pursued its prey
+3	paws overhead giant set down on the ice as the bear polar pursued its prey
+4	paws overhead giant set down on the ice as the bear pursued polar its prey
+5	paws overhead giant set on down the ice as the bear pursued polar its prey
+6	paws overhead giant on set down the ice as the bear pursued polar its prey
+7	paws set overhead giant on down the ice the as polar pursued bear its prey
+0	as part of the film crew for a polar bear documentary i spent months capturing these shots
+1	as part of film the crew for a polar bear documentary i spent months capturing these shots
+2	part as of film the crew for a polar bear documentary i spent months capturing these shots
+3	part as of film the crew for a bear polar documentary i spent months capturing these shots
+4	part as of film the crew for bear a polar documentary i spent months capturing these shots
+5	part as of crew film the for a bear polar documentary i spent months capturing these shots
+6	part as crew of film the for a bear polar documentary i spent months capturing these shots
+7	part as crew of film the for a bear polar documentary i spent capturing months these shots
+0	polar bears are one of the few animals that will attack people for reasons other than fear or confusion
+1	polar bears are of one the few animals that will attack people for reasons other than fear or confusion
+2	bears polar are of one the few animals that will attack people for reasons other than fear or confusion
+3	bears polar are of one the few animals will that attack people for reasons other than fear or confusion
+4	bears polar are of one the few will animals that attack people for reasons other than fear or confusion
+5	bears polar are the of one few animals will that attack people for reasons other than fear or confusion
+6	bears polar are the of one few animals will that attack people for reasons other than fear confusion or
+7	bears polar the are of one few animals will that attack people for reasons other than fear confusion or
+0	they may attack out of hunger because they live in a food-scarce environment
+1	they may attack out of hunger because they live in food-scarce a environment
+2	they attack may out of hunger because they live in food-scarce a environment
+3	attack they may out of hunger because they live in food-scarce a environment
+4	attack they may out of hunger because they live in food-scarce environment a
+5	attack they may out hunger of because they live in food-scarce environment a
+6	attack they may hunger out of because they live in food-scarce environment a
+7	attack out they may hunger of because they in live a environment food-scarce
+0	they will sneak up on people slowly careful to conserve their energy
+1	they will sneak up on people slowly careful to conserve energy their
+2	they sneak will up on people slowly careful to conserve energy their
+3	sneak they will up on people slowly careful to conserve energy their
+4	sneak they will up people on slowly careful to conserve energy their
+5	sneak they will people up on slowly careful to conserve energy their
+6	sneak up they will people on slowly careful to conserve energy their
+7	sneak they up will people on careful slowly conserve their to energy
+0	the seal is an important part of the polar bear's diet
+1	the is seal an important part of the polar bear's diet
+2	is the seal an important part of the polar bear's diet
+3	is the seal an part important of the polar bear's diet
+4	is the seal part an important of the polar bear's diet
+5	is an the seal part important of the polar bear's diet
+6	is an the seal part important of the bear's polar diet
+7	is the an seal part important the of bear's diet polar
+0	when hunting they will wait by a seal's breathing hole or stalk seals that are basking on the ice
+1	when hunting they wait will by a seal's breathing hole or stalk seals that are basking on the ice
+2	hunting when they wait will by a seal's breathing hole or stalk seals that are basking on the ice
+3	hunting when they wait will by a seal's hole breathing or stalk seals that are basking on the ice
+4	hunting when they wait will by a hole seal's breathing or stalk seals that are basking on the ice
+5	hunting when they by wait will a seal's hole breathing or stalk seals that are basking on the ice
+6	hunting when they by wait will a seal's hole breathing or stalk seals that are basking on ice the
+7	hunting when by they wait will a seal's hole breathing or stalk seals that are basking on ice the
+0	the polar bear will crawl quietly forward and freeze in place when the seal looks around
+1	the polar bear will crawl quietly forward and freeze in when place the seal looks around
+2	the bear polar will crawl quietly forward and freeze in when place the seal looks around
+3	bear the polar will crawl quietly forward and freeze in when place the seal looks around
+4	bear the polar will crawl quietly forward and freeze in when the place seal looks around
+5	bear the polar will quietly crawl forward and freeze in when the place seal looks around
+6	bear the polar quietly will crawl forward and freeze in when the place seal looks around
+7	bear will the polar quietly crawl forward and freeze in place the when seal around looks
+0	the medieval castle was not a structure built primarily for defense
+1	the castle medieval was not a structure built primarily for defense
+2	castle the medieval was not a structure built primarily for defense
+3	castle the medieval was a not structure built primarily for defense
+4	castle the medieval a was not structure built primarily for defense
+5	castle was the medieval a not structure built primarily for defense
+6	castle was the medieval a not structure built for primarily defense
+7	castle the was medieval a not built structure for defense primarily
+0	its purpose was to dominate its surroundings
+1	its purpose was to dominate surroundings its
+2	purpose its was to dominate surroundings its
+3	its to purpose was dominate surroundings its
+4	to its purpose was dominate surroundings its
+5	to its purpose was surroundings dominate its
+6	to purpose its dominate was surroundings its
+7	its to dominate purpose surroundings its was
+0	a castle could easily control lands within a day's walk
+1	a could castle easily control lands within a day's walk
+2	could a castle easily control lands within a day's walk
+3	could a castle easily lands control within a day's walk
+4	could a castle lands easily control within a day's walk
+5	could easily a castle lands control within a day's walk
+6	could easily a castle lands control within a walk day's
+7	could easily a castle lands control a within walk day's
+0	during times of attack peasants livestock and property could be brought inside the castle's walls for protection
+1	during times of peasants attack livestock and property could be brought inside the castle's walls for protection
+2	times during of peasants attack livestock and property could be brought inside the castle's walls for protection
+3	times during of peasants attack livestock and property be could brought inside the castle's walls for protection
+4	times during of peasants attack livestock and be property could brought inside the castle's walls for protection
+5	times during of livestock peasants attack and property be could brought inside the castle's walls for protection
+6	times during livestock of peasants attack and property be could brought inside the castle's walls for protection
+7	times during livestock of peasants attack and property be could brought inside the walls castle's for protection
+0	spectacular castles in dramatic locations provide a record of the stormy history of many regions
+1	spectacular castles in dramatic locations provide a record of the history stormy of many regions
+2	spectacular in castles dramatic locations provide a record of the history stormy of many regions
+3	in spectacular castles dramatic locations provide a record of the history stormy of many regions
+4	in spectacular castles dramatic locations provide a record of the history of stormy many regions
+5	in spectacular castles dramatic provide locations a record of the history of stormy many regions
+6	in spectacular castles provide dramatic locations a record of the history of stormy many regions
+7	in dramatic spectacular castles provide locations a record the of stormy of history many regions
+0	today they stand atop rocky cliffs overlooking beautiful landscapes and quaint villages
+1	today they stand atop rocky cliffs overlooking beautiful landscapes and villages quaint
+2	today stand they atop rocky cliffs overlooking beautiful landscapes and villages quaint
+3	stand today they atop rocky cliffs overlooking beautiful landscapes and villages quaint
+4	stand today they atop cliffs rocky overlooking beautiful landscapes and villages quaint
+5	stand today they cliffs atop rocky overlooking beautiful landscapes and villages quaint
+6	stand atop today they cliffs rocky overlooking beautiful landscapes and villages quaint
+7	stand today atop they cliffs rocky beautiful overlooking and quaint landscapes villages
+0	in the past they were home to battles plots and intrigue
+1	in past the they were home to battles plots and intrigue
+2	past in the they were home to battles plots and intrigue
+3	past in the they home were to battles plots and intrigue
+4	past in the home they were to battles plots and intrigue
+5	past they in the home were to battles plots and intrigue
+6	past they in the home were to battles and plots intrigue
+7	past in they the home were battles to and intrigue plots
+0	upon leaving the train station we saw our hotel looming above a magnificent castle built on a cliff
+1	upon leaving the station train we saw our hotel looming above a magnificent castle built on a cliff
+2	leaving upon the station train we saw our hotel looming above a magnificent castle built on a cliff
+3	leaving upon the station train we saw our looming hotel above a magnificent castle built on a cliff
+4	leaving upon the station train we saw looming our hotel above a magnificent castle built on a cliff
+5	leaving upon the we station train saw our looming hotel above a magnificent castle built on a cliff
+6	leaving upon we the station train saw our looming hotel above a magnificent castle built on a cliff
+7	leaving upon we the station train saw our looming hotel above a magnificent built castle on a cliff
+0	the thick outside walls sheltered an inner courtyard hundreds of feet above the river
+1	the thick outside walls sheltered an inner courtyard hundreds of above feet the river
+2	the outside thick walls sheltered an inner courtyard hundreds of above feet the river
+3	outside the thick walls sheltered an inner courtyard hundreds of above feet the river
+4	outside the thick walls sheltered an inner courtyard hundreds of above the feet river
+5	outside the thick walls an sheltered inner courtyard hundreds of above the feet river
+6	outside the thick an walls sheltered inner courtyard hundreds of above the feet river
+7	outside walls the thick an sheltered inner courtyard of hundreds feet the above river
+0	our tower rooms had an incredible but slightly scary view
+1	our rooms tower had an incredible but slightly scary view
+2	rooms our tower had an incredible but slightly scary view
+3	rooms our tower had incredible an but slightly scary view
+4	rooms our tower incredible had an but slightly scary view
+5	rooms had our tower incredible an but slightly scary view
+6	rooms had our tower incredible an but slightly view scary
+7	rooms had our tower incredible an slightly but view scary
+0	after climbing fifty feet up the side of the pyramid the man gestured me into a small black entranceway
+1	after climbing fifty up feet the side of the pyramid the man gestured me into a small black entranceway
+2	climbing after fifty up feet the side of the pyramid the man gestured me into a small black entranceway
+3	climbing after fifty up feet the side of pyramid the the man gestured me into a small black entranceway
+4	climbing after fifty up feet the side pyramid of the the man gestured me into a small black entranceway
+5	climbing after fifty the up feet side of pyramid the the man gestured me into a small black entranceway
+6	climbing after fifty the up feet side of pyramid the the man gestured me into a small entranceway black
+7	climbing after the fifty up feet side of pyramid the the man gestured me into a small entranceway black
+0	this led into the chamber at the pyramid's center
+1	this into led the chamber at the pyramid's center
+2	into this led the chamber at the pyramid's center
+3	into this led the at chamber the pyramid's center
+4	into this led at the chamber the pyramid's center
+5	into the this led at chamber the pyramid's center
+6	into the this led at chamber pyramid's the center
+7	into the this at led chamber pyramid's the center
+0	i followed him down the steep dark narrow passage
+1	i him followed down the steep dark narrow passage
+2	him i followed down the steep dark narrow passage
+3	him i followed down steep the dark narrow passage
+4	him i followed steep down the dark narrow passage
+5	him down i followed steep the dark narrow passage
+6	him down i followed steep the narrow dark passage
+7	him down i steep followed the narrow dark passage
+0	the smell inside the pyramid was chalky and the air was thick
+1	the smell inside the pyramid was chalky and the air thick was
+2	the inside smell the pyramid was chalky and the air thick was
+3	inside the smell the pyramid was chalky and the air thick was
+4	inside the smell the was pyramid chalky and the air thick was
+5	inside the smell was the pyramid chalky and the air thick was
+6	inside the the smell was pyramid chalky and the air thick was
+7	inside the the smell was pyramid and chalky air was the thick
+0	more than just the tomb of the king pyramids represented the pride of the nation
+1	more than just the tomb of the king pyramids represented pride the of the nation
+2	more just than the tomb of the king pyramids represented pride the of the nation
+3	just more than the tomb of the king pyramids represented pride the of the nation
+4	just more than the tomb of the king pyramids represented pride of the the nation
+5	just more than the of tomb the king pyramids represented pride of the the nation
+6	just more than of the tomb the king pyramids represented pride of the the nation
+7	just the more than of tomb the king represented pyramids the of pride the nation
+0	the care that the pyramid builders took in their craft is evident
+1	the care that the pyramid builders took in their craft evident is
+2	the that care the pyramid builders took in their craft evident is
+3	that the care the pyramid builders took in their craft evident is
+4	that the care the builders pyramid took in their craft evident is
+5	that the care builders the pyramid took in their craft evident is
+6	that the the care builders pyramid took in their craft evident is
+7	that the the care builders pyramid in took craft is their evident
+0	the stones covering the pyramid were precisely fitted together and polished until the structure gleamed
+1	the stones covering the pyramid were precisely fitted together and until polished the structure gleamed
+2	the covering stones the pyramid were precisely fitted together and until polished the structure gleamed
+3	covering the stones the pyramid were precisely fitted together and until polished the structure gleamed
+4	covering the stones the pyramid were precisely fitted together and until the polished structure gleamed
+5	covering the stones the were pyramid precisely fitted together and until the polished structure gleamed
+6	covering the stones were the pyramid precisely fitted together and until the polished structure gleamed
+7	covering the the stones were pyramid precisely fitted and together polished the until structure gleamed
+0	architects are still working to solve the mysteries of how pyramids were constructed
+1	architects are still working to solve the mysteries of how were pyramids constructed
+2	architects still are working to solve the mysteries of how were pyramids constructed
+3	still architects are working to solve the mysteries of how were pyramids constructed
+4	still architects are working to solve the mysteries of how were constructed pyramids
+5	still architects are working solve to the mysteries of how were constructed pyramids
+6	still architects are solve working to the mysteries of how were constructed pyramids
+7	still working architects are solve to the mysteries how of pyramids constructed were
+0	some think ramps were built inside the pyramid's walls to raise stone blocks
+1	some think ramps were built inside the pyramid's walls to stone raise blocks
+2	some ramps think were built inside the pyramid's walls to stone raise blocks
+3	ramps some think were built inside the pyramid's walls to stone raise blocks
+4	ramps some think were built inside the pyramid's walls to stone blocks raise
+5	ramps some think were inside built the pyramid's walls to stone blocks raise
+6	ramps some think inside were built the pyramid's walls to stone blocks raise
+7	ramps were some think inside built the pyramid's to walls raise blocks stone
+0	others speculate that ramps zigzagged up the exterior walls of the pyramid
+1	others speculate that ramps zigzagged up the exterior walls of pyramid the
+2	others that speculate ramps zigzagged up the exterior walls of pyramid the
+3	that others speculate ramps zigzagged up the exterior walls of pyramid the
+4	that others speculate ramps up zigzagged the exterior walls of pyramid the
+5	that others speculate up ramps zigzagged the exterior walls of pyramid the
+6	that ramps others speculate up zigzagged the exterior walls of pyramid the
+7	that others ramps speculate up zigzagged exterior the of the walls pyramid
+0	even beginner rock climbing takes courage and strength
+1	even beginner rock climbing takes and courage strength
+2	beginner even rock climbing takes and courage strength
+3	even climbing beginner rock takes and courage strength
+4	climbing even beginner rock takes and courage strength
+5	climbing even beginner rock and takes courage strength
+6	climbing beginner even takes rock and courage strength
+7	even climbing takes beginner and courage rock strength
+0	climbers who are learning the sport can try scrambling on large boulders
+1	climbers who are learning the sport can try scrambling on boulders large
+2	climbers are who learning the sport can try scrambling on boulders large
+3	are climbers who learning the sport can try scrambling on boulders large
+4	are climbers who learning sport the can try scrambling on boulders large
+5	are climbers who sport learning the can try scrambling on boulders large
+6	are learning climbers who sport the can try scrambling on boulders large
+7	are climbers learning who sport the try can on large scrambling boulders
+0	once they're comfortable with that they can begin using ropes to safely climb vertical rock faces
+1	once they're comfortable with that they can begin using ropes safely to climb vertical rock faces
+2	once comfortable they're with that they can begin using ropes safely to climb vertical rock faces
+3	comfortable once they're with that they can begin using ropes safely to climb vertical rock faces
+4	comfortable once they're with that they can begin using ropes safely climb to vertical rock faces
+5	comfortable once they're with they that can begin using ropes safely climb to vertical rock faces
+6	comfortable once they're they with that can begin using ropes safely climb to vertical rock faces
+7	comfortable with once they're they that can begin using ropes to climb safely vertical faces rock
+0	all of the boys on the trip were new to rock climbing
+1	all of the boys on the trip were new to climbing rock
+2	all the of boys on the trip were new to climbing rock
+3	the all of boys on the trip were new to climbing rock
+4	the all of boys the on trip were new to climbing rock
+5	the all of the boys on trip were new to climbing rock
+6	the boys all of the on trip were new to climbing rock
+7	the all boys of the on were trip to rock new climbing
+0	many were afraid of heights
+1	were many afraid of heights
+2	many of were afraid heights
+3	of many were afraid heights
+4	of many were heights afraid
+5	of were many heights afraid
+6	of heights many were afraid
+7	of heights many afraid were
+0	having someone else check their knots and harnesses helped them calm down
+1	having someone else check their knots and harnesses helped them down calm
+2	having else someone check their knots and harnesses helped them down calm
+3	else having someone check their knots and harnesses helped them down calm
+4	else having someone check knots their and harnesses helped them down calm
+5	else having someone knots check their and harnesses helped them down calm
+6	else check having someone knots their and harnesses helped them down calm
+7	else having check someone knots their harnesses and them calm helped down
+0	the adults set up climbing routes appropriate for beginners
+1	the set adults up climbing routes appropriate for beginners
+2	set the adults up climbing routes appropriate for beginners
+3	set the adults up routes climbing appropriate for beginners
+4	set the adults routes up climbing appropriate for beginners
+5	set up the adults routes climbing appropriate for beginners
+6	set up the adults routes climbing for appropriate beginners
+7	set up the routes adults climbing for appropriate beginners
+0	free-climbing is one particular style of rock climbing
+1	free-climbing is one particular style rock of climbing
+2	is free-climbing one particular style rock of climbing
+3	free-climbing particular is one style rock of climbing
+4	particular free-climbing is one style rock of climbing
+5	particular free-climbing is one rock style of climbing
+6	particular is free-climbing style one rock of climbing
+7	free-climbing particular style is rock of one climbing
+0	the climber relies solely on her skill and physical strength to ascend a rock face
+1	the climber relies solely on her skill and physical strength ascend to a rock face
+2	the relies climber solely on her skill and physical strength ascend to a rock face
+3	relies the climber solely on her skill and physical strength ascend to a rock face
+4	relies the climber solely on her skill and physical strength ascend a to rock face
+5	relies the climber solely her on skill and physical strength ascend a to rock face
+6	relies the climber her solely on skill and physical strength ascend a to rock face
+7	relies solely the climber her on skill and strength physical to a ascend rock face
+0	rope and bolts are the only equipment used
+1	rope and bolts are the equipment only used
+2	and rope bolts are the equipment only used
+3	rope are and bolts the equipment only used
+4	are rope and bolts the equipment only used
+5	are rope and bolts equipment the only used
+6	are and rope the bolts equipment only used
+7	rope are the and equipment only bolts used
+0	they are meant only to stop the climber if she falls
+1	they meant are only to stop the climber if she falls
+2	meant they are only to stop the climber if she falls
+3	meant they are only stop to the climber if she falls
+4	meant they are stop only to the climber if she falls
+5	meant only they are stop to the climber if she falls
+6	meant only they are stop to the climber she if falls
+7	meant they only are stop to climber the she falls if
+0	i hesitantly skied down the steep trail that my buddies convinced me to try
+1	i hesitantly skied down the steep trail that my buddies me convinced to try
+2	i skied hesitantly down the steep trail that my buddies me convinced to try
+3	skied i hesitantly down the steep trail that my buddies me convinced to try
+4	skied i hesitantly down the steep trail that my buddies me to convinced try
+5	skied i hesitantly down steep the trail that my buddies me to convinced try
+6	skied i hesitantly steep down the trail that my buddies me to convinced try
+7	skied down i hesitantly steep the trail that buddies my convinced to me try
+0	i made a bad turn and i found myself tumbling down
+1	i a made bad turn and i found myself tumbling down
+2	a i made bad turn and i found myself tumbling down
+3	a i made bad and turn i found myself tumbling down
+4	a i made and bad turn i found myself tumbling down
+5	a bad i made and turn i found myself tumbling down
+6	a bad i made and turn i found tumbling myself down
+7	a i bad made and turn found i tumbling down myself
+0	i finally came to a stop at a flat part of the slope
+1	i finally came to a stop at a flat part the of slope
+2	i came finally to a stop at a flat part the of slope
+3	came i finally to a stop at a flat part the of slope
+4	came i finally to a stop at a flat part the slope of
+5	came i finally to stop a at a flat part the slope of
+6	came i finally stop to a at a flat part the slope of
+7	came to i finally stop a at a part flat of slope the
+0	my skis were nowhere to be found and my poles were lodged in a snow drift up the hill
+1	my skis were to nowhere be found and my poles were lodged in a snow drift up the hill
+2	skis my were to nowhere be found and my poles were lodged in a snow drift up the hill
+3	skis my were to nowhere be found and poles my were lodged in a snow drift up the hill
+4	skis my were to nowhere be found poles and my were lodged in a snow drift up the hill
+5	skis my were be to nowhere found and poles my were lodged in a snow drift up the hill
+6	skis my were be to nowhere found and poles my were lodged in a snow drift up hill the
+7	skis my be were to nowhere found and poles my were lodged in a snow drift up hill the
+0	a major strength of professional skiers is how they use ski poles
+1	a major strength of professional skiers is how they use poles ski
+2	a strength major of professional skiers is how they use poles ski
+3	strength a major of professional skiers is how they use poles ski
+4	strength a major of skiers professional is how they use poles ski
+5	strength a major skiers of professional is how they use poles ski
+6	strength of a major skiers professional is how they use poles ski
+7	strength a of major skiers professional how is use ski they poles
+0	proper use of ski poles improves their balance and adds flair to their skiing
+1	proper use of ski poles improves their balance and adds to flair their skiing
+2	proper of use ski poles improves their balance and adds to flair their skiing
+3	of proper use ski poles improves their balance and adds to flair their skiing
+4	of proper use ski poles improves their balance and adds to their flair skiing
+5	of proper use ski improves poles their balance and adds to their flair skiing
+6	of proper use improves ski poles their balance and adds to their flair skiing
+7	of ski proper use improves poles their balance adds and flair their to skiing
+0	it minimizes the need for upper body movements to regain lost balance while skiing
+1	it minimizes the need for upper body movements to regain balance lost while skiing
+2	it the minimizes need for upper body movements to regain balance lost while skiing
+3	the it minimizes need for upper body movements to regain balance lost while skiing
+4	the it minimizes need for upper body movements to regain balance while lost skiing
+5	the it minimizes need upper for body movements to regain balance while lost skiing
+6	the it minimizes upper need for body movements to regain balance while lost skiing
+7	the need it minimizes upper for body movements regain to lost while balance skiing
+0	new ski designs and stiffer boots let skiers turn more quickly
+1	new designs ski and stiffer boots let skiers turn more quickly
+2	designs new ski and stiffer boots let skiers turn more quickly
+3	designs new ski and boots stiffer let skiers turn more quickly
+4	designs new ski boots and stiffer let skiers turn more quickly
+5	designs and new ski boots stiffer let skiers turn more quickly
+6	designs and new ski boots stiffer let skiers more turn quickly
+7	designs new and ski boots stiffer skiers let more quickly turn
+0	but faster and tighter turns increase the twisting force on the legs
+1	but faster and tighter turns increase the twisting force on legs the
+2	but and faster tighter turns increase the twisting force on legs the
+3	and but faster tighter turns increase the twisting force on legs the
+4	and but faster tighter increase turns the twisting force on legs the
+5	and but faster increase tighter turns the twisting force on legs the
+6	and tighter but faster increase turns the twisting force on legs the
+7	and but tighter faster increase turns twisting the on the force legs
+0	this has led to more injuries particularly to ligaments in the skier's knee
+1	this has led to more injuries particularly to ligaments in skier's the knee
+2	this led has to more injuries particularly to ligaments in skier's the knee
+3	led this has to more injuries particularly to ligaments in skier's the knee
+4	led this has to more injuries particularly to ligaments in skier's knee the
+5	led this has to injuries more particularly to ligaments in skier's knee the
+6	led this has injuries to more particularly to ligaments in skier's knee the
+7	led to this has injuries more particularly to in ligaments the knee skier's
