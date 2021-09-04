@@ -3,8 +3,11 @@ import fire
 import logging
 import sys
 from datetime import datetime
+import os
 
 from neural_nlp import score as score_function
+
+print(os.environ)
 
 _logger = logging.getLogger(__name__)
 
@@ -18,6 +21,7 @@ for ignore_logger in ['transformers.data.processors', 'botocore', 'boto3', 'urll
 
 
 def run(benchmark, model, layers=None, subsample=None):
+    print(f"Environment variable AVG_TOKEN_TRANSFORMERS set to: {os.getenv('AVG_TOKEN_TRANSFORMERS')}")
     start = datetime.now()
     score = score_function(model=model, layers=layers, subsample=subsample, benchmark=benchmark)
     end = datetime.now()
