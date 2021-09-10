@@ -17,9 +17,11 @@ git clone https://github.com/carina-kauf/perturbed-neural-nlp.git
 cd perturbed-neural-nlp
 pip install -e .
 ```
-Install spacy via
+Install spacy and nltk via
 ```bash
-pip install spacy==3.1.2```
+pip install spacy==3.1.2
+git clone https://github.com/nltk/nltk_contrib.git
+```
 Then run 
 ```bash
 python -m spacy download en_core_web_sm
