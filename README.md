@@ -17,7 +17,13 @@ git clone https://github.com/carina-kauf/perturbed-neural-nlp.git
 cd perturbed-neural-nlp
 pip install -e .
 ```
-
+Install spacy via
+```bash
+pip install spacy==3.1.2```
+Then run 
+```bash
+python -m spacy download en_core_web_sm
+```
 
 ## Run
 To score distilgpt on the Pereira2018-encoding-scrambled1 benchmark (using the *last-token representation* as the sentence representation):
