@@ -21,6 +21,9 @@ from neural_nlp.models.wrapper.pytorch import PytorchWrapper
 
 _ressources_dir = (Path(__file__).parent / '..' / '..' / 'ressources' / 'models').resolve()
 
+_logger = logging.getLogger(__name__)
+_logger.debug("We're running in the new version of the implementations.py script.")
+
 
 class BrainModel:
     Modes = Enum('Mode', 'recording')
@@ -548,7 +551,7 @@ class LM1B(BrainModel, TaskModel):
 
 
 def word_last(layer_activations):
-    print('Word last')
+    _logger.debug('Word last')
     for layer, activations in layer_activations.items():
         assert all(a.shape[0] == 1 for a in activations)
         activations = [a[0, -1, :] for a in activations] #(batch, tokens, emb_size)
@@ -876,7 +879,7 @@ class _PytorchTransformerWrapper(BrainModel, TaskModel):
                 max_num_words=max_num_words, additional_tokens=additional_tokens, use_special_tokens=use_special_tokens)
             encoded_layers = [[]] * len(self.layer_names)
             for context_ids in aligned_tokens:
-                print("\n", len(context_ids), [self.tokenizer.convert_ids_to_tokens(elm) for elm in context_ids]) #TODO take out (check for token alignment)
+                # print("\n", len(context_ids), [self.tokenizer.convert_ids_to_tokens(elm) for elm in context_ids]) #TODO take out (check for token alignment)
                 # Convert inputs to PyTorch tensors
                 tokens_tensor = torch.tensor([context_ids])
                 tokens_tensor = tokens_tensor.to('cuda' if torch.cuda.is_available() else 'cpu')
@@ -1079,27 +1082,6 @@ class Glove(KeyedVectorModel):
             identifier=self.identifier + ('-untrained' if random_embeddings else ''), weights_file=word2vec_weightsfile,
             # std from https://gist.github.com/MatthieuBizien/de26a7a2663f00ca16d8d2558815e9a6#file-fast_glove-py-L16
             random_std=.01, random_embeddings=random_embeddings, **kwargs)
-
-
-class RecursiveNeuralTensorNetwork(BrainModel, TaskModel):
-    """
-    http://www.aclweb.org/anthology/D13-1170
-    """
-
-    def __init__(self, weights='sentiment'):
-        cachepath = os.path.join(_ressources_dir, 'recursive-neural-tensor-network', weights + '.activations.csv')
-        self._cache = pd.read_csv(cachepath)
-        self._cache = self._cache[self._cache['node.type'] == 'ROOT']
-        self._cache.drop_duplicates(inplace=True)
-
-    def __call__(self, sentences):
-        result = self._cache[self._cache['sentence'].isin(sentences)
-                             | self._cache['sentence'].isin([sentence + '.' for sentence in sentences])]
-        if len(result) != 1:
-            print(sentences)
-        assert len(result) == 1
-        result = result[[column for column in result if column.startswith('activation')]]
-        return result.values
 
 
 def _call_conditional_average(*args, extractor, average_sentence, sentence_averaging, **kwargs):
