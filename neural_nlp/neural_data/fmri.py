@@ -12,7 +12,7 @@ import scipy.io
 import xarray as xr
 from brainio_base.assemblies import merge_data_arrays, DataAssembly, gather_indexes, walk_coords, array_is_element, \
     NeuroidAssembly
-from nltk_contrib.textgrid import TextGrid
+#from nltk_contrib.textgrid import TextGrid
 from pathlib import Path
 from tqdm import tqdm
 from xarray import DataArray
@@ -168,7 +168,7 @@ def load_Pereira2018_Blank(version='base'):
     return assembly
 
 
-@store()
+#@store()
 def load_Pereira2018():
     data_dir = neural_data_dir / "Pereira2018"
     experiment2, experiment3 = "243sentences.mat", "384sentences.mat"
