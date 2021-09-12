@@ -22,7 +22,7 @@ from neural_nlp.models.wrapper.pytorch import PytorchWrapper
 _ressources_dir = (Path(__file__).parent / '..' / '..' / 'ressources' / 'models').resolve()
 
 _logger = logging.getLogger(__name__)
-_logger.debug("We're running in the new version of the implementations.py script.")
+print("\n\n We're running in the NEW version of the implementations.py script.\n\n")
 
 
 class BrainModel:
@@ -597,8 +597,6 @@ class Transformer(PytorchWrapper, BrainModel, TaskModel):
 
     def __call__(self, *args, average_sentence=True, **kwargs):
 
-        print('WE ARE NOW IN CALL TRANSFORMERS', os.getenv('AVG_TOKEN_TRANSFORMERS'))
-
         if os.getenv('AVG_TOKEN_TRANSFORMERS', '0') == '1':
             avg=word_mean
         else:
@@ -669,6 +667,7 @@ class Transformer(PytorchWrapper, BrainModel, TaskModel):
 
     def tokenize(self, text, vocab_size=None):
         assert not vocab_size or vocab_size == self.vocab_size
+        _logger.debug(text) #TODO take out
         words = text.split()
         tokens = [self.vocab_index[word] for word in tqdm(words, desc='tokenize') if word in self.vocab_index]
         return np.array(tokens)
@@ -865,6 +864,9 @@ class _PytorchTransformerWrapper(BrainModel, TaskModel):
                     text[0] = self.tokenizer.cls_token + text[0]
                     text[-1] = text[-1] + self.tokenizer.sep_token
 
+            _logger.debug("\n Current input: \n")
+            _logger.debug("\n".join([sentence for sentence in text]))
+            _logger.debug("\n")
             # Tokenized input
             tokenized_sentences = [self.tokenizer.tokenize(sentence) for sentence in text]
             # chain

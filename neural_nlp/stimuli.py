@@ -13,7 +13,7 @@ class StimulusSet(pd.DataFrame):
 
 
 _data_dir = Path(os.path.dirname(__file__)) / '..' / 'ressources' / 'stimuli'
-
+print(_data_dir)
 
 class DiverseSentences:
     set_mapping = {'1': 'stimuli_384sentences.txt', '2': 'stimuli_243sentences.txt'}
