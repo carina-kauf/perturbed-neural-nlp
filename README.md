@@ -25,7 +25,6 @@ pytest 6.2.5 requires py>=1.8.2, but you'll have py 1.8.0 which is incompatible.
 Install spacy and nltk via
 ```bash
 pip install spacy==3.1.2
-git clone https://github.com/nltk/nltk_contrib.git
 ```
 Then run 
 ```bash
