@@ -772,47 +772,47 @@ class PereiraEncodingScrLowPMI(_PereiraBenchmarkScrambled):
     def ceiling(self):
         return super(PereiraEncodingScrLowPMI, self).ceiling
 
-class PereiraEncodingScrBackward(_PereiraBenchmarkScrambled):
+class PereiraEncodingScrBackwards(_PereiraBenchmarkScrambled):
 
     def __init__(self, scrambled_version="backward", **kwargs):
         metric = CrossRegressedCorrelation(
             regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
             crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
-        super(PereiraEncodingScrBackward, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-backward'
+        super(PereiraEncodingScrBackwards, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-backward'
 
     @property
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
-        return super(PereiraEncodingScrBackward, self).ceiling
+        return super(PereiraEncodingScrBackwards, self).ceiling
 
-class PereiraEncodingScrRandomWL(_PereiraBenchmarkScrambled):
+class PereiraEncodingScrRandomWordlist(_PereiraBenchmarkScrambled):
 
     def __init__(self, scrambled_version="random-wl", **kwargs):
         metric = CrossRegressedCorrelation(
             regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
             crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
-        super(PereiraEncodingScrRandomWL, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-random'
+        super(PereiraEncodingScrRandomWordlist, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-random-wl'
 
     @property
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
-        return super(PereiraEncodingScrRandomWL, self).ceiling
+        return super(PereiraEncodingScrRandomWordlist, self).ceiling
 
-class PereiraEncodingScrambledRandomLowPMI(_PereiraBenchmarkScrambled): #within sentence random lowPMI condition
+class PereiraEncodingScrRandomLowPMI(_PereiraBenchmarkScrambled): #within sentence random lowPMI condition
 
     def __init__(self, scrambled_version="random-lowPMI", **kwargs):
         metric = CrossRegressedCorrelation(
             regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
             crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
-        super(PereiraEncodingScrambledRandomLowPMI, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-random-lowPMI'
+        super(PereiraEncodingScrRandomLowPMI, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-random-lowPMI'
 
     @property
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
-        return super(PereiraEncodingScrambledRandomLowPMI, self).ceiling
+        return super(PereiraEncodingScrRandomLowPMI, self).ceiling
     
 
 ###################################
@@ -1001,9 +1001,9 @@ benchmark_pool = [
     ('Pereira2018-encoding-scrambled5', PereiraEncodingScr5),
     ('Pereira2018-encoding-scrambled7', PereiraEncodingScr7),
     ('Pereira2018-encoding-scrambled-lowpmi', PereiraEncodingScrLowPMI),
-    #('Pereira2018-encoding-scrambled-random-lowPMI', PereiraEncodingScrambledRandomLowPMI), #lowPMI random word shuffling within sentence
-    ('Pereira2018-encoding-scrambled-backward', PereiraEncodingScrBackward),
-    ('Pereira2018-encoding-scrambled-random-wl', PereiraEncodingScrRandomWL),
+    #('Pereira2018-encoding-scrambled-random-lowPMI', PereiraEncodingScrRandomLowPMI), #lowPMI random word shuffling within sentence
+    ('Pereira2018-encoding-scrambled-backward', PereiraEncodingScrBackwards),
+    ('Pereira2018-encoding-scrambled-random-wl', PereiraEncodingScrRandomWordlist),
     #perturb benchmarks
     ('Pereira2018-encoding-perturb-nouns', PereiraEncodingPerturbedN), #keep only nouns
     ('Pereira2018-encoding-perturb-nouns-delete50percent', PereiraEncodingPerturbedN50Percent), #keep only 50% (randomly selected) of nouns
