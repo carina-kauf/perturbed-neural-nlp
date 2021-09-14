@@ -1131,6 +1131,9 @@ model_layers = {
 # untrained layers are the same as trained ones
 model_layers = {**model_layers, **{f"{identifier}-untrained": layers for identifier, layers in model_layers.items()}}
 
+# avgtoken layers are the same as trained ones
+model_layers = {**model_layers, **{f"{identifier}-avgtoken": layers for identifier, layers in model_layers.items()}}
+
 SPIECE_UNDERLINE = u'▁'  # define directly to avoid having to import (from pytorch_transformers.tokenization_xlnet)
 transformer_configurations = []
 """
