@@ -35,10 +35,10 @@ nouns,conservation habitats.,perturb
 nouns,it beekeeper interest plants pollen.,perturb
 nouns,form agriculture it vegetation way crops.,perturb
 nouns,beekeepers use pesticides crops they honeybees.,perturb
-nouns_delete50percent,conservation habitats.,perturb
-nouns_delete50percent,it beekeeper interest plants pollen.,perturb
-nouns_delete50percent,form agriculture it vegetation way crops.,perturb
-nouns_delete50percent,beekeepers use pesticides crops they honeybees.,perturb
+nouns_delete50percent,habitats.,perturb
+nouns_delete50percent,beekeeper interest plants.,perturb
+nouns_delete50percent,agriculture it crops.,perturb
+nouns_delete50percent,use pesticides honeybees.,perturb
 randomnouns,goods classes.,perturb
 randomnouns,we i history owl stylist.,perturb
 randomnouns,evening mammals pipe people its part.,perturb
