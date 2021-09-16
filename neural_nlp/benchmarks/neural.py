@@ -862,19 +862,19 @@ class PereiraEncodingPerturbedN(_PereiraBenchmarkScrambled):
     def ceiling(self):
         return super(PereiraEncodingPerturbedN, self).ceiling
     
-class PereiraEncodingPerturbedN50Percent(_PereiraBenchmarkScrambled):
+class PereiraEncodingPerturbedNDel50Percent(_PereiraBenchmarkScrambled):
 
     def __init__(self, scrambled_version="nouns-delete50percent", **kwargs):
         metric = CrossRegressedCorrelation(
             regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
             crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
-        super(PereiraEncodingPerturbedN50Percent, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-nouns-delete50percent'
+        super(PereiraEncodingPerturbedNDel50Percent, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-nouns-delete50percent'
 
     @property
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
-        return super(PereiraEncodingPerturbedN50Percent, self).ceiling
+        return super(PereiraEncodingPerturbedNDel50Percent, self).ceiling
     
     
 class PereiraEncodingPerturbedRandomN(_PereiraBenchmarkScrambled):
@@ -1006,7 +1006,7 @@ benchmark_pool = [
     ('Pereira2018-encoding-scrambled-random-wl', PereiraEncodingScrRandomWordlist),
     #perturb benchmarks
     ('Pereira2018-encoding-perturb-nouns', PereiraEncodingPerturbedN), #keep only nouns
-    ('Pereira2018-encoding-perturb-nouns-delete50percent', PereiraEncodingPerturbedN50Percent), #keep only 50% (randomly selected) of nouns
+    ('Pereira2018-encoding-perturb-nouns-delete50percent', PereiraEncodingPerturbedNDel50Percent), #keep only 50% (randomly selected) of nouns
     ('Pereira2018-encoding-perturb-random-nouns', PereiraEncodingPerturbedRandomN), #nouns in each sentence replaced by random nouns
     ('Pereira2018-encoding-perturb-verbs', PereiraEncodingPerturbedV), #currently not running
     ('Pereira2018-encoding-perturb-nounsverbs', PereiraEncodingPerturbedNV),
