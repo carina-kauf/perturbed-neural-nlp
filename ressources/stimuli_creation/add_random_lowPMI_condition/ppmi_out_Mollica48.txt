@@ -1,4 +1,0 @@
-Executing run pPMI.py
-13:58:13
-Finished!
-13:58:22
