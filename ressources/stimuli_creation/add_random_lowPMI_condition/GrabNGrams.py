@@ -5,7 +5,7 @@ print('*'*30, '\n LOADING STIMULI! \n','*'*30)
 
 sentences = []
 sample = []
-with open('into_calculatePMI_10randompermutations.csv') as f:
+with open('0_into_calculatePMI_10randompermutations.csv') as f:
     for line in f.readlines():
         entry = line.split(',')
         sentences.append(entry)
