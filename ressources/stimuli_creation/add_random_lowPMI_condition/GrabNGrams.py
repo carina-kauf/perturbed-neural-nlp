@@ -5,16 +5,12 @@ print('*'*30, '\n LOADING STIMULI! \n','*'*30)
 
 sentences = []
 sample = []
-#with open('into_calculatePMI_10randompermutations.csv') as f:
-with open('9S52/nonsensical_sentences_Mollica_48.csv') as f:
+with open('into_calculatePMI_10randompermutations.csv') as f:
     for line in f.readlines():
         entry = line.split(',')
         sentences.append(entry)
         sample.append(entry[2])
 print("File opened!")
-
-#google1 = ZS('/home/colala/Corpus/cpl-data.ucsd.edu/zs/google-books-20120701/eng-us-all/google-books-eng-us-all-20120701-1gram.zs')
-#google2 = ZS('/home/colala/Corpus/cpl-data.ucsd.edu/zs/google-books-20120701/eng-us-all/google-books-eng-us-all-20120701-2gram.zs')
 
 google1 = ZS('/om/data/public/corpora/google-books-v2/eng-us-all/google-books-eng-us-all-20120701-1gram.zs')
 google2 = ZS('/om/data/public/corpora/google-books-v2/eng-us-all/google-books-eng-us-all-20120701-2gram.zs')
@@ -72,11 +68,10 @@ for ngram in list(ngrams.keys()):
     print(ngram)
     ngrams[ngram], nm1grams[ngram[0]] = fetch(ngram)
 
-
-with open('9S52/1_ngrams_Mollica48.pkl', 'wb') as f:
+    
+with open('1_ngrams_10rand.pkl', 'wb') as f:
     pickle.dump(ngrams, f)
 
-
-with open('9S52/1_nm1grams_Mollica48.pkl', 'wb') as f:
+with open('1_nm1grams_10rand.pkl', 'wb') as f:
     pickle.dump(nm1grams, f)
 

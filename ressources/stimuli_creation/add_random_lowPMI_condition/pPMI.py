@@ -6,18 +6,18 @@ print('*'*30, '\n LOADING STIMULI! \n','*'*30)
 
 sentences = []
 sample = []
-with open('9S52/nonsensical_sentences_Mollica_48.csv') as f:
+with open('into_calculatePMI_10randompermutations.csv') as f:
     for line in f.readlines():
         entry = line.split(',')
         sentences.append(entry)
         sample.append(entry[2])
 
 
-with open('9S52/1_ngrams_Mollica48.pkl', 'rb') as f:
+with open('1_ngrams_10rand.pkl', 'rb') as f:
     ngrams = pickle.load(f)
 
 
-with open('9S52/1_nm1grams_Mollica48.pkl', 'rb') as f:
+with open('1_nm1grams_10rand.pkl', 'rb') as f:
     nm1grams = pickle.load(f)
 
 N = 356033418959 # US american english v2 google ngrams
@@ -65,7 +65,7 @@ print('*'*30, '\n CALCULATING LAG 0 PPMIS! \n','*'*30)
 result = calc_prob(sentences, lag=0)
 printstring = "\n".join(result)
 
-with open('9S52/2_pPMI_0_Mollica48.csv', 'w') as f:
+with open('2_pPMI_lag0_10rand.csv', 'w') as f:
     f.write(printstring)
 
 print('*'*30, '\n CALCULATING LAG 1 PPMIS! \n','*'*30)
@@ -73,7 +73,7 @@ print('*'*30, '\n CALCULATING LAG 1 PPMIS! \n','*'*30)
 result = calc_prob(sentences, lag=1)
 printstring = "\n".join(result)
 
-with open('9S52/2_pPMI_1_Mollica48.csv', 'w') as f:
+with open('2_pPMI_lag1_10rand.csv', 'w') as f:
     f.write(printstring)
 
 print('*'*30, '\n CALCULATING LAG 2 PPMIS! \n','*'*30)
@@ -81,5 +81,5 @@ print('*'*30, '\n CALCULATING LAG 2 PPMIS! \n','*'*30)
 result = calc_prob(sentences, lag=2)
 printstring = "\n".join(result)
 
-with open('9S52/2_pPMI_2_Mollica48.csv', 'w') as f:
+with open('2_pPMI_lag2_10rand.csv', 'w') as f:
     f.write(printstring)

@@ -11,7 +11,7 @@ timestamp() {
 }
 
 module load openmind/miniconda/4.0.5-python3
-cd /om/user/ckauf/neural-nlp/neural_nlp/analyze/neural-scrambled/metric-validation/add_random_lowPMI_condition
+cd /om2/user/ckauf/perturbed-neural-nlp/ressources/stimuli_creation/add_random_lowPMI_condition
 
 echo 'Executing run grabngrams.py'
 timestamp
