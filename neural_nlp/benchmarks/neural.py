@@ -455,19 +455,18 @@ class _PereiraBenchmarkScrambled(Benchmark):
 
         scrambled_data_dir = os.path.join(ressources_dir, "scrambled_stimuli_dfs/")
 
-        STIMULI_TO_PKL_MAP = {'lowPMI': os.path.join(scrambled_data_dir, 'stimuli_lowPMI.pkl'),
-                              'Original': os.path.join(scrambled_data_dir, 'stimuli_Original.pkl'),
+        STIMULI_TO_PKL_MAP = {'Original': os.path.join(scrambled_data_dir, 'stimuli_Original.pkl'),
                               'Scr1': os.path.join(scrambled_data_dir, 'stimuli_Scr1.pkl'),
                               'Scr3': os.path.join(scrambled_data_dir, 'stimuli_Scr3.pkl'),
                               'Scr5': os.path.join(scrambled_data_dir, 'stimuli_Scr5.pkl'),
                               'Scr7': os.path.join(scrambled_data_dir, 'stimuli_Scr7.pkl'),
                               'backward': os.path.join(scrambled_data_dir, 'stimuli_backward.pkl'),
                               'random-wl': os.path.join(scrambled_data_dir, 'stimuli_random.pkl'),
+                              'lowPMI': os.path.join(scrambled_data_dir, 'stimuli_lowPMI.pkl'),
                               'lowPMI-random': os.path.join(scrambled_data_dir, 'stimuli_lowPMI_random.pkl'),
                               #perturb pkls
                               'contentwords': os.path.join(scrambled_data_dir, 'stimuli_contentwords.pkl'),
                               'nouns': os.path.join(scrambled_data_dir, 'stimuli_nouns.pkl'),
-                              'nouns-delete50percent': os.path.join(scrambled_data_dir, 'stimuli_nouns_delete50percent.pkl'),
                               'random-nouns': os.path.join(scrambled_data_dir, 'stimuli_randomnouns.pkl'),
                               'verbs': os.path.join(scrambled_data_dir, 'stimuli_verbs.pkl'),
                               'nounsverbs': os.path.join(scrambled_data_dir, 'stimuli_nounsverbs.pkl'),
@@ -772,6 +771,20 @@ class PereiraEncodingScrLowPMI(_PereiraBenchmarkScrambled):
     def ceiling(self):
         return super(PereiraEncodingScrLowPMI, self).ceiling
 
+class PereiraEncodingScrLowPMIRandom(_PereiraBenchmarkScrambled): #within sentence random lowPMI condition
+
+    def __init__(self, scrambled_version="lowPMI-random", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
+        super(PereiraEncodingScrLowPMIRandom, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-lowpmi-random'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncodingScrLowPMIRandom, self).ceiling
+
 class PereiraEncodingScrBackwardSent(_PereiraBenchmarkScrambled):
 
     def __init__(self, scrambled_version="backward", **kwargs):
@@ -799,20 +812,6 @@ class PereiraEncodingScrRandomWordlist(_PereiraBenchmarkScrambled):
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncodingScrRandomWordlist, self).ceiling
-
-class PereiraEncodingScrLowPMIRandom(_PereiraBenchmarkScrambled): #within sentence random lowPMI condition
-
-    def __init__(self, scrambled_version="lowPMI-random", **kwargs):
-        metric = CrossRegressedCorrelation(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
-        super(PereiraEncodingScrLowPMIRandom, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-lowPMI-random'
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncodingScrLowPMIRandom, self).ceiling
     
 
 ###################################
@@ -861,20 +860,6 @@ class PereiraEncodingPerturbedN(_PereiraBenchmarkScrambled):
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncodingPerturbedN, self).ceiling
-    
-class PereiraEncodingPerturbedNDel50Percent(_PereiraBenchmarkScrambled):
-
-    def __init__(self, scrambled_version="nouns-delete50percent", **kwargs):
-        metric = CrossRegressedCorrelation(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
-        super(PereiraEncodingPerturbedNDel50Percent, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-nouns-delete50percent'
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncodingPerturbedNDel50Percent, self).ceiling
     
     
 class PereiraEncodingPerturbedRandomN(_PereiraBenchmarkScrambled):
@@ -1001,7 +986,7 @@ benchmark_pool = [
     ('Pereira2018-encoding-scrambled5', PereiraEncodingScr5),
     ('Pereira2018-encoding-scrambled7', PereiraEncodingScr7),
     ('Pereira2018-encoding-scrambled-lowpmi', PereiraEncodingScrLowPMI),
-    ('Pereira2018-encoding-scrambled-lowPMI-random', PereiraEncodingScrLowPMIRandom), #lowPMI random word shuffling within sentence
+    ('Pereira2018-encoding-scrambled-lowpmi-random', PereiraEncodingScrLowPMIRandom), #lowPMI random word shuffling within sentence
     ('Pereira2018-encoding-scrambled-backward', PereiraEncodingScrBackwardSent),
     ('Pereira2018-encoding-scrambled-random-wl', PereiraEncodingScrRandomWordlist),
     #perturb benchmarks
