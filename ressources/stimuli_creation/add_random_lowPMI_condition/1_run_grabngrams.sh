@@ -5,7 +5,7 @@
 #SBATCH --error=grabngrams_%j.err
 #SBATCH --nodes=1
 #SBATCH --mem=15G
-#SBATCH -t 20:00:00
+#SBATCH -t 10:00:00
 timestamp() {
   date +"%T"
 }
