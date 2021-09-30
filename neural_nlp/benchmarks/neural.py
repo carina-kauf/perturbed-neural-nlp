@@ -800,19 +800,19 @@ class PereiraEncodingScrBackwardSent(_PereiraBenchmarkScrambled):
     def ceiling(self):
         return super(PereiraEncodingScrBackwardSent, self).ceiling
 
-class PereiraEncodingScrRandomWordlist(_PereiraBenchmarkScrambled):
+class PereiraEncodingScrWordlistRandom(_PereiraBenchmarkScrambled):
 
     def __init__(self, scrambled_version="random-wl", **kwargs):
         metric = CrossRegressedCorrelation(
             regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
             crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
-        super(PereiraEncodingScrRandomWordlist, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-random-wl'
+        super(PereiraEncodingScrWordlistRandom, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-random-wl'
 
     @property
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
-        return super(PereiraEncodingScrRandomWordlist, self).ceiling
+        return super(PereiraEncodingScrWordlistRandom, self).ceiling
 
 class PereiraEncodingScrRandomWLSamePOS(_PereiraBenchmarkScrambled):
 
@@ -1002,7 +1002,7 @@ benchmark_pool = [
     ('Pereira2018-encoding-scrambled-lowpmi', PereiraEncodingScrLowPMI),
     ('Pereira2018-encoding-scrambled-lowpmi-random', PereiraEncodingScrLowPMIRandom), #lowPMI random word shuffling within sentence
     ('Pereira2018-encoding-scrambled-backward', PereiraEncodingScrBackwardSent),
-    ('Pereira2018-encoding-scrambled-random-wl', PereiraEncodingScrRandomWordlist),
+    ('Pereira2018-encoding-scrambled-random-wl', PereiraEncodingScrWordlistRandom),
     ('Pereira2018-encoding-scrambled-random-wl-samepos', PereiraEncodingScrRandomWLSamePOS), #random wordlist bm, same pos distribution as original sentence
     #perturb benchmarks
     ('Pereira2018-encoding-perturb-nouns', PereiraEncodingPerturbedN), #keep only nouns
