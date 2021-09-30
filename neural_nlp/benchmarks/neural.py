@@ -462,6 +462,7 @@ class _PereiraBenchmarkScrambled(Benchmark):
                               'Scr7': os.path.join(scrambled_data_dir, 'stimuli_Scr7.pkl'),
                               'backward': os.path.join(scrambled_data_dir, 'stimuli_backward.pkl'),
                               'random-wl': os.path.join(scrambled_data_dir, 'stimuli_random.pkl'),
+                              'random-wl-samepos': os.path.join(scrambled_data_dir, 'stimuli_random_poscontrolled.pkl'),
                               'lowPMI': os.path.join(scrambled_data_dir, 'stimuli_lowPMI.pkl'),
                               'lowPMI-random': os.path.join(scrambled_data_dir, 'stimuli_lowPMI_random.pkl'),
                               #perturb pkls
@@ -812,7 +813,20 @@ class PereiraEncodingScrRandomWordlist(_PereiraBenchmarkScrambled):
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncodingScrRandomWordlist, self).ceiling
-    
+
+class PereiraEncodingScrRandomWLSamePOS(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="random-wl-samepos", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
+        super(PereiraEncodingScrRandomWLSamePOS, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-random-wl-samepos'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncodingScrRandomWLSamePOS, self).ceiling
 
 ###################################
 ##### PERTURBATION BENCHMARKS
@@ -989,6 +1003,7 @@ benchmark_pool = [
     ('Pereira2018-encoding-scrambled-lowpmi-random', PereiraEncodingScrLowPMIRandom), #lowPMI random word shuffling within sentence
     ('Pereira2018-encoding-scrambled-backward', PereiraEncodingScrBackwardSent),
     ('Pereira2018-encoding-scrambled-random-wl', PereiraEncodingScrRandomWordlist),
+    ('Pereira2018-encoding-scrambled-random-wl-samepos', PereiraEncodingScrRandomWLSamePOS), #random wordlist bm, same pos distribution as original sentence
     #perturb benchmarks
     ('Pereira2018-encoding-perturb-nouns', PereiraEncodingPerturbedN), #keep only nouns
     ('Pereira2018-encoding-perturb-random-nouns', PereiraEncodingPerturbedRandomN), #nouns in each sentence replaced by random nouns
