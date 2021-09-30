@@ -463,7 +463,7 @@ class _PereiraBenchmarkScrambled(Benchmark):
                               'Scr7': os.path.join(scrambled_data_dir, 'stimuli_Scr7.pkl'),
                               'backward': os.path.join(scrambled_data_dir, 'stimuli_backward.pkl'),
                               'random-wl': os.path.join(scrambled_data_dir, 'stimuli_random.pkl'),
-                              #'random-lowPMI': os.path.join(scrambled_data_dir, 'stimuli_random_lowPMI.pkl'),
+                              'lowPMI-random': os.path.join(scrambled_data_dir, 'stimuli_lowPMI_random.pkl'),
                               #perturb pkls
                               'contentwords': os.path.join(scrambled_data_dir, 'stimuli_contentwords.pkl'),
                               'nouns': os.path.join(scrambled_data_dir, 'stimuli_nouns.pkl'),
@@ -800,19 +800,19 @@ class PereiraEncodingScrRandomWordlist(_PereiraBenchmarkScrambled):
     def ceiling(self):
         return super(PereiraEncodingScrRandomWordlist, self).ceiling
 
-class PereiraEncodingScrRandomLowPMI(_PereiraBenchmarkScrambled): #within sentence random lowPMI condition
+class PereiraEncodingScrLowPMIRandom(_PereiraBenchmarkScrambled): #within sentence random lowPMI condition
 
-    def __init__(self, scrambled_version="random-lowPMI", **kwargs):
+    def __init__(self, scrambled_version="lowPMI-random", **kwargs):
         metric = CrossRegressedCorrelation(
             regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
             crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
-        super(PereiraEncodingScrRandomLowPMI, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-random-lowPMI'
+        super(PereiraEncodingScrLowPMIRandom, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-lowPMI-random'
 
     @property
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
-        return super(PereiraEncodingScrRandomLowPMI, self).ceiling
+        return super(PereiraEncodingScrLowPMIRandom, self).ceiling
     
 
 ###################################
@@ -1001,12 +1001,11 @@ benchmark_pool = [
     ('Pereira2018-encoding-scrambled5', PereiraEncodingScr5),
     ('Pereira2018-encoding-scrambled7', PereiraEncodingScr7),
     ('Pereira2018-encoding-scrambled-lowpmi', PereiraEncodingScrLowPMI),
-    #('Pereira2018-encoding-scrambled-random-lowPMI', PereiraEncodingScrRandomLowPMI), #lowPMI random word shuffling within sentence
+    ('Pereira2018-encoding-scrambled-lowPMI-random', PereiraEncodingScrLowPMIRandom), #lowPMI random word shuffling within sentence
     ('Pereira2018-encoding-scrambled-backward', PereiraEncodingScrBackwardSent),
     ('Pereira2018-encoding-scrambled-random-wl', PereiraEncodingScrRandomWordlist),
     #perturb benchmarks
     ('Pereira2018-encoding-perturb-nouns', PereiraEncodingPerturbedN), #keep only nouns
-    ('Pereira2018-encoding-perturb-nouns-delete50percent', PereiraEncodingPerturbedNDel50Percent), #keep only 50% (randomly selected) of nouns
     ('Pereira2018-encoding-perturb-random-nouns', PereiraEncodingPerturbedRandomN), #nouns in each sentence replaced by random nouns
     ('Pereira2018-encoding-perturb-verbs', PereiraEncodingPerturbedV), #currently not running
     ('Pereira2018-encoding-perturb-nounsverbs', PereiraEncodingPerturbedNV),
