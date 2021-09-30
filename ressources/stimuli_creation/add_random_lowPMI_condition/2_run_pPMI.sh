@@ -15,7 +15,7 @@ timestamp
 module load openmind/miniconda/4.0.5-python3
 cd /om2/user/ckauf/perturbed-neural-nlp/ressources/stimuli_creation/add_random_lowPMI_condition
 
-filename="3_pPMI_$(date '+%Y%m%d%T').txt"
+filename="2_pPMI_$(date '+%Y%m%d%T').txt"
 
 python pPMI.py > $filename
 echo 'Finished!'
