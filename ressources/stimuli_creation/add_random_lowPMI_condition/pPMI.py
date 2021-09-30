@@ -55,7 +55,7 @@ def calc_prob(sentences, ngra=ngrams, nm1gra=nm1grams, ALPHA=0.1, lag=0):
                 y_c = log(nm1gra[tokens[t + 3]] + ALPHA * len(list(ngrams.keys())))
                 pmi = max([0,(joint_c + log(Z) - x_c - y_c) / log(2)])
                 mi += pmi
-            mi = mi/len(tokens) #needs to be normalized still
+            mi = mi/(3*len(tokens)) #needs to be normalized still (we're accumulating mi over 3 lags for len(tokens)-many words)
         results.append(','.join([str(sent[0]), sent[1], sent[2].strip('\n'), str(mi)]))
     return results
 
