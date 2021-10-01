@@ -46,6 +46,7 @@ def calc_prob(sentences, ngra=ngrams, nm1gra=nm1grams, ALPHA=0.1, lag=0):
         mi = 0
         # No lag
         for t in range(0, len(tokens) - 1):
+            print(tokens[t], tokens[t+1]) #TODO take out
             joint_c = log(ngra[(tokens[t], tokens[t + 1])] + ngra[(tokens[t + 1], tokens[t])] + ALPHA)
             x_c = log(nm1gra[tokens[t]] + ALPHA * len(list(ngrams.keys())))
             y_c = log(nm1gra[tokens[t + 1]] + ALPHA * len(list(ngrams.keys())))
@@ -54,6 +55,7 @@ def calc_prob(sentences, ngra=ngrams, nm1gra=nm1grams, ALPHA=0.1, lag=0):
         # 1 word lag
         if lag >= 1:
             for t in range(0, len(tokens) - 2):
+                print(tokens[t], tokens[t+2]) #TODO take out
                 joint_c = log(ngra[(tokens[t], tokens[t + 2])] + ngra[(tokens[t + 2], tokens[t])] + ALPHA)
                 x_c = log(nm1gra[tokens[t]] + ALPHA * len(list(ngrams.keys())))
                 y_c = log(nm1gra[tokens[t + 2]] + ALPHA * len(list(ngrams.keys())))
@@ -62,12 +64,13 @@ def calc_prob(sentences, ngra=ngrams, nm1gra=nm1grams, ALPHA=0.1, lag=0):
         # 2 word lag
         if lag >= 2:
             for t in range(0, len(tokens) - 3):
+                print(tokens[t], tokens[t+3]) #TODO take out
                 joint_c = log(ngra[(tokens[t], tokens[t + 3])] + ngra[(tokens[t + 3], tokens[t])] + ALPHA)
                 x_c = log(nm1gra[tokens[t]] + ALPHA * len(list(ngrams.keys())))
                 y_c = log(nm1gra[tokens[t + 3]] + ALPHA * len(list(ngrams.keys())))
                 pmi = max([0,(joint_c + log(Z) - x_c - y_c) / log(2)])
                 mi += pmi
-            mi = mi/(3*len(tokens)) #needs to be normalized still (we're accumulating mi over 3 lags for len(tokens)-many words)
+            mi = mi/(3*len(tokens)-6) #needs to be normalized still (we're accumulating mi over 3 lags for len(tokens)-many words)
         results.append(','.join([str(sent[0]), sent[1], sent[2].strip('\n'), str(mi)]))
     return results
 
