@@ -54,10 +54,10 @@ def make_permutation_with_distance(d, n):
 		
 	return xar
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-	N = 11
+# 	N = 11
 	
-	for _ in range(25):
-		ar = make_permutation_with_distance(8, N)
-		print(kendall_distance( ar, range(N) ), ar)
+# 	for _ in range(25):
+# 		ar = make_permutation_with_distance(8, N)
+# 		print(kendall_distance( ar, range(N) ), ar)
