@@ -35,35 +35,55 @@ random-wl,three climb around the the spears vapor.,scrambled
 random-wl,of shears metallic is in individual machine for fracture a singer can have.,scrambled
 random-wl,insulation body used i've control a fever shark a side crop humble pliers treated and places beekeeper large characteristic own.,scrambled
 random-wl,stop stone the act are flood export and genetic cultures edge varieties reptiles used people.,scrambled
-nouns,conservation habitats.,perturb
-nouns,it beekeeper's interest plants pollen.,perturb
-nouns,form agriculture it vegetation way crops.,perturb
-nouns,beekeepers use pesticides crops they honeybees.,perturb
-randomnouns,its doctors.,perturb
-randomnouns,images ligaments chamber documentary jacket.,perturb
-randomnouns,factor compartments world spears density studies.,perturb
-randomnouns,horror computer sea attack food collar.,perturb
-nounsverbs,beekeeping encourages conservation habitats.,perturb
-nounsverbs,it is beekeeper's interest conserve plants produce pollen.,perturb
-nounsverbs,form agriculture it does require vegetation be cleared make way crops.,perturb
-nounsverbs,beekeepers discourage use pesticides crops they kill honeybees.,perturb
-nounsverbsadj,beekeeping encourages conservation local habitats.,perturb
-nounsverbsadj,it is beekeeper's interest conserve local plants produce pollen.,perturb
-nounsverbsadj,passive form agriculture it does require native vegetation be cleared make way crops.,perturb
-nounsverbsadj,beekeepers discourage use pesticides crops they kill honeybees.,perturb
-contentwords,beekeeping encourages conservation local habitats.,perturb
-contentwords,it is beekeeper's interest conserve local plants produce pollen.,perturb
-contentwords,passive form agriculture it does not require native vegetation be cleared make way crops.,perturb
-contentwords,beekeepers also discourage use pesticides crops they kill honeybees.,perturb
-functionwords,the of.,perturb
-functionwords,in every to that.,perturb
-functionwords,as a of that to for.,perturb
-functionwords,the of on because could the.,perturb
-sentenceshuffle-random,and for society hip fractures involve substantial expense and time in the hospital.,perturb
-sentenceshuffle-random,mosquitos are thin small flying insects that emit a high-pitched sound.,perturb
-sentenceshuffle-random,elephants are the largest kind of land mammal weighing several tons.,perturb
-sentenceshuffle-random,a raven is a large black bird that thrives in many climates.,perturb
-sentenceshuffle-withinpassage,it is in every beekeeper's interest to conserve local plants that produce pollen.,perturb
-sentenceshuffle-withinpassage,beekeepers also discourage the use of pesticides on crops because they could kill the honeybees.,perturb
-sentenceshuffle-withinpassage,beekeeping encourages the conservation of local habitats.,perturb
-sentenceshuffle-withinpassage,as a passive form of agriculture it does not require that native vegetation be cleared to make way for crops.,perturb
+random-wl_poscontrolled,legs emphasize to jacket up throwing large.,scrambled
+random-wl_poscontrolled,mountaineers cool on a spent waters small a in gambling surroundings composition went.,scrambled
+random-wl_poscontrolled,to in is as backgrounds unlocked streamlined a decoration wood can turn can sand is house spread slammed a internal.,scrambled
+random-wl_poscontrolled,have animal television and studies and need one the the sometimes dark cooking can start.,scrambled
+nouns,conservation habitats.,perturbed
+nouns,it beekeeper's interest plants pollen.,perturbed
+nouns,form agriculture it vegetation way crops.,perturbed
+nouns,beekeepers use pesticides crops they honeybees.,perturbed
+randomnouns,its doctors.,perturbed
+randomnouns,images ligaments chamber documentary jacket.,perturbed
+randomnouns,factor compartments world spears density studies.,perturbed
+randomnouns,horror computer sea attack food collar.,perturbed
+nounsverbs,beekeeping encourages conservation habitats.,perturbed
+nounsverbs,it is beekeeper's interest conserve plants produce pollen.,perturbed
+nounsverbs,form agriculture it does require vegetation be cleared make way crops.,perturbed
+nounsverbs,beekeepers discourage use pesticides crops they kill honeybees.,perturbed
+nounsverbsadj,beekeeping encourages conservation local habitats.,perturbed
+nounsverbsadj,it is beekeeper's interest conserve local plants produce pollen.,perturbed
+nounsverbsadj,passive form agriculture it does require native vegetation be cleared make way crops.,perturbed
+nounsverbsadj,beekeepers discourage use pesticides crops they kill honeybees.,perturbed
+contentwords,beekeeping encourages conservation local habitats.,perturbed
+contentwords,it is beekeeper's interest conserve local plants produce pollen.,perturbed
+contentwords,passive form agriculture it does not require native vegetation be cleared make way crops.,perturbed
+contentwords,beekeepers also discourage use pesticides crops they kill honeybees.,perturbed
+functionwords,the of.,perturbed
+functionwords,in every to that.,perturbed
+functionwords,as a of that to for.,perturbed
+functionwords,the of on because could the.,perturbed
+sentenceshuffle-random,and for society hip fractures involve substantial expense and time in the hospital.,perturbed
+sentenceshuffle-random,mosquitos are thin small flying insects that emit a high-pitched sound.,perturbed
+sentenceshuffle-random,elephants are the largest kind of land mammal weighing several tons.,perturbed
+sentenceshuffle-random,a raven is a large black bird that thrives in many climates.,perturbed
+sentenceshuffle-topic-criteria,clearly he had it tailored as it fit the man perfectly.,perturbed
+sentenceshuffle-topic-criteria,a log cabin is a small house built from round logs.,perturbed
+sentenceshuffle-topic-criteria,people use bicycles for transportation recreation and racing.,perturbed
+sentenceshuffle-topic-criteria,a tuxedo jacket is a tailless dinner jacket with black silk lapels.,perturbed
+sentenceshuffle-topic-length-criteria,its purpose was to dominate its surroundings.,perturbed
+sentenceshuffle-topic-length-criteria,drunk driving of any vehicle is a crime in most of the world.,perturbed
+sentenceshuffle-topic-length-criteria,we poured the cream mixture into a frozen tub then start turning the crank to expose it to the cold.,perturbed
+sentenceshuffle-topic-length-criteria,no one really knows exactly how a taste gets from your mouth to your brain.,perturbed
+sentenceshuffle-topic-length-criteria,its purpose was to dominate its surroundings.,perturbed
+sentenceshuffle-topic-length-criteria,drunk driving of any vehicle is a crime in most of the world.,perturbed
+sentenceshuffle-topic-length-criteria,we poured the cream mixture into a frozen tub then start turning the crank to expose it to the cold.,perturbed
+sentenceshuffle-topic-length-criteria,no one really knows exactly how a taste gets from your mouth to your brain.,perturbed
+sentenceshuffle-withinpassage,it is in every beekeeper's interest to conserve local plants that produce pollen.,perturbed
+sentenceshuffle-withinpassage,beekeepers also discourage the use of pesticides on crops because they could kill the honeybees.,perturbed
+sentenceshuffle-withinpassage,beekeeping encourages the conservation of local habitats.,perturbed
+sentenceshuffle-withinpassage,as a passive form of agriculture it does not require that native vegetation be cleared to make way for crops.,perturbed
+sentenceshuffle-withintopic,artisanal honey-making emphasizes quality and character over quantity and consistency.,perturbed
+sentenceshuffle-withintopic,beekeeping encourages the conservation of local habitats.,perturbed
+sentenceshuffle-withintopic,the beekeeper checks honey stores pollen supplies and the bee nursery.,perturbed
+sentenceshuffle-withintopic,bees crawl across his bare arms and hands but they don't sting because they're gentle.,perturbed
