@@ -1004,19 +1004,19 @@ class PereiraEncoding_PerturbedPassageShuffle(_PereiraBenchmarkScrambled): #Sent
         return super(PereiraEncoding_PerturbedPassageShuffle, self).ceiling
 
 
-class PereiraEncoding_PerturbedTopicShuffle(_PereiraBenchmarkScrambled): #Sentences are shuffled within a topic
+class PereiraEncoding_PerturbedShuffleWithinTopic(_PereiraBenchmarkScrambled): #Sentences are shuffled within a topic
 
-    def __init__(self, scrambled_version="sentenceshuffle_passage", **kwargs):
+    def __init__(self, scrambled_version="sentenceshuffle_topic", **kwargs):
         metric = CrossRegressedCorrelation(
             regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
             crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
-        super(PereiraEncoding_PerturbedTopicShuffle, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-sentenceshuffle_topic'
+        super(PereiraEncoding_PerturbedShuffleWithinTopic, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-sentenceshuffle_topic'
 
     @property
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
-        return super(PereiraEncoding_PerturbedTopicShuffle, self).ceiling
+        return super(PereiraEncoding_PerturbedShuffleWithinTopic, self).ceiling
     
     
 
@@ -1055,7 +1055,7 @@ benchmark_pool = [
     ('Pereira2018-encoding-perturb-sentenceshuffle_random-topic-criteria', PereiraEncoding_PerturbedRandomSentenceShuffle_TopicCriteria), #randomly shuffle sentences across datasets/experiments, not from same topic
     ('Pereira2018-encoding-perturb-sentenceshuffle_random-topic-length-criteria', PereiraEncoding_PerturbedRandomSentenceShuffle_TopicLengthCriteria), #randomly shuffle sentences across datasets/experiments, not from same topic, length-matched
     ('Pereira2018-encoding-perturb-sentenceshuffle_passage', PereiraEncoding_PerturbedPassageShuffle), #shuffle sentences within passage
-    ('Pereira2018-encoding-perturb-sentenceshuffle_topic', PereiraEncoding_PerturbedTopicShuffle), #shuffle sentences within topic
+    ('Pereira2018-encoding-perturb-sentenceshuffle_topic', PereiraEncoding_PerturbedShuffleWithinTopic), #shuffle sentences within topic
 ]
 
 benchmark_pool = {identifier: LazyLoad(lambda identifier=identifier, ctr=ctr: ctr(identifier=identifier))
