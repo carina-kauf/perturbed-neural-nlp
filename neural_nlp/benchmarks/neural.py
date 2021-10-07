@@ -470,6 +470,7 @@ class _PereiraBenchmarkScrambled(Benchmark):
                               'contentwords': os.path.join(scrambled_data_dir, 'stimuli_contentwords.pkl'),
                               'nouns': os.path.join(scrambled_data_dir, 'stimuli_nouns.pkl'),
                               'random-nouns': os.path.join(scrambled_data_dir, 'stimuli_randomnouns.pkl'),
+                              'random-nouns-controlled': os.path.join(scrambled_data_dir, 'stimuli_randomnouns_controlled.pkl'),
                               'verbs': os.path.join(scrambled_data_dir, 'stimuli_verbs.pkl'),
                               'nounsverbs': os.path.join(scrambled_data_dir, 'stimuli_nounsverbs.pkl'),
                               'nounsverbsadj': os.path.join(scrambled_data_dir, 'stimuli_nounsverbsadj.pkl'),
@@ -882,6 +883,21 @@ class PereiraEncoding_PerturbedRandomN(_PereiraBenchmarkScrambled):
     def ceiling(self):
         return super(PereiraEncoding_PerturbedRandomN, self).ceiling
     
+class PereiraEncoding_PerturbedRandomNControlled(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="random-nouns-controlled", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
+        super(PereiraEncoding_PerturbedRandomNControlled, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-random-nouns-controlled'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_PerturbedRandomNControlled, self).ceiling
+
+    
     
 class PereiraEncoding_PerturbedV(_PereiraBenchmarkScrambled):
 
@@ -1061,6 +1077,7 @@ benchmark_pool = [
     #perturbation benchmarks > information loss manipulations
     ('Pereira2018-encoding-perturb-nouns', PereiraEncoding_PerturbedN), #keep only nouns
     ('Pereira2018-encoding-perturb-random-nouns', PereiraEncoding_PerturbedRandomN), #nouns in each sentence replaced by random nouns
+    ('Pereira2018-encoding-perturb-random-nouns-controlled', PereiraEncoding_PerturbedRandomNControlled), #nouns in each sentence replaced by random nouns, condition: nouns were not part of the original sentence
     ('Pereira2018-encoding-perturb-verbs', PereiraEncoding_PerturbedV), #currently not running
     ('Pereira2018-encoding-perturb-nounsverbs', PereiraEncoding_PerturbedNV),
     ('Pereira2018-encoding-perturb-nounsverbsadj', PereiraEncoding_PerturbedNVA),
