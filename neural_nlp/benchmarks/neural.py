@@ -456,6 +456,8 @@ class _PereiraBenchmarkScrambled(Benchmark):
         scrambled_data_dir = os.path.join(ressources_dir, "scrambled_stimuli_dfs/")
 
         STIMULI_TO_PKL_MAP = {'Original': os.path.join(scrambled_data_dir, 'stimuli_Original.pkl'),
+                              # length control
+                              'length-control': os.path.join(scrambled_data_dir, 'stimuli_length_control.pkl'),
                               # scrambling | word order manipulations
                               'Scr1': os.path.join(scrambled_data_dir, 'stimuli_Scr1.pkl'),
                               'Scr3': os.path.join(scrambled_data_dir, 'stimuli_Scr3.pkl'),
@@ -1049,8 +1051,24 @@ class PereiraEncoding_PerturbedShuffleWithinTopic(_PereiraBenchmarkScrambled): #
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncoding_PerturbedShuffleWithinTopic, self).ceiling
+
+###################################
+##### LENGTH-CONTROL BENCHMARK
+###################################
     
-    
+class PereiraEncoding_LengthControl(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="length-control", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
+        super(PereiraEncoding_LengthControl, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-length-control'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_LengthControl, self).ceiling
 
 ###################################
 ##### END PERTURBATION BENCHMARKS
@@ -1063,6 +1081,8 @@ benchmark_pool = [
     # secondary benchmarks
     ('Pereira2018-rdm', PereiraRDM),
     ('Pereira2018-cka', PereiraCKA),
+    #length-control benchmark
+    ('Pereira2018-encoding-length-control', PereiraEncoding_LengthControl), #length control (#words-many 'the's), no sentence-internal punctuation but final period.
     #scrambling benchmarks > word order manipulations
     ('Pereira2018-encoding-scrambled-original', PereiraEncoding_ScrOriginal), #lower-cased, no sentence-internal punctuation but final period. (keeps hyphens, apostrophe, currency & units)
     ('Pereira2018-encoding-scrambled1', PereiraEncoding_Scr1),
