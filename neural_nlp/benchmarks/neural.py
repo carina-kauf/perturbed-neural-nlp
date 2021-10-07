@@ -474,6 +474,7 @@ class _PereiraBenchmarkScrambled(Benchmark):
                               'nounsverbs': os.path.join(scrambled_data_dir, 'stimuli_nounsverbs.pkl'),
                               'nounsverbsadj': os.path.join(scrambled_data_dir, 'stimuli_nounsverbsadj.pkl'),
                               'functionwords': os.path.join(scrambled_data_dir, 'stimuli_functionwords.pkl'),
+                              'nouns-delete50percent': os.path.join(scrambled_data_dir, 'stimuli_nouns_delete50percent.pkl'),
                               # perturbation | sentence meaning manipulations
                               'sentenceshuffle_random': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-random.pkl'),
                               'sentenceshuffle_random-topic-criteria': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-topic-criteria.pkl'),
@@ -926,6 +927,21 @@ class PereiraEncoding_PerturbedNVA(_PereiraBenchmarkScrambled):
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncoding_PerturbedNVA, self).ceiling
+    
+
+class PereiraEncoding_PerturbedNDel50Percent(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="nouns-delete50percent", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
+        super(PereiraEncoding_PerturbedNDel50Percent, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-nouns-delete50percent'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_PerturbedNDel50Percent, self).ceiling
 
 class PereiraEncoding_PerturbedFN(_PereiraBenchmarkScrambled):
 
@@ -1049,6 +1065,7 @@ benchmark_pool = [
     ('Pereira2018-encoding-perturb-nounsverbs', PereiraEncoding_PerturbedNV),
     ('Pereira2018-encoding-perturb-nounsverbsadj', PereiraEncoding_PerturbedNVA),
     ('Pereira2018-encoding-perturb-contentwords', PereiraEncoding_PerturbedContentWords), #keep only content words (nouns, verbs, adj, adv)
+    ('Pereira2018-encoding-perturb-nouns-delete50percent', PereiraEncoding_PerturbedNDel50Percent), #keep only 50% (randomly selected) of nouns
     ('Pereira2018-encoding-perturb-functionwords', PereiraEncoding_PerturbedFN),
     #perturbation benchmarks > sentence meaning manipulations
     ('Pereira2018-encoding-perturb-sentenceshuffle_random', PereiraEncoding_PerturbedRandomSentenceShuffle), #randomly shuffle sentences across datasets/experiments
