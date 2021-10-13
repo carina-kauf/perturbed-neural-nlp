@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 #SBATCH --job-name=pPMI_scr
-#SBATCH --output=pPMI_scr_%j.out
-#SBATCH --error=pPMI_scr_%j.err
+#SBATCH --output=bash_output/pPMI_scr_%j.out
+#SBATCH --error=bash_output/pPMI_scr_%j.err
 #SBATCH --nodes=1
 #SBATCH --mem=15G
 #SBATCH -t 00:10:00
@@ -27,4 +27,4 @@ timestamp
 #RUN for cond in Original Scr1 Scr3 Scr5 Scr7 lowPMI lowPMI_random backward random random_poscontrolled random_withreplacement; do sbatch run_pPMI_scr.sh $cond; done
 
 #TEST
-#RUN for cond in Original; do sbatch run_pPMI_scr.sh $cond; done
+#RUN for cond in lowPMI_random backward; do sbatch run_pPMI_scr.sh $cond; done
