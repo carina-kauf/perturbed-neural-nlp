@@ -1164,9 +1164,9 @@ benchmark_pool = [
     ('Pereira2018-encoding-length-control-oov', PereiraEncoding_LengthControl_OOV), #length control (#words-many 'jdfh's), no sentence-internal punctuation but final period.
     ('Pereira2018-encoding-constant-control', PereiraEncoding_ConstantControl), #sentences are all just 'the.'
     #scrambling benchmarks > word order manipulations
-    ('Pereira2018-encoding-constant-control-noun', PereiraEncoding_ConstantControl), #sentences are all just 'house.'
+    ('Pereira2018-encoding-constant-control-noun', PereiraEncoding_ConstantControl_Noun), #sentences are all just 'house.'
     #scrambling benchmarks > word order manipulations
-    ('Pereira2018-encoding-constant-control-oov', PereiraEncoding_ConstantControl), #sentences are all just 'jdfh.'
+    ('Pereira2018-encoding-constant-control-oov', PereiraEncoding_ConstantControl_OOV), #sentences are all just 'jdfh.'
     #scrambling benchmarks > word order manipulations
     ('Pereira2018-encoding-scrambled-original', PereiraEncoding_ScrOriginal), #lower-cased, no sentence-internal punctuation but final period. (keeps hyphens, apostrophe, currency & units)
     ('Pereira2018-encoding-scrambled1', PereiraEncoding_Scr1),
