@@ -458,7 +458,11 @@ class _PereiraBenchmarkScrambled(Benchmark):
         STIMULI_TO_PKL_MAP = {'Original': os.path.join(scrambled_data_dir, 'stimuli_Original.pkl'),
                               # control conditions
                               'length-control': os.path.join(scrambled_data_dir, 'stimuli_length_control.pkl'),
+                              'length-control-noun': os.path.join(scrambled_data_dir, 'stimuli_length_control_noun.pkl'),
+                              'length-control-oov': os.path.join(scrambled_data_dir, 'stimuli_length_control_oov.pkl'),
                               'constant-control': os.path.join(scrambled_data_dir, 'stimuli_constant_control.pkl'),
+                              'constant-control-noun': os.path.join(scrambled_data_dir, 'stimuli_constant_control_noun.pkl'),
+                              'constant-control-oov': os.path.join(scrambled_data_dir, 'stimuli_constant_control_oov.pkl'),
                               # scrambling | word order manipulations
                               'Scr1': os.path.join(scrambled_data_dir, 'stimuli_Scr1.pkl'),
                               'Scr3': os.path.join(scrambled_data_dir, 'stimuli_Scr3.pkl'),
@@ -1070,6 +1074,34 @@ class PereiraEncoding_LengthControl(_PereiraBenchmarkScrambled):
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncoding_LengthControl, self).ceiling
+    
+class PereiraEncoding_LengthControl_Noun(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="length-control-noun", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
+        super(PereiraEncoding_LengthControl_Noun, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-length-control-noun'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_LengthControl_Noun, self).ceiling
+    
+class PereiraEncoding_LengthControl_OOV(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="length-control-oov", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
+        super(PereiraEncoding_LengthControl_OOV, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-length-control-oov'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_LengthControl_OOV, self).ceiling
 
 
 
@@ -1085,7 +1117,35 @@ class PereiraEncoding_ConstantControl(_PereiraBenchmarkScrambled):
     @property
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
-        return super(PereiraEncoding_ConstantControl, self).ceiling  
+        return super(PereiraEncoding_ConstantControl, self).ceiling
+    
+class PereiraEncoding_ConstantControl_Noun(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="constant-control-noun", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
+        super(PereiraEncoding_ConstantControl_Noun, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-constant-control-noun'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_ConstantControl_Noun, self).ceiling 
+
+class PereiraEncoding_ConstantControl_OOV(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="constant-control-oov", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
+        super(PereiraEncoding_ConstantControl_OOV, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-constant-control-oov'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_ConstantControl_OOV, self).ceiling 
 
 ###################################
 ##### END PERTURBATION BENCHMARKS
@@ -1100,7 +1160,13 @@ benchmark_pool = [
     ('Pereira2018-cka', PereiraCKA),
     #control benchmarks
     ('Pereira2018-encoding-length-control', PereiraEncoding_LengthControl), #length control (#words-many 'the's), no sentence-internal punctuation but final period.
+    ('Pereira2018-encoding-length-control-noun', PereiraEncoding_LengthControl_Noun), #length control (#words-many 'house's), no sentence-internal punctuation but final period.
+    ('Pereira2018-encoding-length-control-oov', PereiraEncoding_LengthControl_OOV), #length control (#words-many 'jdfh's), no sentence-internal punctuation but final period.
     ('Pereira2018-encoding-constant-control', PereiraEncoding_ConstantControl), #sentences are all just 'the.'
+    #scrambling benchmarks > word order manipulations
+    ('Pereira2018-encoding-constant-control-noun', PereiraEncoding_ConstantControl), #sentences are all just 'house.'
+    #scrambling benchmarks > word order manipulations
+    ('Pereira2018-encoding-constant-control-oov', PereiraEncoding_ConstantControl), #sentences are all just 'jdfh.'
     #scrambling benchmarks > word order manipulations
     ('Pereira2018-encoding-scrambled-original', PereiraEncoding_ScrOriginal), #lower-cased, no sentence-internal punctuation but final period. (keeps hyphens, apostrophe, currency & units)
     ('Pereira2018-encoding-scrambled1', PereiraEncoding_Scr1),
