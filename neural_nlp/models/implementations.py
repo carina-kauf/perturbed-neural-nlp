@@ -147,6 +147,65 @@ class RandomEmbedding(BrainModel):
         word_embeddings = [np.array([[self._embeddings[word] for word in sentence.split()]]) for sentence in sentences]
         return {self.available_layers[0]: word_embeddings}
 
+class SameUnits(BrainModel):
+    """
+    control model >> every sentence gets assigned the same representation (vector of ones)
+    """
+    identifier = 'same-units'
+    available_layers = [identifier]
+    default_layers = available_layers
+
+    def __init__(self, num_embeddings=768): #768 for gpt2
+        super(SameUnits, self).__init__()
+        self.num_embeddings = num_embeddings
+        self._extractor = ActivationsExtractorHelper(identifier=self.identifier,
+                                                     get_activations=self._get_activations, reset=lambda: None)
+
+    def __call__(self, *args, average_sentence=True, **kwargs):
+        if not average_sentence:
+            raise ValueError("This model only works on a sentence-level")
+        return self._extractor(*args, **kwargs)
+
+    def _get_activations(self, sentences, layers):
+        np.testing.assert_array_equal(layers, self.available_layers)
+        sentence_same = [np.ones([self.num_embeddings]) for sentence in sentences]
+        for ind in range(len(sentence_same)-1):
+            assert all(sentence_same[ind][x] == sentence_same[ind+1][x] for x in range(len(sentence_same[ind])))
+        print('Asserted!')
+        print(np.shape(sentence_same))
+        return {self.available_layers[0]: np.array(sentence_same)}
+
+
+class ConstantUnits(BrainModel):
+    """
+    control model >> every sentence gets assigned the same representation (constant random embedding for the word "the")
+    """
+    identifier = 'constant-units'
+    available_layers = [identifier]
+    default_layers = available_layers
+
+    def __init__(self, num_embeddings=768): #768 for gpt2
+        super(ConstantUnits, self).__init__()
+        self.num_embeddings = num_embeddings
+        self._random_state = RandomState(0)
+        self._embeddings = defaultdict(lambda: self._random_state.rand(num_embeddings))
+        self._extractor = ActivationsExtractorHelper(identifier=self.identifier,
+                                                     get_activations=self._get_activations, reset=lambda: None)
+
+    def __call__(self, *args, average_sentence=True, **kwargs):
+        if not average_sentence:
+            raise ValueError("This model only works on a sentence-level")
+        return self._extractor(*args, **kwargs)
+
+    def _get_activations(self, sentences, layers):
+        np.testing.assert_array_equal(layers, self.available_layers)
+        sentence_constant = np.array([self._embeddings["the"] for sentence in sentences]) #random embedding, but every sentence just gets a constant "the" as their representation.
+        print(np.shape(sentence_constant)) #should be 627*768
+        for ind in range(len(sentence_constant)-1):
+            assert all(sentence_constant[ind][x] == sentence_constant[ind+1][x] for x in range(len(sentence_constant[ind])))
+        print('Asserted!')
+        return {self.available_layers[0]: np.array(sentence_constant)}
+
 
 class ETM(BrainModel, TaskModel):
     """
@@ -1103,6 +1162,8 @@ model_pool = {
     SentenceLength.identifier: LazyLoad(SentenceLength),
     WordPosition.identifier: LazyLoad(WordPosition),
     RandomEmbedding.identifier: LazyLoad(RandomEmbedding),
+    SameUnits.identifier: LazyLoad(SameUnits),
+    ConstantUnits.identifier: LazyLoad(ConstantUnits),
     SkipThoughts.identifier: LazyLoad(SkipThoughts),
     SkipThoughts.identifier + '-untrained': LazyLoad(lambda: SkipThoughts(load_weights=False)),
     LM1B.identifier: LazyLoad(LM1B),
@@ -1121,6 +1182,8 @@ model_layers = {
     SentenceLength.identifier: SentenceLength.default_layers,
     WordPosition.identifier: WordPosition.default_layers,
     RandomEmbedding.identifier: RandomEmbedding.default_layers,
+    SameUnits.identifier: SameUnits.default_layers,
+    ConstantUnits.identifier: ConstantUnits.default_layers,
     SkipThoughts.identifier: SkipThoughts.default_layers,
     LM1B.identifier: LM1B.default_layers,
     Word2Vec.identifier: Word2Vec.default_layers,
