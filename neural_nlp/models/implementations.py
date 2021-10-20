@@ -156,7 +156,7 @@ class RandomEmbedding(BrainModel):
     available_layers = [identifier]
     default_layers = available_layers
 
-    def __init__(self, num_embeddings=1600):
+    def __init__(self, num_embeddings=768) #768 for gpt2, 1600 for gpt2-xl
         self._random_state = RandomState(0)
         self._embeddings = defaultdict(lambda: self._random_state.rand(num_embeddings))
         self._extractor = ActivationsExtractorHelper(identifier=self.identifier,
