@@ -501,8 +501,8 @@ class _PereiraBenchmarkScrambled(Benchmark):
                 else:
                     stimuli.name = f"Pereira2018-{scrambled_version}-lasttoken"  # added this
 
-                if os.getenv('SPLIT@PASSAGE', '0') == '1': #CK os environment variable with default 0 (i.e., typically taking the stimulus_id as split coordinate)
-                    stimuli.name += "_split@passage"
+                if os.getenv('SPLIT_AT_PASSAGE', '0') == '1': #CK os environment variable with default 0 (i.e., typically taking the stimulus_id as split coordinate)
+                    stimuli.name += "_split-at-passage"
 
         self._target_assembly.attrs['stimulus_set'] = stimuli
         self._target_assembly.attrs['stimulus_set_name'] = stimuli.name #CK 2021-08-05, doesn't get reset otherwise as "Pereira2018" is stores as stimulus_set_name in the stored assembly
@@ -659,7 +659,7 @@ class PereiraEncoding(_PereiraBenchmark):
 ###################################
 
 #specify split coordinate for cross-validation
-if os.getenv('SPLIT@PASSAGE', '0') == '1':
+if os.getenv('SPLIT_AT_PASSAGE', '0') == '1':
     pereira_split_coord = 'passage_index'
 else:
     pereira_split_coord = 'stimulus_id'
