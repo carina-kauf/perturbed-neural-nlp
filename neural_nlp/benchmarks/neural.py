@@ -501,6 +501,9 @@ class _PereiraBenchmarkScrambled(Benchmark):
                 else:
                     stimuli.name = f"Pereira2018-{scrambled_version}-lasttoken"  # added this
 
+                if os.getenv('SPLIT@PASSAGE', '0') == '1': #CK os environment variable with default 0 (i.e., typically taking the stimulus_id as split coordinate)
+                    stimuli.name += "_split@passage"
+
         self._target_assembly.attrs['stimulus_set'] = stimuli
         self._target_assembly.attrs['stimulus_set_name'] = stimuli.name #CK 2021-08-05, doesn't get reset otherwise as "Pereira2018" is stores as stimulus_set_name in the stored assembly
         _logger.debug(f"THIS IS THE STIMULUS SET NAME: {self._target_assembly.attrs['stimulus_set'].name}") #e.g., Stimulus set name: Pereira2018-Original-lasttoken
@@ -655,19 +658,40 @@ class PereiraEncoding(_PereiraBenchmark):
 ##### SCRAMBLING BENCHMARKS > word order manpulations
 ###################################
 
+#specify split coordinate for cross-validation
+if os.getenv('SPLIT@PASSAGE', '0') == '1':
+    pereira_split_coord = 'passage_index'
+else:
+    pereira_split_coord = 'stimulus_id'
+
 class PereiraEncoding_ScrOriginal(_PereiraBenchmarkScrambled):
 
     def __init__(self, scrambled_version="Original", **kwargs):
         metric = CrossRegressedCorrelation(
             regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
         super(PereiraEncoding_ScrOriginal, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-original'
 
     @property
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncoding_ScrOriginal, self).ceiling
+
+class PereiraEncoding_ScrOriginal_PassageSplit(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="Original", **kwargs):
+
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+        super(PereiraEncoding_ScrOriginal_PassageSplit, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-original-passagesplit'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_ScrOriginal_PassageSplit, self).ceiling
 
 class PereiraEncoding_Scr1(_PereiraBenchmarkScrambled):
 
@@ -725,6 +749,22 @@ class PereiraEncoding_Scr7(_PereiraBenchmarkScrambled):
     def ceiling(self):
         return super(PereiraEncoding_Scr7, self).ceiling
 
+
+class PereiraEncoding_Scr7_PassageSplit(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="Scr7", **kwargs):
+
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+        super(PereiraEncoding_Scr7_PassageSplit, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled7-passagesplit'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_Scr7_PassageSplit, self).ceiling
+
 class PereiraEncoding_ScrLowPMI(_PereiraBenchmarkScrambled):
 
     def __init__(self, scrambled_version="lowPMI", **kwargs):
@@ -781,6 +821,23 @@ class PereiraEncoding_ScrWordlistRandom(_PereiraBenchmarkScrambled):
     def ceiling(self):
         return super(PereiraEncoding_ScrWordlistRandom, self).ceiling
 
+
+class PereiraEncoding_ScrWordlistRandom_PassageSplit(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="random-wl", **kwargs):
+
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+        super(PereiraEncoding_ScrWordlistRandom_PassageSplit, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-random-wl-passagesplit'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_ScrWordlistRandom_PassageSplit, self).ceiling
+
+
 class PereiraEncoding_ScrRandomWLSamePOS(_PereiraBenchmarkScrambled):
 
     def __init__(self, scrambled_version="random-wl-samepos", **kwargs):
@@ -827,6 +884,20 @@ class PereiraEncoding_PerturbedN(_PereiraBenchmarkScrambled):
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncoding_PerturbedN, self).ceiling
+
+class PereiraEncoding_PerturbedN_PassageSplit(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="nouns", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+        super(PereiraEncoding_PerturbedN_PassageSplit, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-nouns-passagesplit'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_PerturbedN_PassageSplit, self).ceiling
     
     
 class PereiraEncoding_PerturbedRandomN(_PereiraBenchmarkScrambled):
@@ -842,6 +913,22 @@ class PereiraEncoding_PerturbedRandomN(_PereiraBenchmarkScrambled):
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncoding_PerturbedRandomN, self).ceiling
+
+
+class PereiraEncoding_PerturbedRandomN_PassageSplit(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="random-nouns", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+        super(PereiraEncoding_PerturbedRandomN_PassageSplit, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-random-nouns-passagesplit'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_PerturbedRandomN_PassageSplit, self).ceiling
+
     
 class PereiraEncoding_PerturbedRandomNControlled(_PereiraBenchmarkScrambled):
 
@@ -933,6 +1020,20 @@ class PereiraEncoding_PerturbedFN(_PereiraBenchmarkScrambled):
     def ceiling(self):
         return super(PereiraEncoding_PerturbedFN, self).ceiling
 
+class PereiraEncoding_PerturbedFN_PassageSplit(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="functionwords", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+        super(PereiraEncoding_PerturbedFN_PassageSplit, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-functionwords-passagesplit'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_PerturbedFN_PassageSplit, self).ceiling
+
 ###################################
 ##### PERTURBATION BENCHMARKS > sentence meaning manipulations
 ###################################
@@ -950,6 +1051,20 @@ class PereiraEncoding_PerturbedRandomSentenceShuffle(_PereiraBenchmarkScrambled)
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncoding_PerturbedRandomSentenceShuffle, self).ceiling
+
+class PereiraEncoding_PerturbedRandomSentenceShuffle_PassageSplit(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="sentenceshuffle_random", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+        super(PereiraEncoding_PerturbedRandomSentenceShuffle_PassageSplit, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-sentenceshuffle_random-passagesplit'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_PerturbedRandomSentenceShuffle_PassageSplit, self).ceiling
 
 class PereiraEncoding_PerturbedRandomSentenceShuffle_TopicCriteria(_PereiraBenchmarkScrambled):
 
@@ -994,6 +1109,21 @@ class PereiraEncoding_PerturbedShuffleWithinPassage(_PereiraBenchmarkScrambled):
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncoding_PerturbedShuffleWithinPassage, self).ceiling
+
+
+class PereiraEncoding_PerturbedShuffleWithinPassage_PassageSplit(_PereiraBenchmarkScrambled): #Sentences are shuffled within a passage (i.e., sentences with the same passageID and same experiment)
+
+    def __init__(self, scrambled_version="sentenceshuffle_passage", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+        super(PereiraEncoding_PerturbedShuffleWithinPassage_PassageSplit, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-sentenceshuffle_passage-passagesplit'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_PerturbedShuffleWithinPassage_PassageSplit, self).ceiling
 
 
 class PereiraEncoding_PerturbedShuffleWithinTopic(_PereiraBenchmarkScrambled): #Sentences are shuffled within a topic
@@ -1122,18 +1252,23 @@ benchmark_pool = [
     ('Pereira2018-encoding-constant-control-oov', PereiraEncoding_ConstantControl_OOV), #sentences are all just 'jdfh.'
     #scrambling benchmarks > word order manipulations
     ('Pereira2018-encoding-scrambled-original', PereiraEncoding_ScrOriginal), #lower-cased, no sentence-internal punctuation but final period. (keeps hyphens, apostrophe, currency & units)
+    ('Pereira2018-encoding-scrambled-original-passagesplit', PereiraEncoding_ScrOriginal_PassageSplit),
     ('Pereira2018-encoding-scrambled1', PereiraEncoding_Scr1),
     ('Pereira2018-encoding-scrambled3', PereiraEncoding_Scr3),
     ('Pereira2018-encoding-scrambled5', PereiraEncoding_Scr5),
     ('Pereira2018-encoding-scrambled7', PereiraEncoding_Scr7),
+    ('Pereira2018-encoding-scrambled7-passagesplit', PereiraEncoding_Scr7_PassageSplit),
     ('Pereira2018-encoding-scrambled-lowpmi', PereiraEncoding_ScrLowPMI),
     ('Pereira2018-encoding-scrambled-lowpmi-random', PereiraEncoding_ScrLowPMIRandom), #lowPMI random word shuffling within sentence
     ('Pereira2018-encoding-scrambled-backward', PereiraEncoding_ScrBackwardSent),
     ('Pereira2018-encoding-scrambled-random-wl', PereiraEncoding_ScrWordlistRandom),
+    ('Pereira2018-encoding-scrambled-random-wl-passagesplit', PereiraEncoding_ScrWordlistRandom_PassageSplit),
     ('Pereira2018-encoding-scrambled-random-wl-samepos', PereiraEncoding_ScrRandomWLSamePOS), #random wordlist bm, same pos distribution as original sentence
     #perturbation benchmarks > information loss manipulations
     ('Pereira2018-encoding-perturb-nouns', PereiraEncoding_PerturbedN), #keep only nouns
+    ('Pereira2018-encoding-perturb-nouns-passagesplit', PereiraEncoding_PerturbedN_PassageSplit), #keep only nouns
     ('Pereira2018-encoding-perturb-random-nouns', PereiraEncoding_PerturbedRandomN), #nouns in each sentence replaced by random nouns
+    ('Pereira2018-encoding-perturb-random-nouns-passagesplit', PereiraEncoding_PerturbedRandomN_PassageSplit),
     ('Pereira2018-encoding-perturb-random-nouns-controlled', PereiraEncoding_PerturbedRandomNControlled), #nouns in each sentence replaced by random nouns, condition: nouns were not part of the original sentence
     ('Pereira2018-encoding-perturb-verbs', PereiraEncoding_PerturbedV), #currently not running
     ('Pereira2018-encoding-perturb-nounsverbs', PereiraEncoding_PerturbedNV),
@@ -1141,11 +1276,14 @@ benchmark_pool = [
     ('Pereira2018-encoding-perturb-contentwords', PereiraEncoding_PerturbedContentWords), #keep only content words (nouns, verbs, adj, adv)
     ('Pereira2018-encoding-perturb-nouns-delete50percent', PereiraEncoding_PerturbedNDel50Percent), #keep only 50% (randomly selected) of nouns
     ('Pereira2018-encoding-perturb-functionwords', PereiraEncoding_PerturbedFN),
+    ('Pereira2018-encoding-perturb-functionwords-passagesplit', PereiraEncoding_PerturbedFN_PassageSplit),
     #perturbation benchmarks > sentence meaning manipulations
     ('Pereira2018-encoding-perturb-sentenceshuffle_random', PereiraEncoding_PerturbedRandomSentenceShuffle), #randomly shuffle sentences across datasets/experiments
+    ('Pereira2018-encoding-perturb-sentenceshuffle_random-passagesplit', PereiraEncoding_PerturbedRandomSentenceShuffle_PassageSplit),
     ('Pereira2018-encoding-perturb-sentenceshuffle_random-topic-criteria', PereiraEncoding_PerturbedRandomSentenceShuffle_TopicCriteria), #randomly shuffle sentences across datasets/experiments, not from same topic
     ('Pereira2018-encoding-perturb-sentenceshuffle_random-topic-length-criteria', PereiraEncoding_PerturbedRandomSentenceShuffle_TopicLengthCriteria), #randomly shuffle sentences across datasets/experiments, not from same topic, length-matched
     ('Pereira2018-encoding-perturb-sentenceshuffle_passage', PereiraEncoding_PerturbedShuffleWithinPassage), #shuffle sentences within passage
+    ('Pereira2018-encoding-perturb-sentenceshuffle_passage-passagesplit', PereiraEncoding_PerturbedShuffleWithinPassage_PassageSplit), #shuffle sentences within passage
     ('Pereira2018-encoding-perturb-sentenceshuffle_topic', PereiraEncoding_PerturbedShuffleWithinTopic), #shuffle sentences within topic
 ]
 

@@ -22,6 +22,9 @@ for ignore_logger in ['transformers.data.processors', 'botocore', 'boto3', 'urll
 
 def run(benchmark, model, layers=None, subsample=None):
     print(f"Environment variable AVG_TOKEN_TRANSFORMERS set to: {os.getenv('AVG_TOKEN_TRANSFORMERS')}")
+    print(f"Environment variable SPLIT@PASSAGE set to: {os.getenv('SPLIT@PASSAGE')}")
+    if os.getenv('SPLIT@PASSAGE', '0') == '1' and "passagesplit" not in benchmark:
+            raise ValueError("You want the spit_coord to be 'passage_index', but you're not running a PassageSplit benchmark!")
     start = datetime.now()
     score = score_function(model=model, layers=layers, subsample=subsample, benchmark=benchmark)
     end = datetime.now()
