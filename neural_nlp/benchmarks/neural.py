@@ -632,53 +632,6 @@ class _PereiraBenchmarkScrambled(Benchmark):
             return self._rng.choice(list(subjects), size=self._num_bootstraps)
 
 
-def listen_to(candidate, stimulus_set, reset_column='story', average_sentence=True):
-    """
-    Pass a `stimulus_set` through a model `candidate`.
-    Operates on a sentence-based `stimulus_set`.
-    """
-    activations = []
-    for story in ordered_set(stimulus_set[reset_column].values):
-        story_stimuli = stimulus_set[stimulus_set[reset_column] == story]
-        story_stimuli.name = f"{stimulus_set.name}-{story}"
-        story_activations = candidate(stimuli=story_stimuli, average_sentence=average_sentence)
-        activations.append(story_activations)
-    model_activations = merge_data_arrays(activations)
-    # merging does not maintain stimulus order. the following orders again
-    idx = [model_activations['stimulus_id'].values.tolist().index(stimulus_id) for stimulus_id in
-           itertools.chain.from_iterable(s['stimulus_id'].values for s in activations)]
-    assert len(set(idx)) == len(idx), "Found duplicate indices to order activations"
-    model_activations = model_activations[{'presentation': idx}]
-    return model_activations
-
-
-def read_words(candidate, stimulus_set, reset_column='sentence_id', copy_columns=(), average_sentence=False):
-    """
-    Pass a `stimulus_set` through a model `candidate`.
-    In contrast to the `listen_to` function, this function operates on a word-based `stimulus_set`.
-    """
-    # Input: stimulus_set = pandas df, col 1 with sentence ID and 2nd col as word.
-    activations = []
-    for i, reset_id in enumerate(ordered_set(stimulus_set[reset_column].values)):
-        part_stimuli = stimulus_set[stimulus_set[reset_column] == reset_id]
-        # stimulus_ids = part_stimuli['stimulus_id']
-        sentence_stimuli = StimulusSet({'sentence': ' '.join(part_stimuli['word']),
-                                        reset_column: list(set(part_stimuli[reset_column]))})
-        sentence_stimuli.name = f"{stimulus_set.name}-{reset_id}"
-        sentence_activations = candidate(stimuli=sentence_stimuli, average_sentence=average_sentence)
-        for column in copy_columns:
-            sentence_activations[column] = ('presentation', part_stimuli[column])
-        activations.append(sentence_activations)
-    model_activations = merge_data_arrays(activations)
-    # merging does not maintain stimulus order. the following orders again
-    idx = [model_activations['stimulus_id'].values.tolist().index(stimulus_id) for stimulus_id in
-           itertools.chain.from_iterable(s['stimulus_id'].values for s in activations)]
-    assert len(set(idx)) == len(idx), "Found duplicate indices to order activations"
-    model_activations = model_activations[{'presentation': idx}]
-
-    return model_activations
-
-
 class PereiraEncoding(_PereiraBenchmark):
     """
     data source:
