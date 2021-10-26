@@ -661,6 +661,8 @@ class PereiraEncoding(_PereiraBenchmark):
 #specify split coordinate for cross-validation
 if os.getenv('SPLIT_AT_PASSAGE', '0') == '1':
     pereira_split_coord = 'passage_index'
+elif os.getenv('SPLIT_AT_TOPIC', '0') == '1':
+    pereira_split_coord = 'passage_category'
 else:
     pereira_split_coord = 'stimulus_id'
 
@@ -692,6 +694,22 @@ class PereiraEncoding_ScrOriginal_PassageSplit(_PereiraBenchmarkScrambled):
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncoding_ScrOriginal_PassageSplit, self).ceiling
+
+
+class PereiraEncoding_ScrOriginal_TopicSplit(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="Original", **kwargs):
+
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+        super(PereiraEncoding_ScrOriginal_TopicSplit, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-original-topicsplit'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_ScrOriginal_TopicSplit, self).ceiling
 
 class PereiraEncoding_Scr1(_PereiraBenchmarkScrambled):
 
@@ -836,6 +854,22 @@ class PereiraEncoding_ScrWordlistRandom_PassageSplit(_PereiraBenchmarkScrambled)
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncoding_ScrWordlistRandom_PassageSplit, self).ceiling
+
+
+class PereiraEncoding_ScrWordlistRandom_TopicSplit(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="random-wl", **kwargs):
+
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+        super(PereiraEncoding_ScrWordlistRandom_TopicSplit, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-random-wl-topicsplit'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_ScrWordlistRandom_TopicSplit, self).ceiling
 
 
 class PereiraEncoding_ScrRandomWLSamePOS(_PereiraBenchmarkScrambled):
@@ -1253,6 +1287,7 @@ benchmark_pool = [
     #scrambling benchmarks > word order manipulations
     ('Pereira2018-encoding-scrambled-original', PereiraEncoding_ScrOriginal), #lower-cased, no sentence-internal punctuation but final period. (keeps hyphens, apostrophe, currency & units)
     ('Pereira2018-encoding-scrambled-original-passagesplit', PereiraEncoding_ScrOriginal_PassageSplit),
+    ('Pereira2018-encoding-scrambled-original-topicsplit', PereiraEncoding_ScrOriginal_TopicSplit),
     ('Pereira2018-encoding-scrambled1', PereiraEncoding_Scr1),
     ('Pereira2018-encoding-scrambled3', PereiraEncoding_Scr3),
     ('Pereira2018-encoding-scrambled5', PereiraEncoding_Scr5),
@@ -1263,6 +1298,7 @@ benchmark_pool = [
     ('Pereira2018-encoding-scrambled-backward', PereiraEncoding_ScrBackwardSent),
     ('Pereira2018-encoding-scrambled-random-wl', PereiraEncoding_ScrWordlistRandom),
     ('Pereira2018-encoding-scrambled-random-wl-passagesplit', PereiraEncoding_ScrWordlistRandom_PassageSplit),
+    ('Pereira2018-encoding-scrambled-random-wl-topicsplit', PereiraEncoding_ScrWordlistRandom_TopicSplit),
     ('Pereira2018-encoding-scrambled-random-wl-samepos', PereiraEncoding_ScrRandomWLSamePOS), #random wordlist bm, same pos distribution as original sentence
     #perturbation benchmarks > information loss manipulations
     ('Pereira2018-encoding-perturb-nouns', PereiraEncoding_PerturbedN), #keep only nouns

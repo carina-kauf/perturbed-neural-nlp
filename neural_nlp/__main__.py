@@ -23,8 +23,15 @@ for ignore_logger in ['transformers.data.processors', 'botocore', 'boto3', 'urll
 def run(benchmark, model, layers=None, subsample=None):
     print(f"Environment variable AVG_TOKEN_TRANSFORMERS set to: {os.getenv('AVG_TOKEN_TRANSFORMERS')}")
     print(f"Environment variable SPLIT_AT_PASSAGE set to: {os.getenv('SPLIT_AT_PASSAGE')}")
+    print(f"Environment variable SPLIT_AT_TOPIC set to: {os.getenv('SPLIT_AT_TOPIC')}")
+
+    if os.getenv('SPLIT_AT_PASSAGE', '0') == '1' and os.getenv('SPLIT_AT_TOPIC', '0') == '1':
+        raise ValueError("You cannot have two contradictory split_coordinates defined!")
+
     if os.getenv('SPLIT_AT_PASSAGE', '0') == '1' and "passagesplit" not in benchmark:
             raise ValueError("You want the spit_coord to be 'passage_index', but you're not running a PassageSplit benchmark!")
+    if os.getenv('SPLIT_AT_TOPIC', '0') == '1' and "topicsplit" not in benchmark:
+            raise ValueError("You want the spit_coord to be 'passage_category', but you're not running a TopicSplit benchmark!")
     start = datetime.now()
     score = score_function(model=model, layers=layers, subsample=subsample, benchmark=benchmark)
     end = datetime.now()
