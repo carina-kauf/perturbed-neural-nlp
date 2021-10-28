@@ -544,11 +544,22 @@ class _PereiraBenchmarkScrambled(Benchmark):
         model_activations = listen_to(candidate, stimulus_set, reset_column='passage_id')
         assert set(model_activations['stimulus_id'].values) == set(self._target_assembly['stimulus_id'].values)
 
+        print("\n\n***************** BEFORE CROSS_VALIDATION *****************")
+        print(stimulus_set["sentence"])
+        print(stimulus_set["stimulus_id"])
+        print(stimulus_set["passage_index"])
+        print(stimulus_set["passage_category"])
+
         _logger.info('Scoring across experiments & atlases')
         cross_scores = self._cross(self._target_assembly, apply=
         lambda cross_assembly: self._apply_cross(model_activations, cross_assembly))
         raw_scores = cross_scores.raw
         raw_neuroids = apply_aggregate(lambda values: values.mean('split').mean('experiment'), raw_scores)
+        print("\n\n***************** AFTER CROSS_VALIDATION *****************")
+        print(stimulus_set["sentence"])
+        print(stimulus_set["stimulus_id"])
+        print(stimulus_set["passage_index"])
+        print(stimulus_set["passage_category"])
 
         # normally we would ceil every single neuroid here. To estimate the strongest ceiling possible (i.e. make it as
         # hard as possible on the models), we used experiment-overlapping neuroids from as many subjects as possible
