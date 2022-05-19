@@ -506,6 +506,9 @@ class _PereiraBenchmarkScrambled(Benchmark):
                 if os.getenv('SPLIT_AT_TOPIC', '0') == '1': #CK os environment variable with default 0 (i.e., typically taking the stimulus_id as split coordinate)
                     stimuli.name += "_split-at-topic"
 
+                if os.getenv('DECONTEXTUALIZED_EMB', '0') == '1':
+                    stimuli.name += "_decontextualizedemb"
+
         self._target_assembly.attrs['stimulus_set'] = stimuli
         self._target_assembly.attrs['stimulus_set_name'] = stimuli.name #CK 2021-08-05, doesn't get reset otherwise as "Pereira2018" is stores as stimulus_set_name in the stored assembly
         _logger.debug(f"THIS IS THE STIMULUS SET NAME: {self._target_assembly.attrs['stimulus_set'].name}") #e.g., Stimulus set name: Pereira2018-Original-lasttoken
@@ -518,6 +521,8 @@ class _PereiraBenchmarkScrambled(Benchmark):
 
     @property
     def identifier(self):
+        if os.getenv('DECONTEXTUALIZED_EMB', '0') == '1':
+            self._identifier += "_decontextualizedemb"
         return self._identifier
 
     def _metric(self, source_assembly, target_assembly):
@@ -541,7 +546,11 @@ class _PereiraBenchmarkScrambled(Benchmark):
     def __call__(self, candidate):
         stimulus_set = self._target_assembly.attrs['stimulus_set']
         stimulus_set.loc[:, 'passage_id'] = stimulus_set['experiment'] + stimulus_set['passage_index'].astype(str)
-        model_activations = listen_to(candidate, stimulus_set, reset_column='passage_id')
+
+        if os.getenv('DECONTEXTUALIZED_EMB', '0') == '1':
+            model_activations = listen_to(candidate, stimulus_set, reset_column='stimulus_id')
+        else:
+            model_activations = listen_to(candidate, stimulus_set, reset_column='passage_id')
         assert set(model_activations['stimulus_id'].values) == set(self._target_assembly['stimulus_id'].values)
 
         print("\n\n***************** BEFORE CROSS_VALIDATION *****************")
