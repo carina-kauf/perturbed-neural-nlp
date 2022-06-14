@@ -12,9 +12,9 @@ _logger = logging.getLogger(__name__)
 
 
 @store(identifier_ignore=['layers', 'prerun', 'model_impl'])
-# Add OS environment variable call to decontextualized embeddings here to ensure result is saved under a different name
+# Add OS environment variable calls to sent_context & sent_context here to ensure result is saved under a different name
 # store functionality stores results and prevents recomputing if the same function is run with the same arguments!
-def score(benchmark, model, layers=None, model_impl=None, subsample=None, decontextualized=None):
+def score(benchmark, model, layers=None, model_impl=None, subsample=None, emb_context=None, split_coord=None):
     model_impl = model_impl or model_pool[model]
     if subsample:
         SubsamplingHook.hook(model, subsample)

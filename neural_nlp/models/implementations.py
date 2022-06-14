@@ -22,7 +22,6 @@ from neural_nlp.models.wrapper.pytorch import PytorchWrapper
 _ressources_dir = (Path(__file__).parent / '..' / '..' / 'ressources' / 'models').resolve()
 
 _logger = logging.getLogger(__name__)
-print("\n\n We're running in the NEW version of the implementations.py script.\n\n")
 
 
 class BrainModel:
@@ -951,7 +950,7 @@ class _PytorchTransformerWrapper(BrainModel, TaskModel):
             _logger.debug("\n".join([sentence for sentence in text]))
             _logger.debug("\n")
             # Tokenized input
-            tokenized_sentences = [self.tokenizer.tokenize(sentence) for sentence in text]
+            tokenized_sentences = [self.tokenizer.tokenize(sentence.strip()) for sentence in text] #TODO CK added 'strip' because of space after final period
             # chain
             tokenized_sentences = list(itertools.chain.from_iterable(tokenized_sentences))
             tokenized_sentences = np.array(tokenized_sentences)
@@ -980,7 +979,9 @@ class _PytorchTransformerWrapper(BrainModel, TaskModel):
                 encoded_layers = [previous_words + [word_layer_encoding] for previous_words, word_layer_encoding
                                   in zip(encoded_layers, word_encoding)]
             encoded_layers = [np.concatenate(layer_encoding, axis=1) for layer_encoding in encoded_layers]
+
             assert all(layer_encoding.shape[1] == sum(num_words) for layer_encoding in encoded_layers)
+
             # separate into sentences again
             sentence_encodings = [[layer_encoding[:, start:end, :] for start, end in
                                    zip(sentence_indices, sentence_indices[1:] + [sum(num_words)])]
@@ -1009,9 +1010,11 @@ class _PytorchTransformerWrapper(BrainModel, TaskModel):
                 token_word = ''.join(tokens).lower()
                 for special_token in self.tokenizer_special_tokens:
                     token_word = token_word.replace(special_token, '')
+
                 if sentences_chain[sentence_index].lower() != token_word:
                     previous_indices.append(token_index)
                     continue
+
                 previous_indices = []
                 sentence_index += 1
 
