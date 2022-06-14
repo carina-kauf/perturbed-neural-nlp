@@ -74,12 +74,12 @@ class ExtrapolationCeiling:
         self.num_bootstraps = num_bootstraps
         self._post_process = post_process
 
-    @store(identifier_ignore=['assembly', 'metric'])
+    #@store(identifier_ignore=['assembly', 'metric'])
     def __call__(self, identifier, assembly, metric):
         scores = self.collect(identifier, assembly=assembly, metric=metric)
         return self.extrapolate(scores)
 
-    @store(identifier_ignore=['assembly', 'metric'])
+    #@store(identifier_ignore=['assembly', 'metric'])
     def collect(self, identifier, assembly, metric):
         subjects = set(assembly[self.subject_column].values)
         subject_subsamples = self.build_subject_subsamples(subjects)
