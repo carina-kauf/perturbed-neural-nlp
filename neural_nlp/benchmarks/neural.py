@@ -1767,6 +1767,8 @@ benchmark_pool = [
     ('Pereira2018-encoding-teston:sentenceshuffle_random', PereiraEncoding_TestOnRandomSentence),
     ('Pereira2018-encoding-teston:sentenceshuffle_passage', PereiraEncoding_TestOnShuffleWithinPassage),
     ('Pereira2018-encoding-teston:sentenceshuffle_topic', PereiraEncoding_TestOnShuffleWithinTopic),
+    ('Pereira2018-encoding-teston:length-control', PereiraEncoding_TestOnLengthControl),
+    ('Pereira2018-encoding-teston:constant-control', PereiraEncoding_TestOnConstantControl)
 ]
 
 benchmark_pool = {identifier: LazyLoad(lambda identifier=identifier, ctr=ctr: ctr(identifier=identifier))
