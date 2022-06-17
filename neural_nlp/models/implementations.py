@@ -950,7 +950,7 @@ class _PytorchTransformerWrapper(BrainModel, TaskModel):
             _logger.debug("\n".join([sentence for sentence in text]))
             _logger.debug("\n")
             # Tokenized input
-            tokenized_sentences = [self.tokenizer.tokenize(sentence.strip()) for sentence in text] #TODO CK added 'strip' because of space after final period
+            tokenized_sentences = [self.tokenizer.tokenize(sentence.strip()) for sentence in text] #2 sentences in Pereira have space after final period
             # chain
             tokenized_sentences = list(itertools.chain.from_iterable(tokenized_sentences))
             tokenized_sentences = np.array(tokenized_sentences)
