@@ -20,6 +20,7 @@ def v(x, v0, tau0):
 class HoldoutSubjectCeiling:
     def __init__(self, subject_column):
         self.subject_column = subject_column
+        logging.basicConfig()
         self._logger = logging.getLogger(fullname(self))
 
     def __call__(self, assembly, metric):
@@ -67,7 +68,7 @@ class HoldoutSubjectCeiling:
 class ExtrapolationCeiling:
     def __init__(self, subject_column='subject', extrapolation_dimension='neuroid',
                  num_bootstraps=100, post_process=None):
-        self._logger = logging.getLogger(fullname(self))
+        self._logger = logging.getLogger(fullname(self)).setLevel(logging.DEBUG)
         self.subject_column = subject_column
         self.holdout_ceiling = HoldoutSubjectCeiling(subject_column=subject_column)
         self.extrapolation_dimension = extrapolation_dimension
@@ -120,10 +121,12 @@ class ExtrapolationCeiling:
     def average_collected(self, scores):
         return scores.median('neuroid')
 
-    def extrapolate(self, ceilings):
+    def extrapolate(self, ceilings): #ceilings from line 79
         neuroid_ceilings, bootstrap_params, endpoint_xs = [], [], []
+        self._logger.debug(f"Number of per-neuroid ceiling extrapolation steps: {len(ceilings[self.extrapolation_dimension])}")
         for i in trange(len(ceilings[self.extrapolation_dimension]),
                         desc=f'{self.extrapolation_dimension} extrapolations'):
+            self._logger.debug(f"i: {i}")
             try:
                 # extrapolate per-neuroid ceiling
                 neuroid_ceiling = ceilings.isel(**{self.extrapolation_dimension: [i]})
@@ -138,6 +141,7 @@ class ExtrapolationCeiling:
                 endpoint_x = self.add_neuroid_meta(extrapolated_ceiling.endpoint_x, neuroid_ceiling)
                 endpoint_xs.append(endpoint_x)
             except AxisError:  # no extrapolation successful (happens for 1 neuroid in Pereira)
+                self._logger.debug("AXISERROR")
                 continue
         # merge and add meta
         self._logger.debug("Merging neuroid ceilings")
@@ -172,7 +176,9 @@ class ExtrapolationCeiling:
         subject_subsamples = list(sorted(set(ceilings['num_subjects'].values)))
         rng = RandomState(0)
         bootstrap_params = []
+        self._logger.debug(f"Number of bootstraps: {self.num_bootstraps}")
         for bootstrap in range(self.num_bootstraps):
+            self._logger.debug(f"Current bootstrap: {bootstrap}")
             bootstrapped_scores = []
             for num_subjects in subject_subsamples:
                 num_scores = ceilings.sel(num_subjects=num_subjects)
@@ -184,6 +190,7 @@ class ExtrapolationCeiling:
                 choices = num_scores.values.flatten()
                 bootstrapped_score = rng.choice(choices, size=len(choices), replace=True)
                 bootstrapped_scores.append(np.mean(bootstrapped_score))
+            self._logger.debug(f"bootstrapped_scores: {bootstrapped_scores}")
 
             try:
                 params = self.fit(subject_subsamples, bootstrapped_scores)
@@ -192,13 +199,16 @@ class ExtrapolationCeiling:
             params = DataAssembly([params], coords={'bootstrap': [bootstrap], 'param': ['v0', 'tau0']},
                                   dims=['bootstrap', 'param'])
             bootstrap_params.append(params)
+        self._logger.debug(f"bootstrap_params: {bootstrap_params}")
         bootstrap_params = merge_data_arrays(bootstrap_params)
         # find endpoint and error
         asymptote_threshold = .0005
         interpolation_xs = np.arange(1000)
         ys = np.array([v(interpolation_xs, *params) for params in bootstrap_params.values
                        if not np.isnan(params).any()])
+        self._logger.debug(f"ys of interpolation: {ys}")
         median_ys = np.median(ys, axis=0)
+        self._logger.debug(f"median_ys: {median_ys}")
         diffs = np.diff(median_ys)
         end_x = np.where(diffs < asymptote_threshold)[0].min()  # first x where increase smaller than threshold
         # put together

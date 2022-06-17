@@ -9,19 +9,17 @@ import numpy as np
 from brainio_base.assemblies import DataAssembly, walk_coords, merge_data_arrays, array_is_element
 from numpy.random.mtrand import RandomState
 from scipy.stats import median_absolute_deviation
-from tqdm import tqdm
 
 from pathlib import Path
 import os
 import pandas as pd
-import pickle
 
 from brainscore.benchmarks import Benchmark
 from brainscore.metrics import Score
 from brainscore.metrics.rdm import RDM, RDMSimilarity, RDMCrossValidated
 #from brainscore.metrics.cka import CKACrossValidated
-from brainscore.metrics.regression import linear_regression, pearsonr_correlation, CrossRegressedCorrelation
-from brainscore.metrics.transformations import CartesianProduct, CrossValidation, apply_aggregate
+from brainscore.metrics.regression import linear_regression, pearsonr_correlation#, CrossRegressedCorrelation
+from brainscore.metrics.transformations import CartesianProduct, apply_aggregate#CrossValidation
 from brainscore.utils import LazyLoad
 from neural_nlp.benchmarks.ceiling import ExtrapolationCeiling, HoldoutSubjectCeiling
 from neural_nlp.benchmarks.s3 import load_s3
@@ -30,6 +28,7 @@ from neural_nlp.neural_data.fmri import load_voxels, load_rdm_sentences, \
 from neural_nlp.stimuli import load_stimuli, StimulusSet
 from neural_nlp.utils import ordered_set
 from result_caching import store
+from neural_nlp.benchmarks.new_crossregression import CrossRegressedCorrelationPerturbed, CrossRegressedCorrelation, CrossValidation
 
 ressources_dir = (Path(os.getcwd()) / 'ressources').resolve()
 
@@ -108,12 +107,12 @@ class _PereiraBenchmark(Benchmark):
         stimuli = self._target_assembly.attrs['stimulus_set']
         stimuli.name = self._target_assembly.attrs['stimulus_set_name']
 
-        if os.getenv('SPLIT_AT_PASSAGE', '0') == '1': #CK os environment variable with default 0 (i.e., typically taking the stimulus_id as split coordinate)
-            stimuli.name += ",split_coord=Passage"
-        elif os.getenv('SPLIT_AT_TOPIC', '0') == '1':
-            stimuli.name += ",split_coord=Topic"
-        else:
-            stimuli.name += ",split_coord=Sentence"
+        # if os.getenv('SPLIT_AT_PASSAGE', '0') == '1': #CK not needed for stimuli as this is about the cross_val
+        #     stimuli.name += ",split_coord=Passage"
+        # elif os.getenv('SPLIT_AT_TOPIC', '0') == '1':
+        #     stimuli.name += ",split_coord=Topic"
+        # else:
+        #     stimuli.name += ",split_coord=Sentence"
 
         if os.getenv('DECONTEXTUALIZED_EMB', '0') == '1':
             stimuli.name += ",emb_context=Sentence"
@@ -127,6 +126,7 @@ class _PereiraBenchmark(Benchmark):
         _logger.debug(f"THIS IS THE STIMULUS SET NAME: {self._target_assembly.attrs['stimulus_set'].name}") #e.g., Stimulus set name: Pereira2018-Original-lasttoken
 
         self._single_metric = metric
+        print(self._single_metric)
         self._ceiler = self.PereiraExtrapolationCeiling(subject_column='subject', num_bootstraps=100)
         self._cross = CartesianProduct(dividers=['experiment', 'atlas'])
 
@@ -306,26 +306,6 @@ def read_words(candidate, stimulus_set, reset_column='sentence_id', copy_columns
     return model_activations
 
 
-class PereiraEncoding(_PereiraBenchmark):
-    """
-    data source:
-        Pereira et al., nature communications 2018
-        https://www.nature.com/articles/s41467-018-03068-4?fbclid=IwAR0W7EZrnIFFO1kvANgeOEICaoDG5fhmdHipazy6n-APUJ6lMY98PkvuTyU
-    """
-
-    def __init__(self, **kwargs):
-        metric = CrossRegressedCorrelation(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord='stimulus_id', stratification_coord=None))
-        super(PereiraEncoding, self).__init__(metric=metric, **kwargs)
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncoding, self).ceiling
-
-
 class _PereiraSubjectWise(_PereiraBenchmark):
     def __init__(self, **kwargs):
         super(_PereiraSubjectWise, self).__init__(**kwargs)
@@ -389,23 +369,23 @@ class PereiraRDM(_PereiraSubjectWise):
         return super(PereiraRDM, self).ceiling
 
 
-class PereiraCKA(_PereiraSubjectWise):
-    """
-    data source:
-        Pereira et al., nature communications 2018
-        https://www.nature.com/articles/s41467-018-03068-4?fbclid=IwAR0W7EZrnIFFO1kvANgeOEICaoDG5fhmdHipazy6n-APUJ6lMY98PkvuTyU
-    """
-
-    def __init__(self, **kwargs):
-        metric = CKACrossValidated(
-            comparison_coord='stimulus_id',
-            crossvalidation_kwargs=dict(split_coord='stimulus_id', stratification_coord=None, splits=5,
-                                        kfold=True, test_size=None))
-        super(PereiraCKA, self).__init__(metric=metric, **kwargs)
-
-    @property
-    def ceiling(self):
-        return super(_PereiraSubjectWise, self).ceiling
+# class PereiraCKA(_PereiraSubjectWise):
+#     """
+#     data source:
+#         Pereira et al., nature communications 2018
+#         https://www.nature.com/articles/s41467-018-03068-4?fbclid=IwAR0W7EZrnIFFO1kvANgeOEICaoDG5fhmdHipazy6n-APUJ6lMY98PkvuTyU
+#     """
+#
+#     def __init__(self, **kwargs):
+#         metric = CKACrossValidated(
+#             comparison_coord='stimulus_id',
+#             crossvalidation_kwargs=dict(split_coord='stimulus_id', stratification_coord=None, splits=5,
+#                                         kfold=True, test_size=None))
+#         super(PereiraCKA, self).__init__(metric=metric, **kwargs)
+#
+#     @property
+#     def ceiling(self):
+#         return super(_PereiraSubjectWise, self).ceiling
 
 
 def aggregate(score, combine_layers=True):
@@ -529,12 +509,12 @@ class _PereiraBenchmarkScrambled(Benchmark):
                 else:
                     stimuli.name = f"Pereira2018-{scrambled_version}-lasttoken"  # added this
 
-                if os.getenv('SPLIT_AT_PASSAGE', '0') == '1':  # CK os environment variable with default 0 (i.e., typically taking the stimulus_id as split coordinate)
-                    stimuli.name += ",split_coord=Passage"
-                elif os.getenv('SPLIT_AT_TOPIC', '0') == '1':
-                    stimuli.name += ",split_coord=Topic"
-                else:
-                    stimuli.name += ",split_coord=Sentence"
+                # if os.getenv('SPLIT_AT_PASSAGE', '0') == '1':  # CK os environment variable with default 0 (i.e., typically taking the stimulus_id as split coordinate)
+                #     stimuli.name += ",split_coord=Passage"
+                # elif os.getenv('SPLIT_AT_TOPIC', '0') == '1':
+                #     stimuli.name += ",split_coord=Topic"
+                # else:
+                #     stimuli.name += ",split_coord=Sentence"
 
                 if os.getenv('DECONTEXTUALIZED_EMB', '0') == '1':
                     stimuli.name += ",emb_context=Sentence"
@@ -586,18 +566,11 @@ class _PereiraBenchmarkScrambled(Benchmark):
 
         assert set(model_activations['stimulus_id'].values) == set(self._target_assembly['stimulus_id'].values)
 
-        print("\n\n***************** BEFORE CROSS_VALIDATION *****************")
-        check_df = stimulus_set[["sentence", "stimulus_id", "passage_index", "passage_category"]]
-        print(check_df.head(10))
-
         _logger.info('Scoring across experiments & atlases')
         cross_scores = self._cross(self._target_assembly, apply=
         lambda cross_assembly: self._apply_cross(model_activations, cross_assembly))
         raw_scores = cross_scores.raw
         raw_neuroids = apply_aggregate(lambda values: values.mean('split').mean('experiment'), raw_scores)
-        print("\n\n***************** AFTER CROSS_VALIDATION *****************")
-        check_df = stimulus_set[["sentence", "stimulus_id", "passage_index", "passage_category"]]
-        print(check_df.head(10))
 
         # normally we would ceil every single neuroid here. To estimate the strongest ceiling possible (i.e. make it as
         # hard as possible on the models), we used experiment-overlapping neuroids from as many subjects as possible
@@ -694,7 +667,7 @@ elif os.getenv('SPLIT_AT_TOPIC', '0') == '1':
 else:
     pereira_split_coord = 'stimulus_id'
 
-_logger.info(f"Cross validation split coordinate is {pereira_split_coord}")
+_logger.info(f"\nCross validation split coordinate is {pereira_split_coord}\n")
 
 ###################################
 ##### ORIGINAL BENCHMARK
@@ -1221,64 +1194,40 @@ class _PereiraBenchmarkTestOnPerturbed(Benchmark):
         https://www.nature.com/articles/s41467-018-03068-4
     """
 
-    def __init__(self, train_identifier, test_identifier, metric, scrambled_version, data_version='base'):
-        self._train_identifier = train_identifier
-        self._train_data_version = data_version
-        self._train_target_assembly = LazyLoad(lambda: self._load_assembly(version=self._train_data_version))
-
-        self._test_identifier = test_identifier
-        self._test_data_version = data_version
-        self._test_target_assembly = LazyLoad(lambda: self._load_assembly(version=self._test_data_version))
+    def __init__(self, identifier, metric, scrambled_version, data_version='base'):
+        self._identifier = identifier
+        self._data_version = data_version
+        self._target_assembly = LazyLoad(lambda: self._load_assembly(version=self._data_version))
 
         self.scrambled_version = scrambled_version
 
+        # load the scrambled-original stimuli as train dataset
         scrambled_data_dir = os.path.join(ressources_dir, "scrambled_stimuli_dfs/")
+        stimuli = pd.read_pickle(os.path.join(scrambled_data_dir, 'stimuli_Original.pkl'))
 
-        STIMULI_TO_PKL_MAP = {'Original': os.path.join(scrambled_data_dir, 'stimuli_Original.pkl'),
-                              # control conditions
-                              'length-control': os.path.join(scrambled_data_dir, 'stimuli_length_control.pkl'),
-                              'length-control-noun': os.path.join(scrambled_data_dir, 'stimuli_length_control_noun.pkl'),
-                              'length-control-oov': os.path.join(scrambled_data_dir, 'stimuli_length_control_oov.pkl'),
-                              'constant-control': os.path.join(scrambled_data_dir, 'stimuli_constant_control.pkl'),
-                              'constant-control-noun': os.path.join(scrambled_data_dir, 'stimuli_constant_control_noun.pkl'),
-                              'constant-control-oov': os.path.join(scrambled_data_dir, 'stimuli_constant_control_oov.pkl'),
-                              # scrambling | word order manipulations
-                              'Scr1': os.path.join(scrambled_data_dir, 'stimuli_Scr1.pkl'),
-                              'Scr3': os.path.join(scrambled_data_dir, 'stimuli_Scr3.pkl'),
-                              'Scr5': os.path.join(scrambled_data_dir, 'stimuli_Scr5.pkl'),
-                              'Scr7': os.path.join(scrambled_data_dir, 'stimuli_Scr7.pkl'),
-                              'backward': os.path.join(scrambled_data_dir, 'stimuli_backward.pkl'),
-                              'random-wl': os.path.join(scrambled_data_dir, 'stimuli_random.pkl'),
-                              'random-wl-samepos': os.path.join(scrambled_data_dir, 'stimuli_random_poscontrolled.pkl'),
-                              'lowPMI': os.path.join(scrambled_data_dir, 'stimuli_lowPMI.pkl'),
-                              'lowPMI-random': os.path.join(scrambled_data_dir, 'stimuli_lowPMI_random.pkl'),
-                              # perturbation | information loss manipulations
-                              'contentwords': os.path.join(scrambled_data_dir, 'stimuli_contentwords.pkl'),
-                              'nouns': os.path.join(scrambled_data_dir, 'stimuli_nouns.pkl'),
-                              'random-nouns': os.path.join(scrambled_data_dir, 'stimuli_randomnouns.pkl'),
-                              'random-nouns-controlled': os.path.join(scrambled_data_dir, 'stimuli_randomnouns_controlled.pkl'),
-                              'verbs': os.path.join(scrambled_data_dir, 'stimuli_verbs.pkl'),
-                              'nounsverbs': os.path.join(scrambled_data_dir, 'stimuli_nounsverbs.pkl'),
-                              'nounsverbsadj': os.path.join(scrambled_data_dir, 'stimuli_nounsverbsadj.pkl'),
-                              'functionwords': os.path.join(scrambled_data_dir, 'stimuli_functionwords.pkl'),
-                              'nouns-delete50percent': os.path.join(scrambled_data_dir, 'stimuli_nouns_delete50percent.pkl'),
-                              # perturbation | sentence meaning manipulations
-                              'sentenceshuffle_random': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-random.pkl'),
-                              'sentenceshuffle_random-topic-criteria': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-topic-criteria.pkl'),
-                              'sentenceshuffle_random-topic-length-criteria': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-topic-length-criteria.pkl'),
-                              'sentenceshuffle_passage': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-withinpassage.pkl'),
-                              'sentenceshuffle_topic': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-withintopic.pkl')
-                              }
+        if os.getenv('AVG_TOKEN_TRANSFORMERS', '0') == '1':  # CK
+            stimuli.name = f"Pereira2018-{scrambled_version}-avgtoken"  # added this
+        else:
+            stimuli.name = f"Pereira2018-{scrambled_version}-lasttoken"  # added this
 
+        if os.getenv('SPLIT_AT_PASSAGE','0') == '1':
+            stimuli.name += ",split_coord=Passage"
+        elif os.getenv('SPLIT_AT_TOPIC', '0') == '1':
+            stimuli.name += ",split_coord=Topic"
+        else:
+            stimuli.name += ",split_coord=Sentence"
 
-        for key in STIMULI_TO_PKL_MAP.keys():
-            if scrambled_version == key:
-                _logger.debug(f"I AM USING THIS DATA VERSION: {key}")
-                stimuli = pd.read_pickle(STIMULI_TO_PKL_MAP[key])
+        if os.getenv('DECONTEXTUALIZED_EMB', '0') == '1':
+            stimuli.name += ",emb_context=Sentence"
+        elif os.getenv('PAPER_GROUPING', '0') == '1':
+            stimuli.name += ",emb_context=Topic"
+        else:
+            stimuli.name += ",emb_context=Passage"
 
-        self._test_target_assembly.attrs['stimulus_set'] = stimuli
-        self._test_target_assembly.attrs['stimulus_set_name'] = stimuli.name
-        _logger.debug(f"THIS IS THE TEST STIMULUS SET NAME: {self._test_target_assembly.attrs['stimulus_set'].name}")
+        self._target_assembly.attrs['stimulus_set'] = stimuli
+        self._target_assembly.attrs['stimulus_set_name'] = stimuli.name
+        _logger.debug(f"WE'RE TRAINING ON ACTIVATIONS FROM THIS STIMULUS SET: {self._target_assembly.attrs['stimulus_set'].name}")
+        _logger.debug(f"WE'RE TESTING ON ACTIVATIONS FROM SCRAMBLED VERSION: {self.scrambled_version}")
 
         self._single_metric = metric
         self._ceiler = self.PereiraExtrapolationCeiling(subject_column='subject', num_bootstraps=100)
@@ -1287,7 +1236,7 @@ class _PereiraBenchmarkTestOnPerturbed(Benchmark):
 
     @property
     def identifier(self):
-        self._identifier += f"_Train=Original,Test={self.scrambled_version}"
+        self._identifier += f"_TrainOn=ScrOriginal,TestOn={self.scrambled_version}"
         return self._identifier
 
     def _metric(self, source_assembly, target_assembly):
@@ -1342,9 +1291,43 @@ class _PereiraBenchmarkTestOnPerturbed(Benchmark):
         source_assembly = source_assembly.dropna('neuroid')  # only relevant when running audio-visual self as "model"
         assert len(cross_assembly['presentation']) in [243, 384]
         assert not np.isnan(cross_assembly).any()
-        source_assembly = source_assembly[{'presentation': [stimulus_id in cross_assembly['stimulus_id'].values
+        source_assembly_train = source_assembly[{'presentation': [stimulus_id in cross_assembly['stimulus_id'].values
                                                             for stimulus_id in source_assembly['stimulus_id'].values]}]
-        return self._single_metric(source_assembly, cross_assembly) #TODO CK here we want the latter to be the test assembly! But what is cross_assembly?
+        source_assembly_test = source_assembly_train.copy(deep=True)
+
+        from neural_nlp.benchmarks.utils import load_activations_into_matrix
+        path = '/om2/user/ckauf/.result_caching/neural_nlp.models.wrapper.core.ActivationsExtractorHelper._from_sentences_stored'
+        layer_identifier = np.unique(source_assembly_test.layer.data)
+        assert len(layer_identifier) == 1
+        layer_identifier = layer_identifier[0]
+        stimuli_identifier = 'Pereira2018-Original' #todo change relative to scrambled version
+        agg = 'lasttoken'
+        expt = np.unique(source_assembly_test.experiment.data)
+        assert len(expt) == 1
+        expt = expt[0]
+        identifier = np.unique(source_assembly_test.model.data)[0]
+
+        d_expt = {'243sentences': np.arange(1, 72 + 1),
+                  '384sentences': np.arange(1, 96 + 1)}
+
+        activations_matrix, flat_sentence_array, flat_sentence_num_array = load_activations_into_matrix(
+            identifier=identifier,
+            stimuli_identifier=stimuli_identifier,
+            agg=agg,
+            expt=expt,
+            layer_identifier=layer_identifier,
+            path=path,
+            d_expt=d_expt)
+
+        sentencelist = list(source_assembly_train.sentence.data)
+
+        assert len(sentencelist) == len(flat_sentence_array)
+        if self.scrambled_version == "Original":
+            assert all([a == b for a, b in zip(sentencelist, flat_sentence_array)])
+
+        source_assembly_test.values = activations_matrix
+
+        return self._single_metric(source_train_emb=source_assembly_train, source_test_emb=source_assembly_test, target=cross_assembly)
 
     @property
     def ceiling(self):
@@ -1352,10 +1335,10 @@ class _PereiraBenchmarkTestOnPerturbed(Benchmark):
 
     class PereiraExtrapolationCeiling(ExtrapolationCeiling):
         def __init__(self, subject_column, *args, **kwargs):
-            super(_PereiraBenchmark.PereiraExtrapolationCeiling, self).__init__(
+            super(_PereiraBenchmarkTestOnPerturbed.PereiraExtrapolationCeiling, self).__init__(
                 subject_column, *args, **kwargs)
             self._num_subsamples = 10
-            self.holdout_ceiling = _PereiraBenchmark.PereiraHoldoutSubjectCeiling(subject_column=subject_column)
+            self.holdout_ceiling = _PereiraBenchmarkTestOnPerturbed.PereiraHoldoutSubjectCeiling(subject_column=subject_column)
             self._rng = RandomState(0)
 
         def iterate_subsets(self, assembly, num_subjects):
@@ -1406,13 +1389,41 @@ class _PereiraBenchmarkTestOnPerturbed(Benchmark):
 
     class PereiraHoldoutSubjectCeiling(HoldoutSubjectCeiling):
         def __init__(self, *args, **kwargs):
-            super(_PereiraBenchmark.PereiraHoldoutSubjectCeiling, self).__init__(*args, **kwargs)
+            super(_PereiraBenchmarkTestOnPerturbed.PereiraHoldoutSubjectCeiling, self).__init__(*args, **kwargs)
             self._rng = RandomState(0)
             self._num_bootstraps = 5
 
         def get_subject_iterations(self, subjects):
             # use only a subset of subjects
             return self._rng.choice(list(subjects), size=self._num_bootstraps)
+
+class PereiraEncoding_Original_Test(_PereiraBenchmarkTestOnPerturbed):
+
+    def __init__(self, scrambled_version="Original", **kwargs):
+        metric = CrossRegressedCorrelationPerturbed(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+        super(PereiraEncoding_Original_Test, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-test'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_Original_Test, self).ceiling
+
+class PereiraEncoding_Original_TestScr1(_PereiraBenchmarkTestOnPerturbed):
+
+    def __init__(self, scrambled_version="Scr1", **kwargs):
+        metric = CrossRegressedCorrelationPerturbed(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+        super(PereiraEncoding_Original_Test, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-test'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_Original_Test, self).ceiling
 
 
 #########################################
@@ -1426,7 +1437,7 @@ benchmark_pool = [
     ('Pereira2018-encoding', PereiraEncoding),
     # secondary benchmarks
     ('Pereira2018-rdm', PereiraRDM),
-    ('Pereira2018-cka', PereiraCKA),
+    # ('Pereira2018-cka', PereiraCKA),
     #control benchmarks
     ('Pereira2018-encoding-length-control', PereiraEncoding_LengthControl), #length control (#words-many 'the's), no sentence-internal punctuation but final period.
     ('Pereira2018-encoding-length-control-noun', PereiraEncoding_LengthControl_Noun), #length control (#words-many 'house's), no sentence-internal punctuation but final period.
@@ -1466,6 +1477,9 @@ benchmark_pool = [
     ('Pereira2018-encoding-perturb-sentenceshuffle_random-topic-length-criteria', PereiraEncoding_PerturbedRandomSentenceShuffle_TopicLengthCriteria), #randomly shuffle sentences across datasets/experiments, not from same topic, length-matched
     ('Pereira2018-encoding-perturb-sentenceshuffle_passage', PereiraEncoding_PerturbedShuffleWithinPassage), #shuffle sentences within passage
     ('Pereira2018-encoding-perturb-sentenceshuffle_topic', PereiraEncoding_PerturbedShuffleWithinTopic), #shuffle sentences within topic
+    # test
+    ('Pereira2018-encoding-test', PereiraEncoding_Original_Test),
+    ('Pereira2018-encoding-testscr1', PereiraEncoding_Original_TestScr1),
 ]
 
 benchmark_pool = {identifier: LazyLoad(lambda identifier=identifier, ctr=ctr: ctr(identifier=identifier))

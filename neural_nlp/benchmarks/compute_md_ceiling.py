@@ -7,19 +7,26 @@ from neural_nlp.benchmarks.s3 import load_s3
 from numpy.random.mtrand import RandomState
 from brainscore.metrics.regression import linear_regression, pearsonr_correlation, CrossRegressedCorrelation
 import os
+import sys
+import logging
 
-#specify split coordinate for cross-validation
-if os.getenv('SPLIT_AT_PASSAGE', '0') == '1':
-    pereira_split_coord = 'passage_index'
-elif os.getenv('SPLIT_AT_TOPIC', '0') == '1':
-    pereira_split_coord = 'passage_category'
-else:
-    pereira_split_coord = 'stimulus_id'
+
+_logger = logging.getLogger(__name__)
+
+#
+# #specify split coordinate for cross-validation
+# if os.getenv('SPLIT_AT_PASSAGE', '0') == '1':
+#     pereira_split_coord = 'passage_index'
+# elif os.getenv('SPLIT_AT_TOPIC', '0') == '1':
+#     pereira_split_coord = 'passage_category'
+# else:
+#     pereira_split_coord = 'stimulus_id'
 
 metric = CrossRegressedCorrelation(
             regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+            crossvalidation_kwargs=dict(splits=2, kfold=True, split_coord='stimulus_id', stratification_coord=None))
+            #todo splits should be 5
 
 identifier = "Pereira-encoding"
 
@@ -36,7 +43,7 @@ class _PereiraMDCeiling(Benchmark):
     def __init__(self, data_version='base'):
         self._data_version = data_version
         self._target_assembly = LazyLoad(lambda: self._load_assembly(version=self._data_version))
-        self._ceiler = self.PereiraExtrapolationCeiling(subject_column='subject', num_bootstraps=1) #todo should be 100
+        self._ceiler = self.PereiraExtrapolationCeiling(subject_column='subject', num_bootstraps=2) #todo should be 100
         self._cross = CartesianProduct(dividers=['experiment', 'atlas'])
         self._single_metric = metric
 
@@ -68,7 +75,7 @@ class _PereiraMDCeiling(Benchmark):
         def __init__(self, subject_column, *args, **kwargs):
             super(_PereiraMDCeiling.PereiraExtrapolationCeiling, self).__init__(
                 subject_column, *args, **kwargs)
-            self._num_subsamples = 10
+            self._num_subsamples = 2 #todo should be 10
             self.holdout_ceiling = _PereiraMDCeiling.PereiraHoldoutSubjectCeiling(subject_column=subject_column)
             self._rng = RandomState(0)
 
@@ -77,6 +84,7 @@ class _PereiraMDCeiling(Benchmark):
             # don't worry about atlases here, cross-metric will take care of it.
             experiments = set(assembly['experiment'].values)
             for experiment in sorted(experiments):
+                _logger.info(f"Experiment: {experiment}")
                 experiment_assembly = assembly[{'presentation': [
                     experiment_value == experiment for experiment_value in assembly['experiment'].values]}]
                 experiment_assembly = experiment_assembly.dropna('neuroid')  # drop subjects that haven't done this exp
@@ -99,7 +107,9 @@ class _PereiraMDCeiling(Benchmark):
             return combinations
 
         def extrapolate(self, ceilings):
-            ceiling = super(_PereiraMDCeiling.PereiraExtrapolationCeiling, self).extrapolate(ceilings)
+            ceiling = super(_PereiraMDCeiling.PereiraExtrapolationCeiling, self).extrapolate(ceilings) #extrapolate from ExtrapolationCeiling in transformations.py
+            #FIXME Don't extrapolate here, but just take last one and take the median? i.e., use all subjects!
+
             # compute aggregate ceiling only for MD neuroids
             neuroid_ceilings = ceiling.raw
             md_ceilings = neuroid_ceilings.sel(atlas='MD')
@@ -122,7 +132,7 @@ class _PereiraMDCeiling(Benchmark):
         def __init__(self, *args, **kwargs):
             super(_PereiraMDCeiling.PereiraHoldoutSubjectCeiling, self).__init__(*args, **kwargs)
             self._rng = RandomState(0)
-            self._num_bootstraps = 5
+            self._num_bootstraps = 2 #todo should be 5
 
         def get_subject_iterations(self, subjects):
             # use only a subset of subjects
