@@ -1,0 +1,628 @@
+Index	Sentence	Surprisal	PPL
+0	habitats local of conservation the encourages beekeeping.	7.421846389770508	1672.118040889005
+1	pollen produce that plants local conserve to interest beekeeper's every in is it.	7.404809951782227	1643.8723913698702
+2	crops for way make to cleared be vegetation native that require not does it agriculture of form passive a as.	7.5686116218566895	1936.4498896478538
+3	honeybees the kill could they because crops on pesticides of use the discourage also beekeepers.	6.601080894470215	735.8901791397973
+4	effort the worth is product their but craft their for extremes to go beekeepers artisanal.	7.251219749450684	1409.823431227073
+5	consistency and quantity over character and quality emphasizes honey-making artisanal.	5.810458183288574	333.7720194067023
+6	honeybees their of micromanagers become beekeepers honey finest the produce to.	7.247305870056152	1404.316336432099
+7	honey extract to ways best the select and flows nectar when know fields the scout they.	7.7306413650512695	2277.062160643063
+8	air the fills bees 40000 of hum deep the hive the opens beekeeper the as.	8.077048301696777	3219.715567932901
+9	nursery bee the and supplies pollen stores honey checks beekeeper the.	7.153469085693359	1278.5336134369309
+10	gentle they're because sting don't they but hands and arms bare his across crawl bees.	7.249044895172119	1406.7606025159744
+11	college in longer no i'm though even exams about dream recurring a have i.	8.134369850158691	3409.6667906755424
+12	class to gone never i've realize suddenly i and exam final my of day the it's dream my in.	7.157758712768555	1284.0298257643472
+13	assignments reading the of any done even never i've.	6.939896583557129	1032.6634150609925
+14	nightmare same the have who people other many know i.	7.909273624420166	2722.412254185578
+15	night previous the from experience dream their down write to had study the in participants morning each.	8.057723999023438	3158.0941230910157
+16	intensity emotional its and dream each described and dreams any recalled they if recorded they.	8.152286529541016	3471.3072445780786
+17	nightmare a or dream bad a dream flying a as such category a to dream each assigned then participants.	7.318406581878662	1507.7994995628621
+18	awake are we when as active as are minds our sleep we while night every.	7.1779608726501465	1310.2337988168172
+19	each minutes ninety about of cycles in night the throughout dream we.	8.428658485412598	4576.356723870715
+20	dreams our fill can places and characters of combinations strange and stories feelings images.	7.422181606292725	1672.678656441956
+21	worse to bad from went things cards playing start to decided i when.	7.800869464874268	2442.724918093456
+22	it doing $10000 to close spent already had i and do to had i something was gambling.	7.24267578125	1397.8292565494762
+23	away savings my gamble me watching of sick were friends my.	8.571961402893066	5281.478745331819
+24	have not did i money losing after casino a leaving of horror the was part hardest the.	7.929975986480713	2779.3600614991765
+25	by come to hard are gambling legalized of effects economic and social the on data good.	7.592408180236816	1983.083390308192
+26	likely more problems gambling makes nearby casino a having that indicate studies some.	9.252961158752441	10435.420948471612
+27	problems marriage and bankruptcies personal with associated be also may gambling.	7.904973983764648	2710.7319882438874
+28	gambling legalized of expansion dramatic a been has there generation past the over.	8.056112289428711	3153.0082920340524
+29	well as casinos have many and lotteries instituted have states most.	7.437634468078613	1698.727071469013
+30	business controversial but big very become has gambling.	9.103652954101562	8988.06579955838
+31	kitchen the in window a shattering house the shook hurricane the from wind the.	6.6682515144348145	787.0183105687088
+32	hurricane the to kitchen the surrendered and door the slammed food some grabbed in ran we.	7.754184722900391	2331.3079078228407
+33	foundation its from ripped be would house our afraid was i.	8.790013313293457	6568.319620851373
+34	sofa the on huddled asleep fell we house the shaking wind the with night that later.	7.179715156555176	1312.5343381915109
+35	foundations their off houses suck and trees of off limbs tear can hurricanes.	8.452138900756836	4685.082953739399
+36	mudslides and floods trigger can that rains heavy dump they.	7.109074115753174	1223.0146517084838
+37	land onto lurches that water ocean of wall a surge storm a bring also can hurricanes.	8.163105964660645	3509.068738745962
+38	hurricanes ancient of evidence for look to methods several use scientists.	7.900902271270752	2699.717106872627
+39	lakes coastal of bottoms the at sand beach windblown of layers deposited storms strongest the.	7.529524803161621	1862.2203720341643
+40	rings growth their in storm each of record a preserve hurricanes passing by drenched trees.	8.22593879699707	3736.6276919380957
+41	preferences different have countries different but world the around exported is cream ice american.	7.223705768585205	1371.5623473487396
+42	delicacies local with flavored cream ice their enjoy people many.	7.597835540771484	1993.8755588411145
+43	mangos fresh and bananas with topped is cream ice vanilla places tropical some in.	8.056509971618652	3154.262436635489
+44	child a as home at cream ice making remember i.	8.704730033874512	6031.373453636364
+45	cold the to it expose to crank the turning start then tub frozen a into mixture cream the poured we.	8.036080360412598	3090.4758673478823
+46	more any crank hand the turn couldn't i that enough froze it eventually.	8.315505981445312	4086.752735319885
+47	harden to freezer the into cream ice half-frozen of container the put i then.	6.902690887451172	994.9484108785682
+48	air whipped-in half to up and flavorings sugar cream or milk of mixture a is cream ice.	6.973977565765381	1068.4641962399792
+49	silky and smooth it makes what is cream and milk in butterfat the.	5.8256964683532715	338.8970819955385
+50	flavorings natural and butterfat with loaded is cream ice premium high-priced.	7.101305961608887	1213.550890939732
+51	hurt back my makes chair uncomfortable the mower lawn riding the use i when.	7.581204891204834	1960.9903225055236
+52	machine the control to me of front in levers two the use i.	7.34303617477417	1545.3970935298335
+53	grass of blade each sever precisely mower lawn the underneath blades sharp the.	7.704598903656006	2218.5273605676934
+54	patience me taught has it and task long a is lawn the mowing.	7.129931449890137	1248.7913591942106
+55	height even an to grass cut that blades revolving with machine a is mower lawn a.	7.443986415863037	1709.5516392766272
+56	motor a have may machine the or muscle by powered be may blades the.	7.267724514007568	1433.2853188956572
+57	engine gas small a is mowers lawn for source power common most the.	8.008880615234375	3007.5486238050735
+58	emissions create not do they because environment the for better are lawnmowers electric.	6.999008655548096	1095.5465559187505
+59	run to expensive less are and maintenance less need also they.	7.641750812530518	2083.3882475324326
+60	toaster ordinary an as electricity much as use mowers lawn electric.	7.480900764465332	1773.83786664044
+61	spacewalks their for time long a train astronauts.	7.0331010818481445	1133.5403668080507
+62	underwater conducted is training their of much.	7.774799346923828	2379.865724802694
+63	space in floating spend will they hour every for pool the in hours 10 to 8 spend may they.	7.462917327880859	1742.2232872650834
+64	station space the of outside the on work repair and construction perform to able be to practice astronauts.	7.283902645111084	1456.6617805626506
+65	pilots test military as backgrounds have many and pilots always are flights shuttle of commanders the.	7.428427696228027	1683.1590544440096
+66	space in experiments run can who scientists and engineers doctors as trained are astronauts other.	7.287211894989014	1461.4902232374188
+67	diverse more much are now astronauts but men young all were crews early.	7.606276035308838	2010.7760786408226
+68	shuttle space the of exterior the to together out floated astronauts of team the.	7.395581245422363	1628.7713644266817
+69	telescope huge the on part broken the repair to needed tools carried they.	7.207393646240234	1349.3707426896785
+70	place into part replacement the fitted other the while pipe the on bolts the loosened astronaut one.	7.401750087738037	1638.8500531010068
+71	artists experimental by time long a for art in used been have computers.	7.283667087554932	1456.3186932834678
+72	world art mainstream the entered have graphics computer widespread and affordable more are computers that now.	7.983762741088867	2932.9462447953947
+73	technology graphics latest the showcase that exhibitions art have conferences science computer some.	8.278040885925293	3936.4748194740214
+74	cultures two the bridging to devoted are that up sprung have conferences new brand.	8.153348922729492	3474.997097440046
+75	procedures surgical and conditions medical visualize to doctors with works specialist graphics computer the.	7.749579429626465	2320.5962353238874
+76	body patient's a within structures understand doctors help to animation digital uses she.	8.921769142150879	7493.334283573194
+77	x-rays at squinting than clearer much is screen a on animation an in structures internal the seeing.	7.287834644317627	1462.4006487467288
+78	education for tool powerful a is animation digital modern.	8.97970199584961	7940.265530810782
+79	students help actually graphics if ask must we broadens graphics computer of field the as.	7.632472991943359	2064.1483353957174
+80	classroom the in effective be can imagery digital engaging and vivid that suggest does research.	7.997289180755615	2972.8880917193524
+81	cliche was place first the in school law to came he reason the.	7.301283836364746	1482.2016109262215
+82	better the for things change to wanted he.	8.076626777648926	3218.358666397181
+83	all-nighter an pulled had director program the and he when school law at evening one recalled he.	7.378474712371826	1601.1456966286041
+84	sunrise at families evicted several for petition a drafting finished finally they.	8.540943145751953	5120.171152778814
+85	relentlessly up gone has education legal of cost the decades four past the over.	7.92925500869751	2777.356926837878
+86	1970s the since four of factor a by increased tuition school law private.	8.072044372558594	3203.6445819572086
+87	crash eventually could lawyers new for and school law to admission for market the.	8.021440505981445	3045.5613239066893
+88	law practicing actually in experience minimal have often faculty school law.	8.51469898223877	4987.54449388871
+89	journals prestigious for articles review law writing on focus professors.	8.061540603637695	3170.1703501263814
+90	england feudal in law property like topics on classes with theoretical the emphasize often schools law.	8.310997009277344	4068.367162147307
+91	care preventive in involved increasingly are pharmacists.	8.248409271240234	3821.5419471439222
+92	often pharmacies to go people because advisers health front-line becoming are they.	7.97945499420166	2920.3390285829
+93	health public about information of source good a often are pharmacists.	7.533388614654541	1869.4295590108763
+94	effects side and interactions drug about lot a know they because pharmacists with consult doctors.	7.7756218910217285	2381.82407461255
+95	medications of use safe the about advice offer and patients to drugs prescription dispense pharmacists.	6.456541538238525	636.8547058311618
+96	vaccines provide and screenings wellness and health conduct also they.	7.649087905883789	2098.730476452225
+97	licensed be to order in exams two pass and degrees professional have must pharmacists.	7.839444160461426	2538.7932798792003
+98	pharmacist a be to chose i as much as me chose profession pharmacy the think i.	6.5044050216674805	668.0780591118395
+99	child a as pharmacies in bottles arranged neatly the by fascinated was i.	8.33869457244873	4182.62606072547
+100	patients my of lives on have i that impact the love i but cliche it's know i.	6.691582202911377	805.5958604406944
+101	situations stressful potentially to response own her or his has person each.	7.869259834289551	2615.6288727278725
+102	stressful fulltime working find may another while unemployment by devastated be may person one.	8.060063362121582	3165.490700209603
+103	traffic in stuck being like stresses everyday are there.	7.83305025100708	2522.612250668315
+104	child a of loss or divorce as such stresses traumatic also are there.	7.899200439453125	2695.1265496876413
+105	stress of levels different to adapt can people some.	8.273062705993652	3916.9270360876512
+106	health on toll real a take can stress though effectively with dealt not if.	8.808626174926758	6691.719696862324
+107	beneficial or harmful be will it if determines that stress to reaction your it's that remember.	6.907198429107666	999.4433051376461
+108	worried and stressed incredibly felt i downsizing was company my when.	7.27925968170166	1449.9142296530504
+109	times at dizzy felt even i and reason no for race would heart my.	8.030915260314941	3074.5544035172284
+110	level stress my manage to try to yoga taking started i then.	8.16663646697998	3521.4794091260856
+111	stripes satin with tuxedo black jet a wore man the.	6.571664333343506	714.5581169165915
+112	style latest the in cut fabric rich with made was it.	8.057168006896973	3156.3387356599574
+113	perfectly man the fit it as tailored it had he clearly.	6.995821952819824	1092.0609314942183
+114	event formal a for out picked have would stylist professional a something like looked it.	7.728852272033691	2272.9919267300875
+115	attire wedding in statements personal making are grooms today's preferred still is tuxedo the while.	6.766369819641113	868.1546088912005
+116	men for fashion wedding of edge cutting the on are jackets shorter.	8.311200141906738	4069.1936642082233
+117	ties satin and shirts colorful with tuxedos their up jazzing also are grooms.	6.476487636566162	649.6850042392476
+118	lapels silk black with jacket dinner tailless a is jacket tuxedo a.	6.545505046844482	696.1081574138876
+119	jacket tuxedo the to match perfect a be should trousers tie black.	6.689379692077637	803.823479391182
+120	lapels jacket the match and black be should tie the and white plain be always should shirt the.	6.701450347900391	813.5849511150693
+121	adulthood in blind went pianist concert the.	7.830183029174805	2515.389720994227
+122	eyes the damaged slowly that condition genetic a by caused was blindness her.	8.695067405700684	5973.375193643509
+123	pianist a to advantage an was blind being that interviewers told she.	7.579531669616699	1957.7118946967528
+124	music her on fully more concentrate could she so distractions visual no had she.	8.249248504638672	3824.7504589363066
+125	life of activities ordinary the for insufficient vision as blindness defines government the.	8.37980842590332	4358.1739329886195
+126	blind legally the on focused be can resources blindness legal of parameters the establishing by.	8.578653335571289	5316.940567262144
+127	standard the meet not do who but problems vision have who those overlook may this.	8.14833927154541	3457.632106706214
+128	deficiencies nutritional and disease infectious by caused usually is children in blindness countries developing in.	7.891172885894775	2673.5778842156988
+129	supplements vitamin and medicine by prevented be often can causes these.	7.733169078826904	2282.8252026263012
+130	problems genetic by caused be to likely more is blindness countries developed in.	8.043354034423828	3113.036932795735
+131	brain your to mouth your from gets taste a how exactly knows really one no.	7.678271293640137	2160.8810124208835
+132	cell bud taste a touches food of molecule a when begins process the think scientists.	8.709678649902344	6061.294377499965
+133	cell the beneath nerves taste to message taste a carries cell the.	8.398360252380371	4439.780655894385
+134	tastes basic four the of one to responded bud taste each that believed once was it.	7.308969020843506	1493.636487026509
+135	sweet something eating were you if only respond would tongue the of tip the on bud taste a is that.	7.361892223358154	1574.8136445807531
+136	tastes basic the of all to sensitive be can bud taste single a that think now scientists.	7.400748252868652	1637.2090181323993
+137	flavors strong very with foods eat to tend i so good very isn't taste of sense my.	6.661299228668213	781.5657103498069
+138	bitter very it's so cream no with coffee my drink i and sauce hot of lots like i.	6.654348850250244	776.1523670886427
+139	sugar extra add i cookies make i when so well sweetness taste even can't i.	6.833693504333496	928.6143272456162
+140	individuals aging for problem real a are fractures hip.	8.398713111877441	4441.3475510943945
+141	healing of process difficult the and break the of pain the with faced are patients.	6.682070255279541	797.9694035346976
+142	independence of loss patient's the to adjust to have families.	7.580807209014893	1960.210626625474
+143	hospital the in time and expense substantial involve fractures hip society for and.	8.596606254577637	5413.257165725344
+144	fingers their snapping someone like sound a heard i race the through halfway.	8.244914054870605	3808.2081470057005
+145	broken was foot my that instantly knew i and crunch a felt i.	7.718342304229736	2249.2279528077484
+146	spikes on running like felt step every.	8.361617088317871	4279.6096806947635
+147	fracture the showed clearly x-ray the afterward office doctor's the at.	6.49564790725708	662.2531649697835
+148	fracture bone of types different few a are there.	7.242851257324219	1398.0745636619788
+149	intact is skin the but broken is bone the fractures simple or closed in.	6.930878639221191	1023.392777738379
+150	wound open an produced and skin the punctured has bone broken the fractures compound or open in.	7.138089656829834	1259.0209282608705
+151	cleaned carefully not they're if infected become can piercings ear new.	7.276074409484863	1445.3032057224111
+152	earlobe the around redness or swelling tenderness include infection of signs.	6.834804534912109	929.6466195068712
+153	ointment some apply and area the clean symptoms these see you if.	8.048691749572754	3129.6978632841387
+154	provider care health your contact away go don't swelling and redness the if.	6.981048583984375	1076.0461003381438
+155	infections reduce to measures new initiated has hospital local a.	8.541001319885254	5120.469022962065
+156	patients other from isolated are patients infected that ensured and habits washing hand improved have they.	8.120826721191406	3363.800521046181
+157	began measures new the since drop rates infection seen has hospital the.	8.426920890808105	4568.411775667622
+158	infection of risk the increases which healing delays alcohol or soap with wound a scrubbing.	7.456506252288818	1731.089490015094
+159	moisture and heat in holding by infection of risk the increase can band-aids.	6.037958145141602	419.03654896092775
+160	diagnosed are they once treated be easily can infections skin most fortunately.	7.922597885131836	2758.9291247236074
+161	century sixteenth the of end the at started opera modern.	7.780093669891357	2392.4989151552095
+162	performance tragic greek imitate and rediscover to effort an as began it.	7.988746166229248	2947.598842585011
+163	matter subject their for antiquity from tales chose opera of founders early.	9.476073265075684	13043.866014891622
+164	traditions musical and stories of sources different into out branched operas later.	6.597763538360596	733.453014065297
+165	music and words combines that play a perform musicians and singers which in form art an is opera.	6.885560035705566	978.0492588664601
+166	costumes and scenery acting as such theatre spoken of elements the of many incorporates it.	7.385812759399414	1612.9381930794818
+167	orchestra an by accompanied and house opera an in given typically are performances.	7.159282684326172	1285.9881425284545
+168	production new the in role the win to hard worked has singer opera the.	7.456100940704346	1730.3880015613338
+169	singing about just not is job her.	7.4869818687438965	1784.6576243755626
+170	critical all are interpretation musical and presence stage acting.	8.78908920288086	6562.252572039726
+171	show the of star the certainly is voice strong pure her but.	7.625152111053467	2049.092130878264
+172	painting a completing while mind in elements many keep must painter a.	8.221707344055176	3720.8497330857585
+173	lighting and composition strong like design of elements solid use to has she.	7.904524803161621	2709.514653436822
+174	skill with strokes brush the execute to has she.	8.784676551818848	6533.359435805355
+175	soul painter's the of glimpse a reveal should painting the of content the importantly most.	7.149707794189453	1273.7337083990833
+176	artists creative as than artisans skilled as more employed were painters ago long.	7.03961181640625	1140.9446246706918
+177	court royal the of members and scholars of status social the had painters prominent however.	7.4521965980529785	1723.6451456589812
+178	patrons their with relationship personal a established and imagery and subject its on decided work their signed they.	7.935557842254639	2794.9174275996406
+179	itself painting the on more and scene actual the on less focus to learned i painter a as.	7.357094764709473	1567.2766349432663
+180	vision of field its within everything record to has that lens camera a not is eye artist's an.	7.477454662322998	1767.7355607917407
+181	painting good a for needed is than more but information useful provides nature found i.	7.8938469886779785	2680.7368739481176
+182	bird impressive an is owl eagle the.	9.18820858001709	9781.113193493822
+183	horns like up stick that tufts ear has it.	6.948614120483398	1041.7050496456923
+184	you through right pierce could they like look and creepy downright are eyes orange large its.	7.947207927703857	2827.6688625323136
+185	darkness the through silently and swiftly flying night at hunts owl this.	8.061539649963379	3170.1673268177815
+186	thriving are others endangered become have species owl some while.	8.243001937866211	3800.93336478543
+187	habitat previous its beyond well spread has owl barred the.	8.132003784179688	3401.608830674113
+188	invasion owl's barred the facilitated have may logging that suggest findings early.	9.214999198913574	10046.69696144304
+189	talons her with it gripped and branch thick a on landed owl the.	8.029891967773438	3071.409844104154
+190	eye an half-closing down settled and sides her to wings her pressed she.	7.716259479522705	2244.548080624435
+191	eyes her of glow the for but statue a been have might she.	7.566617012023926	1932.591277149803
+192	ice sea floating across stalk bear polar a watch to unnerving it's.	8.621164321899414	5547.842108744877
+193	animal huge the beneath directly waters frigid the in submerged are you when worse even it's.	7.501686096191406	1811.0935193903458
+194	prey its pursued bear polar the as ice the on down set paws giant overhead.	8.188344955444336	3598.7612047901666
+195	shots these capturing months spent i documentary bear polar a for crew film the of part as.	8.846553802490234	6950.3952155598545
+196	confusion or fear than other reasons for people attack will that animals few the of one are bears polar.	7.486139297485352	1783.1545564647538
+197	environment food-scarce a in live they because hunger of out attack may they.	7.6121344566345215	2022.590625607389
+198	energy their conserve to careful slowly people on up sneak will they.	8.851436614990234	6984.4156823861
+199	diet bear's polar the of part important an is seal the.	7.812655448913574	2471.6851622413897
+200	ice the on basking are that seals stalk or hole breathing seal's a by wait will they hunting when.	7.495144367218018	1799.2845042424044
+201	around looks seal the when place in freeze and forward quietly crawl will bear polar the.	8.524109840393066	5034.703121188213
+202	defense for primarily built structure a not was castle medieval the.	8.494688034057617	4888.7309729628405
+203	surroundings its dominate to was purpose its.	7.506662368774414	1820.1284759749258
+204	walk day's a within lands control easily could castle a.	9.050085067749023	8519.262608238494
+205	protection for walls castle's the inside brought be could property and livestock peasants attack of times during.	8.372847557067871	4327.942596132532
+206	regions many of history stormy the of record a provide locations dramatic in castles spectacular.	7.535618782043457	1873.6033522481266
+207	villages quaint and landscapes beautiful overlooking cliffs rocky atop stand they today.	8.227827072143555	3743.690138963565
+208	intrigue and plots battles to home were they past the in.	6.696659564971924	809.6965638670897
+209	cliff a on built castle magnificent a above looming hotel our saw we station train the leaving upon.	8.47307014465332	4784.181073152026
+210	river the above feet of hundreds courtyard inner an sheltered walls outside thick the.	8.676668167114258	5864.474554885199
+211	view scary slightly but incredible an had rooms tower our.	9.388947486877441	11955.50937735731
+212	entranceway black small a into me gestured man the pyramid the of side the up feet fifty climbing after.	7.182864665985107	1316.6746940892358
+213	center pyramid's the at chamber the into led this.	8.510807991027832	4968.17570842248
+214	passage narrow dark steep the down him followed i.	7.895617961883545	2685.4885934651065
+215	thick was air the and chalky was pyramid the inside smell the.	6.883711814880371	976.2432772986188
+216	nation the of pride the represented pyramids king the of tomb the just than more.	6.6636223793029785	783.3835159264443
+217	evident is craft their in took builders pyramid the that care the.	8.528539657592773	5057.055407388716
+218	gleamed structure the until polished and together fitted precisely were pyramid the covering stones the.	7.572992324829102	1944.951509374867
+219	constructed were pyramids how of mysteries the solve to working still are architects.	7.694386959075928	2195.9871675940217
+220	blocks stone raise to walls pyramid's the inside built were ramps think some.	8.652731895446777	5725.767585167109
+221	pyramid the of walls exterior the up zigzagged ramps that speculate others.	7.23539924621582	1387.6948195019497
+222	strength and courage takes climbing rock beginner even.	8.325265884399414	4126.83432345307
+223	boulders large on scrambling try can sport the learning are who climbers.	7.883251667022705	2652.4835453589767
+224	faces rock vertical climb safely to ropes using begin can they that with comfortable they're once.	8.024288177490234	3054.2464424301966
+225	climbing rock to new were trip the on boys the of all.	6.50002384185791	665.1574914457132
+226	heights of afraid were many.	6.978854179382324	1073.6874087319065
+227	down calm them helped harnesses and knots their check else someone having.	8.825855255126953	6808.010789828993
+228	beginners for appropriate routes climbing up set adults the.	8.194987297058105	3622.7449721049525
+229	climbing rock of style particular one is free-climbing.	5.271669864654541	194.74088199969682
+230	face rock a ascend to strength physical and skill her on solely relies climber the.	8.131709098815918	3400.6065740208805
+231	used equipment only the are bolts and rope.	7.4143266677856445	1659.5913357935924
+232	falls she if climber the stop to only meant are they.	7.893071174621582	2678.6579271421597
+233	try to me convinced buddies my that trail steep the down skied hesitantly i.	7.603305816650391	2004.8124949721523
+234	down tumbling myself found i and turn bad a made i.	7.639359474182129	2078.4121135029263
+235	slope the of part flat a at stop a to came finally i.	6.974122047424316	1068.6185808721705
+236	hill the up drift snow a in lodged were poles my and found be to nowhere were skis my.	7.544256210327148	1889.8565587403418
+237	poles ski use they how is skiers professional of strength major a.	7.715442657470703	2242.715432830863
+238	skiing their to flair adds and balance their improves poles ski of use proper.	8.355316162109375	4252.728951574944
+239	skiing while balance lost regain to movements body upper for need the minimizes it.	7.994588375091553	2964.869731612869
+240	quickly more turn skiers let boots stiffer and designs ski new.	7.867859840393066	2611.9695703687503
+241	legs the on force twisting the increase turns tighter and faster but.	7.3324737548828125	1529.15986370693
+242	knee skier's the in ligaments to particularly injuries more to led has this.	7.099948883056641	1211.9051240236493
+243	keyboards two with instrument musical portable a is accordion an.	7.496249675750732	1801.2743682619791
+244	chords for other the notes individual for used is keyboard one.	7.267760276794434	1433.3365780896142
+245	reeds through air blow that bellows with sound produce accordions.	6.745196342468262	849.9659947165442
+246	bellows the closing and opening while keyboards both plays accordionist an.	7.149629592895508	1273.6341046695659
+247	building a of part is that home self-contained a is apartment an.	6.369542598724365	583.7907411831012
+248	bathroom a and kitchen a as well as rooms more or one have may apartment an.	6.112000465393066	451.24050388029127
+249	families for others people single for are apartments some.	7.862150192260742	2597.098637486133
+250	space storage extra or facility laundry a garage a have can building the.	7.4356184005737305	1695.3057729637603
+251	yellow or red green be can that fruit a is apple an.	6.987999439239502	1083.5515956164932
+252	inside seeds and pulp sweet crisp a skin thin have apples.	8.064935684204102	3180.951625167052
+253	cider make to used are apples tart very some.	7.6232147216796875	2045.1260846864186
+254	pies in baked or roasted raw eaten be can apples.	7.468844413757324	1752.5802573098065
+255	wildland or building a burning of act criminal the is arson.	7.71942138671875	2251.6563652984796
+256	arson or accident by caused was fire a if determines investigation fire a.	8.03684139251709	3092.8287138834094
+257	insurance collect or others to damage cause to done be can arson.	7.192060947418213	1328.8390528353584
+258	harmed were people whether on depends crime the of severity the.	7.821654796600342	2494.0291060485765
+259	passengers transporting for vehicle wheeled a is car or automobile an.	7.550087928771973	1900.909868661764
+260	engine electric or gasoline a by powered be can car a.	7.581230163574219	1961.0398820035543
+261	sit just passengers other roads on car the steers driver the.	7.861863136291504	2596.353231811235
+262	trunk of type the and doors of number size in vary automobiles.	7.088799476623535	1198.4681475880684
+263	wood cut and split to used tool a is axe the.	7.44785737991333	1716.1820770280683
+264	handle a to attached head a of consists usually axe the.	8.681169509887695	5890.932067535839
+265	metal then and stone of made were heads axe historically.	8.622918128967285	5557.580490571924
+266	buildings entering firemen and woodcutters by used are axes.	6.865289211273193	958.4229864569204
+267	inside edible soft a with bunchs in grows that fruit long a is banana a.	8.057498931884766	3157.383419864046
+268	spots brown small have and red or purple yellow be can ripe when banana a.	7.555861473083496	1911.916599369753
+269	ecuador or india as such countries tropical are producers greatest the.	7.361924648284912	1574.8647086257054
+270	potatoes like cooked often and foods staple are plantains and bananas unripe.	5.8232102394104	338.0555528122136
+271	in sex have or sleep to place a as used furniture of piece a is bed a.	7.265902042388916	1430.6755758941488
+272	covers and pillows sheets plus spring box a and mattress a of made is bed a.	6.433662414550781	622.449446469769
+273	air with filled is it airbeds in and water with filled is mattress the waterbeds in.	5.59171724319458	268.1957818766366
+274	ground the above suspended sling fabric a hammock the is bed of type another.	7.585486888885498	1969.4052820792792
+275	legs six and body yellow and black a with insect flying a is bee a.	6.6408185958862305	765.7215530486425
+276	honey make to nectar collect they as flowers between pollen spread bees.	6.673736572265625	791.3470122528996
+277	hive a in located colony a in together live and insects social are bees.	7.350971698760986	1557.7094169923243
+278	threatened feel they if attack can and stingers have bees many.	7.565099716186523	1929.6611879178156
+279	frame a on pedals and wheels two with vehicle a is bicycle a.	6.822014808654785	917.8324050558552
+280	saddle the on cyclist a of pedalling the by propelled is bicycle a.	6.629070281982422	756.7782530928878
+281	air of full tube inner an with tires rubber have wheels the.	8.570313453674316	5272.782304174413
+282	racing and recreation transportation for bicycles use people.	6.601754665374756	736.3861676039736
+283	steel or iron forging by objects creates blacksmith a.	7.37156867980957	1590.1262265166702
+284	shape its change to anvil an on iron hot bends and hammers blacksmith a.	6.792868137359619	891.4667477204599
+285	tongs with metal the handle and apron thick a wears blacksmiths.	7.013727188110352	1111.790644899413
+286	furniture iron or shoes horse weapons like objects make blacksmiths.	6.557275295257568	704.3499320663279
+287	food puree or ingredients mix to used appliance kitchen a is blender a.	7.021562099456787	1120.5356394315847
+288	bottom the in blade rotating a with container plastic or glass a have blenders.	7.203683376312256	1344.3734893135688
+289	smoothies fruit and shakes milk make to used are blenders.	6.135459899902344	461.9514966213775
+290	ice crushed with drinks alcoholic cold make to used also are blenders.	8.007664680480957	3003.8938633362254
+291	puberty undergone not has who child male young a is boy a.	7.236326694488525	1388.982431669883
+292	girls to relative distinctions sex indicate to used is term the.	8.710515022277832	6066.365997262702
+293	other each with fight and games rough play to like boys traditionally.	7.902533531188965	2704.124641119185
+294	boy a as to referred often is immaturely behaving male adult an.	7.693968772888184	2195.069028082082
+295	family cabbage the in plant a is broccoli.	7.795353889465332	2429.2889721528045
+296	stalk tough thick a and head flower green a has broccoli.	7.905055046081543	2710.95173536582
+297	nutrients other and fiber vitamins in high is broccoli.	7.195398807525635	1333.2819424460315
+298	raw eaten or stir-fried boiled be can broccoli.	7.5471978187561035	1895.4239612675606
+299	wings large four with insect flying a is butterfly a.	8.113272666931152	3338.48592368921
+300	patterned and colorful very be can butterflies of wings the.	8.622303009033203	5554.162963229263
+301	butterfly a into caterpillar a of transformation the is metamorphosis.	5.53257942199707	252.7951361051117
+302	wings colorful their of because butterflies collect people some.	9.289168357849121	10820.181836482296
+303	wood with works who laborer manual or artist an is carpenter a.	7.19750452041626	1336.0924093988497
+304	objects other and boats furniture houses repair and build carpenters.	6.844536781311035	938.7383391383628
+305	planes and pliers saws hammers as such tools use carpenters.	5.666123867034912	288.9124979579967
+306	instruments musical repairs and makes that carpenter a is luthier a.	6.148871898651123	468.1889242018645
+307	tail a and legs four with animals furry small are cats.	8.448270797729492	4666.995574657849
+308	fur their licking by themselves groom to like cats.	8.151020050048828	3466.913687903713
+309	owners their by fed often are but birds or mice hunt can cats.	8.226078033447266	3737.1480029359104
+310	sharp keep they that so retractable are cats of claws the.	8.213399887084961	3690.0669742937234
+311	on sit to people for designed furniture of piece a is chair a.	7.041885852813721	1143.54212657369
+312	legs by supported level floor above raised seat a of consist chairs.	8.101646423339844	3299.8966320403615
+313	cushion a as well as rests arm and back have also can chairs.	6.3863844871521	593.7061423780406
+314	cinemas like places in or vehicles in located chairs fixed are seats.	7.619893550872803	2038.3451382112157
+315	instrument musical woodwind a is clarinet a.	6.351900100708008	573.5815369291533
+316	bottom the at flare a with tube black long a is clarinet a.	7.618022918701172	2034.535708350667
+317	holes and keys pressing by notes chooses player the.	8.702197074890137	6016.115564020879
+318	music classical and jazz in both used is clarinet the.	7.3292107582092285	1524.1783519064002
+319	atlantic the of areas colder the in lives that fish a is cod a.	7.647729396820068	2095.881267853706
+320	cooked when easily flakes and mild-tasting and white is flesh cod.	6.925265789031982	1017.6647178014658
+321	dishes elaborate for cod salted chips and fish for used is cod fresh.	7.074518203735352	1181.4741338317053
+322	vikings the of time the since traded and salted caught been has cod.	7.390841484069824	1621.0696434396657
+323	plant coffee the of seeds the beans coffee from made is coffee.	6.428225040435791	619.0741406777322
+324	hot served usually and countries many in drink popular a is coffee.	8.176188468933105	3555.2777512531943
+325	awake people keeps that caffeine called drug mild a contains coffee.	8.299294471740723	4021.0344393829905
+326	export agricultural legal seventh-largest world's the is coffee.	8.430892944335938	4586.593837934861
+327	falls rain no almost where environment natural a is desert a.	8.182463645935059	3577.657894673955
+328	rocks or dunes sand with filled usually are deserts hot.	6.982757091522217	1077.8861045946269
+329	deserts in live to adapted have plants and animals some.	6.694266319274902	807.7610780201205
+330	africa northern in sahara the is desert hot biggest the.	6.844436168670654	938.6438949466548
+331	computer a with sometimes at working for used furniture of piece a is desk a.	6.974478244781494	1068.999287785881
+332	metal or plastic wood of made be can and surface flat a has desk a.	7.230746746063232	1381.2535647306902
+333	papers and supplies store to drawers have may desk a.	7.822301864624023	2495.6434347671525
+334	sides three on partitions by surrounded desk a of consists cubicle a.	7.9077277183532715	2718.206911934797
+335	area enclosed an from exit or entrance to barrier movable a is door a.	6.468963146209717	644.8148015650384
+336	them through pass to gets who control to locks have doors most.	8.169520378112793	3531.6497008579986
+337	unlocked are they after handle a pulling or pushing by opened are doors most.	7.339503765106201	1539.9477482221948
+338	chamber revolving a of consist or slide can doors of types other.	8.13321590423584	3405.7344888523394
+339	wear sometimes women that clothing of piece a is dress a.	7.300617694854736	1481.2145836933848
+340	skirt matching long a to attached shirt a like is dress a.	6.929786205291748	1022.2753991870754
+341	dance a or wedding a as such occasions formal at worn usually is dress a.	7.099372863769531	1211.2072443134477
+342	dress a in bike a ride or stairs climb to hard be can it.	7.2125091552734375	1356.2911465158538
+343	alcohol of effects the under driving of act the is driving drunk.	6.780596733093262	880.5940469630002
+344	world the of most in crime a is vehicle any of driving drunk.	7.180212497711182	1313.187277889998
+345	deaths vehicle-related all of half almost in role a plays it.	7.438835620880127	1700.7687281752817
+346	tests breathing and sobriety field by caught are drivers drunk.	7.55222225189209	1904.9713572664364
+347	rain of lack by caused supply water the of shortage persistent a is drought a.	7.907990455627441	2718.921180037787
+348	die and growing stop to plants and crops cause will drought.	7.3763861656188965	1597.8051186738708
+349	famine cause and desert into areas turn eventually will drought extreme.	8.140114784240723	3429.3114763118438
+350	bowls dust from away migrate to have people of numbers large.	7.845386028289795	2553.9233599448553
+351	eyesight good very have and day the during hunt that prey of birds large are eagles.	6.860374450683594	953.7241232870431
+352	talons sharp and legs strong flesh tearing for beaks hooked have eagles.	6.849175930023193	943.1034031573605
+353	mammals small others and fish eat species some and eyries in live eagles.	6.733137607574463	839.778030551975
+354	states united the of bird national the is and head white bright a has eagle bald the.	7.395417213439941	1628.504215741926
+355	structures other and buildings down knock can and ground the shake earthquakes.	7.773102283477783	2375.8303667724326
+356	activity volcanic and landslides trigger also can shaking the.	8.187077522277832	3594.2029047614074
+357	crust earth's the in energy of release the by caused are earthquakes most.	7.661696434020996	2125.3599048823326
+358	tsunami a cause and seabed the displace can sea at earthquake an.	6.471617698669434	646.5287701859261
+359	tons several weighing mammal land of kind largest the are elephants.	9.336847305297852	11348.573194796387
+360	food or things grab can which trunk a called nose long a has elephant an.	8.326699256896973	4132.753855708154
+361	trees into digging or objects moving for tusks ivory of pair a has elephant the.	7.418772220611572	1666.985560276457
+362	body its and them in blood the cool to ears large its flaps elephant the.	7.518576622009277	1841.9436452294804
+363	cortex visual the for it coding and light sensing for organ an is eye the.	7.7365899085998535	2290.6477311868666
+364	texture and motion color detect can which eyes complex have animals most.	8.364412307739258	4291.588863212312
+365	it of part sensitive most the and eye human the of center the is fovea the.	6.6310858726501465	758.3051465565362
+366	directions many in facing units eye of up made eyes compound have insects.	8.553204536437988	5183.338037203822
+367	food for animals raise or plants grow to used land is farm a.	7.176802635192871	1308.7171154625294
+368	produce to what decide and farm the run who people the are farmers.	6.739109992980957	844.8085156513844
+369	barn a and silo a farmers for house a have usually farms.	6.5708136558532715	713.9505168835428
+370	equipment and land the share farmers many where farm a is cooperative a.	7.273358345031738	1441.3829952434771
+371	hand each on thumb a and fingers four have usually primates.	7.962555408477783	2871.401188140168
+372	activities other and grooming writing grasping for used are fingers.	8.309826850891113	4063.609312456013
+373	vibration and pressure temperature to sensitive are fingertips the.	7.259711742401123	1421.8466200304872
+374	decorated or grown be can and finger the of tip the protects nail the.	7.159063339233398	1285.7060982736687
+375	land inhabited submerges that water of expanse an of overflow an is flood a.	7.063937664031982	1169.0393989564586
+376	sea at earthquakes as well as melt snow rapid or rain heavy by caused be can flood.	7.639338493347168	2078.3685071388427
+377	levees and dams break or channel its of out flow will river a flood a in.	5.915623664855957	370.785476480143
+378	diseases causes water contaminated the and evacuate people flood a during.	6.670623779296875	788.8875427329465
+379	on walking for used building a inside surface horizontal a is floor a.	7.795684337615967	2430.0918588499158
+380	floorboards wooden or linoleum tile concrete bare of made be may floors.	6.746326923370361	850.9274934612472
+381	noise dampen to and comfort for floor a on carpets put often people.	7.033627033233643	1134.1367107447045
+382	it under wiring electrical and pipes has often floor the buildings in.	7.653242588043213	2107.4681731277014
+383	leg a of end the on part body a is foot a.	7.014085292816162	1112.1888536571873
+384	straight standing or running walking when feet their use people.	7.943258285522461	2816.522608664877
+385	sports and fighting both in kick to feet their use also people.	7.774741172790527	2379.7272822037094
+386	feet to related behavior for rules have cultures many.	8.558881759643555	5212.8486942215595
+387	cover canopy and trees of density high a with area an is forest a.	7.026683330535889	1126.2888806381327
+388	location its in rainfall and temperature on depends forest of type the.	7.441218852996826	1704.826888679778
+389	plants ground as well as animals and trees of types various has ecosystem forest a.	6.7225871086120605	830.964528488823
+390	regeneration disregarding forests of down cutting the is deforestation.	7.065971851348877	1171.4198644102355
+391	tines several and handle a with foods solid eating for tool a is fork a.	7.689043045043945	2184.2833010360964
+392	disposable if plastic or metal of made usually are forks.	6.403034687042236	603.6742233088213
+393	cutting while place in food hold to or mouth the to food lift to used are forks.	7.507129669189453	1820.979221528567
+394	foods various for kinds special are there and cultures western in used are forks.	7.599071025848389	1996.3404847152901
+395	handle a and sides sloping with pan small a is pan frying a.	7.575076103210449	1949.0085828358276
+396	food brown and sear fry to used is pan frying a.	7.463288307189941	1742.8697359585906
+397	pan the of bottom the covering oil on cooked is food the.	7.404918670654297	1644.0511210375553
+398	steel teflon-clad or iron of made are pans frying.	7.113030433654785	1227.8628706928762
+399	maturity reached yet not has who human female a is girl a.	6.997671127319336	1094.0822109939324
+400	woman a of that into develops girl a of body the puberty at.	7.301393508911133	1482.3641766654866
+401	games social and dolls with playing like often girls.	7.938238143920898	2802.418697780606
+402	skirts and dresses wear and hair long grow sometimes girls.	6.8744072914123535	967.2019267724237
+403	fingers and hand the covers that clothing of piece a is glove a.	6.903416156768799	995.6702781760584
+404	material waterproof lined or wool of made are cold against protect to gloves.	8.252205848693848	3836.078303880024
+405	chemicals or germs from hands shield to used are gloves latex or rubber disposable.	6.5989274978637695	734.3072207056781
+406	together covered are fingers four the where glove of kind a is mitten a.	7.258177757263184	1419.6672004729044
+407	object an to impact an deliver to used tool a is hammer a.	7.553909778594971	1908.1887612640976
+408	wood into nails drive to used often most is hammer a.	8.156561851501465	3486.17997086484
+409	nails remove to used be can head the on claw the.	7.476408958435059	1765.8879990125984
+410	length handle and head the of shape the in vary hammers.	7.126964569091797	1245.0918348271068
+411	people against weapon a as used explosive an is grenade hand a.	8.115690231323242	3346.566692335334
+412	that after bit a explode to timed and thrown are grenades hand.	8.360361099243164	4274.237911839466
+413	launchers shoulder or rifles from fired be also can grenades.	7.6559062004089355	2113.089134121303
+414	it disperse to mob a of middle the into thrown are grenades gas tear.	8.384228706359863	4377.480923771436
+415	legs muscular long four with mammal hoofed large a is horse a.	7.3312201499938965	1527.2441024805614
+416	brown or gray usually is and neck its on mane a and tail a has horse a.	6.317171096801758	554.0035511815602
+417	entertainment and travel work draft for used been have horses.	7.203056812286377	1343.5314170814522
+418	gallops or trots walks it while horse a ride can human a.	7.0728278160095215	1179.4786714851741
+419	injured or sick are they when healed be to hospitals to go people.	6.970267295837402	1064.5072508705623
+420	nurses and surgeons physicians professional by staffed are hospitals.	7.568561553955078	1936.3529380924042
+421	day same the leaving therapy or diagnosis specialist for there go patients some.	8.357831001281738	4263.437340225743
+422	weeks several for stay to have patients treatments or operations some for.	7.184036731719971	1318.2188281186627
+423	in live to families or people for structure or building permanent a is house a.	7.277364253997803	1447.1686249235818
+424	in light let to windows and rain and cold out keep to walls and roof a has house a.	6.328919887542725	560.5508088423506
+425	washing or cooking sleeping like purposes for rooms have can house a.	8.793176651000977	6589.130332283263
+426	sleep and eat to night at back come and work to house the leave people most.	6.84468412399292	938.8766655532817
+427	inuit by snow of blocks from made shelter of type a is igloo an.	7.199934005737305	1339.342372565399
+428	time the of most land the covers snow where places in built are igloos.	6.725669860839844	833.5301387788229
+429	tunnel entrance an with dome a of shape the in built often are igloos.	6.616579055786133	747.3839600224713
+430	igloos warms heat body and space the insulate snow in pockets air.	6.791292190551758	890.0629499908911
+431	things cut to used is that edge sharp a with tool a is knife a.	6.8932952880859375	985.6440526787326
+432	metal of made usually blade a and handle a of consist knives modern.	7.7734456062316895	2376.646183432965
+433	rituals in instruments and weapons as used been also have knives.	6.436577320098877	624.2664747610585
+434	throwing or stabbing slashing by attack to used be can knife a.	7.922915458679199	2759.8054267704797
+435	family legume the of plant a of seeds the are lentils.	5.785322666168213	325.48704682886677
+436	yellow or black brown green red be can lentils.	6.974063396453857	1068.5559071933058
+437	cuisines mediterranean and indian in used commonly are lentils.	5.774652481079102	322.03250288249154
+438	protein of source great a are and boiling by cooked are lentils.	7.48496150970459	1781.0556151133128
+439	vegetable leaf a as climates temperate in grown often plant biennial a is lettuce.	6.62744140625	755.5465587724256
+440	cooked or dishes other and salads in raw and cold eaten be can lettuce.	7.735378742218018	2287.8750550872064
+441	beginners for crop suitable a and grow to easy fairly considered is lettuce.	7.837169647216797	2533.025323072483
+442	bitterness the remove to bred are some but bitter taste leaves lettuce most.	7.878435134887695	2639.7384912458665
+443	kept is media and documents books of collection a where place a is library a.	6.7041754722595215	815.8050949937026
+444	information organizing and finding at experts are and libraries at work librarians.	6.606085777282715	739.5824552466046
+445	weeks several for home take to books borrow and libraries public to go can people.	7.126400470733643	1244.3896786285281
+446	books specialized have and research scholarly support libraries academic.	8.554117202758789	5188.070854672736
+447	logs round from built house small a is cabin log a.	7.900017261505127	2697.32888782309
+448	origins humble and life frontier american of symbol a is cabin log.	7.994686126708984	2965.159566590297
+449	settlers european by shelters first as used were cabins log.	7.426747798919678	1680.3338937332583
+450	ends the at joints notch with logs using built were cabins log.	8.58513355255127	5351.507375050862
+451	adult human male a is man a.	6.607929229736328	740.9470977787331
+452	puberty through passing after man a becomes boy a.	7.432627201080322	1690.2423518211951
+453	virility and masculinity with associated is manhood.	6.558277606964111	705.0562641720765
+454	structure body and weight height in women from differ men.	6.607075214385986	740.3145877085365
+455	young their feed to mammals female by produced liquid white a is milk.	8.065869331359863	3183.9228984490915
+456	food solid eat can they before milk fed be must animals newborn.	8.620096206665039	5541.919537627911
+457	milk from made are butter and cheese as such products dairy.	6.63599157333374	762.0343042192275
+458	milk called sometimes is coconuts and soybeans from produced liquid.	6.1030683517456055	447.2279195248866
+459	sound high-pitched a emit that insects flying small thin are mosquitos.	7.009396076202393	1106.985767939075
+460	animals and plants of skin the piercing for mouthparts have mosquitoes.	6.837606906890869	932.2554889474841
+461	protein for blood their suck and animals and people bite mosquitoes female.	8.107466697692871	3319.158937349448
+462	diseases parasite other and malaria fever yellow spread can bites mosquito.	8.012247085571289	3017.6905086328898
+463	land surrounding above steeply rises that landform a is mountain a.	7.633133888244629	2065.5129742885792
+464	top the at snow have sometimes and hills than higher rise mountains.	7.917718410491943	2745.4997907188235
+465	collision plate tectonic to due forms mountains of range a.	7.5555739402771	1911.3669396507278
+466	mountains up hike or climb who people are mountaineers.	5.595154285430908	269.1191680561849
+467	eat we when in food put we cavity face the is mouth the.	7.057306289672852	1161.3127086645072
+468	saliva with it mix and food chew to teeth has mouth the.	7.2598443031311035	1422.035113549502
+469	talking and kissing for used also is mouth the.	7.515675067901611	1836.6068922625057
+470	mouth the in placement tongue by controlled are sounds speech.	8.655716896057129	5742.884539253098
+471	liquids hot drinking for handle a with cup sturdy a is mug a.	6.851650238037109	945.4398207821694
+472	glass or metal of made be also can but ceramic normally is mug a.	7.235642910003662	1388.0329916765213
+473	insulation thermal for base ring a has and thick is mug a.	7.628645896911621	2056.2637407266725
+474	them on carved or imprinted drawings have or plain be can mugs.	7.525368690490723	1854.4968354117177
+475	intent with being human another of killing unlawful the is murder.	7.628824710845947	2056.631462212047
+476	existence their of victim the deprives it because crime serious a murder.	7.6850996017456055	2175.686665004662
+477	murder considered not is war in or accidentally self-defense in killing.	6.130383014678955	459.6121651775188
+478	penalty death the or sentence life a given often is murderer convicted a.	7.594274997711182	1986.788902715855
+479	pulp orange in liquid the from made drink a is juice orange.	7.14890718460083	1272.714353086054
+480	c vitamin of lot a contains and taste acid sweet a has juice orange.	7.385923862457275	1613.1174054002083
+481	well as pulp contains often juice orange squeezed freshly.	9.202906608581543	9925.937986855157
+482	glass a from breakfast at drunk often is juice orange.	8.480586051940918	4820.274000187714
+483	regions tropical and warm in lives that bird a is parrot a.	6.698554515838623	811.2323537361603
+484	beak curved sharp a and feathers brightly-colored have parrots.	6.409144401550293	607.3737906108182
+485	repeatedly it hear they if voice human the imitate can parrots.	7.326669692993164	1520.3102319671816
+486	pets popular them makes abilities and appearance their.	8.167048454284668	3522.9305128339915
+487	smell characteristic a with fruit orange-yellow an is peach a.	6.739232540130615	844.9120508708279
+488	hairs fine small in covered and thin is peach a of skin the.	7.765644073486328	2358.176838683985
+489	seed the contains which inside stone red-brown large a have peaches.	7.410342693328857	1652.992719390482
+490	ripening after harvested be must and delicate and sweet are peaches.	7.013410568237305	1111.4386856081637
+491	keyboard a of means by played instrument musical popular a is piano the.	7.70725154876709	2224.42013859353
+492	string steel vibrating a hit to hammer felt-tipped a causes key piano a pressing.	7.338892459869385	1539.006657775349
+493	quality sound the change to pedals and range note enormous an has piano the.	8.44781494140625	4664.868580053401
+494	concerts solo give can pianists famous and large is repertoire piano the.	7.28631067276001	1460.1736890947902
+495	rivers american south in live that fish ferocious small are piranhas.	7.452054500579834	1723.4002374400168
+496	day the during active most are and schools in attack and live piranhas.	7.0369553565979	1137.9177732662374
+497	carnivores opportunistic are and teeth sharp very have piranhas.	6.150913715362549	469.14585677941307
+498	carrion and mammals lizards insects fish eat piranhas.	5.82628870010376	339.09784705149633
+499	fields or clearings forest in grows that fruit a is raspberry the.	7.929774284362793	2778.799515221896
+500	together joined fruits small many of consists raspberry single a.	9.250680923461914	10411.652842089348
+501	jam into sugar with cooked or themselves by eaten are raspberries.	7.267159938812256	1432.476349940194
+502	teas herbal in dried or fresh used are raspberry the of leaves.	7.243301868438721	1398.704693560373
+503	climates many in thrives that bird black large a is raven a.	7.784795761108398	2403.775153465357
+504	animals small or berries insects carrion on feed ravens.	6.392975807189941	597.6323748836295
+505	solving problem of capable are and brains large have ravens.	6.661853313446045	781.9988840091702
+506	tricksters also and ill-omen of birds are ravens folklore in.	6.423220157623291	615.9834877806126
+507	food preserve and contain to used device cooling a is refrigerator a.	7.982517719268799	2929.2969349301356
+508	temperature freezing at compartment small a have can refrigerators some.	7.487743854522705	1786.0180263430323
+509	food of types different for compartments small and shelves have can refrigerator a.	7.570430755615234	1939.9757570537251
+510	surface its on magnets put often people and white generally is refrigerator a.	8.449296951293945	4671.787086795249
+511	grooves twisting with barrel a has and shoulder the on rests that firearm a is rifle a.	7.106287956237793	1219.6118803323202
+512	air the through fly they as axis rifle the around spin bullets the make grooves the.	7.192896842956543	1329.9502878442715
+513	scopes with sometimes sports shooting and hunting in used are rifles.	7.072268486022949	1178.8191381612671
+514	weapon infantry standard the are and bursts in fire can rifles assault.	8.152220726013184	3471.0788278305927
+515	spawn to back and ocean the to water fresh from migrates that fish a is salmon.	7.3860764503479	1613.363566362542
+516	taste nice a and content protein high has and red or orange is flesh salmon.	7.124844074249268	1242.4544213120191
+517	ways other in or poaching grilling by cooked or sushi in raw eaten be can salmon.	8.158167839050293	3491.783230669437
+518	wild the in caught be also can it though fish farmed common most the is salmon.	7.443609714508057	1708.907770138505
+519	materials hard cut to wire abrasive or blade hard a uses that tool a is saw a.	6.5783772468566895	719.3710199828877
+520	teeth the called are saw the of side cutting the along points sharp small the.	7.441317081451416	1704.9943594154572
+521	engine gas or motor electric an by powered or hand by worked be can saws.	7.292741775512695	1469.5944766830505
+522	medicine and carpentry construction forestry in extensively used are saws.	6.291436195373535	539.9282149120269
+523	world physical the about knowledge new produces and studies scientist a.	8.435739517211914	4608.877054220718
+524	them test to experiments does and hypotheses creates scientist a.	8.898463249206543	7320.714776174289
+525	sciences of examples classic are biology and chemistry physics.	7.090881824493408	1200.9663753692296
+526	conferences and journals in research their publish scientists.	6.832246780395508	927.271850000366
+527	cutting for used instrument two-bladed a are scissors.	7.226921558380127	1375.9801030281455
+528	handles metal or plastic with metallic usually are blades the.	7.636786937713623	2073.072194058051
+529	fabric or hair paper cut can scissors format and size the on depending.	7.384974479675293	1611.5866662538747
+530	metal of pieces or shrubs cutting for used scissors large are shears.	7.069518089294434	1175.581372471293
+531	something into screws tightening and inserting for tool a is screwdriver a.	6.988326072692871	1083.9055776241087
+532	inserted are they after screws remove to used be also can screwdrivers.	7.345503807067871	1549.2152743000306
+533	handle the rotating from torque the applies tip screwdriver the.	8.26391315460205	3881.252363372486
+534	flathead and phillips are screwdrivers of types major two the.	6.150515556335449	468.95909930356464
+535	skeleton cartilage a with fish large a is shark a.	7.367587566375732	1583.8083380945102
+536	fin dorsal large a with bodies streamlined have sharks.	8.742755889892578	6265.137972872748
+537	jaws powerful with mammals and fish on predate sharks most.	7.325096130371094	1517.919809844902
+538	fields electrical detect can and senses keen very have sharks.	9.193151473999023	9829.579883210065
+539	water on travels and floats that vehicle large a is ship a.	7.803404808044434	2448.925921545361
+540	engines diesel or steam sails by ocean the in powered be can ship a.	7.766580104827881	2360.385199500147
+541	containers cargo transport to and ocean the in fish to used are ships.	7.530555725097656	1864.141165789516
+542	cities between people take that hotels floating are ships cruise.	8.319360733032227	4102.536553716738
+543	heel a and outsole an sole a with foot the for clothing is shoe a.	5.881107807159424	358.2058449879412
+544	plastic or rubber canvas leather of made usually are shoes.	7.222463607788086	1369.8597040673524
+545	colors and styles many in come and heels high have often shoes women's.	6.684892654418945	800.2247729717064
+546	activity athletic and sports for shoe a is sneaker a.	6.914209842681885	1006.4754392861232
+547	land on fights who forces armed national the of member a is soldier a.	8.068778991699219	3193.200523453575
+548	camouflage usually uniform a wear must militia the in soldier a.	8.00363540649414	2991.8147033981295
+549	work her or his for paid is soldier a army volunteer a in.	7.371216773986816	1589.5667502858907
+550	grenades and rifles as such weapons using fights soldier a.	7.756937026977539	2337.7332142250643
+551	end one at head sharpened and pole a of consist that weapons are spears.	7.117360591888428	1233.1912392259353
+552	firearms of advent the before weapon personal common most the were spears.	8.17883586883545	3564.7024632108237
+553	war in fighting when throwing or stabbing for used were spears.	7.38868522644043	1617.577965484698
+554	fishing and hunting for spear the use still people native some.	7.088676929473877	1198.3212877314375
+555	silk make that legs eight with insects are spiders.	7.804366588592529	2451.2823838785994
+556	insects catch to them use and silk with webs build spiders.	6.735127925872803	841.4511205712562
+557	prey stuck their paralyse to fangs venomous use spiders.	7.287806034088135	1462.3588097270735
+558	bird a as big as or coin a as small as be can spiders.	6.456080436706543	636.5611188425597
+559	inundation frequent to subject land spongy low are swamps.	6.595944404602051	732.1199777803702
+560	vegetation and mud water shallow with covered is swamp a.	6.994231700897217	1090.3256596237134
+561	reptiles and birds for grounds breeding and nesting are swamps.	5.601247787475586	270.7640527213832
+562	land arable fertile produce to swamps drain often farmers.	7.889011859893799	2667.806451246692
+563	warmth for torso the on worn garment heavy a is sweater a.	7.578820705413818	1956.3205262852441
+564	common also is cotton but wool from knitted often are sweaters.	6.675295829772949	792.5818885175021
+565	cardigan a called is front the down opens that sweater a.	7.528952598571777	1861.1551057941672
+566	decoration as well as shape sleeve and collar cut in differ sweaters.	6.144410133361816	466.10462838811264
+567	legs and surface flat a with furniture of piece a is table a.	6.422519683837891	615.5521585802181
+568	sit to people for table a around chairs usually are there.	7.704317569732666	2217.9033013499384
+569	together meal a eat to table a on food and plates cutlery set people.	6.468355178833008	644.4228943471409
+570	on write or work to surfaces as used also are tables.	7.3070783615112305	1490.8151971527134
+571	images moving displays that screen a with appliance an is television a.	8.265318870544434	3886.712138243319
+572	films or programs watching for used mostly are televisions.	6.572141647338867	714.8992669176529
+573	console game a to connected when videogames play to used are they.	7.519367694854736	1843.401333322803
+574	internet or cable via received or broadcast be can content television.	7.625391960144043	2049.5836627067365
+575	consent their without property person's of taking the is theft.	7.037282466888428	1138.290058765536
+576	receivers to it sell to or something own to steal thieves.	6.700664043426514	812.9454770717267
+577	fines or jail with punishable be can and crime a is theft.	6.731226921081543	838.1750099345512
+578	property intellectual and ideas of theft is espionage industrial.	8.669926643371582	5825.072026207289
+579	elements heating using bread toasting for appliance kitchen a is toaster a.	7.170852184295654	1300.9527820807507
+580	done once it eject and slot a in placed bread the toast toasters pop-up.	7.0353312492370605	1136.0711725794313
+581	control temperature and within tray a side the on door a have ovens toaster.	6.715118408203125	824.78142200194
+582	cheese or garlic like toppings with cooked be to bread allow they.	7.022820949554443	1121.9471140618011
+583	taste savory a with fruit red smooth and shiny a is tomato the.	6.486512184143066	656.2305557562497
+584	ripe more gets it as red to green from color changes and softens tomato a.	6.583410263061523	723.0007525730863
+585	sauce as well as ketchup or soup salads make to used be can tomatoes.	5.887650966644287	360.55732763361203
+586	tastes and sizes different with tomato of varieties many are there.	6.29879093170166	543.9138833730337
+587	track a on stations between moves that cars of series connected a is train a.	7.567697048187256	1934.679673186677
+588	electricity or diesel by powered locomotive a by pulled is train the.	6.75584602355957	859.0662328064896
+589	distances long over fuel or goods of containers transports train freight a.	7.974959373474121	2907.2397586512793
+590	city a inside stations and suburbs between people transport trains commuter.	8.591646194458008	5386.473563789509
+591	train a off or on get passengers where place a is station train a.	6.9750776290893555	1069.640221247636
+592	tickets purchasing for machines or counters have stations train.	7.7941436767578125	2426.3507940373224
+593	station a in eat to places and rooms waiting are there.	7.357702255249023	1568.2290299280353
+594	line the to next platform a from enter trains cargo or passengers.	7.789257049560547	2414.5230446942332
+595	sea tropical warm over formed storm a is cyclone tropical a.	7.356961727142334	1567.0681421417153
+596	rain torrential and winds powerful very produce can cyclones.	7.809012413024902	2462.6971063355345
+597	flooding coastal and waves high cause also can cyclone tropical.	6.847822189331055	941.8275494859736
+598	property damage seriously and inland move can cyclone tropical a.	8.42255687713623	4548.518602830449
+599	bow a with played is that strings four with instrument an is violin the.	7.400513172149658	1636.8241870942236
+600	family its in instrument pitched highest and smallest the is violin.	7.928858757019043	2776.256612509014
+601	collarbone the and chin the between instrument the holds violinist a.	7.060802936553955	1165.380516825003
+602	bowing while hand one with neck the fingering by made are notes different.	7.315924167633057	1504.0611585808413
+603	animals dead of carcasses the on mostly feeding birds scavenging are vultures.	6.1250786781311035	457.18068197554953
+604	heat losing for feathers without head bald a have vultures many.	8.256481170654297	3852.5138823547627
+605	flapping without miles for soar to wings large their use vultures.	7.499752044677734	1807.5941562928122
+606	sick or wounded the kill may but animals healthy attack seldom vultures.	6.942371845245361	1035.222693384216
+607	area an protects sometimes and defines that structure solid a is wall a.	7.669713020324707	2142.466512671271
+608	rooms into space the divide and roof the support building a delineate walls.	7.198333740234375	1337.2007831827998
+609	drywall as well as cement or brick stone of made usually are walls.	6.124800205230713	457.0533872699228
+610	water or stone earth of movement to barrier a provide walls retaining.	8.144719123840332	3445.137597400243
+611	area its of 70% covering earth on liquid common most the is water.	7.461017608642578	1738.9166939627787
+612	live to order in water drink must people and animals plants.	7.532642841339111	1868.0359080691253
+613	ice solid becomes and temperature low a at freezes water.	8.213238716125488	3689.4722905831177
+614	vapor condensed are which sky the in clouds from falls that water is rain.	7.067525863647461	1173.2416804819918
+615	ocean the in lives that mammal large very a is whale a.	7.227829933166504	1377.230576523605
+616	surfacing when heads their on blowholes through breathe whales.	8.316594123840332	4091.202124574662
+617	insulation as and reservoir energy an as serves whale a in blubber the.	7.40509033203125	1644.3333653413038
+618	ambergris and oil whale meat for hunted been have whales.	7.985675811767578	2938.5625487388493
+619	through light let to wall a in opening transparent a is window a.	6.944006443023682	1036.916249863632
+620	frames by place in held glass of sheets of made is window typical a.	8.017342567443848	3033.1063381018066
+621	through sound and air let also will window a open when.	8.012090682983398	3017.2185709349874
+622	inside insulation increase to panes multiple have windows some.	8.50421142578125	4935.510670184018
+623	adult human female a is woman a.	6.774908065795898	875.5988618496198
+624	caregiver a as seen stereotypically is woman a.	6.541223526000977	693.1341270582461
+625	children bear and pregnant become can woman a.	8.653470039367676	5729.995585947143
+626	man a than organs reproductive different has woman a.	9.054213523864746	8554.5067118637

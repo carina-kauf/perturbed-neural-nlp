@@ -1,0 +1,628 @@
+Index	Sentence	Surprisal	PPL
+0	beekeeping conservation encourages the of habitats local.	85.90570878982544	2.034114011782252e+37
+1	in it is every beekeeper's interest to conserve local plants produce that pollen.	94.6464614868164	1.2718501788533446e+41
+2	a as passive of form agriculture it does require not that native vegetation be cleared to make way for crops.	126.08753252029419	5.7427460313965545e+54
+3	discourage beekeepers also the use of pesticides on crops because could they kill the honeybees.	101.60032939910889	1.331871781528127e+44
+4	go artisanal beekeepers to extremes for their craft but their is product worth the effort.	107.73026466369629	6.118704468552911e+46
+5	emphasizes artisanal honey-making quality character and over quantity and consistency.	93.6795015335083	4.836047784722712e+40
+6	the to produce finest beekeepers honey become micromanagers of their honeybees.	106.17991733551025	1.2982316351397407e+46
+7	the they scout fields know when nectar flows and select best the ways to extract honey.	125.70284843444824	3.908889869224986e+54
+8	beekeeper as the opens the hive the deep hum of bees 40000 fills the air.	135.77810287475586	9.282839504661565e+58
+9	checks the beekeeper honey pollen stores supplies and the bee nursery.	92.9907488822937	2.428673351856792e+40
+10	across bees crawl his bare arms and hands but they sting don't because they're gentle.	113.43514966964722	1.8376362755857953e+49
+11	a i have recurring dream about exams even though i'm longer no in college.	110.29552459716797	7.956786612452457e+47
+12	my in dream the it's day of my exam final and i suddenly realize i've never gone to class.	119.50484848022461	7.948702736307057e+51
+13	even i've never done of any the reading assignments.	74.69665861129761	2.7564279913489258e+32
+14	many i know other who people have the same nightmare.	74.25733137130737	1.7764347308462277e+32
+15	morning each participants the in study had to down write their dream experience from the previous night.	127.61306762695312	2.6402867066902955e+55
+16	if they recorded they recalled any dreams and described each and dream its emotional intensity.	122.76933288574219	2.079906533856686e+53
+17	then participants assigned dream each to a category as such a flying dream a bad dream or a nightmare.	135.50921249389648	7.094196817888765e+58
+18	while every night we sleep our minds are as active when as we are awake.	83.13127040863037	1.2689719200214083e+36
+19	throughout we dream the night in cycles of about ninety each minutes.	108.00138092041016	8.024237449917243e+46
+20	stories images feelings and strange combinations of characters and places fill can our dreams.	113.26073932647705	1.5435265558507266e+49
+21	decided when i to start playing cards things went from to bad worse.	104.60007381439209	2.6744523479777493e+45
+22	was gambling something had i to do and had i already spent close to $10000 doing it.	115.28869342803955	1.1728524560452038e+50
+23	were my friends sick watching of me gamble my savings away.	88.65708923339844	3.1862851219613135e+38
+24	hardest the part the was horror of leaving casino a after losing money i did not have.	140.2494649887085	8.120237553199188e+60
+25	on good data the social and economic effects of legalized are gambling hard to come by.	101.00062036514282	7.311594431038234e+43
+26	indicate some studies that having a casino nearby makes gambling more problems likely.	101.35116910934448	1.0381341523798222e+44
+27	also gambling may be with associated personal bankruptcies and marriage problems.	86.18059158325195	2.6776596349858606e+37
+28	past over the generation there has been a dramatic expansion legalized of gambling.	94.93810272216797	1.702527496227924e+41
+29	have most states instituted and lotteries many have casinos as well.	98.94062042236328	9.318917898199604e+42
+30	gambling very has become big controversial but business.	82.34619140625	5.787573687185599e+35
+31	from the wind the hurricane shook the house shattering a in window the kitchen.	103.68116760253906	1.0669866044191333e+45
+32	in we ran grabbed some food slammed the door and the surrendered kitchen to the hurricane.	122.80149030685425	2.1478780003365824e+53
+33	afraid i was our would house be ripped from its foundation.	89.51502084732056	7.514145520501456e+38
+34	night later that with the wind shaking the house we asleep fell huddled on the sofa.	111.86883926391602	3.8372455334069246e+48
+35	tear hurricanes can limbs off of trees and suck houses their off foundations.	123.5732684135437	4.64717024483159e+53
+36	heavy they dump rains can that trigger floods and mudslides.	82.47909307479858	6.610206011418083e+35
+37	also hurricanes can bring a storm surge a wall of water ocean that lurches onto land.	106.00260734558105	1.0872951167655069e+46
+38	several scientists use methods look to for evidence of ancient hurricanes.	91.7611312866211	7.101547086753167e+39
+39	storms the strongest deposited layers of windblown beach sand at bottoms the of coastal lakes.	123.28897476196289	3.4972076412290236e+53
+40	by trees drenched passing hurricanes preserve a record of each in storm their growth rings.	146.61284399032593	4.711390708773502e+63
+41	cream american ice is exported around the world but different have countries different preferences.	114.31100177764893	4.412018175489528e+49
+42	enjoy many people their cream ice flavored with local delicacies.	87.5945234298706	1.101078216008451e+38
+43	tropical in some places vanilla ice cream is topped with and bananas fresh mangos.	104.01235961914062	1.485914539793433e+45
+44	making i remember ice at cream home as a child.	83.62275266647339	2.074436019043899e+36
+45	poured we the mixture cream into a frozen then tub start turning the crank to expose it to the cold.	142.1392936706543	5.37416384406492e+61
+46	froze eventually it enough that i couldn't turn the hand any crank more.	111.73403596878052	3.353322029476447e+48
+47	put then i the container of half-frozen ice cream into freezer the to harden.	113.90053081512451	2.9266582947653074e+49
+48	cream ice is mixture a of milk or sugar cream flavorings and up to half whipped-in air.	137.80538606643677	7.048857731442865e+59
+49	in the butterfat milk and cream is what makes it and smooth silky.	87.40433406829834	9.103742816858788e+37
+50	ice high-priced premium cream loaded is with butterfat and natural flavorings.	106.40903377532959	1.6325112894867375e+46
+51	use when i the riding lawn mower the uncomfortable chair my makes back hurt.	131.46392154693604	1.2418115566503652e+57
+52	the i use two levers in front of me to the control machine.	81.32463073730469	2.083715258822338e+35
+53	blades the sharp underneath the lawn mower precisely sever each of blade grass.	128.67452716827393	7.631978015715488e+55
+54	lawn mowing the is a long task and it has me taught patience.	105.2003402709961	4.874468565312908e+45
+55	mower a lawn is a machine with revolving blades that grass cut to an even height.	113.02349090576172	1.2175265090121176e+49
+56	may the blades be powered by muscle or the machine have may a motor.	97.7262487411499	2.766754120350163e+42
+57	common the most power source for lawn mowers is a gas small engine.	93.1784987449646	2.930271336932224e+40
+58	are electric lawnmowers better for the environment because they do create not emissions.	89.21373081207275	5.559439413665514e+38
+59	need they also less and maintenance are less expensive to run.	78.7258472442627	1.5495337550157403e+34
+60	mowers electric lawn use much as electricity as an ordinary toaster.	97.43501281738281	2.0677042040690892e+42
+61	astronauts long train a time their for spacewalks.	85.17553567886353	9.800881504576321e+36
+62	much training of their is underwater conducted.	76.75260543823242	2.1539370840752913e+33
+63	may they spend to 8 10 hours in pool the for every hour they will spend floating in space.	125.83979606628418	4.482590180328754e+54
+64	practice astronauts to able be to perform construction repair and work on the outside of the space station.	108.76623773574829	1.7241572235328887e+47
+65	of the commanders shuttle flights are always pilots and many backgrounds have as military test pilots.	121.62873983383179	6.647992957034512e+52
+66	are other astronauts trained as doctors engineers and scientists who run can experiments in space.	103.40361213684082	8.083848390540325e+44
+67	were early crews all young men but astronauts now are more much diverse.	111.16938018798828	1.9065507592527874e+48
+68	of the team astronauts floated out together to the exterior the of space shuttle.	106.31162357330322	1.480987797041926e+46
+69	tools they carried needed to repair the broken part on huge the telescope.	100.08418273925781	2.9242081921947592e+43
+70	astronaut one loosened bolts the on the pipe the while other fitted the replacement part into place.	131.43767738342285	1.2096451870476084e+57
+71	been computers have used in art for a long time experimental by artists.	91.1959457397461	4.035487502866898e+39
+72	computers now that are more affordable and widespread computer graphics entered have the mainstream art world.	115.78671455383301	1.929884012828263e+50
+73	science some computer conferences have art exhibitions that showcase the graphics latest technology.	103.84967803955078	1.2628219440140416e+45
+74	conferences brand new have sprung up that are devoted to the bridging two cultures.	93.1377363204956	2.8132280626034347e+40
+75	graphics the computer specialist works with doctors to visualize medical and conditions surgical procedures.	108.14908790588379	9.30148093828613e+46
+76	digital she uses animation to help doctors understand structures within patient's a body.	101.1686897277832	8.64975268356129e+43
+77	the seeing internal in structures an animation on screen a is much clearer than squinting at x-rays.	133.10766220092773	6.425740649132868e+57
+78	animation modern digital is powerful a tool for education.	76.17636919021606	1.2105334393339332e+33
+79	field as the of computer graphics broadens we must ask graphics if actually help students.	131.86511087417603	1.8547697669697727e+57
+80	suggest research does that vivid and engaging digital imagery can effective be in the classroom.	111.60687160491943	2.9528982367769925e+48
+81	he the reason came to law school in the first was place cliche.	102.8039436340332	4.437980995569592e+44
+82	he change wanted to things the for better.	72.24532318115234	2.3754462114310343e+31
+83	recalled he one at evening law school when and he the program director had pulled an all-nighter.	140.03750610351562	6.569255604516727e+60
+84	finished they finally drafting a petition for several evicted families sunrise at.	126.72107696533203	1.0820926991652405e+55
+85	past over the four decades the cost of legal education gone has up relentlessly.	102.71659088134766	4.066760715677593e+44
+86	school private law tuition increased by a factor of four the since 1970s.	90.08593893051147	1.3299220130948801e+39
+87	for the market admission to law school and for new could lawyers eventually crash.	112.23636293411255	5.541573415191465e+48
+88	faculty law school often minimal have experience in actually practicing law.	91.71339511871338	6.770510511242284e+39
+89	on professors focus writing review law articles for prestigious journals.	87.87115716934204	1.451973456471217e+38
+90	often law schools emphasize the theoretical with classes on topics property like law in feudal england.	139.75536346435547	4.9543099004527044e+60
+91	pharmacists involved are increasingly in care preventive.	76.78449440002441	2.2237308118399285e+33
+92	becoming they are front-line health advisers because people go to often pharmacies.	103.41415214538574	8.169502827946366e+44
+93	often pharmacists are a source good of information about public health.	75.82574129104614	8.525130365868808e+32
+94	with doctors consult pharmacists because they know a lot about interactions drug and side effects.	91.71246814727783	6.764237349364426e+39
+95	prescription pharmacists dispense drugs to patients and offer advice about safe the use of medications.	89.27466344833374	5.908724069121655e+38
+96	conduct they also health wellness and screenings and provide vaccines.	90.03190183639526	1.25996407622888e+39
+97	have pharmacists must professional degrees and pass two exams in to order be licensed.	111.56717491149902	2.837974086473636e+48
+98	the i think pharmacy profession chose me as much as chose i to be a pharmacist.	108.23758125305176	1.0162118917985925e+47
+99	fascinated i was by the neatly arranged bottles in pharmacies a as child.	114.91777324676514	8.093843330840778e+49
+100	know i it's but cliche i love the that impact i have on lives of my patients.	117.20342350006104	7.957929479333708e+50
+101	has each person his or her own response to potentially situations stressful.	87.3428750038147	8.561081820219339e+37
+102	may one person be devastated by unemployment while another may working find fulltime stressful.	118.3861312866211	2.5968301909529256e+51
+103	everyday there are stresses being like stuck in traffic.	76.01802492141724	1.0332579335347654e+33
+104	also there are traumatic stresses such as divorce or loss a of child.	91.57559967041016	5.898989373677424e+39
+105	can some people adapt different to levels of stress.	64.27635955810547	8.219932910262553e+27
+106	dealt if not with effectively though stress can take a toll real on health.	110.73236846923828	1.2315628905493473e+48
+107	it's remember that your reaction to stress that determines if will it be harmful or beneficial.	107.41602897644043	4.4687766841216404e+46
+108	company when my was i downsizing felt incredibly stressed and worried.	105.50241708755493	6.59352365460122e+45
+109	would my heart race for no reason and i even dizzy felt at times.	102.11077880859375	2.218951344310264e+44
+110	started then i taking yoga to try to manage my level stress.	96.7104721069336	1.0019000039080059e+42
+111	wore the man a black jet tuxedo with satin stripes.	88.72438383102417	3.408084138708323e+38
+112	made it was with fabric rich cut in the latest style.	90.901686668396	3.006774897254789e+39
+113	had clearly he it as tailored it fit the man perfectly.	93.6879186630249	4.8769252192652975e+40
+114	like it looked something a professional stylist would have picked for out a formal event.	98.30268907546997	4.923970266012764e+42
+115	tuxedo while the is still preferred today's grooms are making statements personal in wedding attire.	136.7038927078247	2.342859568655431e+59
+116	are shorter jackets on the cutting edge of wedding fashion men for.	97.31784582138062	1.8390918971416857e+42
+117	also grooms are jazzing up their tuxedos with colorful shirts satin and ties.	111.1386194229126	1.8487966337456864e+48
+118	jacket a tuxedo is a tailless dinner jacket with black lapels silk.	102.40348863601685	2.9735143742736866e+44
+119	trousers black tie should be a perfect match to the jacket tuxedo.	86.44739437103271	3.496442175680169e+37
+120	shirt the should be always plain white and tie the should be black and match the jacket lapels.	107.91385459899902	7.351764270865233e+46
+121	the went concert pianist blind adulthood in.	93.7707576751709	5.298130144633071e+40
+122	was her blindness caused by a genetic condition that slowly the damaged eyes.	91.05988311767578	3.5221249657142265e+39
+123	interviewers she told that being blind was an advantage to pianist a.	100.81983375549316	6.102354966438892e+43
+124	no she had visual distractions so she could concentrate more on fully her music.	87.76458168029785	1.3051893767425386e+38
+125	defines the government blindness as vision insufficient for the ordinary of activities life.	113.40759181976318	1.7876863878176177e+49
+126	the by establishing parameters of legal blindness resources can be on focused the legally blind.	125.61137580871582	3.567199331885703e+54
+127	overlook this may those who have vision problems but who not do meet the standard.	102.6134467124939	3.668205657179769e+44
+128	countries in developing blindness in children is usually caused by disease infectious and nutritional deficiencies.	102.13301801681519	2.268851882879768e+44
+129	can these causes often prevented be by medicine and vitamin supplements.	95.62439823150635	3.381804418758414e+41
+130	countries in developed blindness is more likely to be caused genetic by problems.	100.7426586151123	5.649119071019327e+43
+131	really no one knows exactly how a taste gets from mouth your to your brain.	99.36769008636475	1.4283659343269619e+43
+132	the scientists think process begins when a molecule of food a touches taste bud cell.	115.99021911621094	2.3654409825037684e+50
+133	carries the cell a taste message to taste nerves beneath cell the.	122.44913482666016	1.510023023370362e+53
+134	once it was believed that each taste bud responded to of one the four basic tastes.	105.7821397781372	8.721668779482734e+45
+135	is that a bud taste on the tip the of tongue would respond only if you were eating something sweet.	122.25690078735352	1.2459407395358512e+53
+136	now scientists think a that single taste bud be can sensitive to all of the basic tastes.	125.49588203430176	3.178111055589241e+54
+137	sense my of isn't taste very good so tend i to eat foods with very strong flavors.	127.05804491043091	1.5156809285260234e+55
+138	like i lots hot of sauce and i my drink coffee with no cream so it's very bitter.	129.72923374176025	2.1912420607658835e+56
+139	even i can't taste sweetness well so when i make i cookies add extra sugar.	107.06834745407104	3.156403278491888e+46
+140	are hip fractures a problem real for aging individuals.	77.05449485778809	2.913009644980176e+33
+141	faced patients are with the pain of the break and difficult the process of healing.	88.018967628479	1.6832628706197422e+38
+142	to families have adjust the to patient's loss of independence.	89.63234519958496	8.4495371592124e+38
+143	society and for hip fractures involve substantial expense and time the in hospital.	111.82031059265137	3.6554753115160773e+48
+144	the halfway through race i heard a sound like someone their snapping fingers.	97.53441619873047	2.2838035871563765e+42
+145	a i felt crunch and i knew instantly that my was foot broken.	100.92988586425781	6.812279997438011e+43
+146	every like step felt running spikes on.	88.95283699035645	4.2827848187032235e+38
+147	doctor's at the office the afterward x-ray clearly showed the fracture.	96.14778709411621	5.707598066756614e+41
+148	a there are few types different of bone fracture.	74.32523918151855	1.9012588239455553e+32
+149	or in closed simple fractures the bone is broken but skin the is intact.	107.03786897659302	3.0616521815515985e+46
+150	open in or fractures compound the broken bone punctured has the skin and produced an open wound.	125.72165250778198	3.9830883515035636e+54
+151	piercings new ear can infected become if they're not carefully cleaned.	110.51839256286621	9.943242673292177e+47
+152	infection signs of include swelling tenderness or redness around the earlobe.	91.05426597595215	3.502396152258137e+39
+153	see if you these symptoms clean the area and apply ointment some.	92.81286716461182	2.0329002028938134e+40
+154	redness if the and swelling don't go away contact your care health provider.	98.7894058227539	8.011130738752354e+42
+155	hospital a local has new initiated measures to reduce infections.	83.6756477355957	2.1871173272014864e+36
+156	improved they have hand washing habits and ensured that infected are patients isolated from other patients.	113.21925163269043	1.480799398358546e+49
+157	has the hospital seen infection rates drop since the new began measures.	91.85054540634155	7.765779046963782e+39
+158	wound scrubbing a with soap or alcohol delays healing which the increases risk of infection.	121.76976203918457	7.654832926736958e+52
+159	increase band-aids can the risk of infection by holding in and heat moisture.	108.66948127746582	1.5651503767335057e+47
+160	skin fortunately most infections can easily be treated once they diagnosed are.	101.21819257736206	9.088715404974732e+43
+161	started modern opera at end the of the sixteenth century.	80.57954788208008	9.891291467582399e+34
+162	as it began an effort to rediscover and imitate greek performance tragic.	100.16384935379028	3.166701009694682e+43
+163	of early founders opera chose tales from antiquity for their matter subject.	117.67818689346313	1.2793436215807089e+51
+164	branched later operas out into different sources of stories and traditions musical.	111.66821479797363	3.13970967124826e+48
+165	is opera an form art in which singers musicians and perform a play that combines words and music.	114.92930603027344	8.187728210124238e+49
+166	many it incorporates of the elements of spoken theatre such acting as scenery and costumes.	110.76540470123291	1.2729286095438896e+48
+167	typically performances are given in an opera house and accompanied an by orchestra.	96.66111755371094	9.536520971937808e+41
+168	singer the opera has worked hard to win the role the in new production.	96.51039505004883	8.202231384333662e+41
+169	her not job is just singing about.	63.973188400268555	6.070195969215893e+27
+170	presence acting stage and interpretation musical are all critical.	90.58065795898438	2.1811218013396442e+39
+171	pure but her strong voice is certainly the star of show the.	90.46713352203369	1.9470490044179647e+39
+172	must a painter keep many elements in mind while completing painting a.	92.00275182723999	9.042477535094932e+39
+173	to she has use solid elements of design like strong and composition lighting.	109.86721801757812	5.1847345616346794e+47
+174	to she has execute brush the strokes with skill.	85.95915985107422	2.145797783548576e+37
+175	the most importantly content of the painting should reveal a of glimpse the painter's soul.	114.73945140838623	6.771901044243904e+49
+176	painters long ago were employed more as skilled artisans than creative as artists.	88.89419174194336	4.0388427712056894e+38
+177	painters however prominent had the social status of scholars and of members the royal court.	113.7410044670105	2.4951152245020263e+49
+178	signed they their decided work on its subject imagery and and established a personal relationship with their patrons.	130.5899248123169	5.181836886216206e+56
+179	a as painter learned i to focus less the on actual scene and more on the painting itself.	115.26843595504761	1.149332461233307e+50
+180	artist's an eye not is a camera lens has that to record everything within its field of vision.	117.51065635681152	1.082005879269531e+51
+181	nature i found provides useful information but more than is for needed a good painting.	113.73351573944092	2.4764997763386873e+49
+182	the is eagle owl an bird impressive.	79.86013412475586	4.817431792640986e+34
+183	ear it has tufts stick that up like horns.	87.2567982673645	7.854996503561398e+37
+184	orange its large eyes are downright creepy and look like could they pierce right through you.	110.95742225646973	1.542397143294901e+48
+185	hunts this owl at night flying swiftly and silently through darkness the.	98.40994262695312	5.4814448293679534e+42
+186	owl while some species become have endangered others are thriving.	96.09173774719238	5.396491037247934e+41
+187	owl the barred has well spread beyond its previous habitat.	89.3977313041687	6.682537431219951e+38
+188	suggest early findings that logging may have facilitated the barred invasion owl's.	120.36927795410156	1.886744993002976e+52
+189	landed the owl on a thick branch and gripped it her with talons.	96.8345775604248	1.134286313723154e+42
+190	her she pressed wings to her sides and settled down an half-closing eye.	110.49364423751831	9.700184120249028e+47
+191	have she might been a statue but for the glow her of eyes.	105.83219146728516	9.169312241723482e+45
+192	to it's unnerving watch a polar bear stalk across floating ice sea.	95.15842962265015	2.1221735224030077e+41
+193	worse it's even when you are submerged in the frigid directly waters beneath the huge animal.	115.9058427810669	2.1740420513616897e+50
+194	paws overhead giant set down on the ice as the bear polar pursued its prey.	115.67767715454102	1.7305209750771515e+50
+195	part as of film the crew for a bear polar documentary i spent months capturing these shots.	132.78146743774414	4.6372296840615964e+57
+196	bears polar are of one the few animals will that attack people for reasons other than fear or confusion.	127.39340353012085	2.1195915720883887e+55
+197	attack they may out of hunger because they live in food-scarce a environment.	101.52201795578003	1.2315504007397084e+44
+198	sneak they will up on people slowly careful to conserve energy their.	105.68896770477295	7.945760532213353e+45
+199	is the seal an part important of the polar bear's diet.	82.53109216690063	6.963024343725439e+35
+200	hunting when they wait will by a seal's hole breathing or stalk seals that are basking on the ice.	153.79639863967896	6.2076506185696936e+66
+201	bear the polar will crawl quietly forward and freeze in when place the seal looks around.	123.89154195785522	6.388707822061822e+53
+202	castle the medieval was a not structure built primarily for defense.	92.43523979187012	1.3935243922721814e+40
+203	its to purpose was dominate surroundings its.	87.14818000793457	7.046503717068143e+37
+204	could a castle easily lands control within a day's walk.	92.07533168792725	9.723183264058601e+39
+205	times during of peasants attack livestock and property be could brought inside the castle's walls for protection.	139.67513608932495	4.5723646944078845e+60
+206	in spectacular castles dramatic locations provide a record of the history stormy of many regions.	125.88682317733765	4.698428803314728e+54
+207	stand today they atop rocky cliffs overlooking beautiful landscapes and villages quaint.	111.86020374298096	3.8042515842752105e+48
+208	past in the they home were to battles plots and intrigue.	96.88020133972168	1.1872354272185974e+42
+209	leaving upon the station train we saw our looming hotel above a magnificent castle built on a cliff.	123.33198833465576	3.6509171352807978e+53
+210	outside the thick walls sheltered an inner courtyard hundreds of above feet the river.	111.94122314453125	4.125299737639944e+48
+211	rooms our tower had incredible an but slightly scary view.	97.04510116577148	1.400077034879835e+42
+212	climbing after fifty up feet the side of pyramid the the man gestured me into a small black entranceway.	151.53477096557617	6.467178481954301e+65
+213	into this led the at chamber the pyramid's center.	91.41592025756836	5.02839893771058e+39
+214	him i followed down steep the dark narrow passage.	90.03354263305664	1.2620331180528779e+39
+215	inside the smell the pyramid was chalky and the air thick was.	96.9509506225586	1.2742741428963766e+42
+216	just more than the tomb of the king pyramids represented pride the of the nation.	107.94091606140137	7.553430143089743e+46
+217	that the care the pyramid builders took in their craft evident is.	98.28149557113647	4.8207121465059206e+42
+218	covering the stones the pyramid were precisely fitted together and until polished the structure gleamed.	119.17945861816406	5.7409165510507954e+51
+219	still architects are working to solve the mysteries of how were pyramids constructed.	77.79403018951416	6.102644004989246e+33
+220	ramps some think were built inside the pyramid's walls to stone raise blocks.	114.20221138000488	3.957220256284788e+49
+221	that others speculate ramps zigzagged up the exterior walls of pyramid the.	120.82016086578369	2.961618857326055e+52
+222	even climbing beginner rock takes and courage strength.	89.1571455001831	5.253591649486894e+38
+223	are climbers who learning the sport can try scrambling on boulders large.	98.879638671875	8.767614531414936e+42
+224	comfortable once they're with that they can begin using ropes safely to climb vertical rock faces.	110.99527072906494	1.6018933371117616e+48
+225	the all of boys on the trip were new to climbing rock.	80.63439130783081	1.0448915007984095e+35
+226	of many were afraid heights.	54.61832809448242	5.2533761999609276e+23
+227	else having someone check their knots and harnesses helped them down calm.	108.2413558959961	1.0200549774209349e+47
+228	set the adults up routes climbing appropriate for beginners.	86.79616928100586	4.95561283485571e+37
+229	free-climbing particular is one style rock of climbing.	87.26979732513428	7.957770592866757e+37
+230	relies the climber solely on her skill and physical strength ascend to a rock face.	109.34402465820312	3.0726036218863975e+47
+231	rope are and bolts the equipment only used.	79.53525352478027	3.481141868098887e+34
+232	meant they are only stop to the climber if she falls.	85.14807891845703	9.53544178222137e+36
+233	skied i hesitantly down the steep trail that my buddies me convinced to try.	124.14525985717773	8.233818896360553e+53
+234	a i made bad and turn i found myself tumbling down.	87.18353748321533	7.300107269041582e+37
+235	came i finally to a stop at a flat part the of slope.	105.6817045211792	7.888258092852297e+45
+236	skis my were to nowhere be found and poles my were lodged in a snow drift up the hill.	133.73935317993164	1.2085457608585556e+58
+237	strength a major of professional skiers is how they use poles ski.	104.64244842529297	2.7902166372003714e+45
+238	of proper use ski poles improves their balance and adds to flair their skiing.	117.68210506439209	1.2843661416875645e+51
+239	the it minimizes need for upper body movements to regain balance lost while skiing.	98.11980628967285	4.101006305345704e+42
+240	designs new ski and boots stiffer let skiers turn more quickly.	98.87640953063965	8.739348328138962e+42
+241	and but faster tighter turns increase the twisting force on legs the.	112.19688177108765	5.327048366388947e+48
+242	led this has to more injuries particularly to ligaments in skier's the knee.	117.46744346618652	1.036245125515118e+51
+243	is an accordion a musical portable instrument with two keyboards.	74.03088665008545	1.4164640694990777e+32
+244	is one keyboard used individual for notes the other for chords.	87.73580646514893	1.2681674826165972e+38
+245	sound accordions produce with that bellows blow air through reeds.	107.12861633300781	3.3524856483403374e+46
+246	plays an accordionist both while keyboards opening and closing the bellows.	103.06013298034668	5.733859639977649e+44
+247	is an apartment a self-contained home that is part of building a.	77.60952425003052	5.0744400366130164e+33
+248	may an apartment have one or more rooms as well a as kitchen and a bathroom.	84.8371229171753	6.98705792120777e+36
+249	are some apartments for people single others for families.	75.85000991821289	8.734554516030267e+32
+250	can the building have a garage a laundry facility or storage extra space.	88.9291000366211	4.182321615864978e+38
+251	is an apple a fruit that can be green red yellow or.	81.02354049682617	1.5419721932003992e+35
+252	thin apples have skin crisp a sweet pulp and seeds inside.	100.75156497955322	5.699656904348155e+43
+253	tart some very apples used are to make cider.	82.46017694473267	6.4863417048156096e+35
+254	be apples can eaten roasted raw or baked in pies.	78.96350479125977	1.9652346038407513e+34
+255	the arson is criminal of act burning a building or wildland.	91.02781534194946	3.4109700233945047e+39
+256	investigation a fire determines if a fire was caused by or accident arson.	85.98159980773926	2.194493716746036e+37
+257	be arson can done to cause damage to others or insurance collect.	92.79345989227295	1.9938275283965423e+40
+258	of the severity the depends crime on whether people were harmed.	91.13504981994629	3.797075606346545e+39
+259	or an automobile car a is wheeled vehicle for transporting passengers.	84.34209823608398	4.259002118245111e+36
+260	can a car be by powered a gasoline or electric engine.	75.63036251068115	7.012116174465046e+32
+261	steers the driver the on car roads other passengers just sit.	104.85450267791748	3.449307523895849e+45
+262	in automobiles vary size number of doors and the type trunk of.	103.61039400100708	9.940823946837267e+44
+263	is the axe a used tool to split and cut wood.	69.93615341186523	2.3598560514852326e+30
+264	usually the axe consists a of head attached to a handle.	85.32693290710449	1.1402921098852243e+37
+265	heads historically axe were of made stone and then metal.	95.2369613647461	2.295550196897145e+41
+266	used axes are by and woodcutters firemen entering buildings.	106.51280879974365	1.811027786596739e+46
+267	is a banana a long fruit that grows in bunchs a with soft edible inside.	113.90195369720459	2.9308255484596605e+49
+268	when a banana ripe can be yellow purple or red have and small brown spots.	99.96708011627197	2.6010653667123093e+43
+269	producers the greatest are countries tropical such as india or ecuador.	103.78667831420898	1.1857187484307445e+45
+270	and unripe bananas plantains are staple foods and often cooked potatoes like.	110.2745132446289	7.791347895862419e+47
+271	bed a is piece a of furniture used a as place to sleep or have sex in.	109.67561721801758	4.280705563522083e+47
+272	is a bed made of a mattress and a box plus spring sheets pillows and covers.	95.70280075073242	3.657617349348079e+41
+273	the in waterbeds mattress is filled with water and in it airbeds is filled with air.	105.6696081161499	7.793413324844768e+45
+274	of another type bed is the hammock a fabric sling above suspended the ground.	116.83946228027344	5.5301095782397564e+50
+275	is a bee a flying insect with a black and body yellow and six legs.	96.17899417877197	5.888523964575161e+41
+276	pollen bees spread between flowers as they collect nectar to honey make.	100.2666687965393	3.5096271185224184e+43
+277	social bees are insects and live together in a colony in located a hive.	91.61312866210938	6.124579097791261e+39
+278	have many bees stingers can and attack if they feel threatened.	84.06697511672974	3.234621012807937e+36
+279	is a bicycle a vehicle with two wheels and pedals a on frame.	78.85722351074219	1.767083325922328e+34
+280	is a bicycle propelled by the pedalling of a cyclist the on saddle.	88.28293466567993	2.1917517981554787e+38
+281	have the wheels rubber tires with an inner tube full air of.	100.83465099334717	6.193448220023842e+43
+282	people for use bicycles transportation and recreation racing.	75.57390642166138	6.627206982638886e+32
+283	creates a blacksmith objects forging by iron or steel.	81.77964878082275	3.2843557895759404e+35
+284	hammers a blacksmith and bends hot iron on an anvil change to its shape.	109.92066383361816	5.469375615797286e+47
+285	a blacksmiths wears thick and apron handle the metal with tongs.	105.76447105407715	8.568921419700657e+45
+286	objects blacksmiths make like horse weapons shoes or iron furniture.	102.26182222366333	2.580745038672275e+44
+287	is a blender a kitchen appliance used to mix ingredients puree or food.	80.80710029602051	1.2418746360126563e+35
+288	a blenders have glass or plastic container with a rotating in blade the bottom.	106.86691474914551	2.5805446244891717e+46
+289	used blenders are to milk make shakes and fruit smoothies.	88.54371786117554	2.8447759930171674e+38
+290	also blenders are used to make cold alcoholic drinks with ice crushed.	86.45207214355469	3.512836050328799e+37
+291	is a boy a young male child who has not puberty undergone.	82.0190691947937	4.172815300400262e+35
+292	is the term used indicate to sex distinctions relative to girls.	89.2476167678833	5.751054527663075e+38
+293	like traditionally boys to play rough games and fight with other each.	96.87488794326782	1.1809439041897406e+42
+294	male an adult behaving immaturely is often referred to as boy a.	85.05632781982422	8.699490598402714e+36
+295	broccoli plant is a in cabbage the family.	73.38288688659668	7.4093965873168635e+31
+296	a broccoli has green head flower and a thick tough stalk.	84.25658798217773	3.9099501884610184e+36
+297	high broccoli is in fiber vitamins and other nutrients.	70.1330337524414	2.873356798829192e+30
+298	broccoli boiled can be stir-fried eaten or raw.	78.0298900604248	7.725928360048451e+33
+299	is a butterfly a insect flying with four large wings.	70.34214782714844	3.5416582062892374e+30
+300	of the wings butterflies be can very colorful and patterned.	89.88876628875732	1.091930971038045e+39
+301	the metamorphosis is transformation a of caterpillar into a butterfly.	81.1656494140625	1.7774347253117663e+35
+302	collect some people butterflies of because their colorful wings.	87.68404769897461	1.2041984576046246e+38
+303	is a carpenter an artist or manual laborer who works wood with.	87.77518463134766	1.3191018621763452e+38
+304	and carpenters build repair furniture houses boats and other objects.	89.45727109909058	7.092497713491641e+38
+305	tools carpenters use such hammers as saws pliers and planes.	89.5563154220581	7.830934787740947e+38
+306	is a luthier a that carpenter makes and repairs musical instruments.	85.00624990463257	8.274566695800881e+36
+307	small cats are furry with animals four legs and a tail.	79.47625160217285	3.2816896940459847e+34
+308	to cats like groom by themselves licking their fur.	77.84414291381836	6.41625648120161e+33
+309	hunt cats can mice or birds but are often fed their by owners.	104.95689392089844	3.821200866467384e+45
+310	of the claws cats retractable are so that they keep sharp.	89.75154161453247	9.519174004051531e+38
+311	is a chair a piece of furniture designed for people sit to on.	86.8887939453125	5.436554545097512e+37
+312	of chairs consist a seat raised above floor level supported legs by.	112.23597764968872	5.539438744525177e+48
+313	also chairs can have back and arm rests as well a as cushion.	97.8773193359375	3.2179529583885976e+42
+314	fixed seats are chairs located in vehicles or in places cinemas like.	106.47620391845703	1.7459339733138678e+46
+315	a a clarinet is woodwind instrument musical.	71.31177520751953	9.339217018193124e+30
+316	is a clarinet a long black tube with a flare the at bottom.	97.567617893219	2.3609025620430937e+42
+317	chooses the player notes pressing by keys and holes.	86.29856872558594	3.012951866679278e+37
+318	is the clarinet used in both jazz and classical music.	51.7048716545105	2.8519404111896167e+22
+319	is a cod a fish that lives in the colder of areas the atlantic.	104.79011631011963	3.234217863266429e+45
+320	is cod flesh white mild-tasting and and flakes easily when cooked.	105.6651029586792	7.758381741233735e+45
+321	is fresh cod used for fish and chips salted cod elaborate for dishes.	109.04211854934692	2.2719061178283285e+47
+322	been cod has caught salted and traded since the time the of vikings.	116.24152946472168	3.0412688555158833e+50
+323	made coffee is from coffee beans the seeds of the plant coffee.	75.41924715042114	5.677574827752176e+32
+324	a coffee is popular drink in many countries and usually hot served.	80.30392169952393	7.508446131122045e+34
+325	a coffee contains mild called drug caffeine that keeps people awake.	86.50525093078613	3.7047007638969677e+37
+326	coffee world's is the seventh-largest agricultural legal export.	84.7229790687561	6.233361294745753e+36
+327	is a desert a environment natural where almost no rain falls.	85.6231746673584	1.533459396534579e+37
+328	are hot deserts usually with filled sand dunes or rocks.	78.7202730178833	1.5409203319707582e+34
+329	and some animals plants adapted have to live in deserts.	75.70261335372925	7.537498612093739e+32
+330	hot the biggest desert the is sahara in northern africa.	100.02359771728516	2.7523049342825144e+43
+331	is a desk a piece of furniture used for working sometimes at with a computer.	84.62955665588379	5.677399583516506e+36
+332	has a desk a flat surface and can be made wood of plastic or metal.	82.25707626342773	5.294126553689126e+35
+333	may a desk have to drawers store supplies and papers.	92.505615234375	1.4951275405569546e+40
+334	consists a cubicle of a desk surrounded by partitions on sides three.	93.35001850128174	3.478547360581167e+40
+335	is a door a movable barrier to entrance or exit an from enclosed area.	95.59444427490234	3.2820081048386792e+41
+336	have most doors locks to control who gets to pass them through.	84.50490474700928	5.0120318873967686e+36
+337	are most doors opened by pushing or pulling a handle they after are unlocked.	98.06718063354492	3.8907686238665536e+42
+338	of other types doors can slide or consist of a chamber revolving.	95.80998659133911	4.071444207226092e+41
+339	is a dress a of piece clothing that women sometimes wear.	80.81578159332275	1.252702651546729e+35
+340	is a dress like a shirt attached to a long skirt matching.	74.31403398513794	1.8800737585217008e+32
+341	is a dress usually worn at formal occasions such as wedding a or a dance.	84.60437393188477	5.536212397053218e+36
+342	be it can hard to climb stairs or ride a in bike a dress.	99.10275983810425	1.0959272837269267e+43
+343	is drunk driving the act of driving under the effects alcohol of.	84.78860378265381	6.656144645432315e+36
+344	of drunk driving any vehicle is a crime in most the of world.	91.31424713134766	4.5422773470593825e+39
+345	a it plays role almost in half of all vehicle-related deaths.	80.5101089477539	9.227754959664095e+34
+346	are drunk drivers caught field by sobriety and breathing tests.	93.98602724075317	6.570720692936155e+40
+347	is a drought a persistent shortage of the water supply by caused lack of rain.	100.53785419464111	4.602939844071679e+43
+348	cause drought will crops plants and to stop growing and die.	88.3931713104248	2.4471835127711634e+38
+349	will extreme drought eventually areas turn into desert and cause famine.	89.59762477874756	8.161200228402336e+38
+350	of large numbers people to have migrate away from dust bowls.	83.74757099151611	2.3502169516136948e+36
+351	large eagles are birds of prey that hunt during the and day have very good eyesight.	103.5685887336731	9.533812040496277e+44
+352	hooked eagles have beaks for tearing flesh strong legs and talons sharp.	118.93305540084839	4.487140585109235e+51
+353	in eagles live eyries and some species eat fish and small others mammals.	120.46845245361328	2.0834550928135862e+52
+354	bald the eagle a has bright white head is and the national bird of the united states.	110.38957929611206	8.74148361613963e+47
+355	the earthquakes shake ground and can knock down buildings and structures other.	86.29013299942017	2.9876423320216746e+37
+356	can the shaking also landslides trigger and volcanic activity.	88.85042572021484	3.8658910021986766e+38
+357	are most earthquakes caused by the release of energy in earth's the crust.	78.5330753326416	1.2778540797588832e+34
+358	at an earthquake sea can displace the seabed and cause tsunami a.	94.06947326660156	7.14254779574819e+40
+359	the elephants are largest of kind land mammal weighing several tons.	90.15907955169678	1.4308389133189385e+39
+360	has an elephant a long nose called a trunk which grab can things or food.	116.5109453201294	3.981627560192681e+50
+361	has the elephant a pair of ivory tusks for moving or objects digging into trees.	111.44327163696289	2.507251600284207e+48
+362	flaps the elephant its large ears to cool the blood them in and its body.	112.92689037322998	1.1054149850197226e+49
+363	is the eye an organ for sensing light and coding for it the visual cortex.	97.33166599273682	1.8646849048278888e+42
+364	have most animals complex eyes which can detect color motion texture and.	106.6322922706604	2.0408736845954796e+46
+365	is the fovea the center of the human eye and most the sensitive part of it.	91.19938373565674	4.0493853691136904e+39
+366	compound insects have eyes made up of eye units facing many in directions.	108.09985828399658	8.854661170223675e+46
+367	is a farm land used to grow plants or raise for animals food.	82.46434783935547	6.513452050449529e+35
+368	the farmers are people who run the farm and decide to what produce.	80.19091033935547	6.706097435627915e+34
+369	have farms usually a house for farmers a silo and barn a.	111.28827667236328	2.147259136535746e+48
+370	is a cooperative a farm where many farmers share the and land equipment.	88.76879119873047	3.56283887884371e+38
+371	have primates usually four and fingers a thumb on each hand.	90.74211692810059	2.5633072040855243e+39
+372	used fingers are for writing grasping grooming and other activities.	88.57077550888062	2.9227997491417965e+38
+373	are the fingertips sensitive temperature to pressure and vibration.	73.69905281066895	1.0164638953471858e+32
+374	protects the nail the tip of the finger and can grown be or decorated.	110.30276012420654	8.014566940610172e+47
+375	is a flood an overflow of an expanse of water submerges that inhabited land.	103.09766244888306	5.953137295466207e+44
+376	can flood be by caused heavy rain or snow rapid melt as well as earthquakes at sea.	118.81185531616211	3.974963530971245e+51
+377	flood in a a river will flow out of its or channel break dams and levees.	116.3033595085144	3.2352456456556188e+50
+378	flood during a people and evacuate the contaminated water causes diseases.	91.81968927383423	7.529816309808021e+39
+379	is a floor a horizontal surface inside a building used walking for on.	102.93928527832031	5.081168153247579e+44
+380	be floors may made of bare concrete tile linoleum or floorboards wooden.	111.09381866455078	1.767797109988564e+48
+381	put people often carpets on a floor for comfort and dampen to noise.	100.93821144104004	6.869232911573535e+43
+382	the in buildings floor often has pipes and electrical wiring it under.	98.25820684432983	4.709741101013816e+42
+383	is a foot a body part on the end of leg a.	80.64237356185913	1.0532654672905093e+35
+384	their people use feet walking when running or standing straight.	82.4329948425293	6.312404007402262e+35
+385	use people also their feet to kick in both fighting sports and.	95.16286611557007	2.131609445937119e+41
+386	have many cultures rules behavior for related to feet.	91.2927074432373	4.4454842980347987e+39
+387	is a forest an area with a high density of and trees canopy cover.	79.03034400939941	2.1010786329490724e+34
+388	of the type forest depends on temperature and rainfall in location its.	93.38294506072998	3.5949904725261645e+40
+389	ecosystem a forest has various types of trees and animals well as as ground plants.	102.35949516296387	2.8455349206592583e+44
+390	the deforestation is cutting of down forests disregarding regeneration.	86.7625675201416	4.791862081270432e+37
+391	is a fork a tool for eating solid foods with handle a and several tines.	115.16096353530884	1.0322169683452786e+50
+392	usually forks are made metal of or plastic if disposable.	92.48346710205078	1.4623772753158955e+40
+393	are forks used lift to food to the or mouth to hold food in place while cutting.	127.47174263000488	2.292315667907716e+55
+394	used forks are in western cultures and there are special for kinds various foods.	115.49813222885132	1.4461105587527727e+50
+395	pan a frying is a small pan with sloping sides a and handle.	103.03327703475952	5.5819207803011486e+44
+396	pan a frying is to used fry sear and brown food.	100.43020915985107	4.1331927080043933e+43
+397	is the food cooked on oil covering the bottom of pan the.	89.17360782623291	5.340793793854052e+38
+398	are frying pans made iron of or teflon-clad steel.	97.64513397216797	2.551190381239843e+42
+399	is a girl a female human who has not yet maturity reached.	80.62997817993164	1.0402904210088576e+35
+400	the at puberty body of a girl develops into that a of woman.	98.95032501220703	9.409794420656615e+42
+401	like girls often playing dolls with and social games.	76.49447250366211	1.6639003168386658e+33
+402	grow girls sometimes long and hair wear dresses and skirts.	82.14128160476685	4.715256662776043e+35
+403	is a glove a piece of clothing that covers the and hand fingers.	79.19742584228516	2.483161832220153e+34
+404	protect gloves to against cold are made of wool or waterproof lined material.	96.5667724609375	8.677935442909977e+41
+405	or disposable rubber latex gloves are used to shield hands germs from or chemicals.	102.21559524536133	2.4641604312164555e+44
+406	is a mitten a kind of glove where the four are fingers covered together.	101.25876331329346	9.465033410450842e+43
+407	is a hammer a tool used to deliver an impact an to object.	84.70128631591797	6.099598614619993e+36
+408	is a hammer most used often to drive nails into wood.	71.26064968109131	8.873744772461922e+30
+409	on the claw the can head be used to remove nails.	74.17793941497803	1.6408533455600303e+32
+410	in hammers vary the of shape the head and handle length.	89.74781513214111	9.483766982540058e+38
+411	grenade a hand is an explosive used as a weapon people against.	90.04192352294922	1.2726545249067834e+39
+412	are hand grenades thrown and timed to explode a bit that after.	90.90831756591797	3.026778761963144e+39
+413	also grenades can be from fired rifles or shoulder launchers.	81.0853328704834	1.6402597536918895e+35
+414	grenades tear gas are thrown into the middle of a to mob disperse it.	103.40828132629395	8.121681666818766e+44
+415	is a horse a large hoofed mammal with four long legs muscular.	91.87294960021973	7.941728711813521e+39
+416	horse a has tail a and a mane its on neck and is usually gray or brown.	116.96966314315796	6.299110881113153e+50
+417	been horses have used draft for work travel and entertainment.	93.00680160522461	2.4679747757365764e+40
+418	can a human ride a horse while it walks trots gallops or.	103.16588687896729	6.3734618737633335e+44
+419	to people go hospitals to be healed when they are or sick injured.	94.31889343261719	9.165896670141841e+40
+420	staffed hospitals are by physicians professional surgeons and nurses.	79.94806718826294	5.260226183367814e+34
+421	go some patients there for specialist diagnosis or therapy leaving same the day.	101.80122375488281	1.6282074131904105e+44
+422	operations for some or treatments patients have to stay for weeks several.	105.18519592285156	4.8012040879856604e+45
+423	is a house a permanent building or structure for people families or to live in.	84.23209190368652	3.815335319528005e+36
+424	house a has roof a and walls to out keep cold and rain and windows to let light in.	130.712007522583	5.854685699546167e+56
+425	can a house have rooms for purposes like sleeping cooking washing or.	99.2199182510376	1.2321483259366916e+43
+426	leave most people the house to work and come back night at to eat and sleep.	92.79745531082153	2.001809639204519e+40
+427	is an igloo a type of shelter made from blocks snow of by inuit.	112.41244173049927	6.608503750783117e+48
+428	built igloos are in places where snow covers the land of most the time.	94.24269151687622	8.493386459966559e+40
+429	often igloos are built in the shape of a dome an with entrance tunnel.	107.84287881851196	6.848054112742885e+46
+430	in air pockets snow insulate the space and body heat igloos warms.	119.84455442428589	1.1164227367395718e+52
+431	is a knife a tool with a sharp edge that used is to cut things.	86.80362224578857	4.99268481928586e+37
+432	consist modern knives of a handle and a blade usually of made metal.	108.55335330963135	1.393549290320273e+47
+433	also knives have been as used weapons and instruments in rituals.	83.84409523010254	2.5883791844709466e+36
+434	can a knife be used to attack by slashing stabbing throwing or.	95.56433200836182	3.184652556415335e+41
+435	the lentils are seeds a of plant of the legume family.	86.26213836669922	2.9051642406061527e+37
+436	be lentils can red brown green black or yellow.	85.51088905334473	1.370589052232927e+37
+437	commonly lentils are used indian in and mediterranean cuisines.	92.38584423065186	1.326362868603181e+40
+438	cooked lentils are by boiling and are a great source protein of.	98.64849090576172	6.95817341835757e+42
+439	a lettuce is biennial plant often grown in temperate climates a as leaf vegetable.	119.77381467819214	1.0401759093977227e+52
+440	be lettuce can eaten cold and raw in salads and dishes other or cooked.	102.84612846374512	4.629201411977141e+44
+441	considered lettuce is fairly easy to grow and a suitable for crop beginners.	87.41727018356323	9.222274902686306e+37
+442	leaves most lettuce taste bitter but some are bred to the remove bitterness.	111.7188367843628	3.302739648775873e+48
+443	is a library a place where a collection of books and documents media is kept.	75.8838300704956	9.035010576756225e+32
+444	at librarians work libraries and are experts at finding and information organizing.	94.6518144607544	1.2786766142786629e+41
+445	go people can to public libraries and borrow books to home take for several weeks.	105.19441795349121	4.8456857294748264e+45
+446	support academic libraries scholarly and research have specialized books.	88.1334400177002	1.8874118214297624e+38
+447	cabin a log is small a house built from round logs.	90.11500597000122	1.369146212800637e+39
+448	is log cabin a symbol of american frontier life and origins humble.	103.35385131835938	7.691433881132788e+44
+449	were log cabins used first as shelters by european settlers.	91.76526641845703	7.130973719768251e+39
+450	were log cabins built using logs with notch joints at ends the.	112.81690216064453	9.902801500228215e+48
+451	a a man is male adult human.	58.602375984191895	2.8228546476680395e+25
+452	becomes a boy a after man passing through puberty.	76.2348370552063	1.2834207656679245e+33
+453	manhood with is associated masculinity virility and.	84.4650707244873	4.816306638197318e+36
+454	from men differ women height in weight and body structure.	80.79303693771362	1.2245319421259805e+35
+455	a milk is white liquid produced by female mammals to their feed young.	93.69559478759766	4.914505154385747e+40
+456	must newborn animals be fed milk before they can eat food solid.	83.15772771835327	1.3029935793854882e+36
+457	such dairy products as and cheese butter are made from milk.	67.4137659072876	1.8942030774153044e+29
+458	from liquid produced soybeans coconuts and is sometimes called milk.	89.65900421142578	8.677822886221569e+38
+459	thin mosquitos are small insects flying that emit a high-pitched sound.	83.44974517822266	1.7448730991101772e+36
+460	mouthparts mosquitoes have for the piercing skin of plants and animals.	95.26188611984253	2.3534852323694797e+41
+461	bite female mosquitoes people and animals and suck their blood protein for.	101.28835201263428	9.749275883476237e+43
+462	can mosquito bites spread fever yellow malaria and other parasite diseases.	88.30105304718018	2.2318247254389647e+38
+463	is a mountain a that landform rises steeply above surrounding land.	93.42655944824219	3.755253257997481e+40
+464	higher mountains rise than hills and sometimes have snow at top the.	96.71213865280151	1.0035711083188895e+42
+465	of a range mountains due forms to tectonic plate collision.	93.05387735366821	2.5869346291532916e+40
+466	people mountaineers are who or climb hike up mountains.	94.19954586029053	8.134726667434412e+40
+467	is the mouth the face cavity we put food in we when eat.	103.03945922851562	5.6165361854182715e+44
+468	has the mouth teeth to chew food and mix it saliva with.	92.95844793319702	2.3514783452119946e+40
+469	is the mouth also for used kissing and talking.	72.54021263122559	3.1901717274689408e+31
+470	are speech sounds controlled tongue by placement in the mouth.	83.25974607467651	1.442940040409808e+36
+471	is a mug a sturdy cup with a handle for hot drinking liquids.	85.92440032958984	2.0724922919367708e+37
+472	is a mug normally ceramic but can also be made metal of or glass.	94.1841254234314	8.010247853974905e+40
+473	is a mug thick and has a ring base for insulation thermal.	98.46385717391968	5.785086240669844e+42
+474	be mugs can plain or have drawings imprinted or carved them on.	113.79445362091064	2.632105415656904e+49
+475	the murder is unlawful of killing another human being with intent.	75.12224006652832	4.218658095870472e+32
+476	serious murder a crime because it deprives the victim of existence their.	91.37014770507812	4.8034243908280147e+39
+477	self-defense killing in accidentally in or war is not considered murder.	92.57392883300781	1.6008345919946716e+40
+478	murderer a convicted is often given a life sentence or death the penalty.	81.88150691986084	3.636525399065789e+35
+479	is orange juice a drink made from the liquid in pulp orange.	86.36322498321533	3.2141937300752046e+37
+480	has orange juice a sweet acid taste and contains a of lot vitamin c.	104.52317810058594	2.476506544921983e+45
+481	orange freshly squeezed juice contains often pulp as well.	80.66451644897461	1.0768479340378464e+35
+482	is orange juice often at drunk breakfast from a glass.	87.5441722869873	1.047010282977948e+38
+483	is a parrot a bird that lives in warm and regions tropical.	83.44782257080078	1.7415216159651561e+36
+484	brightly-colored parrots have feathers a and sharp curved beak.	94.02319240570068	6.819517257135271e+40
+485	imitate parrots can the voice human if they hear it repeatedly.	93.9686279296875	6.45738353317874e+40
+486	their abilities appearance and makes popular them pets.	81.61751461029053	2.7927767603427923e+35
+487	is a peach an fruit orange-yellow with a characteristic smell.	84.92509603500366	7.629579155468798e+36
+488	of the skin a peach is thin and covered in fine small hairs.	81.76075744628906	3.222892317063522e+35
+489	a peaches have large stone red-brown inside which contains the seed.	97.82116460800171	3.0422297052697156e+42
+490	sweet peaches are and and delicate must be harvested after ripening.	90.42329406738281	1.8635354080995703e+39
+491	is the piano a popular musical instrument played by means a of keyboard.	92.01318359375	9.137300273851837e+39
+492	piano pressing a key causes a felt-tipped hammer to hit vibrating a steel string.	126.47299766540527	8.443548374104741e+54
+493	has the piano an enormous note range and pedals to the change sound quality.	102.34485530853271	2.8041801561203397e+44
+494	repertoire the piano is large and famous pianists can give concerts solo.	105.98064231872559	1.0636730299348394e+46
+495	small piranhas are ferocious that fish live in south american rivers.	93.69631671905518	4.918054371246341e+40
+496	and piranhas live attack in schools and are most active the during day.	111.41975212097168	2.4489703165548728e+48
+497	very piranhas have sharp and teeth are opportunistic carnivores.	96.55623626708984	8.586983020457579e+41
+498	piranhas insects eat fish lizards and mammals carrion.	92.32294464111328	1.2455048146531594e+40
+499	is the raspberry a fruit that grows in forest clearings fields or.	95.33086395263672	2.5215533992438755e+41
+500	raspberry a single consists many of small fruits joined together.	97.5449161529541	2.3079097556369787e+42
+501	eaten raspberries are by or themselves cooked with sugar into jam.	99.91616344451904	2.47194291273524e+43
+502	the leaves of raspberry are used fresh or dried in teas herbal.	94.69954681396484	1.341190967851838e+41
+503	is a raven a large black bird that thrives in climates many.	81.3321304321289	2.0994012338550008e+35
+504	on ravens feed carrion berries insects or small animals.	89.81053590774536	1.0097646470512086e+39
+505	large ravens have brains are and capable of problem solving.	83.64096641540527	2.112565461834288e+36
+506	ravens in folklore are of birds ill-omen and also tricksters.	117.78713607788086	1.4266033444147252e+51
+507	is a refrigerator a cooling device used to contain and food preserve.	88.89510869979858	4.042547918283011e+38
+508	can some refrigerators have small a compartment at freezing temperature.	85.35505771636963	1.1728178541859676e+37
+509	can a refrigerator have shelves and small compartments for different of types food.	97.42660999298096	2.0504024423627137e+42
+510	is a refrigerator generally white and people often put magnets its on surface.	109.24662017822266	2.7874321829465817e+47
+511	rifle a is firearm a that rests on shoulder the and has a barrel with twisting grooves.	123.59580135345459	4.753073325753924e+53
+512	make the grooves the bullets spin around the rifle axis they as fly through the air.	110.64990043640137	1.134073448589261e+48
+513	used rifles are in and hunting shooting sports sometimes with scopes.	92.40036249160767	1.3457598151112255e+40
+514	can assault rifles fire in bursts and are the standard weapon infantry.	90.24953126907349	1.5662945057475483e+39
+515	a salmon is fish that migrates from fresh water to ocean the and back to spawn.	96.38921737670898	7.266164432560259e+41
+516	is salmon flesh orange or red and has high protein and content a nice taste.	101.95561408996582	1.900030613151909e+44
+517	be salmon can eaten raw in sushi or cooked by poaching grilling or in other ways.	105.09098052978516	4.3695120553257266e+45
+518	the salmon is most common farmed fish though it can be also caught in the wild.	83.17790985107422	1.3295579296877982e+36
+519	saw a is tool a that uses a blade hard or abrasive wire to cut hard materials.	118.44241046905518	2.747168449132497e+51
+520	sharp the small points along the cutting side of the are saw called the teeth.	101.7585039138794	1.5601154456441914e+44
+521	be saws can worked by hand or powered by an motor electric or gas engine.	114.69710540771484	6.491124946171219e+49
+522	used saws are extensively forestry in construction carpentry and medicine.	103.525071144104	9.12782145629735e+44
+523	studies a scientist and new produces knowledge about the physical world.	76.23354434967041	1.2817627524316062e+33
+524	creates a scientist hypotheses does and experiments to test them.	85.0565128326416	8.701100264567964e+36
+525	and physics chemistry biology classic are examples of sciences.	85.16251373291016	9.674082333091626e+36
+526	scientists research publish their in and journals conferences.	83.83804893493652	2.5727762972845077e+36
+527	scissors two-bladed are a instrument for used cutting.	84.99809503555298	8.207363078486942e+36
+528	are the blades usually with metallic plastic or metal handles.	71.47242736816406	1.0966822495766685e+31
+529	the depending on size and format scissors can cut paper or hair fabric.	98.22859954833984	4.572342440341112e+42
+530	large shears are scissors used for cutting shrubs or pieces metal of.	108.18693542480469	9.660265642583595e+46
+531	is a screwdriver a tool for inserting and tightening screws something into.	80.84203338623047	1.2860237984519486e+35
+532	also screwdrivers can be used to remove screws after they inserted are.	85.22483825683594	1.0296200143381851e+37
+533	tip the screwdriver applies torque the from rotating the handle.	89.52835083007812	7.614979515352116e+38
+534	major the two types screwdrivers of are phillips and flathead.	103.81463670730591	1.219337309919047e+45
+535	is a shark a fish large with a cartilage skeleton.	74.63304328918457	2.5865380293657928e+32
+536	streamlined sharks have bodies a with large dorsal fin.	82.42057847976685	6.234511480971643e+35
+537	predate most sharks on and fish mammals with powerful jaws.	92.2576322555542	1.1667575021619624e+40
+538	very sharks have keen and senses can detect electrical fields.	89.38645553588867	6.607609914156777e+38
+539	is a ship a large vehicle that floats and travels water on.	82.89400577545166	1.0009428718905072e+36
+540	can a ship be powered in the ocean by sails or steam diesel engines.	83.46899223327637	1.7787820445922656e+36
+541	used ships are to fish in the ocean and to cargo transport containers.	82.32014465332031	5.6387724918245736e+35
+542	are cruise ships floating that hotels take people between cities.	84.83219194412231	6.952689730826091e+36
+543	is a shoe clothing for the foot with a sole outsole an and a heel.	99.29219388961792	1.3244998160851986e+43
+544	usually shoes are made leather of canvas rubber or plastic.	78.31577730178833	1.0282765413900325e+34
+545	often women's shoes have high heels and come in many and styles colors.	94.0350193977356	6.900650468615003e+40
+546	is a sneaker a for shoe sports and athletic activity.	75.58215713500977	6.682112360550351e+32
+547	is a soldier a member of the national armed forces fights who on land.	87.72370195388794	1.2529094667537565e+38
+548	in a soldier the must militia wear a uniform usually camouflage.	95.7680196762085	3.9041139785603255e+41
+549	volunteer in a army a soldier is paid for his her or work.	101.30709457397461	9.933725413585861e+43
+550	fights a soldier using such weapons as rifles and grenades.	63.60250520706177	4.1900291720903156e+27
+551	weapons spears are that consist of a pole and sharpened at head one end.	100.54986190795898	4.658543796193027e+43
+552	the spears were most common personal weapon before the advent firearms of.	107.49997615814209	4.860113931902847e+46
+553	used spears were for or stabbing throwing when fighting in war.	96.95779991149902	1.2830319729067042e+42
+554	people some native still the use spear for hunting and fishing.	91.4086742401123	4.9920947604281445e+39
+555	insects spiders are with legs eight that make silk.	92.75004005432129	1.90910841483686e+40
+556	webs spiders build with and silk use them to catch insects.	89.52627182006836	7.599164342363484e+38
+557	venomous spiders use fangs paralyse to their stuck prey.	101.87255859375	1.7485983112857079e+44
+558	be spiders can as small as a coin or as as big a bird.	86.88229131698608	5.401317342893635e+37
+559	low swamps are spongy subject land to frequent inundation.	89.65385437011719	8.633248349860674e+38
+560	is a swamp covered shallow with water mud and vegetation.	72.03438711166382	1.9236977183361859e+31
+561	nesting swamps are and grounds breeding for birds and reptiles.	85.3191876411438	1.1314943586635706e+37
+562	drain farmers often swamps produce to fertile arable land.	92.05423593521118	9.520213818175131e+39
+563	is a sweater a heavy garment worn on the torso warmth for.	91.00778818130493	3.3433374831862746e+39
+564	often sweaters are knitted wool from but cotton is also common.	89.34264373779297	6.324368603007622e+38
+565	that a sweater opens the down front is called a cardigan.	81.04347467422485	1.5730185542061666e+35
+566	in sweaters differ cut collar and sleeve shape as well decoration as.	106.5982894897461	1.9726448623305976e+46
+567	is a table a piece of furniture with a flat and surface legs.	75.5351791381836	6.375459471283622e+32
+568	usually there are chairs a around table for people to sit.	75.45407676696777	5.87880665308828e+32
+569	cutlery people set plates and food on a table to a eat meal together.	107.3325343132019	4.1108097784004557e+46
+570	also tables are used surfaces as to work or write on.	90.81040954589844	2.744478071869761e+39
+571	is a television an appliance with a screen that displays images moving.	77.61993885040283	5.12756445633571e+33
+572	mostly televisions are used watching for programs or films.	79.81637191772461	4.611156789126782e+34
+573	used they are to play videogames when connected to a console game.	73.57154846191406	8.947825833087432e+31
+574	can television content be or broadcast received via cable or internet.	81.977370262146	4.002391299442402e+35
+575	the theft is taking person's of property without their consent.	68.49228858947754	5.5695869369372244e+29
+576	to thieves steal own or something to sell it to receivers.	87.86910724639893	1.4490000714163496e+38
+577	a theft is crime and can be punishable with jail fines or.	72.45803833007812	2.938503526766722e+31
+578	is industrial espionage theft ideas of and intellectual property.	76.43451690673828	1.5670718870857962e+33
+579	is a toaster a kitchen appliance for toasting bread using elements heating.	99.1077208518982	1.101377702721916e+43
+580	toast pop-up toasters the bread placed in a slot and it eject once done.	129.53601551055908	1.8062453579686052e+56
+581	have toaster ovens a door on the side a tray and within temperature control.	110.01344203948975	6.001099297941629e+47
+582	bread they allow to be cooked with toppings like garlic cheese or.	82.02143859863281	4.1827141074976494e+35
+583	is the tomato a shiny and smooth red fruit with savory a taste.	88.07072973251343	1.772686511048916e+38
+584	softens a tomato and changes color from green to red it as gets more ripe.	94.48364877700806	1.0807551008133078e+41
+585	be tomatoes can used to make salads soup or ketchup well as as sauce.	99.9181137084961	2.4767685580628574e+43
+586	many there are varieties tomato of with different sizes and tastes.	85.9597110748291	2.146980924317734e+37
+587	is a train a connected series of cars that moves stations between on a track.	94.22739315032959	8.364440367839865e+40
+588	is the train pulled by a locomotive powered by diesel electricity or.	78.01124572753906	7.583218082759972e+33
+589	train a freight transports containers of goods or fuel over distances long.	94.29388761520386	8.93953786987879e+40
+590	transport commuter trains people suburbs between and stations inside a city.	100.71426630020142	5.490983050191653e+43
+591	station a train is a place where passengers get on off or a train.	83.27376174926758	1.4633062078668818e+36
+592	have train stations counters machines or for purchasing tickets.	85.18344497680664	9.878706963160796e+36
+593	waiting there are rooms places and to eat in a station.	82.12023496627808	4.617053409587744e+35
+594	cargo passengers or trains enter from a platform next to line the.	100.07200622558594	2.8888174364474807e+43
+595	cyclone a tropical is storm a formed over warm tropical sea.	103.7009596824646	1.088314857586801e+45
+596	produce cyclones can very winds powerful and torrential rain.	90.24433135986328	1.558171055427481e+39
+597	can tropical cyclone also high cause waves and coastal flooding.	78.55147743225098	1.3015869756447652e+34
+598	cyclone a tropical can inland move and seriously damage property.	96.82460594177246	1.1230318490306045e+42
+599	is the violin an instrument with four strings that is with played a bow.	91.45444917678833	5.225918385788328e+39
+600	the violin is smallest highest and pitched instrument in its family.	88.52171897888184	2.782877446515066e+38
+601	holds a violinist the between instrument the chin and the collarbone.	91.12746810913086	3.7683961342668566e+39
+602	are different notes made by fingering the neck with one while hand bowing.	97.63978099822998	2.5375704118114888e+42
+603	scavenging vultures are birds feeding mostly on the carcasses of animals dead.	93.29841613769531	3.3035987941170435e+40
+604	have many vultures a head bald without feathers for losing heat.	100.9570083618164	6.999574511051913e+43
+605	their vultures use large to wings soar for miles without flapping.	99.87864780426025	2.3809243759065253e+43
+606	attack vultures seldom healthy animals but may kill the wounded sick or.	115.69796705245972	1.7659917008361238e+50
+607	is a wall a solid structure that defines and sometimes an protects area.	93.82481384277344	5.592408891252414e+40
+608	a walls delineate building support the roof and divide the into space rooms.	112.78385782241821	9.580917489121345e+48
+609	usually walls are made of stone brick or cement as as well drywall.	91.5862808227539	5.96233507816945e+39
+610	provide retaining walls a barrier to movement of earth stone water or.	106.33000183105469	1.5084574212448826e+46
+611	the water is most common liquid on earth covering 70% its of area.	103.18526077270508	6.498144541301158e+44
+612	and plants animals people drink must water in order to live.	80.50442600250244	9.175462860736848e+34
+613	at water freezes a temperature low and becomes solid ice.	79.35604906082153	2.9100081999276373e+34
+614	water rain is that falls from clouds in the sky are which condensed vapor.	106.68097591400146	2.1426891156490776e+46
+615	is a whale a very large mammal that lives in ocean the.	79.30200576782227	2.7569158410558014e+34
+616	through whales breathe blowholes their on heads when surfacing.	106.85372734069824	2.5467373337298846e+46
+617	in the blubber a whale serves as an energy reservoir as and insulation.	98.25999355316162	4.7181635590338886e+42
+618	been whales have hunted meat for whale oil and ambergris.	95.092613697052	1.9869978554846115e+41
+619	is a window a transparent opening in a wall to light let through.	88.5673599243164	2.9128337090495376e+38
+620	window a typical is made of sheets of glass held place in by frames.	110.3591136932373	8.479184879787448e+47
+621	a when open window also will let air and sound through.	86.3001127243042	3.0176074536849167e+37
+622	have some windows multiple to panes increase insulation inside.	94.44122314453125	1.035862415840477e+41
+623	a a woman is female adult human.	58.487300872802734	2.5160080741422654e+25
+624	a stereotypically woman is seen a as caregiver.	77.40188837051392	4.122996899445982e+33
+625	a become woman can pregnant bear and children.	77.7179536819458	5.655596654186175e+33
+626	has a woman different organs reproductive than a man.	69.87199974060059	2.2132166405321665e+30

@@ -1,0 +1,112 @@
+Running for average: None
+Loading model
+Loading lookup from /om2/user/ckauf/anaconda39/envs/perturbed3.8/lib/python3.8/site-packages/brainio_collection/lookup.csv
+/net/vast-storage.ib.cluster/scratch/vast/cpl/ckauf/perturbed-neural-nlp/neural_nlp/../ressources/stimuli
+I AM USING THE NEW SPLIT FUNCTION
+I AM USING THE NEW CROSSVALIDATION SCRIPT
+files/distilgpt2.original+Original.sentence_surp.txt
+Getting distilgpt2 probabilities for condition original+Original
+files/distilgpt2.scrambled+Scr1.sentence_surp.txt
+Getting distilgpt2 probabilities for condition scrambled+Scr1
+files/distilgpt2.scrambled+Scr3.sentence_surp.txt
+Getting distilgpt2 probabilities for condition scrambled+Scr3
+files/distilgpt2.scrambled+Scr5.sentence_surp.txt
+Getting distilgpt2 probabilities for condition scrambled+Scr5
+files/distilgpt2.scrambled+Scr7.sentence_surp.txt
+Getting distilgpt2 probabilities for condition scrambled+Scr7
+files/distilgpt2.scrambled+backward.sentence_surp.txt
+Getting distilgpt2 probabilities for condition scrambled+backward
+files/distilgpt2.scrambled+lowPMI.sentence_surp.txt
+Getting distilgpt2 probabilities for condition scrambled+lowPMI
+files/distilgpt2.scrambled+random.sentence_surp.txt
+Getting distilgpt2 probabilities for condition scrambled+random
+files/distilgpt2.perturbed+nouns.sentence_surp.txt
+Getting distilgpt2 probabilities for condition perturbed+nouns
+files/distilgpt2.perturbed+randomnouns.sentence_surp.txt
+Getting distilgpt2 probabilities for condition perturbed+randomnouns
+files/distilgpt2.perturbed+nounsverbs.sentence_surp.txt
+Getting distilgpt2 probabilities for condition perturbed+nounsverbs
+files/distilgpt2.perturbed+nounsverbsadj.sentence_surp.txt
+Getting distilgpt2 probabilities for condition perturbed+nounsverbsadj
+files/distilgpt2.perturbed+contentwords.sentence_surp.txt
+Getting distilgpt2 probabilities for condition perturbed+contentwords
+files/distilgpt2.perturbed+functionwords.sentence_surp.txt
+Getting distilgpt2 probabilities for condition perturbed+functionwords
+files/distilgpt2.perturbed+sentenceshuffle-random.sentence_surp.txt
+Getting distilgpt2 probabilities for condition perturbed+sentenceshuffle-random
+files/distilgpt2.perturbed+sentenceshuffle-withinpassage.sentence_surp.txt
+Getting distilgpt2 probabilities for condition perturbed+sentenceshuffle-withinpassage
+files/distilgpt2.perturbed+sentenceshuffle-withintopic.sentence_surp.txt
+Getting distilgpt2 probabilities for condition perturbed+sentenceshuffle-withintopic
+Running for average: avg
+Loading model
+files/distilgpt2.original+Original.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition original+Original
+files/distilgpt2.scrambled+Scr1.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition scrambled+Scr1
+files/distilgpt2.scrambled+Scr3.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition scrambled+Scr3
+files/distilgpt2.scrambled+Scr5.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition scrambled+Scr5
+files/distilgpt2.scrambled+Scr7.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition scrambled+Scr7
+files/distilgpt2.scrambled+backward.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition scrambled+backward
+files/distilgpt2.scrambled+lowPMI.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition scrambled+lowPMI
+files/distilgpt2.scrambled+random.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition scrambled+random
+files/distilgpt2.perturbed+nouns.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition perturbed+nouns
+files/distilgpt2.perturbed+randomnouns.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition perturbed+randomnouns
+files/distilgpt2.perturbed+nounsverbs.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition perturbed+nounsverbs
+files/distilgpt2.perturbed+nounsverbsadj.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition perturbed+nounsverbsadj
+files/distilgpt2.perturbed+contentwords.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition perturbed+contentwords
+files/distilgpt2.perturbed+functionwords.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition perturbed+functionwords
+files/distilgpt2.perturbed+sentenceshuffle-random.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition perturbed+sentenceshuffle-random
+files/distilgpt2.perturbed+sentenceshuffle-withinpassage.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition perturbed+sentenceshuffle-withinpassage
+files/distilgpt2.perturbed+sentenceshuffle-withintopic.sentence_surp.average.txt
+Getting distilgpt2 probabilities for condition perturbed+sentenceshuffle-withintopic
+Running for average: avg_sentlength
+Loading model
+files/distilgpt2.original+Original.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition original+Original
+files/distilgpt2.scrambled+Scr1.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition scrambled+Scr1
+files/distilgpt2.scrambled+Scr3.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition scrambled+Scr3
+files/distilgpt2.scrambled+Scr5.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition scrambled+Scr5
+files/distilgpt2.scrambled+Scr7.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition scrambled+Scr7
+files/distilgpt2.scrambled+backward.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition scrambled+backward
+files/distilgpt2.scrambled+lowPMI.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition scrambled+lowPMI
+files/distilgpt2.scrambled+random.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition scrambled+random
+files/distilgpt2.perturbed+nouns.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition perturbed+nouns
+files/distilgpt2.perturbed+randomnouns.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition perturbed+randomnouns
+files/distilgpt2.perturbed+nounsverbs.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition perturbed+nounsverbs
+files/distilgpt2.perturbed+nounsverbsadj.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition perturbed+nounsverbsadj
+files/distilgpt2.perturbed+contentwords.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition perturbed+contentwords
+files/distilgpt2.perturbed+functionwords.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition perturbed+functionwords
+files/distilgpt2.perturbed+sentenceshuffle-random.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition perturbed+sentenceshuffle-random
+files/distilgpt2.perturbed+sentenceshuffle-withinpassage.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition perturbed+sentenceshuffle-withinpassage
+files/distilgpt2.perturbed+sentenceshuffle-withintopic.sentence_surp.average_sentlength.txt
+Getting distilgpt2 probabilities for condition perturbed+sentenceshuffle-withintopic

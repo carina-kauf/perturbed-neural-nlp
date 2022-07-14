@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "2_pPMI.py", line 28, in <module>
+    with open("{}/1_ngrams_{}.pkl".format(savedir, cond), 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/rdma/vast-rdma/vast/cpl/ckauf/perturbed-neural-nlp/analysis/pmi_verification/stimuli_csvs/1_ngrams_backward.pkl'

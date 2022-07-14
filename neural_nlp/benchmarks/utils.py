@@ -41,8 +41,8 @@ def load_activations_into_matrix(identifier,
 
     for passage_idx in d_expt[expt]:
 
-        #identifier=distilgpt2,stimuli_identifier=Pereira2018-Original-lasttoken,split_coord=Sentence,emb_context=Passage-384sentences.100.pkl
-        intended_filename = f'identifier={identifier},stimuli_identifier={stimuli_identifier}-{agg},split_coord=Sentence,emb_context=Passage-{expt}{passage_idx}.pkl'
+        #identifier=distilgpt2,stimuli_identifier=Pereira2018,emb_context=Sentence-384sentences.99.pkl
+        intended_filename = f'identifier={identifier},stimuli_identifier={stimuli_identifier}-{agg},emb_context=Passage-{expt}{passage_idx}.pkl'
 
         if verbose:
             print(f'Loading {intended_filename}')
