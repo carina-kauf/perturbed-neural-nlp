@@ -1,0 +1,5 @@
+,train-intact-test-perturbed:contextualized,train-intact-test-perturbed:decontextualized,train-perturbed-test-perturbed:contextualized,train-perturbed-test-perturbed:decontextualized,manipulation
+train-intact-test-perturbed:contextualized,1.0,1.3293009595315123e-30,6.689394826522722e-11,3.291866858921608e-29,word-order
+train-intact-test-perturbed:decontextualized,1.3293009595315123e-30,1.0,1.1755875508883285e-43,0.5133398160354559,word-order
+train-perturbed-test-perturbed:contextualized,6.689394826522722e-11,1.1755875508883285e-43,1.0,9.445808907342397e-43,word-order
+train-perturbed-test-perturbed:decontextualized,3.291866858921608e-29,0.5133398160354559,9.445808907342397e-43,1.0,word-order

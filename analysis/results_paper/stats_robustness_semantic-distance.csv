@@ -1,0 +1,5 @@
+,train-intact-test-perturbed:contextualized,train-intact-test-perturbed:decontextualized,train-perturbed-test-perturbed:contextualized,train-perturbed-test-perturbed:decontextualized,manipulation
+train-intact-test-perturbed:contextualized,1.0,0.48421520075868185,3.130578924251752e-08,0.22569209172491367,semantic-distance
+train-intact-test-perturbed:decontextualized,0.48421520075868185,1.0,1.526805318165559e-10,0.48421520075868185,semantic-distance
+train-perturbed-test-perturbed:contextualized,3.130578924251752e-08,1.526805318165559e-10,1.0,1.235767210410576e-14,semantic-distance
+train-perturbed-test-perturbed:decontextualized,0.22569209172491367,0.48421520075868185,1.235767210410576e-14,1.0,semantic-distance

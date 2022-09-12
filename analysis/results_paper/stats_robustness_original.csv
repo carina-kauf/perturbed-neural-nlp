@@ -1,0 +1,5 @@
+,train-intact-test-perturbed:contextualized,train-intact-test-perturbed:decontextualized,train-perturbed-test-perturbed:contextualized,train-perturbed-test-perturbed:decontextualized,manipulation
+train-intact-test-perturbed:contextualized,1.0,2.7449800242618902e-06,0.9999999999999973,1.3947942546294678e-05,original
+train-intact-test-perturbed:decontextualized,2.7449800242618902e-06,1.0,2.7449800242618902e-06,0.5538273084107105,original
+train-perturbed-test-perturbed:contextualized,0.9999999999999973,2.7449800242618902e-06,1.0,1.3947942546294678e-05,original
+train-perturbed-test-perturbed:decontextualized,1.3947942546294678e-05,0.5538273084107105,1.3947942546294678e-05,1.0,original

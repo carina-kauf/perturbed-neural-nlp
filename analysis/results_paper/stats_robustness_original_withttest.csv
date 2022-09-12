@@ -1,0 +1,17 @@
+,exp_condition1,exp_condition2,ttest,adjusted_pval,significance,pvals,manipulation
+0,train-intact-test-perturbed:contextualized,train-intact-test-perturbed:contextualized,0.0,1.0,n.s.,1.0,original
+1,train-intact-test-perturbed:contextualized,train-intact-test-perturbed:decontextualized,7.279,0.0,***,9.1499334142063e-07,original
+2,train-intact-test-perturbed:contextualized,train-perturbed-test-perturbed:contextualized,-0.0,1.0,n.s.,0.9999999999999973,original
+3,train-intact-test-perturbed:contextualized,train-perturbed-test-perturbed:decontextualized,6.094,0.0,***,9.298628364196452e-06,original
+4,train-intact-test-perturbed:decontextualized,train-intact-test-perturbed:contextualized,-7.279,0.0,***,9.1499334142063e-07,original
+5,train-intact-test-perturbed:decontextualized,train-intact-test-perturbed:decontextualized,0.0,1.0,n.s.,1.0,original
+6,train-intact-test-perturbed:decontextualized,train-perturbed-test-perturbed:contextualized,-7.279,0.0,***,9.149933414206234e-07,original
+7,train-intact-test-perturbed:decontextualized,train-perturbed-test-perturbed:decontextualized,-0.752,0.738,n.s.,0.4615227570089254,original
+8,train-perturbed-test-perturbed:contextualized,train-intact-test-perturbed:contextualized,0.0,1.0,n.s.,0.9999999999999973,original
+9,train-perturbed-test-perturbed:contextualized,train-intact-test-perturbed:decontextualized,7.279,0.0,***,9.149933414206234e-07,original
+10,train-perturbed-test-perturbed:contextualized,train-perturbed-test-perturbed:contextualized,0.0,1.0,n.s.,1.0,original
+11,train-perturbed-test-perturbed:contextualized,train-perturbed-test-perturbed:decontextualized,6.094,0.0,***,9.298628364196386e-06,original
+12,train-perturbed-test-perturbed:decontextualized,train-intact-test-perturbed:contextualized,-6.094,0.0,***,9.298628364196452e-06,original
+13,train-perturbed-test-perturbed:decontextualized,train-intact-test-perturbed:decontextualized,0.752,0.738,n.s.,0.4615227570089254,original
+14,train-perturbed-test-perturbed:decontextualized,train-perturbed-test-perturbed:contextualized,-6.094,0.0,***,9.298628364196386e-06,original
+15,train-perturbed-test-perturbed:decontextualized,train-perturbed-test-perturbed:decontextualized,0.0,1.0,n.s.,1.0,original
