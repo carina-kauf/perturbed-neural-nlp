@@ -10,7 +10,7 @@ def flatten_list(xss):
     return [x for xs in xss for x in xs]
 
 
-def get_conditions(testonperturbed=False):
+def get_conditions(testonperturbed=False, randomnouns=False):
     
     if testonperturbed:
         to_prepend = "teston:"
@@ -19,8 +19,7 @@ def get_conditions(testonperturbed=False):
         
     original = [f'{to_prepend}original']
     
-    conditions_control = [f'{to_prepend}length-control',
-                         f'{to_prepend}random-wl']
+    conditions_control = [f'{to_prepend}random-wl']
 
     conditions_scrambled = [f'{to_prepend}scrambled1',
                             f'{to_prepend}scrambled3',
@@ -37,8 +36,10 @@ def get_conditions(testonperturbed=False):
                                f'{to_prepend}nounsverbs',
                                f'{to_prepend}nounsverbsadj',
                                f'{to_prepend}contentwords',
-                               f'{to_prepend}functionwords',
-                               f'{to_prepend}random-nouns']
+                               f'{to_prepend}functionwords']
+    
+    if randomnouns:
+        conditions_perturb_loss += [f'{to_prepend}random-nouns']
 
     conditions_perturb_meaning = [f'{to_prepend}sentenceshuffle_passage',
                                   f'{to_prepend}sentenceshuffle_topic',
@@ -46,17 +47,17 @@ def get_conditions(testonperturbed=False):
 
 
     #create CAT2COND
-    conditions = [original, conditions_control, conditions_perturb_loss, conditions_perturb_meaning,conditions_scrambled]
-    categories_unique = ["original", "controls", "information-loss", "sentence-meaning", "word-order"]
+    conditions = [original, conditions_scrambled, conditions_perturb_loss, conditions_perturb_meaning, conditions_control]
+    categories_unique = ["original", "word-order", "information-loss", "semantic-distance", "control"]
     
     CAT2COND = dict(zip(categories_unique, conditions)) #dictionary from manipulation category to condition
     
     #create COND2CAT
-    categories = [["original"] * 1,
-            ["controls"]*len(conditions_control),
-            ["information-loss"]*len(conditions_perturb_loss),
-            ["sentence-meaning"]*len(conditions_perturb_meaning),
-            ["word-order"]*len(conditions_scrambled)]
+    categories = [["original"] * len(original),
+                  ["word-order"] * len(conditions_scrambled),
+                  ["information-loss"] * len(conditions_perturb_loss),
+                  ["semantic-distance"] * len(conditions_perturb_meaning),
+                  ["control"] * len(conditions_control)]
     
     conditions = flatten_list(conditions)
     categories = flatten_list(categories)
@@ -114,7 +115,7 @@ def get_max_score(matrix):
 #         lang_score_matrix.append(score.data)
 #     return lang_score_matrix
 
-def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sentence", testonperturbed=False):
+def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sentence", testonperturbed=False, randomnouns=False):
     """
     input: model_identifier, embedding context, split_coordinate & whether to test on perturbed sentence
     output: dataframe containing the maximum score and associated error per condition.
@@ -122,7 +123,7 @@ def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sen
     
     working_dir = "/om2/user/ckauf/.result_caching/neural_nlp.score"
     
-    CAT2COND, COND2CAT = get_conditions(testonperturbed=testonperturbed)
+    CAT2COND, COND2CAT = get_conditions(testonperturbed=testonperturbed, randomnouns=randomnouns)
     
     conditions, categories = [], []
     max_scores, errors = [], []
@@ -144,8 +145,12 @@ def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sen
                 
         if not f"split_coord={split_coord}" in filename:
             continue
+        
+        exclude_list = ["-control", "random-nouns"]
+        if randomnouns:
+            exclude_list = ["-control"]
             
-        if "constant-control" in filename:
+        if any(x in filename for x in exclude_list):
             continue
                         
 
@@ -214,3 +219,59 @@ def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sen
     )
     
     return scores_df
+
+def get_sample_stimuli(getall=False, randomnouns=False):
+    working_dir = "/om2/user/ckauf/perturbed-neural-nlp/ressources/scrambled_stimuli_dfs/"
+    
+    # Translate between names for stimuli dataframes and condition names used for plotting
+    conditions = [
+    ('Original', 'original'),
+        #
+    ('Scr1', 'scrambled1'),
+    ('Scr3', 'scrambled3'),
+    ('Scr5', 'scrambled5'),
+    ('Scr7', 'scrambled7'),
+    ('backward', 'backward'),
+    ('lowPMI', 'lowpmi'),
+    ('lowPMI_random', 'lowpmi-random'),
+        #
+    ('nouns', 'nouns'),
+    ('nounsverbs', 'nounsverbs'),
+    ('nounsverbsadj', 'nounsverbsadj'),
+    ('contentwords', 'contentwords'),
+    ('functionwords', 'functionwords'),
+        #
+    ('sentenceshuffle-withinpassage', 'sent_passage'),
+    ('sentenceshuffle-withintopic', 'sent_topic'),
+    ('sentenceshuffle-random', 'sent_random'),
+        #
+    ('random', 'random-wl')
+    ]
+    
+    if randomnouns:
+        conditions.append(('randomnouns', 'random-nouns'))
+    
+    # set up empty lists
+    conds, sentences = [], []
+    
+    # populate lists
+    for (stimuli_name, condition) in conditions:
+        # print(f"{stimuli_name} | {condition}")
+        for filename in os.listdir(working_dir):
+            if filename == f'stimuli_{stimuli_name}.pkl':
+                with open(os.path.join(working_dir,filename), 'rb') as f:
+                    df = pickle.load(f)
+                    
+                if getall:
+                    sentences += list(df["sentence"])
+                    conds += [condition] * len(list(df["sentence"]))
+                else:
+                    sentences += list(df["sentence"])[:1] #get first sentence
+                    conds += [condition]
+                
+    sample_stim_df = pd.DataFrame({
+    'condition' : conds,
+    'stimulus': sentences
+    })     
+    
+    return sample_stim_df
