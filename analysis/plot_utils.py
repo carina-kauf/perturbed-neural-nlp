@@ -16,11 +16,11 @@ COND2LABEL = {
         "lowpmi" : "LowPMI",
         "lowpmi-random" : "LowPMIRand",
         #
-        "nouns" : "Nouns",
-        "nounsverbs" : "NounsVerbs",
-        "nounsverbsadj" : "NounsVerbsAdj",
-        "contentwords" : "NounsVerbsAdjAdv",
-        "functionwords" : "FunctionWords",
+        "contentwords" : "Keep ContentW",
+        "nounsverbsadj" : "Keep NVAdj",
+        "nounsverbs" : "Keep NV",
+        "nouns" : "Keep N",
+        "functionwords" : "Keep FunctionW",
         #
         "sent_passage" : "RandSentFromPassage",
         "sent_topic" : "RandSentFromTopic",
@@ -60,10 +60,10 @@ def get_conditions(testonperturbed=False, randomnouns=False, length_control=Fals
     if testonperturbed:
         conditions_scrambled = [re.sub("scrambled","scr",elm) for elm in conditions_scrambled]
 
-    conditions_perturb_loss = [f'{to_prepend}nouns',
-                               f'{to_prepend}nounsverbs',
+    conditions_perturb_loss = [f'{to_prepend}contentwords',
                                f'{to_prepend}nounsverbsadj',
-                               f'{to_prepend}contentwords',
+                               f'{to_prepend}nounsverbs',
+                               f'{to_prepend}nouns',
                                f'{to_prepend}functionwords']
     
     if randomnouns:
@@ -273,10 +273,10 @@ def get_sample_stimuli(getall=False, randomnouns=False, length_control=False):
     ('lowPMI', 'lowpmi'),
     ('lowPMI_random', 'lowpmi-random'),
         #
-    ('nouns', 'nouns'),
-    ('nounsverbs', 'nounsverbs'),
-    ('nounsverbsadj', 'nounsverbsadj'),
     ('contentwords', 'contentwords'),
+    ('nounsverbsadj', 'nounsverbsadj'),
+    ('nounsverbs', 'nounsverbs'),
+    ('nouns', 'nouns'),
     ('functionwords', 'functionwords'),
         #
     ('sentenceshuffle-withinpassage', 'sent_passage'),
