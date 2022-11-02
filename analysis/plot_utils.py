@@ -16,11 +16,11 @@ COND2LABEL = {
         "lowpmi" : "LowPMI",
         "lowpmi-random" : "LowPMIRand",
         #
-        "contentwords" : "Keep ContentW",
-        "nounsverbsadj" : "Keep NVAdj",
-        "nounsverbs" : "Keep NV",
-        "nouns" : "Keep N",
-        "functionwords" : "Keep FunctionW",
+        "contentwords" : "KeepContentW",
+        "nounsverbsadj" : "KeepNVAdj",
+        "nounsverbs" : "KeepNV",
+        "nouns" : "KeepN",
+        "functionwords" : "KeepFunctionW",
         #
         "sent_passage" : "RandSentFromPassage",
         "sent_topic" : "RandSentFromTopic",
@@ -28,7 +28,7 @@ COND2LABEL = {
         #
         "random-wl" : "RandWordList",
         #
-        "random-nouns" : "RandNouns",
+        "random-nouns" : "RandN",
         "length-control" : "LengthControl",
         "concatenated-control" : "ConcatenatedControl"
     }
