@@ -2,12 +2,8 @@ import os
 import pickle
 import numpy as np
 import pandas as pd
-from tqdm import tqdm
-import seaborn as sns
 import matplotlib.pyplot as plt
 import re
-from datetime import date
-import copy
 
 import scipy.stats as stats
 
@@ -17,8 +13,6 @@ import statsmodels.stats.multicomp
 from statistics import mean, stdev
 from math import sqrt
 
-from statsmodels.formula.api import ols
-from statsmodels.stats.anova import anova_lm
 import scikit_posthocs as sp
 
 #import from own script
@@ -60,8 +54,22 @@ def get_best_layer(matrix):
     return best_layernr
 
 
+def get_passage_identifier(filename):
+    """
+    get passage identifier to be used as key for the dictionary.
+    fill the identifier with 0s for single-digit passage numbers
+    """
+    passage = filename.split("-")[-1].split(".")[0]
+    number = passage.split("sentences")[-1]
+    if len(number) == 1:
+        passage_identifier = passage[:-1] + number.zfill(2)
+    else:
+        passage_identifier = passage
+    return passage_identifier
+
+
 def get_stats_df(model_identifier, emb_context="Passage", split_coord="Sentence", testonperturbed=False,
-                randomnouns=False):
+                randomnouns=False,length_control=False):
     """
     output: dataframe of subject-median'ed predicted scores of best layer
     """
@@ -74,7 +82,9 @@ def get_stats_df(model_identifier, emb_context="Passage", split_coord="Sentence"
     layers = get_all_layers(model_identifier)
     #print(layers)
 
-    CAT2COND, COND2CAT = pu.get_conditions(testonperturbed=testonperturbed, randomnouns=randomnouns)
+    CAT2COND, COND2CAT = pu.get_conditions(testonperturbed=testonperturbed,
+                                           randomnouns=randomnouns,
+                                           length_control=length_control)
 
     condition_order = list(COND2CAT.keys())
 
@@ -95,9 +105,15 @@ def get_stats_df(model_identifier, emb_context="Passage", split_coord="Sentence"
         exclude_list = ["-control", "random-nouns"]
         if randomnouns:
             exclude_list = ["-control"]
-        if any(x in filename for x in exclude_list):
-            continue
-
+        if length_control:
+            include_list = ["original", "length-control", "random-wl"]
+            
+        if length_control:
+            if all(x not in filename for x in include_list):
+                continue
+        else:
+            if any(x in filename for x in exclude_list):
+                continue
 
         model_name = filename.split(",")[1]
         bm = filename.split(",")[0]

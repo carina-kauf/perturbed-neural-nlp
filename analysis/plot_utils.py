@@ -3,14 +3,42 @@ import re
 import pickle
 import numpy as np
 import pandas as pd
-from tqdm import tqdm
+
+
+COND2LABEL = {
+        "original" : "Original",
+        #
+        "scrambled1" : "1LocalWordSwap",
+        "scrambled3" : "3LocalWordSwaps",
+        "scrambled5" : "5LocalWordSwaps",
+        "scrambled7" : "7LocalWordSwaps",
+        "backward" : "ReverseOrder",
+        "lowpmi" : "LowPMI",
+        "lowpmi-random" : "LowPMIRand",
+        #
+        "nouns" : "Nouns",
+        "nounsverbs" : "NounsVerbs",
+        "nounsverbsadj" : "NounsVerbsAdj",
+        "contentwords" : "NounsVerbsAdjAdv",
+        "functionwords" : "FunctionWords",
+        #
+        "sent_passage" : "RandSentFromPassage",
+        "sent_topic" : "RandSentFromTopic",
+        "sent_random" : "RandSent",
+        #
+        "random-wl" : "RandWordList",
+        #
+        "random-nouns" : "RandNouns",
+        "length-control" : "LengthControl",
+        "concatenated-control" : "ConcatenatedControl"
+    }
 
 
 def flatten_list(xss):
     return [x for xs in xss for x in xs]
 
 
-def get_conditions(testonperturbed=False, randomnouns=False):
+def get_conditions(testonperturbed=False, randomnouns=False, length_control=False):
     
     if testonperturbed:
         to_prepend = "teston:"
@@ -40,6 +68,9 @@ def get_conditions(testonperturbed=False, randomnouns=False):
     
     if randomnouns:
         conditions_perturb_loss += [f'{to_prepend}random-nouns']
+        
+    if length_control:
+        conditions_control = [f'{to_prepend}length-control'] + conditions_control
 
     conditions_perturb_meaning = [f'{to_prepend}sentenceshuffle_passage',
                                   f'{to_prepend}sentenceshuffle_topic',
@@ -115,7 +146,7 @@ def get_max_score(matrix):
 #         lang_score_matrix.append(score.data)
 #     return lang_score_matrix
 
-def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sentence", testonperturbed=False, randomnouns=False):
+def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sentence", testonperturbed=False, randomnouns=False, length_control=False):
     """
     input: model_identifier, embedding context, split_coordinate & whether to test on perturbed sentence
     output: dataframe containing the maximum score and associated error per condition.
@@ -123,7 +154,7 @@ def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sen
     
     working_dir = "/om2/user/ckauf/.result_caching/neural_nlp.score"
     
-    CAT2COND, COND2CAT = get_conditions(testonperturbed=testonperturbed, randomnouns=randomnouns)
+    CAT2COND, COND2CAT = get_conditions(testonperturbed=testonperturbed, randomnouns=randomnouns, length_control= length_control)
     
     conditions, categories = [], []
     max_scores, errors = [], []
@@ -147,11 +178,18 @@ def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sen
             continue
         
         exclude_list = ["-control", "random-nouns"]
+        
         if randomnouns:
             exclude_list = ["-control"]
+        if length_control:
+            include_list = ["original", "length-control", "random-wl"]
             
-        if any(x in filename for x in exclude_list):
-            continue
+        if length_control:
+            if all(x not in filename for x in include_list):
+                continue
+        else:
+            if any(x in filename for x in exclude_list):
+                continue
                         
 
         model_name = filename.split(",")[1]
@@ -220,7 +258,7 @@ def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sen
     
     return scores_df
 
-def get_sample_stimuli(getall=False, randomnouns=False):
+def get_sample_stimuli(getall=False, randomnouns=False, length_control=False):
     working_dir = "/om2/user/ckauf/perturbed-neural-nlp/ressources/scrambled_stimuli_dfs/"
     
     # Translate between names for stimuli dataframes and condition names used for plotting
@@ -250,13 +288,15 @@ def get_sample_stimuli(getall=False, randomnouns=False):
     
     if randomnouns:
         conditions.append(('randomnouns', 'random-nouns'))
+    if length_control:
+        conditions.append(('length_control', 'length-control'))
     
     # set up empty lists
     conds, sentences = [], []
     
     # populate lists
     for (stimuli_name, condition) in conditions:
-        # print(f"{stimuli_name} | {condition}")
+        print(f"{stimuli_name} | {condition}")
         for filename in os.listdir(working_dir):
             if filename == f'stimuli_{stimuli_name}.pkl':
                 with open(os.path.join(working_dir,filename), 'rb') as f:
@@ -266,7 +306,7 @@ def get_sample_stimuli(getall=False, randomnouns=False):
                     sentences += list(df["sentence"])
                     conds += [condition] * len(list(df["sentence"]))
                 else:
-                    sentences += list(df["sentence"])[:1] #get first sentence
+                    sentences += list(df["sentence"])[:1]
                     conds += [condition]
                 
     sample_stim_df = pd.DataFrame({
