@@ -32,13 +32,21 @@ from neural_nlp.utils import ordered_set
 from result_caching import store
 from neural_nlp.benchmarks.new_crossregression import CrossRegressedCorrelationPerturbed, CrossRegressedCorrelation, CrossValidation
 
-ressources_dir = (Path(os.getcwd()) / 'ressources').resolve()
+ressources_dir = "/om2/user/ckauf/perturbed-neural-nlp/ressources" #(Path(os.getcwd()) / 'ressources').resolve()
 
 _logger = logging.getLogger(__name__)
 _logger.info(f"\n RESSOURCES_DIR: {ressources_dir}") #TODO take out
 
 import pickle
 
+import numpy as np
+import torch
+import random
+
+np.random.seed(0)
+random.seed(0)
+torch.manual_seed(0)
+torch.cuda.manual_seed(0)
 
 
 class Invert:
@@ -477,6 +485,7 @@ class _PereiraBenchmarkScrambled(Benchmark):
                               'constant-control': os.path.join(scrambled_data_dir, 'stimuli_constant_control.pkl'),
                               'constant-control-noun': os.path.join(scrambled_data_dir, 'stimuli_constant_control_noun.pkl'),
                               'constant-control-oov': os.path.join(scrambled_data_dir, 'stimuli_constant_control_oov.pkl'),
+                              'concatenated-control' : os.path.join(scrambled_data_dir, 'stimuli_concatenated_control.pkl'),
                               # scrambling | word order manipulations
                               'Scr1': os.path.join(scrambled_data_dir, 'stimuli_Scr1.pkl'),
                               'Scr3': os.path.join(scrambled_data_dir, 'stimuli_Scr3.pkl'),
@@ -1160,6 +1169,21 @@ class PereiraEncoding_ConstantControl_OOV(_PereiraBenchmarkScrambled):
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncoding_ConstantControl_OOV, self).ceiling 
+    
+    
+class PereiraEncoding_ConcatenatedControl(_PereiraBenchmarkScrambled):
+
+    def __init__(self, scrambled_version="concatenated-control", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+        super(PereiraEncoding_ConcatenatedControl, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-concatenated-control'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_ConcatenatedControl, self).ceiling 
 
 ###################################
 ##### END PERTURBATION BENCHMARKS
@@ -1731,6 +1755,7 @@ benchmark_pool = [
     #scrambling benchmarks > word order manipulations
     ('Pereira2018-encoding-constant-control-oov', PereiraEncoding_ConstantControl_OOV), #sentences are all just 'jdfh.'
     #scrambling benchmarks > word order manipulations
+    ('Pereira2018-encoding-concatenated-control', PereiraEncoding_ConcatenatedControl), #every sentence 5 times
     ('Pereira2018-encoding-scrambled-original', PereiraEncoding_ScrOriginal), #lower-cased, no sentence-internal punctuation but final period. (keeps hyphens, apostrophe, currency & units)
     ('Pereira2018-encoding-scrambled1', PereiraEncoding_Scr1),
     ('Pereira2018-encoding-scrambled3', PereiraEncoding_Scr3),

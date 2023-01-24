@@ -12,6 +12,15 @@ from brainscore.metrics.transformations import extract_coord, standard_error_of_
 
 print("I AM USING THE NEW SPLIT FUNCTION")
 
+import torch
+import random
+
+np.random.seed(0)
+random.seed(0)
+torch.manual_seed(0)
+torch.cuda.manual_seed(0)
+
+
 
 class SplitNew:
     class Defaults:
@@ -32,10 +41,14 @@ class SplitNew:
             train_size = self.Defaults.train_size
         if kfold:
             if os.getenv("SPLIT_AT_TOPIC", "0") == "1":
-                raise NotImplementedError
-            if os.getenv("SPLIT_AT_PASSAGE", "0") == "1":
+                print("SPLITTING BY TOPIC!")
                 assert (train_size is None or train_size == self.Defaults.train_size) and test_size is None
-                self._logger.info("Using GroupKFold")
+                print("Using GroupKFold for topics with split coordinate {}!".format(split_coord))
+                self._split = GroupKFold(n_splits=splits) #FIXME no shuffle, see https://stackoverflow.com/questions/40819598/scikit-learn-groupkfold-with-shuffling-groups
+            elif os.getenv("SPLIT_AT_PASSAGE", "0") == "1":
+                print("SPLITTING BY PASSAGE!")
+                assert (train_size is None or train_size == self.Defaults.train_size) and test_size is None
+                print("Using GroupKFold for passages with split coordinate {}!".format(split_coord))
                 self._split = GroupKFold(n_splits=splits) #FIXME no shuffle, see https://stackoverflow.com/questions/40819598/scikit-learn-groupkfold-with-shuffling-groups
             else:
                 assert (train_size is None or train_size == self.Defaults.train_size) and test_size is None
@@ -62,16 +75,36 @@ class SplitNew:
         cross_validation_values, indices = extract_coord(assembly, self._split_coord, unique=self._unique_split_values)
         data_shape = np.zeros(len(cross_validation_values))
         args = [assembly[self._stratification_coord].values[indices]] if self.do_stratify else []
-        if not os.getenv("SPLIT_AT_PASSAGE"):
-            splits = self._split.split(data_shape, *args)
-        else:
+        
+        if os.getenv("SPLIT_AT_PASSAGE", "0") == "1":
             groups = list(assembly.passage_index.data)
+            print("SPLITTING WITH GROUPS: {}!".format(groups))
             splits = self._split.split(data_shape, groups=groups, *args)
+            print("THESE ARE MY CROSS-VALIDATION SPLITS:\n{}!".format(list(splits)))
 
             # savedir = "/om2/user/ckauf/perturbed-neural-nlp/bash_june2022"
             # with open(os.path.join(savedir, "passagesplits.txt"), "w") as f:
             #     for item in list(splits):
             #         f.write("%s\n" % repr(item))
+            
+        elif os.getenv("SPLIT_AT_TOPIC", "0") == "1":
+            groups = list(assembly.passage_category.data)
+            print("SPLITTING WITH GROUPS: {}!".format(groups))
+            splits = self._split.split(data_shape, groups=groups, *args)
+            print("THESE ARE MY CROSS-VALIDATION SPLITS:\n{}!".format(list(splits)))
+            
+            for i, (train_index, test_index) in enumerate(splits):
+                print("Fold {}:".format(i))
+                print("  Train: index={}, group={}".format(train_index, groups[train_index]))
+                print("  Test:  index={}, group={}".format(test_index, groups[test_index]))
+            
+#             savedir = "/om2/user/ckauf/perturbed-neural-nlp/bash_paper_202212" # leads to KeyError: 'z'
+#             with open(os.path.join(savedir, "TOPICsplits.txt"), "w") as f:
+#                 for item in list(splits):
+#                     f.write("%s\n" % repr(item))
+            
+        else:
+            splits = self._split.split(data_shape, *args)
 
         return cross_validation_values, list(splits)
 

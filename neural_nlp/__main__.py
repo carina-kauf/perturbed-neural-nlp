@@ -5,6 +5,8 @@ import sys
 from datetime import datetime
 import os
 
+import torch.cuda
+
 from neural_nlp import score as score_function
 
 print(os.environ)
@@ -28,6 +30,19 @@ def run(benchmark, model, layers=None, subsample=None):
     NOTE: Instead of using all these os.environment variables, I could just add arguments to this function which
     would be usable as flags due to fire module; keeping environment variables for now though
     """
+    if torch.cuda.is_available():
+        _logger.info(f"SLURM JOB ID: {os.getenv('SLURM_JOB_ID')}")
+
+    # 0. Whether or not to compute the ceiling #TODO DELETE!!
+#     if (os.getenv('COMPUTE_CEILING', '0') == '1') and (benchmark != "Pereira2018-encoding-scrambled-original"):
+#         raise NotImplementedError
+#     if os.getenv('COMPUTE_CEILING', '0') == '1':
+#         compute_ceiling = True
+#     else:
+#         compute_ceiling = False
+#     _logger.info(f"Environment variable COMPUTE_CEILING set to: {os.getenv('COMPUTE_CEILING')}")
+
+
     # 1. How to get model activations
     ## 1.a. Sequence summary (default for GPT-2 is last-token emb)
     _logger.info(f"Environment variable AVG_TOKEN_TRANSFORMERS set to: {os.getenv('AVG_TOKEN_TRANSFORMERS')}")
@@ -65,9 +80,10 @@ def run(benchmark, model, layers=None, subsample=None):
     _logger.info(f"Cross validation split coordinate is: {split_coord}")
 
     start = datetime.now()
+    slurm_id = os.getenv('SLURM_JOB_ID')
     # Pass arguments on to score_function; these will be used for caching result
     score = score_function(model=model, layers=layers, subsample=subsample, benchmark=benchmark,
-                           emb_context=emb_context, split_coord=split_coord)
+                           emb_context=emb_context, split_coord=split_coord, slurm_id=slurm_id)
     end = datetime.now()
     print(score)
     print(f"Duration: {end - start}")

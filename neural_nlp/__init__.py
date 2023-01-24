@@ -14,7 +14,7 @@ _logger = logging.getLogger(__name__)
 @store(identifier_ignore=['layers', 'prerun', 'model_impl'])
 # Add emb_context & split_coord here to ensure result is saved under a different name for different settings
 # store functionality stores results and prevents recomputing if the same function is run with the same arguments!
-def score(benchmark, model, layers=None, model_impl=None, subsample=None, emb_context=None, split_coord=None):
+def score(benchmark, model, layers=None, model_impl=None, subsample=None, emb_context=None, split_coord=None, slurm_id=None):
     model_impl = model_impl or model_pool[model]
     if subsample:
         SubsamplingHook.hook(model, subsample)

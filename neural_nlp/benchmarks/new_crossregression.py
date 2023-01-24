@@ -9,6 +9,15 @@ from brainscore.utils import fullname
 
 print("I AM USING THE NEW CROSSVALIDATION SCRIPT")
 
+import numpy as np
+import torch
+import random
+
+np.random.seed(0)
+random.seed(0)
+torch.manual_seed(0)
+torch.cuda.manual_seed(0)
+
 
 class CrossRegressedCorrelationPerturbed:
     def __init__(self, regression, correlation, crossvalidation_kwargs=None):
