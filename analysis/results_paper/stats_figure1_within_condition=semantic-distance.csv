@@ -1,4 +1,0 @@
-,sent_passage,sent_topic,sent_random,manipulation
-sent_passage,1.0,1.4083496344690772e-10,1.66973369826111e-14,semantic-distance
-sent_topic,1.4083496344690772e-10,1.0,2.8670468994132922e-05,semantic-distance
-sent_random,1.66973369826111e-14,2.8670468994132922e-05,1.0,semantic-distance
