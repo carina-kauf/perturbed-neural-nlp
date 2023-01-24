@@ -180,6 +180,16 @@ def get_colors(randomnouns):
 
     return CAT2COLOR
 
+def adjust_name(cond):
+    #adjust names for consistency
+    if cond == 'sentenceshuffle_random':
+        cond = 'sent_random'
+    elif cond == 'sentenceshuffle_passage':
+        cond = 'sent_passage'
+    elif cond == 'sentenceshuffle_topic':
+        cond = 'sent_topic'
+    return cond
+
 
 def main_barplot(approach, full_df, full_stats_df, randomnouns, vertical=False):
     """
@@ -299,13 +309,7 @@ def main_barplot(approach, full_df, full_stats_df, randomnouns, vertical=False):
         # annotate stats 2 original
         for ind_c, cond in enumerate(CAT2COND[current_category]):
             # adjust names for consistency
-            if cond == 'sentenceshuffle_random':
-                cond = 'sent_random'
-            elif cond == 'sentenceshuffle_passage':
-                cond = 'sent_passage'
-            elif cond == 'sentenceshuffle_topic':
-                cond = 'sent_topic'
-
+            cond = adjust_name(cond)
             cond = plot_utils.COND2LABEL[cond]
 
             if cond in ["Original", "RandWordList"]:
@@ -392,35 +396,77 @@ def within_category_stats_and_plots(approach, model_identifier, emb_context, spl
     stats_df = stats_utils.get_stats_df(model_identifier=model_identifier, emb_context=emb_context,
                                         split_coord=split_coord, testonperturbed=testonperturbed,
                                         randomnouns=randomnouns)
-
-    # Rename conditions according to new names:
-    stats_df['condition'] = stats_df['condition'].map(plot_utils.COND2LABEL)
-
-    # Plot arguments
-    heatmap_args = {'linewidths': 0.25, 'linecolor': '0.5', 'clip_on': False, 'square': True,
-                    'cbar_ax_bbox': [0.95, 0.55, 0.04, 0.3]}
-
+    
     CAT2COND, _ = plot_utils.get_conditions()
     categories = [x for x in CAT2COND.keys() if x not in ['original', 'control']]
+    
+    #get dataframes with ttest values
+    for ind, current_category in enumerate(categories):
 
-    for category in categories:
-        sub_df = stats_df.loc[stats_df["category"] == category]
-        ttest = sp.posthoc_ttest(sub_df, val_col='values', group_col='condition', p_adjust='fdr_bh')
-        print(ttest)
+        already_tested = [] #list to keep track of which combos were already tested (for correct number of multiple comparisons)
+        # NOTE: only done for half of the comparisons, i.e., upper triangle of comparison matrix
+        # https://github.com/maximtrp/scikit-posthocs/blob/master/scikit_posthocs/_posthocs.py#L1653
 
-        plt.figure(figsize=(10, 10))
-        sp.sign_plot(ttest, annot=ttest, fmt='.3f', **heatmap_args)
-        plt.subplots_adjust(top=0.8)
-        plt.title(f'{category}')
+        ttests, pvals = [], []
+        compare1, compare2 = [], []
+        cohens_d = []
 
-        ttest_df = pd.DataFrame(ttest)
+        for cond1 in CAT2COND[current_category]:
+            cond1 = adjust_name(cond1)
+            cond1_scores = list(stats_df[stats_df['condition'] == cond1]["values"])
 
-        ttest_df["manipulation"] = f"{category}"
-        ttest_df.to_csv(f'{out_dir}/stats_{approach}_within_condition={category}.csv')
-        
-        plt.savefig(f'{out_dir}/stats_{approach}_within_condition={category}.svg', dpi=180, bbox_inches="tight")
-        plt.savefig(f'{out_dir}/stats_{approach}_within_condition={category}.png', dpi=180, bbox_inches="tight")
-        
+            for cond2 in CAT2COND[current_category]:
+                cond2 = adjust_name(cond2)
+
+                if cond1 == cond2:
+                    continue
+
+                if set([cond1, cond2]) in already_tested:
+                    #print(f"Already tested the comparison {cond1} & {cond2}")
+                    continue
+                else:
+                    #print(f"Testing the comparison {cond1} & {cond2}")
+                    cond2_scores = list(stats_df[stats_df['condition'] == cond2]["values"])
+
+                    #get ttest
+                    ttest, pval = scipy.stats.ttest_ind(cond1_scores, cond2_scores)
+                    #get cohens d
+                    cohensd = stats_utils.cohens_d(cond1_scores, cond2_scores)
+
+                    ttests.append(round(ttest,3))
+                    pvals.append(pval)
+                    compare1.append(cond1)
+                    compare2.append(cond2)
+                    cohens_d.append(cohensd)
+
+                    already_tested.append(set([cond1, cond2]))
+
+        _, adjusted_pvals = statsmodels.stats.multitest.fdrcorrection(pvals)
+        adjusted_pvals = [round(x,3) for x in adjusted_pvals]
+        pvals = [round(x,3) for x in pvals]
+        cohens_d = [round(x,3) for x in cohens_d]
+        significances = stats_utils.assign_significance_labels(adjusted_pvals)
+
+
+        ttest_df = pd.DataFrame({
+            "Condition 1" : compare1,
+            "Condition 2" : compare2,
+            "T-test statistic" : ttests,
+            "Adjusted pvalue" : adjusted_pvals,
+            "Significance" : significances,
+            "Cohen's d" : cohens_d,
+            "Unadjusted p value" : pvals
+        })
+        ttest_df["Manipulation"] = current_category
+        ttest_df["Computational design"] = approach
+
+        # rename conditions according to new names:
+        ttest_df['Condition 1'] = ttest_df['Condition 1'].map(plot_utils.COND2LABEL)
+        ttest_df['Condition 2'] = ttest_df['Condition 2'].map(plot_utils.COND2LABEL)
+
+        print(ttest_df)
+        ttest_df.to_csv(f'{out_dir}/stats_{approach}_within_condition={current_category}_with_ttest.csv',index=False)
+ 
     return ttest_df
 
 
