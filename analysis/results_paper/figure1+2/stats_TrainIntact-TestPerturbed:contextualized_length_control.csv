@@ -1,0 +1,2 @@
+condition,ttest2original,ttest2random,adjusted_pvals2original,adjusted_pvals2random,cohensd2original,cohensd2random,significance2original,significance2random,pvals2original,pvals2random
+LengthControl,15.44602227147982,-1.2146403396891732,7.886749954980538e-12,0.24019784708961944,6.9076711562009185,-0.5432036735516854,***,n.s.,7.886749954980538e-12,0.24019784708961944
