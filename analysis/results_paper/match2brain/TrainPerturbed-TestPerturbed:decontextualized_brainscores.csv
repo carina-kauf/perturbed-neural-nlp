@@ -1,0 +1,18 @@
+score,error,condition,category,stimulus,labelname
+0.8242905544870367,0.12848957978216363,Original,original,beekeeping encourages the conservation of local habitats.,Original: beekeeping encourages the conservation of local habitats.
+0.7655050681457789,0.10446689555450454,1LocalWordSwap,word-order,beekeeping encourages the conservation of habitats local.,1LocalWordSwap: beekeeping encourages the conservation of habitats local.
+0.7725010126068942,0.07030902411593008,3LocalWordSwaps,word-order,beekeeping conservation encourages the of habitats local.,3LocalWordSwaps: beekeeping conservation encourages the of habitats local.
+0.6625860430395304,0.10218078235418071,5LocalWordSwaps,word-order,conservation beekeeping encourages the habitats of local.,5LocalWordSwaps: conservation beekeeping encourages the habitats of local.
+0.6172436001674318,0.1635843704870301,7LocalWordSwaps,word-order,beekeeping conservation of encourages habitats local the.,7LocalWordSwaps: beekeeping conservation of encourages habitats local the.
+0.6030953182281823,0.06986855565159904,ReverseOrder,word-order,habitats local of conservation the encourages beekeeping.,ReverseOrder: habitats local of conservation the encourages beekeeping.
+0.5663918193828641,0.18190453343506316,LowPMI,word-order,beekeeping conservation habitats the of encourages local.,LowPMI: beekeeping conservation habitats the of encourages local.
+0.5928797431476187,0.13769157682993957,LowPMIRand,word-order,encourages the beekeeping of habitats conservation local.,LowPMIRand: encourages the beekeeping of habitats conservation local.
+0.6952800626706254,0.19406164348757807,KeepContentW,information-loss,beekeeping encourages conservation local habitats.,KeepContentW: beekeeping encourages conservation local habitats.
+0.6780123828657584,0.1836654510188433,KeepNVAdj,information-loss,beekeeping encourages conservation local habitats.,KeepNVAdj: beekeeping encourages conservation local habitats.
+0.6594084005314494,0.15945118535030312,KeepNV,information-loss,beekeeping encourages conservation habitats.,KeepNV: beekeeping encourages conservation habitats.
+0.46235037204880003,0.11689777707915755,KeepN,information-loss,conservation habitats.,KeepN: conservation habitats.
+0.11084132494890617,0.06293499169038369,KeepFunctionW,information-loss,the of.,KeepFunctionW: the of.
+0.6585242867995945,0.1585790668293095,RandSentFromPassage,semantic-distance,it is in every beekeeper's interest to conserve local plants that produce pollen.,RandSentFromPassage: it is in every beekeeper's interest to conserve local plants that produce pollen.
+0.2163580339793383,0.05546079566923019,RandSentFromTopic,semantic-distance,artisanal honey-making emphasizes quality and character over quantity and consistency.,RandSentFromTopic: artisanal honey-making emphasizes quality and character over quantity and consistency.
+0.07328905210632437,0.07352244682345695,RandSent,semantic-distance,and for society hip fractures involve substantial expense and time in the hospital.,RandSent: and for society hip fractures involve substantial expense and time in the hospital.
+0.121317029171931,0.08633988710954495,RandWordList,control,three climb around the the spears vapor.,RandWordList: three climb around the the spears vapor.

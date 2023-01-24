@@ -1,0 +1,22 @@
+Condition 1,Condition 2,T-test statistic,Adjusted pvalue,Significance,Cohen's d,Unadjusted p value,Manipulation,Computational design
+1LocalWordSwap,3LocalWordSwaps,-0.01,0.992,n.s.,-0.004,0.992,word-order,TrainPerturbed-TestPerturbed:contextualized
+1LocalWordSwap,5LocalWordSwaps,-0.353,0.942,n.s.,-0.158,0.728,word-order,TrainPerturbed-TestPerturbed:contextualized
+1LocalWordSwap,7LocalWordSwaps,-0.48,0.942,n.s.,-0.215,0.637,word-order,TrainPerturbed-TestPerturbed:contextualized
+1LocalWordSwap,ReverseOrder,0.621,0.942,n.s.,0.278,0.542,word-order,TrainPerturbed-TestPerturbed:contextualized
+1LocalWordSwap,LowPMI,-0.738,0.942,n.s.,-0.33,0.47,word-order,TrainPerturbed-TestPerturbed:contextualized
+1LocalWordSwap,LowPMIRand,-0.137,0.942,n.s.,-0.061,0.893,word-order,TrainPerturbed-TestPerturbed:contextualized
+3LocalWordSwaps,5LocalWordSwaps,-0.354,0.942,n.s.,-0.159,0.727,word-order,TrainPerturbed-TestPerturbed:contextualized
+3LocalWordSwaps,7LocalWordSwaps,-0.482,0.942,n.s.,-0.215,0.636,word-order,TrainPerturbed-TestPerturbed:contextualized
+3LocalWordSwaps,ReverseOrder,0.645,0.942,n.s.,0.288,0.527,word-order,TrainPerturbed-TestPerturbed:contextualized
+3LocalWordSwaps,LowPMI,-0.752,0.942,n.s.,-0.336,0.462,word-order,TrainPerturbed-TestPerturbed:contextualized
+3LocalWordSwaps,LowPMIRand,-0.131,0.942,n.s.,-0.059,0.897,word-order,TrainPerturbed-TestPerturbed:contextualized
+5LocalWordSwaps,7LocalWordSwaps,-0.235,0.942,n.s.,-0.105,0.817,word-order,TrainPerturbed-TestPerturbed:contextualized
+5LocalWordSwaps,ReverseOrder,1.053,0.942,n.s.,0.471,0.306,word-order,TrainPerturbed-TestPerturbed:contextualized
+5LocalWordSwaps,LowPMI,-0.514,0.942,n.s.,-0.23,0.614,word-order,TrainPerturbed-TestPerturbed:contextualized
+5LocalWordSwaps,LowPMIRand,0.143,0.942,n.s.,0.064,0.888,word-order,TrainPerturbed-TestPerturbed:contextualized
+7LocalWordSwaps,ReverseOrder,1.044,0.942,n.s.,0.467,0.31,word-order,TrainPerturbed-TestPerturbed:contextualized
+7LocalWordSwaps,LowPMI,-0.154,0.942,n.s.,-0.069,0.879,word-order,TrainPerturbed-TestPerturbed:contextualized
+7LocalWordSwaps,LowPMIRand,0.3,0.942,n.s.,0.134,0.768,word-order,TrainPerturbed-TestPerturbed:contextualized
+ReverseOrder,LowPMI,-1.377,0.942,n.s.,-0.616,0.185,word-order,TrainPerturbed-TestPerturbed:contextualized
+ReverseOrder,LowPMIRand,-0.687,0.942,n.s.,-0.307,0.501,word-order,TrainPerturbed-TestPerturbed:contextualized
+LowPMI,LowPMIRand,0.487,0.942,n.s.,0.218,0.632,word-order,TrainPerturbed-TestPerturbed:contextualized

@@ -1,0 +1,4 @@
+Condition 1,Condition 2,T-test statistic,Adjusted pvalue,Significance,Cohen's d,Unadjusted p value,Manipulation,Computational design
+RandSentFromPassage,RandSentFromTopic,8.378,0.0,***,3.747,0.0,semantic-distance,TrainIntact-TestPerturbed:decontextualized
+RandSentFromPassage,RandSent,12.846,0.0,***,5.745,0.0,semantic-distance,TrainIntact-TestPerturbed:decontextualized
+RandSentFromTopic,RandSent,5.834,0.0,***,2.609,0.0,semantic-distance,TrainIntact-TestPerturbed:decontextualized

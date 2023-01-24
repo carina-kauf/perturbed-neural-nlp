@@ -1,0 +1,11 @@
+Condition 1,Condition 2,T-test statistic,Adjusted pvalue,Significance,Cohen's d,Unadjusted p value,Manipulation,Computational design
+KeepContentW,KeepNVAdj,0.113,0.911,n.s.,0.051,0.911,information-loss,TrainIntact-TestPerturbed:decontextualized
+KeepContentW,KeepNV,1.036,0.392,n.s.,0.463,0.314,information-loss,TrainIntact-TestPerturbed:decontextualized
+KeepContentW,KeepN,2.029,0.115,n.s.,0.908,0.057,information-loss,TrainIntact-TestPerturbed:decontextualized
+KeepContentW,KeepFunctionW,14.679,0.0,***,6.565,0.0,information-loss,TrainIntact-TestPerturbed:decontextualized
+KeepNVAdj,KeepNV,0.885,0.431,n.s.,0.396,0.388,information-loss,TrainIntact-TestPerturbed:decontextualized
+KeepNVAdj,KeepN,1.874,0.129,n.s.,0.838,0.077,information-loss,TrainIntact-TestPerturbed:decontextualized
+KeepNVAdj,KeepFunctionW,13.836,0.0,***,6.188,0.0,information-loss,TrainIntact-TestPerturbed:decontextualized
+KeepNV,KeepN,1.138,0.386,n.s.,0.509,0.27,information-loss,TrainIntact-TestPerturbed:decontextualized
+KeepNV,KeepFunctionW,13.519,0.0,***,6.046,0.0,information-loss,TrainIntact-TestPerturbed:decontextualized
+KeepN,KeepFunctionW,9.885,0.0,***,4.421,0.0,information-loss,TrainIntact-TestPerturbed:decontextualized
