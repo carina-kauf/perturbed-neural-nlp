@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import torch.cuda
-if not torch.cuda.is_available():
+if not os.getenv('USER') == 'ckauf':
     import pickle5 as pickle #for local debugging
 else:
     import pickle
