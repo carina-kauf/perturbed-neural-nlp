@@ -173,6 +173,7 @@ class CrossValidation(Transformation):
             expt = np.unique(target_assembly.experiment.data)[0]
             layer_identifier = np.unique(train_source.layer.data)[0]
             store_path = '/om2/user/ckauf/perturbed-neural-nlp/analysis/checks/activations_storage/slurm_job={}/'.format(os.getenv('SLURM_JOB_ID'))
+            os.makedirs(store_path, exist_ok=True)
             train_store_name = 'CrossValidation_TrainPTestP_train_source_expt={}_layer={}_decontextualized={}_splitnr={}_{}.pkl'.format(expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'), split_iterator, os.getenv('SLURM_JOB_ID'))
             test_store_name = 'CrossValidation_TrainPTestP_test_source_expt={}_layer={}_decontextualized={}_splitnr={}_{}.pkl'.format(expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'), split_iterator, os.getenv('SLURM_JOB_ID'))
             split_train_store_name = 'Splits_TrainIndices_expt={}_layer={}_decontextualized={}_splitnr={}_{}.pkl'.format(expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'), split_iterator, os.getenv('SLURM_JOB_ID'))
