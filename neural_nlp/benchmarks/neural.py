@@ -1341,6 +1341,22 @@ class _PereiraBenchmarkTestOnPerturbed(Benchmark):
 
         source_assembly_test.values = activations_matrix
 
+        # FIXME: take out again
+        print('I AM IN THE FUNCTION THAT STORES THE ACTIVATION VALUES!')
+        store_path = '/om2/user/ckauf/perturbed-neural-nlp/analysis/checks/activations_storage/slurm_job={}/'.format(
+            os.getenv('SLURM_JOB_ID'))
+        os.makedirs(store_path, exist_ok=True)
+        train_store_name = 'Neural_source_assembly_train_{}_expt={}_layer={}_decontextualized={}_{}.pkl'.format(
+            self.scrambled_version, expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'),
+            os.getenv('SLURM_JOB_ID'))
+        test_store_name = 'Neural_source_assembly_test_{}_expt={}_layer={}_decontextualized={}_{}.pkl'.format(
+            self.scrambled_version, expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'),
+            os.getenv('SLURM_JOB_ID'))
+        with open(os.path.join(store_path, train_store_name), 'wb') as file:
+            pickle.dump(source_assembly_train.values, file)
+        with open(os.path.join(store_path, test_store_name), 'wb') as file:
+            pickle.dump(source_assembly_test.values, file)
+
         return self._single_metric(source_train_emb=source_assembly_train, source_test_emb=source_assembly_test, target=cross_assembly)
 
     @property
