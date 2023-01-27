@@ -1310,21 +1310,32 @@ class _PereiraBenchmarkTestOnPerturbed(Benchmark):
         expt = expt[0]
         identifier = np.unique(source_assembly_test.model.data)[0]
 
-        d_expt = {'243sentences': np.arange(1, 72 + 1),
-                  '384sentences': np.arange(1, 96 + 1)}
-
         activations_matrix, flat_sentence_array, flat_sentence_num_array = load_activations_into_matrix(
             identifier=identifier,
             stimuli_identifier=stimuli_identifier,
             agg=agg,
             expt=expt,
             layer_identifier=layer_identifier,
-            path=path,
-            d_expt=d_expt)
+            path=path)
 
-        sentencelist = list(source_assembly_train.sentence.data)
+        sentencelist_source = list(source_assembly_train.sentence.data)
+        sentencelist_target = list(cross_assembly.sentence.data)
 
-        assert len(sentencelist) == len(flat_sentence_array)
+        print('Asserting that the sentences between the two activations xarrays (source_assembly and from load activations function) are the same!')
+        assert len(sentencelist_source) == len(flat_sentence_array)
+        assert (sentencelist_source == flat_sentence_array).all()
+        print('Sentence list source assembly')
+        print(sentencelist_source)
+        print('Sentence list from loaded activations')
+        print(flat_sentence_array)
+
+        print('Asserting that the sentences between the activations xarrays source_assembly and target assembly are the same!')
+        assert len(sentencelist_target) == len(flat_sentence_array)
+        assert (sentencelist_target == flat_sentence_array).all()
+        print('Sentence list target assembly')
+        print(sentencelist_target)
+
+
         if self.scrambled_version == "Original":
             assert all([a == b for a, b in zip(sentencelist, flat_sentence_array)])
 
