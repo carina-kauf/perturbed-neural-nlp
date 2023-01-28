@@ -34,6 +34,8 @@ def load_activations_into_matrix(identifier,
     """
     if os.getenv('DECONTEXTUALIZED_EMB', '0') == '1':
         decontextualized = True
+    else:
+        decontextualized = False
 
     d_expt_passage = {'243sentences': np.arange(1, 72 + 1),
                       '384sentences': np.arange(1, 96 + 1)}
