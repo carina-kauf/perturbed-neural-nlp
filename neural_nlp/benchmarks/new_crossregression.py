@@ -88,6 +88,9 @@ class CrossValidationPerturbed(Transformation):
                 # get activations
                 test_source_perturbed_array = test_source.values
 
+                print(f"Shape of test_source_orig_array : {np.shape(test_source_orig_array)}")
+                print(f"Shape of test_source_perturbed_array : {np.shape(test_source_perturbed_array)}")
+
                 # STEP 2: Make sure that the sentences are mismatched with the fMRI data
                 print("THIS ONLY WORKS FOR THE teston:sentenceshuffle_random benchmark RIGHT NOW, if you want this to work for"
                       "teston:sentenceshuffle_topic as well, access the topic_ids and"
@@ -96,7 +99,8 @@ class CrossValidationPerturbed(Transformation):
                 all_different = False
                 attempt = 0
                 while not all_different:
-                    if attempt % 1000 == 0:
+                    attempt += 1
+                    if attempt % 100000 == 0:
                         print(f"Attempt number {attempt}", flush=True)
                     for ind, row in enumerate(test_source_perturbed_array):
                         if (row == test_source_orig_array[ind]).all():
@@ -107,22 +111,22 @@ class CrossValidationPerturbed(Transformation):
                             continue
                     # if not all different, shuffle for next attempt
                     if not all_different:
-                        attempt += 1
                         np.random.shuffle(test_source_perturbed_array)
                 # once all rows are mismatched, output the test_source_perturbed_array and set activations as values in test_source Assembly
+                print(f"All activations successfully mismatched after {attempt} attempts!")
                 test_source.values = test_source_perturbed_array
 
                 # CHECKS
-                # check 1: assert same set of activations in test set as for teston:original benchmark
-                assert set([test_source_perturbed_array[i] for i in range(np.shape(test_source_perturbed_array)[0])]) == \
-                       set([test_source_orig_array[i] for i in range(np.shape(test_source_orig_array)[0])])
-                # check 2: assert shape of test activations same as for teston:original benchmark
+                # check 1: assert shape of test activations same as for teston:original benchmark
                 assert np.shape(test_source_perturbed_array) == np.shape(test_source_orig_array)
+                # check 2: assert same set of activations in test set as for teston:original benchmark
+                assert set([test_source_perturbed_array[i] for i in range(len(test_source_perturbed_array))]) == \
+                       set([test_source_orig_array[i] for i in range(len(test_source_orig_array))])
                 # check 3: assert no test activations in the same spot as for teston:original benchmark
                 check_diff_rows = [(test_source_perturbed_array[i] == test_source_orig_array[i]).all() for i in range(len(test_source_orig_array))]
                 assert not True in check_diff_rows
 
-            else:
+            else: #if not sem. distance benchmark or if using old sem. benchmark setup
                 test_source = subset(source_test_emb, test_values, dims_must_match=False)
 
             test_target = subset(target_assembly, test_values, dims_must_match=False)
