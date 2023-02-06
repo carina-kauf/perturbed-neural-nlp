@@ -77,7 +77,7 @@ class CrossValidationPerturbed(Transformation):
 
                 print('RUNNING WITH THE NEW SEM. DISTANCE BENCHMARK SETUP', flush=True)
                 if not os.getenv('DECONTEXTUALIZED_EMB', '0'):
-                    print("Note that contextualization is different than in other perturbed benchmarks!")
+                    print("Note that contextualization is different than in other contextualized perturbed benchmarks!")
 
                 # STEP 1: Pick out test set (same indices as for original condition)
                 print('Getting the activations that would be in the test set for this split in the original benchmark')
@@ -87,6 +87,11 @@ class CrossValidationPerturbed(Transformation):
                 test_source = test_source_orig.copy(deep=True)
                 # get activations
                 test_source_perturbed_array = test_source.values
+                
+                # TODO: for topic/passage shuffle benchmarks, access
+                    # > test_source.coords.passage_index    (passages)
+                    # > test_source.coords.passage_category (topics)
+                # turn into list, zip with activations & use in while loop!
 
                 print(f"Shape of test_source_orig_array : {np.shape(test_source_orig_array)}")
                 print(f"Shape of test_source_perturbed_array : {np.shape(test_source_perturbed_array)}")
@@ -112,19 +117,28 @@ class CrossValidationPerturbed(Transformation):
                     # if not all different, shuffle for next attempt
                     if not all_different:
                         np.random.shuffle(test_source_perturbed_array)
-                # once all rows are mismatched, output the test_source_perturbed_array and set activations as values in test_source Assembly
+                # once all rows are mismatched, output the test_source_perturbed_array and run checks
                 print(f"All activations successfully mismatched after {attempt} attempts!")
-                test_source.values = test_source_perturbed_array
 
                 # CHECKS
                 # check 1: assert shape of test activations same as for teston:original benchmark
                 assert np.shape(test_source_perturbed_array) == np.shape(test_source_orig_array)
+                print("CHECK 1 OK: shape of test activations same as for teston:original benchmark")
                 # check 2: assert same set of activations in test set as for teston:original benchmark
-                assert set([test_source_perturbed_array[i] for i in range(len(test_source_perturbed_array))]) == \
-                       set([test_source_orig_array[i] for i in range(len(test_source_orig_array))])
+                print(f"Shape of first row: {np.shape(test_source_orig_array[0])}")
+                test_source_orig_array_rows = [test_source_orig_array[i] for i in range(len(test_source_orig_array))]
+                print(f"Shape of test_source_orig_array_rows: {np.shape(test_source_orig_array_rows)}")
+                for ind, row in enumerate(test_source_perturbed_array):
+                    assert np.any(np.all(row == test_source_orig_array_rows, axis=1))
+                print("CHECK 2 OK: assert same set of activations in test set as for teston:original benchmark")
                 # check 3: assert no test activations in the same spot as for teston:original benchmark
                 check_diff_rows = [(test_source_perturbed_array[i] == test_source_orig_array[i]).all() for i in range(len(test_source_orig_array))]
                 assert not True in check_diff_rows
+                print("CHECK 3 OK: no test activations in the same spot as for teston:original benchmark")
+                
+                # set activations as values in test_source Assembly
+                print("Setting shuffled activations as values in test_source assembly!")
+                test_source.values = test_source_perturbed_array
 
             else: #if not sem. distance benchmark or if using old sem. benchmark setup
                 test_source = subset(source_test_emb, test_values, dims_must_match=False)
