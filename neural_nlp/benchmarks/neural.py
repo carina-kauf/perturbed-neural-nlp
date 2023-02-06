@@ -1324,16 +1324,10 @@ class _PereiraBenchmarkTestOnPerturbed(Benchmark):
         print('Asserting that the sentences between the two activations xarrays (source_assembly and from load activations function) are the same!')
         assert len(sentencelist_source) == len(flat_sentence_array)
         assert (sentencelist_source == flat_sentence_array).all()
-        print('Sentence list source assembly')
-        print(sentencelist_source)
-        print('Sentence list from loaded activations')
-        print(flat_sentence_array)
 
         print('Asserting that the sentences between the activations xarrays source_assembly and target assembly are the same!')
         assert len(sentencelist_target) == len(flat_sentence_array)
         assert (sentencelist_target == flat_sentence_array).all()
-        print('Sentence list target assembly')
-        print(sentencelist_target)
 
 
         if self.scrambled_version == "Original":

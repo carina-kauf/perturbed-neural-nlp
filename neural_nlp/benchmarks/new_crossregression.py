@@ -72,7 +72,56 @@ class CrossValidationPerturbed(Transformation):
             train_source = subset(source_train_emb, train_values, dims_must_match=False)
             train_target = subset(target_assembly, train_values, dims_must_match=False)
             assert len(train_source[self._split_coord]) == len(train_target[self._split_coord])
-            test_source = subset(source_test_emb, test_values, dims_must_match=False)
+
+            if os.getenv('NEW_SEM_DISTANCE_BM', '0') == '1':
+                # STEP 1: Pick out test set (same indices as for original condition)
+                if not os.getenv('DECONTEXTUALIZED_EMB', '0'):
+                    raise NotImplementedError("The new way of doing TrainIntact-TestPerturbed semantic-distance benchmarks"
+                                              "is only implemented for decontextualized embeddings! Otherwise the activations"
+                                              "differ from the original case in the current setup > check if we want this"
+                                              "approach for contextualized benchmarks, too.")
+                ## Get the embeddings that would be in the test set for this split in the original benchmark
+                test_source_orig = subset(source_train_emb, test_values, dims_must_match=False)
+                test_source_orig_rows = [test_source_orig[ind] for ind in range(np.shape(test_source_orig)[0])]
+                test_source_acts = []
+                for ind, row in enumerate(source_test_emb):
+                    if row in test_source_orig_rows:
+                        test_source_acts.append(row)
+                test_source_acts_shuffled = np.array(test_source_acts)
+
+                # STEP 2: Make sure that the sentences are mismatched with the fMRI data
+                print("THIS ONLY WORKS FOR THE teston:sentenceshuffle_random benchmark RIGHT NOW, if you want this to work for"
+                      "teston:sentenceshuffle_topic as well, output the topic_ids as an array in the utils.py script and"
+                      "add another condition to the while loop below!")
+                all_different = False
+                attempt = 0
+                while not all_different:
+                    print(f"Attempt number {attempt}")
+                    for ind, row in enumerate(test_source_acts_shuffled):
+                        print(row, test_orig_acts[ind])
+                        if (row == test_orig_acts[ind]).all():
+                            print(f'rows at index {ind} are the same, shuffling matrix and retrying\n')
+                            all_different = False
+                            break
+                        else:
+                            all_different = True
+                            continue
+                    attempt += 1
+                    np.random.shuffle(test_source_acts_shuffled)
+                test_source = test_source_acts_shuffled
+                print(test_source)
+                # check 1: assert same set of activations in test set as for teston:original benchmark
+                assert set([test_source[i] for i in range(np.shape(test_source)[0])]) == \
+                       set([test_source_orig[i] for i in range(np.shape(test_source_orig)[0])])
+                # check 2: assert shape of test activations same as for teston:original benchmark
+                assert np.shape(test_source) == np.shape(test_source_orig)
+                # check 3: assert no test activations in the same spot as for teston:original benchmark
+                check_diff_rows = [(test_source[i] == test_source_orig[i]).all() for i in range(len(test_orig_acts))]
+                assert not True in check_diff_rows
+
+            else:
+                test_source = subset(source_test_emb, test_values, dims_must_match=False)
+
             test_target = subset(target_assembly, test_values, dims_must_match=False)
             assert len(test_source[self._split_coord]) == len(test_target[self._split_coord])
             
