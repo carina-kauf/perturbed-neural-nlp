@@ -98,11 +98,11 @@ class CrossValidationPerturbed(Transformation):
                 all_different = False
                 attempt = 0
                 while not all_different:
-                    print(f"Attempt number {attempt}", flush=True)
+                    if attempt % 1000 == 0:
+                        print(f"Attempt number {attempt}", flush=True)
                     for ind, row in enumerate(test_source_acts_shuffled):
-                        print(row, test_source_orig[ind])
                         if (row == test_source_orig[ind]).all():
-                            print(f'rows at index {ind} are the same, shuffling matrix and retrying\n', flush=True)
+                            #print(f'rows at index {ind} are the same, shuffling matrix and retrying\n', flush=True)
                             all_different = False
                             break
                         else:
@@ -111,7 +111,7 @@ class CrossValidationPerturbed(Transformation):
                     attempt += 1
                     np.random.shuffle(test_source_acts_shuffled)
                 test_source = test_source_acts_shuffled
-                print(test_source)
+                #print(test_source)
                 # check 1: assert same set of activations in test set as for teston:original benchmark
                 assert set([test_source[i] for i in range(np.shape(test_source)[0])]) == \
                        set([test_source_orig[i] for i in range(np.shape(test_source_orig)[0])])
