@@ -116,7 +116,7 @@ class CrossValidationPerturbed(Transformation):
                 # check 2: assert shape of test activations same as for teston:original benchmark
                 assert np.shape(test_source) == np.shape(test_source_orig)
                 # check 3: assert no test activations in the same spot as for teston:original benchmark
-                check_diff_rows = [(test_source[i] == test_source_orig[i]).all() for i in range(len(test_orig_acts))]
+                check_diff_rows = [(test_source[i] == test_source_orig[i]).all() for i in range(len(test_source_orig))]
                 assert not True in check_diff_rows
 
             else:
