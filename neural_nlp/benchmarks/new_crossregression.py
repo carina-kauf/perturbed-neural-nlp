@@ -84,8 +84,8 @@ class CrossValidationPerturbed(Transformation):
                 test_source_orig = subset(source_train_emb, test_values, dims_must_match=False)
                 test_source_orig_rows = [test_source_orig[ind] for ind in range(np.shape(test_source_orig)[0])]
                 test_source_acts = []
-                for ind, row in enumerate(source_test_emb):
-                    if row in test_source_orig_rows:
+                for ind, row in enumerate(source_test_emb): #NOTE: we could also just work with the orig here without loading the test_source_embs
+                    if np.any(np.all(row == test_source_orig_rows, axis=1)):
                         test_source_acts.append(row)
                 test_source_acts_shuffled = np.array(test_source_acts)
 
