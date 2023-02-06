@@ -131,22 +131,24 @@ class CrossValidationPerturbed(Transformation):
             layer_identifier = np.unique(source_train_emb.layer.data)[0]
             
             assert np.unique(source_train_emb.layer.data)[0] == np.unique(source_test_emb.layer.data)[0], "Layers are not the same!"
+            layers_of_interest = ['drop', 'encoder.h.5', 'encoder.h.44']
             
-            store_path = '/om2/user/ckauf/perturbed-neural-nlp/analysis/checks/activations_storage/slurm_job={}/'.format(os.getenv('SLURM_JOB_ID'))
-            os.makedirs(store_path, exist_ok=True)
-            train_store_name = 'CrossValidationPerturbed_train_source_expt={}_layer={}_decontextualized={}_splitnr={}_{}.pkl'.format(expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'), split_iterator, os.getenv('SLURM_JOB_ID'))
-            test_store_name = 'CrossValidationPerturbed_test_source_expt={}_layer={}_decontextualized={}_splitnr={}_{}.pkl'.format(expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'), split_iterator, os.getenv('SLURM_JOB_ID'))
-            split_train_store_name = 'Splits_TrainIndices_expt={}_layer={}_decontextualized={}_splitnr={}_{}.pkl'.format(expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'), split_iterator, os.getenv('SLURM_JOB_ID'))
-            split_test_store_name = 'Splits_TestIndices_expt={}_layer={}_decontextualized={}_splitnr={}_{}.pkl'.format(expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'), split_iterator, os.getenv('SLURM_JOB_ID'))
-            
-            with open(os.path.join(store_path, train_store_name), 'wb') as file:
-                pickle.dump(train_source.values, file)
-            with open(os.path.join(store_path, test_store_name), 'wb') as file:
-                pickle.dump(test_source.values, file)
-            with open(os.path.join(store_path, split_train_store_name), 'wb') as file:
-                pickle.dump(train_indices, file)
-            with open(os.path.join(store_path, split_test_store_name), 'wb') as file:
-                pickle.dump(test_indices, file)
+            if layer_identifier in layers_of_interest:
+                store_path = '/om2/user/ckauf/perturbed-neural-nlp/analysis/checks/activations_storage/slurm_job={}/'.format(os.getenv('SLURM_JOB_ID'))
+                os.makedirs(store_path, exist_ok=True)
+                train_store_name = 'CrossValidationPerturbed_train_source_expt={}_layer={}_decontextualized={}_splitnr={}_{}.pkl'.format(expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'), split_iterator, os.getenv('SLURM_JOB_ID'))
+                test_store_name = 'CrossValidationPerturbed_test_source_expt={}_layer={}_decontextualized={}_splitnr={}_{}.pkl'.format(expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'), split_iterator, os.getenv('SLURM_JOB_ID'))
+                split_train_store_name = 'Splits_TrainIndices_expt={}_layer={}_decontextualized={}_splitnr={}_{}.pkl'.format(expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'), split_iterator, os.getenv('SLURM_JOB_ID'))
+                split_test_store_name = 'Splits_TestIndices_expt={}_layer={}_decontextualized={}_splitnr={}_{}.pkl'.format(expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'), split_iterator, os.getenv('SLURM_JOB_ID'))
+
+                with open(os.path.join(store_path, train_store_name), 'wb') as file:
+                    pickle.dump(train_source.values, file)
+                with open(os.path.join(store_path, test_store_name), 'wb') as file:
+                    pickle.dump(test_source.values, file)
+                with open(os.path.join(store_path, split_train_store_name), 'wb') as file:
+                    pickle.dump(train_indices, file)
+                with open(os.path.join(store_path, split_test_store_name), 'wb') as file:
+                    pickle.dump(test_indices, file)
 
             split_score = yield from self._get_result(train_source, train_target, test_source, test_target,
                                                       done=done)
