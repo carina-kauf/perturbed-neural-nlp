@@ -74,25 +74,23 @@ class CrossValidationPerturbed(Transformation):
             assert len(train_source[self._split_coord]) == len(train_target[self._split_coord])
 
             if os.getenv('NEW_SEM_DISTANCE_BM', '0') == '1':
+
                 print('RUNNING WITH THE NEW SEM. DISTANCE BENCHMARK SETUP', flush=True)
-                # STEP 1: Pick out test set (same indices as for original condition)
                 if not os.getenv('DECONTEXTUALIZED_EMB', '0'):
-                    raise NotImplementedError("The new way of doing TrainIntact-TestPerturbed semantic-distance benchmarks"
-                                              "is only implemented for decontextualized embeddings! Otherwise the activations"
-                                              "differ from the original case in the current setup > check if we want this"
-                                              "approach for contextualized benchmarks, too.")
-                ## Get the embeddings that would be in the test set for this split in the original benchmark
+                    print("Note that contextualization is different than in other perturbed benchmarks!")
+
+                # STEP 1: Pick out test set (same indices as for original condition)
+                print('Getting the activations that would be in the test set for this split in the original benchmark')
                 test_source_orig = subset(source_train_emb, test_values, dims_must_match=False)
-                test_source_acts = []
-                print('Getting the embeddings that would be in the test set for this split in the original benchmark')
-                for ind, row in enumerate(source_test_emb): #NOTE: we could also just work with the orig here without loading the test_source_embs
-                    if np.any(np.all(row == test_source_orig, axis=1)): #check that row is a row in test_source_orig
-                        test_source_acts.append(row)
-                test_source_acts_shuffled = np.array(test_source_acts)
+                test_source_orig_array = test_source_orig.values
+                # set up perturbed test source assembly
+                test_source = test_source_orig.copy(deep=True)
+                # get activations
+                test_source_perturbed_array = test_source.values
 
                 # STEP 2: Make sure that the sentences are mismatched with the fMRI data
                 print("THIS ONLY WORKS FOR THE teston:sentenceshuffle_random benchmark RIGHT NOW, if you want this to work for"
-                      "teston:sentenceshuffle_topic as well, output the topic_ids as an array in the utils.py script and"
+                      "teston:sentenceshuffle_topic as well, access the topic_ids and"
                       "add another condition to the while loop below!", flush=True)
                 print('Making sure that the sentences are mismatched with the fMRI data')
                 all_different = False
@@ -100,25 +98,28 @@ class CrossValidationPerturbed(Transformation):
                 while not all_different:
                     if attempt % 1000 == 0:
                         print(f"Attempt number {attempt}", flush=True)
-                    for ind, row in enumerate(test_source_acts_shuffled):
-                        if (row == test_source_orig[ind]).all():
-                            #print(f'rows at index {ind} are the same, shuffling matrix and retrying\n', flush=True)
+                    for ind, row in enumerate(test_source_perturbed_array):
+                        if (row == test_source_orig_array[ind]).all():
                             all_different = False
                             break
                         else:
                             all_different = True
                             continue
-                    attempt += 1
-                    np.random.shuffle(test_source_acts_shuffled)
-                test_source = test_source_acts_shuffled
-                #print(test_source)
+                    # if not all different, shuffle for next attempt
+                    if not all_different:
+                        attempt += 1
+                        np.random.shuffle(test_source_perturbed_array)
+                # once all rows are mismatched, output the test_source_perturbed_array and set activations as values in test_source Assembly
+                test_source.values = test_source_perturbed_array
+
+                # CHECKS
                 # check 1: assert same set of activations in test set as for teston:original benchmark
-                assert set([test_source[i] for i in range(np.shape(test_source)[0])]) == \
-                       set([test_source_orig[i] for i in range(np.shape(test_source_orig)[0])])
+                assert set([test_source_perturbed_array[i] for i in range(np.shape(test_source_perturbed_array)[0])]) == \
+                       set([test_source_orig_array[i] for i in range(np.shape(test_source_orig_array)[0])])
                 # check 2: assert shape of test activations same as for teston:original benchmark
-                assert np.shape(test_source) == np.shape(test_source_orig)
+                assert np.shape(test_source_perturbed_array) == np.shape(test_source_orig_array)
                 # check 3: assert no test activations in the same spot as for teston:original benchmark
-                check_diff_rows = [(test_source[i] == test_source_orig[i]).all() for i in range(len(test_source_orig))]
+                check_diff_rows = [(test_source_perturbed_array[i] == test_source_orig_array[i]).all() for i in range(len(test_source_orig_array))]
                 assert not True in check_diff_rows
 
             else:
