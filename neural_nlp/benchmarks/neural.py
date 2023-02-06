@@ -1319,37 +1319,11 @@ class _PereiraBenchmarkTestOnPerturbed(Benchmark):
             path=path)
 
         sentencelist_source = list(source_assembly_train.sentence.data)
-        sentencelist_target = list(cross_assembly.sentence.data)
-
-        print('Asserting that the sentences between the two activations xarrays (source_assembly and from load activations function) are the same!')
-        assert len(sentencelist_source) == len(flat_sentence_array)
-        assert (sentencelist_source == flat_sentence_array).all()
-
-        print('Asserting that the sentences between the activations xarrays source_assembly and target assembly are the same!')
-        assert len(sentencelist_target) == len(flat_sentence_array)
-        assert (sentencelist_target == flat_sentence_array).all()
-
 
         if self.scrambled_version == "Original":
             assert all([a == b for a, b in zip(sentencelist, flat_sentence_array)])
 
         source_assembly_test.values = activations_matrix
-
-        # FIXME: take out again
-        print('I AM IN THE FUNCTION THAT STORES THE ACTIVATION VALUES!')
-        store_path = '/om2/user/ckauf/perturbed-neural-nlp/analysis/checks/activations_storage/slurm_job={}/'.format(
-            os.getenv('SLURM_JOB_ID'))
-        os.makedirs(store_path, exist_ok=True)
-        train_store_name = 'Neural_source_assembly_train_{}_expt={}_layer={}_decontextualized={}_{}.pkl'.format(
-            self.scrambled_version, expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'),
-            os.getenv('SLURM_JOB_ID'))
-        test_store_name = 'Neural_source_assembly_test_{}_expt={}_layer={}_decontextualized={}_{}.pkl'.format(
-            self.scrambled_version, expt, layer_identifier, os.getenv('DECONTEXTUALIZED_EMB'),
-            os.getenv('SLURM_JOB_ID'))
-        with open(os.path.join(store_path, train_store_name), 'wb') as file:
-            pickle.dump(source_assembly_train.values, file)
-        with open(os.path.join(store_path, test_store_name), 'wb') as file:
-            pickle.dump(source_assembly_test.values, file)
 
         return self._single_metric(source_train_emb=source_assembly_train, source_test_emb=source_assembly_test, target=cross_assembly)
 

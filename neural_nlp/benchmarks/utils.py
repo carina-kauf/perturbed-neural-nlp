@@ -32,22 +32,18 @@ def load_activations_into_matrix(identifier,
 
 
     """
-    if os.getenv('DECONTEXTUALIZED_EMB', '0') == '1':
-        decontextualized = True
-    else:
-        decontextualized = False
 
     d_expt_passage = {'243sentences': np.arange(1, 72 + 1),
                       '384sentences': np.arange(1, 96 + 1)}
 
-    d_expt_sentence = {'243sentences': np.arange(1, 243 + 1),
-                       '384sentences': np.arange(1, 384 + 1)}
+    d_expt_sentence = {'243sentences': np.arange(243),
+                       '384sentences': np.arange(384)}
 
     activations = []
     sentence_array = []  # for sanity checking sentences
     sentence_num_array = []
 
-    if decontextualized:
+    if os.getenv('DECONTEXTUALIZED_EMB', '0') == '1':
         print("I'm loading the activations with DECONTEXTUALIZED_EMB=1, hence loading individual sentence activations.")
         activations_iterator_dict = d_expt_sentence
     else:
@@ -56,7 +52,7 @@ def load_activations_into_matrix(identifier,
 
     for idx in activations_iterator_dict[expt]:
 
-        if decontextualized:
+        if os.getenv('DECONTEXTUALIZED_EMB', '0') == '1':
             # identifier=distilgpt2,stimuli_identifier=Pereira2018,emb_context=Sentence-384sentences.99.pkl
             # NOTE: difference is dot in between experiment and idx!
             intended_filename = f'identifier={identifier},stimuli_identifier={stimuli_identifier}-{agg},emb_context=Sentence-{expt}.{idx}.pkl'
@@ -102,6 +98,10 @@ def load_activations_into_matrix(identifier,
 
     return activations_matrix, flat_sentence_array, flat_sentence_num_array
 
+
+###################
+## OLD FUNCTION!
+###################
 
 # def load_activations_into_matrix(identifier,
 #                                  stimuli_identifier,
