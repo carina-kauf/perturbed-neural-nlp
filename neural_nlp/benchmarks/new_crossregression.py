@@ -98,8 +98,8 @@ class CrossValidationPerturbed(Transformation):
                 while not all_different:
                     print(f"Attempt number {attempt}")
                     for ind, row in enumerate(test_source_acts_shuffled):
-                        print(row, test_orig_acts[ind])
-                        if (row == test_orig_acts[ind]).all():
+                        print(row, test_source_orig[ind])
+                        if (row == test_source_orig[ind]).all():
                             print(f'rows at index {ind} are the same, shuffling matrix and retrying\n')
                             all_different = False
                             break
