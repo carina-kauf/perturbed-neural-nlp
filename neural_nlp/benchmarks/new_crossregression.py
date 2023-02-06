@@ -74,6 +74,7 @@ class CrossValidationPerturbed(Transformation):
             assert len(train_source[self._split_coord]) == len(train_target[self._split_coord])
 
             if os.getenv('NEW_SEM_DISTANCE_BM', '0') == '1':
+                print('RUNNING WITH THE NEW SEM. DISTANCE BENCHMARK SETUP', flush=True)
                 # STEP 1: Pick out test set (same indices as for original condition)
                 if not os.getenv('DECONTEXTUALIZED_EMB', '0'):
                     raise NotImplementedError("The new way of doing TrainIntact-TestPerturbed semantic-distance benchmarks"
@@ -82,25 +83,26 @@ class CrossValidationPerturbed(Transformation):
                                               "approach for contextualized benchmarks, too.")
                 ## Get the embeddings that would be in the test set for this split in the original benchmark
                 test_source_orig = subset(source_train_emb, test_values, dims_must_match=False)
-                test_source_orig_rows = [test_source_orig[ind] for ind in range(np.shape(test_source_orig)[0])]
                 test_source_acts = []
+                print('Getting the embeddings that would be in the test set for this split in the original benchmark')
                 for ind, row in enumerate(source_test_emb): #NOTE: we could also just work with the orig here without loading the test_source_embs
-                    if np.any(np.all(row == test_source_orig_rows, axis=1)):
+                    if np.any(np.all(row == test_source_orig, axis=1)): #check that row is a row in test_source_orig
                         test_source_acts.append(row)
                 test_source_acts_shuffled = np.array(test_source_acts)
 
                 # STEP 2: Make sure that the sentences are mismatched with the fMRI data
                 print("THIS ONLY WORKS FOR THE teston:sentenceshuffle_random benchmark RIGHT NOW, if you want this to work for"
                       "teston:sentenceshuffle_topic as well, output the topic_ids as an array in the utils.py script and"
-                      "add another condition to the while loop below!")
+                      "add another condition to the while loop below!", flush=True)
+                print('Making sure that the sentences are mismatched with the fMRI data')
                 all_different = False
                 attempt = 0
                 while not all_different:
-                    print(f"Attempt number {attempt}")
+                    print(f"Attempt number {attempt}", flush=True)
                     for ind, row in enumerate(test_source_acts_shuffled):
                         print(row, test_source_orig[ind])
                         if (row == test_source_orig[ind]).all():
-                            print(f'rows at index {ind} are the same, shuffling matrix and retrying\n')
+                            print(f'rows at index {ind} are the same, shuffling matrix and retrying\n', flush=True)
                             all_different = False
                             break
                         else:
