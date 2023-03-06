@@ -1,0 +1,628 @@
+,sentence,sentence_num,stimulus_id,experiment,story,passage_index,passage_label,passage_category
+0,Beekeeping encourages the conservation of local habitats.,0,243sentences.0,243sentences,243sentences.beekeeping,1,beekeeping,beekeeping
+1,It is in every beekeeper's interest to conserve local plants that produce pollen.,1,243sentences.1,243sentences,243sentences.beekeeping,1,beekeeping,beekeeping
+2,"As a passive form of agriculture, it does not require that native vegetation be cleared to make way for crops.",2,243sentences.2,243sentences,243sentences.beekeeping,1,beekeeping,beekeeping
+3,"Beekeepers also discourage the use of pesticides on crops, because they could kill the honeybees.",3,243sentences.3,243sentences,243sentences.beekeeping,1,beekeeping,beekeeping
+4,"Artisanal beekeepers go to extremes for their craft, but their product is worth the effort.",4,243sentences.4,243sentences,243sentences.beekeeping,2,beekeeping,beekeeping
+5,Artisanal honey-making emphasizes quality and character over quantity and consistency.,5,243sentences.5,243sentences,243sentences.beekeeping,2,beekeeping,beekeeping
+6,"To produce the finest honey, beekeepers become micromanagers of their honeybees.",6,243sentences.6,243sentences,243sentences.beekeeping,2,beekeeping,beekeeping
+7,"They scout the fields, know when nectar flows, and select the best ways to extract honey.",7,243sentences.7,243sentences,243sentences.beekeeping,2,beekeeping,beekeeping
+8,"As the beekeeper opens the hive, the deep hum of 40,000 bees fills the air.",8,243sentences.8,243sentences,243sentences.beekeeping,3,beekeeping,beekeeping
+9,"The beekeeper checks honey stores, pollen supplies, and the bee nursery.",9,243sentences.9,243sentences,243sentences.beekeeping,3,beekeeping,beekeeping
+10,"Bees crawl across his bare arms and hands, but they don't sting, because they're gentle.",10,243sentences.10,243sentences,243sentences.beekeeping,3,beekeeping,beekeeping
+11,"I have a recurring dream about exams, even though I'm no longer in college.",11,243sentences.11,243sentences,243sentences.dreams,4,dreams,dreams
+12,"In my dream, it's the day of my final exam and I suddenly realize I've never gone to class.",12,243sentences.12,243sentences,243sentences.dreams,4,dreams,dreams
+13,I've never even done any of the reading assignments.,13,243sentences.13,243sentences,243sentences.dreams,4,dreams,dreams
+14,I know many other people who have the same nightmare.,14,243sentences.14,243sentences,243sentences.dreams,4,dreams,dreams
+15,"Each morning, participants in the study had to write down their dream experience from the previous night.",15,243sentences.15,243sentences,243sentences.dreams,5,dreams,dreams
+16,"They recorded if they recalled any dreams, and described each dream and its emotional intensity.",16,243sentences.16,243sentences,243sentences.dreams,5,dreams,dreams
+17,"Participants then assigned each dream to a category, such as a flying dream, a bad dream, or a nightmare.",17,243sentences.17,243sentences,243sentences.dreams,5,dreams,dreams
+18,"Every night while we sleep, our minds are as active as when we are awake.",18,243sentences.18,243sentences,243sentences.dreams,6,dreams,dreams
+19,"We dream throughout the night, in cycles of about ninety minutes each.",19,243sentences.19,243sentences,243sentences.dreams,6,dreams,dreams
+20,"Images, feelings, stories, and strange combinations of characters and places can fill our dreams.",20,243sentences.20,243sentences,243sentences.dreams,6,dreams,dreams
+21,"When I decided to start playing cards, things went from bad to worse.",21,243sentences.21,243sentences,243sentences.gambling,7,gambling,gambling
+22,"Gambling was something I had to do, and I had already spent close to $10,000 doing it.",22,243sentences.22,243sentences,243sentences.gambling,7,gambling,gambling
+23,My friends were sick of watching me gamble my savings away.,23,243sentences.23,243sentences,243sentences.gambling,7,gambling,gambling
+24,The hardest part was the horror of leaving a casino after losing money I did not have.,24,243sentences.24,243sentences,243sentences.gambling,7,gambling,gambling
+25,Good data on the social and economic effects of legalized gambling are hard to come by.,25,243sentences.25,243sentences,243sentences.gambling,8,gambling,gambling
+26,Some studies indicate that having a casino nearby makes gambling problems more likely.,26,243sentences.26,243sentences,243sentences.gambling,8,gambling,gambling
+27,Gambling may also be associated with personal bankruptcies and marriage problems.,27,243sentences.27,243sentences,243sentences.gambling,8,gambling,gambling
+28,"Over the past generation, there has been a dramatic expansion of legalized gambling.",28,243sentences.28,243sentences,243sentences.gambling,9,gambling,gambling
+29,"Most states have instituted lotteries, and many have casinos as well.",29,243sentences.29,243sentences,243sentences.gambling,9,gambling,gambling
+30,Gambling has become very big but controversial business.,30,243sentences.30,243sentences,243sentences.gambling,9,gambling,gambling
+31,"The wind from the hurricane shook the house, shattering a window in the kitchen.",31,243sentences.31,243sentences,243sentences.hurricane,10,hurricane,hurricane
+32,"We ran in, grabbed some food, slammed the door, and surrendered the kitchen to the hurricane.",32,243sentences.32,243sentences,243sentences.hurricane,10,hurricane,hurricane
+33,I was afraid our house would be ripped from its foundation.,33,243sentences.33,243sentences,243sentences.hurricane,10,hurricane,hurricane
+34,"Later that night, with the wind shaking the house, we fell asleep huddled on the sofa.",34,243sentences.34,243sentences,243sentences.hurricane,10,hurricane,hurricane
+35,Hurricanes can tear limbs off of trees and suck houses off their foundations.,35,243sentences.35,243sentences,243sentences.hurricane,11,hurricane,hurricane
+36,They dump heavy rains that can trigger floods and mudslides.,36,243sentences.36,243sentences,243sentences.hurricane,11,hurricane,hurricane
+37,Hurricanes can also bring a storm surge: a wall of ocean water that lurches onto land.,37,243sentences.37,243sentences,243sentences.hurricane,11,hurricane,hurricane
+38,Scientists use several methods to look for evidence of ancient hurricanes.,38,243sentences.38,243sentences,243sentences.hurricane,12,hurricane,hurricane
+39,The strongest storms deposited layers of windblown beach sand at the bottoms of coastal lakes.,39,243sentences.39,243sentences,243sentences.hurricane,12,hurricane,hurricane
+40,Trees drenched by passing hurricanes preserve a record of each storm in their growth rings.,40,243sentences.40,243sentences,243sentences.hurricane,12,hurricane,hurricane
+41,"American ice cream is exported around the world, but different countries have different preferences.",41,243sentences.41,243sentences,243sentences.ice_cream,13,ice_cream,ice_cream
+42,Many people enjoy their ice cream flavored with local delicacies.,42,243sentences.42,243sentences,243sentences.ice_cream,13,ice_cream,ice_cream
+43,"In some tropical places, vanilla ice cream is topped with bananas and fresh mangos.",43,243sentences.43,243sentences,243sentences.ice_cream,13,ice_cream,ice_cream
+44,I remember making ice cream at home as a child.,44,243sentences.44,243sentences,243sentences.ice_cream,14,ice_cream,ice_cream
+45,"We poured the cream mixture into a frozen tub, then start turning the crank to expose it to the cold.",45,243sentences.45,243sentences,243sentences.ice_cream,14,ice_cream,ice_cream
+46,Eventually it froze enough that I couldn't turn the hand crank any more.,46,243sentences.46,243sentences,243sentences.ice_cream,14,ice_cream,ice_cream
+47,Then I put the container of half-frozen ice cream into the freezer to harden.,47,243sentences.47,243sentences,243sentences.ice_cream,14,ice_cream,ice_cream
+48,"Ice cream is a mixture of milk or cream, sugar, flavorings, and up to half whipped-in air.",48,243sentences.48,243sentences,243sentences.ice_cream,15,ice_cream,ice_cream
+49,The butterfat in milk and cream is what makes it smooth and silky.,49,243sentences.49,243sentences,243sentences.ice_cream,15,ice_cream,ice_cream
+50,High-priced premium ice cream is loaded with butterfat and natural flavorings.,50,243sentences.50,243sentences,243sentences.ice_cream,15,ice_cream,ice_cream
+51,"When I use the riding lawn mower, the uncomfortable chair makes my back hurt.",51,243sentences.51,243sentences,243sentences.lawn_mower,16,lawn_mower,lawn_mower
+52,I use the two levers in front of me to control the machine.,52,243sentences.52,243sentences,243sentences.lawn_mower,16,lawn_mower,lawn_mower
+53,The sharp blades underneath the lawn mower precisely sever each blade of grass.,53,243sentences.53,243sentences,243sentences.lawn_mower,16,lawn_mower,lawn_mower
+54,Mowing the lawn is a long task and it has taught me patience.,54,243sentences.54,243sentences,243sentences.lawn_mower,16,lawn_mower,lawn_mower
+55,A lawn mower is a machine with revolving blades that cut grass to an even height.,55,243sentences.55,243sentences,243sentences.lawn_mower,17,lawn_mower,lawn_mower
+56,The blades may be powered by muscle or the machine may have a motor.,56,243sentences.56,243sentences,243sentences.lawn_mower,17,lawn_mower,lawn_mower
+57,The most common power source for lawn mowers is a small gas engine.,57,243sentences.57,243sentences,243sentences.lawn_mower,17,lawn_mower,lawn_mower
+58,Electric lawnmowers are better for the environment because they do not create emissions.,58,243sentences.58,243sentences,243sentences.lawn_mower,18,lawn_mower,lawn_mower
+59,They also need less maintenance and are less expensive to run.,59,243sentences.59,243sentences,243sentences.lawn_mower,18,lawn_mower,lawn_mower
+60,Electric lawn mowers use as much electricity as an ordinary toaster.,60,243sentences.60,243sentences,243sentences.lawn_mower,18,lawn_mower,lawn_mower
+61,Astronauts train a long time for their spacewalks.,61,243sentences.61,243sentences,243sentences.astronaut,19,astronaut,astronaut
+62,Much of their training is conducted underwater.,62,243sentences.62,243sentences,243sentences.astronaut,19,astronaut,astronaut
+63,They may spend 8 to 10 hours in the pool for every hour they will spend floating in space.,63,243sentences.63,243sentences,243sentences.astronaut,19,astronaut,astronaut
+64,Astronauts practice to be able to perform construction and repair work on the outside of the space station.,64,243sentences.64,243sentences,243sentences.astronaut,19,astronaut,astronaut
+65,"The commanders of shuttle flights are always pilots, and many have backgrounds as military test pilots.",65,243sentences.65,243sentences,243sentences.astronaut,20,astronaut,astronaut
+66,"Other astronauts are trained as doctors, engineers, and scientists, who can run experiments in space.",66,243sentences.66,243sentences,243sentences.astronaut,20,astronaut,astronaut
+67,"Early crews were all young men, but astronauts now are much more diverse.",67,243sentences.67,243sentences,243sentences.astronaut,20,astronaut,astronaut
+68,The team of astronauts floated out together to the exterior of the space shuttle.,68,243sentences.68,243sentences,243sentences.astronaut,21,astronaut,astronaut
+69,They carried tools needed to repair the broken part on the huge telescope.,69,243sentences.69,243sentences,243sentences.astronaut,21,astronaut,astronaut
+70,"One astronaut loosened the bolts on the pipe, while the other fitted the replacement part into place.",70,243sentences.70,243sentences,243sentences.astronaut,21,astronaut,astronaut
+71,Computers have been used in art for a long time by experimental artists.,71,243sentences.71,243sentences,243sentences.computer_graphics,22,computer_graphics,computer_graphics
+72,"Now that computers are more affordable and widespread, computer graphics have entered the mainstream art world.",72,243sentences.72,243sentences,243sentences.computer_graphics,22,computer_graphics,computer_graphics
+73,Some computer science conferences have art exhibitions that showcase the latest graphics technology.,73,243sentences.73,243sentences,243sentences.computer_graphics,22,computer_graphics,computer_graphics
+74,Brand new conferences have sprung up that are devoted to bridging the two cultures.,74,243sentences.74,243sentences,243sentences.computer_graphics,22,computer_graphics,computer_graphics
+75,The computer graphics specialist works with doctors to visualize medical conditions and surgical procedures.,75,243sentences.75,243sentences,243sentences.computer_graphics,23,computer_graphics,computer_graphics
+76,She uses digital animation to help doctors understand structures within a patient's body.,76,243sentences.76,243sentences,243sentences.computer_graphics,23,computer_graphics,computer_graphics
+77,Seeing the internal structures in an animation on a screen is much clearer than squinting at X-rays.,77,243sentences.77,243sentences,243sentences.computer_graphics,23,computer_graphics,computer_graphics
+78,Modern digital animation is a powerful tool for education.,78,243sentences.78,243sentences,243sentences.computer_graphics,24,computer_graphics,computer_graphics
+79,"As the field of computer graphics broadens, we must ask if graphics actually help students.",79,243sentences.79,243sentences,243sentences.computer_graphics,24,computer_graphics,computer_graphics
+80,Research does suggest that vivid and engaging digital imagery can be effective in the classroom.,80,243sentences.80,243sentences,243sentences.computer_graphics,24,computer_graphics,computer_graphics
+81,The reason he came to law school in the first place was cliche.,81,243sentences.81,243sentences,243sentences.law_school,25,law_school,law_school
+82,He wanted to change things for the better.,82,243sentences.82,243sentences,243sentences.law_school,25,law_school,law_school
+83,He recalled one evening at law school when he and the program director had pulled an all-nighter.,83,243sentences.83,243sentences,243sentences.law_school,25,law_school,law_school
+84,They finally finished drafting a petition for several evicted families at sunrise.,84,243sentences.84,243sentences,243sentences.law_school,25,law_school,law_school
+85,"Over the past four decades, the cost of legal education has gone up relentlessly.",85,243sentences.85,243sentences,243sentences.law_school,26,law_school,law_school
+86,Private law school tuition increased by a factor of four since the 1970s.,86,243sentences.86,243sentences,243sentences.law_school,26,law_school,law_school
+87,The market for admission to law school and for new lawyers could eventually crash.,87,243sentences.87,243sentences,243sentences.law_school,26,law_school,law_school
+88,Law school faculty often have minimal experience in actually practicing law.,88,243sentences.88,243sentences,243sentences.law_school,27,law_school,law_school
+89,Professors focus on writing law review articles for prestigious journals.,89,243sentences.89,243sentences,243sentences.law_school,27,law_school,law_school
+90,"Law schools often emphasize the theoretical, with classes on topics like property law in feudal England.",90,243sentences.90,243sentences,243sentences.law_school,27,law_school,law_school
+91,Pharmacists are increasingly involved in preventive care.,91,243sentences.91,243sentences,243sentences.pharmacist,28,pharmacist,pharmacist
+92,They are becoming front-line health advisers because people go to pharmacies often.,92,243sentences.92,243sentences,243sentences.pharmacist,28,pharmacist,pharmacist
+93,Pharmacists are often a good source of information about public health.,93,243sentences.93,243sentences,243sentences.pharmacist,28,pharmacist,pharmacist
+94,Doctors consult with pharmacists because they know a lot about drug interactions and side effects.,94,243sentences.94,243sentences,243sentences.pharmacist,28,pharmacist,pharmacist
+95,Pharmacists dispense prescription drugs to patients and offer advice about the safe use of medications.,95,243sentences.95,243sentences,243sentences.pharmacist,29,pharmacist,pharmacist
+96,They also conduct health and wellness screenings and provide vaccines.,96,243sentences.96,243sentences,243sentences.pharmacist,29,pharmacist,pharmacist
+97,Pharmacists must have professional degrees and pass two exams in order to be licensed.,97,243sentences.97,243sentences,243sentences.pharmacist,29,pharmacist,pharmacist
+98,I think the pharmacy profession chose me as much as I chose to be a pharmacist.,98,243sentences.98,243sentences,243sentences.pharmacist,30,pharmacist,pharmacist
+99,I was fascinated by the neatly arranged bottles in pharmacies as a child.,99,243sentences.99,243sentences,243sentences.pharmacist,30,pharmacist,pharmacist
+100,"I know it's cliche, but I love the impact that I have on lives of my patients.",100,243sentences.100,243sentences,243sentences.pharmacist,30,pharmacist,pharmacist
+101,Each person has his or her own response to potentially stressful situations.,101,243sentences.101,243sentences,243sentences.stress,31,stress,stress
+102,"One person may be devastated by unemployment, while another may find working fulltime stressful.",102,243sentences.102,243sentences,243sentences.stress,31,stress,stress
+103,"There are everyday stresses, like being stuck in traffic.",103,243sentences.103,243sentences,243sentences.stress,31,stress,stress
+104,"There are also traumatic stresses, such as divorce or loss of a child.",104,243sentences.104,243sentences,243sentences.stress,31,stress,stress
+105,Some people can adapt to different levels of stress.,105,243sentences.105,243sentences,243sentences.stress,32,stress,stress
+106,"If not dealt with effectively, though, stress can take a real toll on health.",106,243sentences.106,243sentences,243sentences.stress,32,stress,stress
+107,Remember that it's your reaction to stress that determines if it will be harmful or beneficial.,107,243sentences.107,243sentences,243sentences.stress,32,stress,stress
+108,"When my company was downsizing, I felt incredibly stressed and worried.",108,243sentences.108,243sentences,243sentences.stress,33,stress,stress
+109,"My heart would race for no reason, and I even felt dizzy at times.",109,243sentences.109,243sentences,243sentences.stress,33,stress,stress
+110,"Then, I started taking yoga to try to manage my stress level.",110,243sentences.110,243sentences,243sentences.stress,33,stress,stress
+111,The man wore a jet black tuxedo with satin stripes.,111,243sentences.111,243sentences,243sentences.tuxedo,34,tuxedo,tuxedo
+112,It was made with rich fabric cut in the latest style.,112,243sentences.112,243sentences,243sentences.tuxedo,34,tuxedo,tuxedo
+113,"Clearly he had it tailored, as it fit the man perfectly.",113,243sentences.113,243sentences,243sentences.tuxedo,34,tuxedo,tuxedo
+114,It looked like something a professional stylist would have picked out for a formal event.,114,243sentences.114,243sentences,243sentences.tuxedo,34,tuxedo,tuxedo
+115,"While the tuxedo is still preferred, today's grooms are making personal statements in wedding attire.",115,243sentences.115,243sentences,243sentences.tuxedo,35,tuxedo,tuxedo
+116,Shorter jackets are on the cutting edge of wedding fashion for men.,116,243sentences.116,243sentences,243sentences.tuxedo,35,tuxedo,tuxedo
+117,Grooms are also jazzing up their tuxedos with colorful shirts and satin ties.,117,243sentences.117,243sentences,243sentences.tuxedo,35,tuxedo,tuxedo
+118,A tuxedo jacket is a tailless dinner jacket with black silk lapels.,118,243sentences.118,243sentences,243sentences.tuxedo,36,tuxedo,tuxedo
+119,Black tie trousers should be a perfect match to the tuxedo jacket.,119,243sentences.119,243sentences,243sentences.tuxedo,36,tuxedo,tuxedo
+120,The shirt should always be plain white and the tie should be black and match the jacket lapels.,120,243sentences.120,243sentences,243sentences.tuxedo,36,tuxedo,tuxedo
+121,The concert pianist went blind in adulthood.,121,243sentences.121,243sentences,243sentences.blindness,37,blindness,blindness
+122,Her blindness was caused by a genetic condition that slowly damaged the eyes.,122,243sentences.122,243sentences,243sentences.blindness,37,blindness,blindness
+123,She told interviewers that being blind was an advantage to a pianist.,123,243sentences.123,243sentences,243sentences.blindness,37,blindness,blindness
+124,"She had no visual distractions, so she could concentrate more fully on her music.",124,243sentences.124,243sentences,243sentences.blindness,37,blindness,blindness
+125,The government defines blindness as vision insufficient for the ordinary activities of life.,125,243sentences.125,243sentences,243sentences.blindness,38,blindness,blindness
+126,"By establishing the parameters of legal blindness, resources can be focused on the legally blind.",126,243sentences.126,243sentences,243sentences.blindness,38,blindness,blindness
+127,This may overlook those who have vision problems but who do not meet the standard.,127,243sentences.127,243sentences,243sentences.blindness,38,blindness,blindness
+128,"In developing countries, blindness in children is usually caused by infectious disease and nutritional deficiencies.",128,243sentences.128,243sentences,243sentences.blindness,39,blindness,blindness
+129,These causes can often be prevented by medicine and vitamin supplements.,129,243sentences.129,243sentences,243sentences.blindness,39,blindness,blindness
+130,"In developed countries, blindness is more likely to be caused by genetic problems.",130,243sentences.130,243sentences,243sentences.blindness,39,blindness,blindness
+131,No one really knows exactly how a taste gets from your mouth to your brain.,131,243sentences.131,243sentences,243sentences.taste,40,taste,taste
+132,Scientists think the process begins when a molecule of food touches a taste bud cell.,132,243sentences.132,243sentences,243sentences.taste,40,taste,taste
+133,The cell carries a taste message to taste nerves beneath the cell.,133,243sentences.133,243sentences,243sentences.taste,40,taste,taste
+134,It was once believed that each taste bud responded to one of the four basic tastes.,134,243sentences.134,243sentences,243sentences.taste,41,taste,taste
+135,"That is, a taste bud on the tip of the tongue would respond only if you were eating something sweet.",135,243sentences.135,243sentences,243sentences.taste,41,taste,taste
+136,Scientists now think that a single taste bud can be sensitive to all of the basic tastes.,136,243sentences.136,243sentences,243sentences.taste,41,taste,taste
+137,"My sense of taste isn't very good, so I tend to eat foods with very strong flavors.",137,243sentences.137,243sentences,243sentences.taste,42,taste,taste
+138,"I like lots of hot sauce, and I drink my coffee with no cream, so it's very bitter.",138,243sentences.138,243sentences,243sentences.taste,42,taste,taste
+139,"I can't even taste sweetness well, so when I make cookies I add extra sugar.",139,243sentences.139,243sentences,243sentences.taste,42,taste,taste
+140,Hip fractures are a real problem for aging individuals.,140,243sentences.140,243sentences,243sentences.bone_fracture,43,bone_fracture,bone_fracture
+141,Patients are faced with the pain of the break and the difficult process of healing.,141,243sentences.141,243sentences,243sentences.bone_fracture,43,bone_fracture,bone_fracture
+142,Families have to adjust to the patient's loss of independence.,142,243sentences.142,243sentences,243sentences.bone_fracture,43,bone_fracture,bone_fracture
+143,"And for society, hip fractures involve substantial expense and time in the hospital.",143,243sentences.143,243sentences,243sentences.bone_fracture,43,bone_fracture,bone_fracture
+144,"Halfway through the race, I heard a sound like someone snapping their fingers.",144,243sentences.144,243sentences,243sentences.bone_fracture,44,bone_fracture,bone_fracture
+145,I felt a crunch and I knew instantly that my foot was broken.,145,243sentences.145,243sentences,243sentences.bone_fracture,44,bone_fracture,bone_fracture
+146,Every step felt like running on spikes.,146,243sentences.146,243sentences,243sentences.bone_fracture,44,bone_fracture,bone_fracture
+147,"At the doctor's office afterward, the x-ray clearly showed the fracture.",147,243sentences.147,243sentences,243sentences.bone_fracture,44,bone_fracture,bone_fracture
+148,There are a few different types of bone fracture.,148,243sentences.148,243sentences,243sentences.bone_fracture,45,bone_fracture,bone_fracture
+149,"In closed or simple fractures, the bone is broken but the skin is intact.",149,243sentences.149,243sentences,243sentences.bone_fracture,45,bone_fracture,bone_fracture
+150,"In open or compound fractures, the broken bone has punctured the skin and produced an open wound.",150,243sentences.150,243sentences,243sentences.bone_fracture,45,bone_fracture,bone_fracture
+151,New ear piercings can become infected if they're not carefully cleaned.,151,243sentences.151,243sentences,243sentences.infection,46,infection,infection
+152,"Signs of infection include tenderness, swelling, or redness around the earlobe.",152,243sentences.152,243sentences,243sentences.infection,46,infection,infection
+153,"If you see these symptoms, clean the area and apply some ointment.",153,243sentences.153,243sentences,243sentences.infection,46,infection,infection
+154,"If the redness and swelling don't go away, contact your health care provider.",154,243sentences.154,243sentences,243sentences.infection,46,infection,infection
+155,A local hospital has initiated new measures to reduce infections.,155,243sentences.155,243sentences,243sentences.infection,47,infection,infection
+156,They have improved hand washing habits and ensured that infected patients are isolated from other patients.,156,243sentences.156,243sentences,243sentences.infection,47,infection,infection
+157,The hospital has seen infection rates drop since the new measures began.,157,243sentences.157,243sentences,243sentences.infection,47,infection,infection
+158,"Scrubbing a wound with soap or alcohol delays healing, which increases the risk of infection.",158,243sentences.158,243sentences,243sentences.infection,48,infection,infection
+159,Band-aids can increase the risk of infection by holding in heat and moisture.,159,243sentences.159,243sentences,243sentences.infection,48,infection,infection
+160,"Fortunately, most skin infections can easily be treated once they are diagnosed.",160,243sentences.160,243sentences,243sentences.infection,48,infection,infection
+161,Modern opera started at the end of the sixteenth century.,161,243sentences.161,243sentences,243sentences.opera,49,opera,opera
+162,It began as an effort to rediscover and imitate Greek tragic performance.,162,243sentences.162,243sentences,243sentences.opera,49,opera,opera
+163,Early founders of opera chose tales from antiquity for their subject matter.,163,243sentences.163,243sentences,243sentences.opera,49,opera,opera
+164,Later operas branched out into different sources of stories and musical traditions.,164,243sentences.164,243sentences,243sentences.opera,49,opera,opera
+165,Opera is an art form in which singers and musicians perform a play that combines words and music.,165,243sentences.165,243sentences,243sentences.opera,50,opera,opera
+166,"It incorporates many of the elements of spoken theatre, such as acting, scenery, and costumes.",166,243sentences.166,243sentences,243sentences.opera,50,opera,opera
+167,Performances are typically given in an opera house and accompanied by an orchestra.,167,243sentences.167,243sentences,243sentences.opera,50,opera,opera
+168,The opera singer has worked hard to win the role in the new production.,168,243sentences.168,243sentences,243sentences.opera,51,opera,opera
+169,Her job is not just about singing.,169,243sentences.169,243sentences,243sentences.opera,51,opera,opera
+170,"Acting, stage presence, and musical interpretation are all critical.",170,243sentences.170,243sentences,243sentences.opera,51,opera,opera
+171,"But her pure, strong voice is certainly the star of the show.",171,243sentences.171,243sentences,243sentences.opera,51,opera,opera
+172,A painter must keep many elements in mind while completing a painting.,172,243sentences.172,243sentences,243sentences.painter,52,painter,painter
+173,"She has to use solid elements of design, like strong composition and lighting.",173,243sentences.173,243sentences,243sentences.painter,52,painter,painter
+174,She has to execute the brush strokes with skill.,174,243sentences.174,243sentences,243sentences.painter,52,painter,painter
+175,"Most importantly, the content of the painting should reveal a glimpse of the painter's soul.",175,243sentences.175,243sentences,243sentences.painter,52,painter,painter
+176,"Long ago, painters were employed more as skilled artisans than as creative artists.",176,243sentences.176,243sentences,243sentences.painter,53,painter,painter
+177,"However, prominent painters had the social status of scholars and members of the royal court.",177,243sentences.177,243sentences,243sentences.painter,53,painter,painter
+178,"They signed their work, decided on its subject and imagery, and established a personal relationship with their patrons.",178,243sentences.178,243sentences,243sentences.painter,53,painter,painter
+179,"As a painter, I learned to focus less on the actual scene and more on the painting itself.",179,243sentences.179,243sentences,243sentences.painter,54,painter,painter
+180,An artist's eye is not a camera lens that has to record everything within its field of vision.,180,243sentences.180,243sentences,243sentences.painter,54,painter,painter
+181,"I found nature provides useful information, but more than is needed for a good painting.",181,243sentences.181,243sentences,243sentences.painter,54,painter,painter
+182,The eagle owl is an impressive bird.,182,243sentences.182,243sentences,243sentences.owl,55,owl,owl
+183,It has ear tufts that stick up like horns.,183,243sentences.183,243sentences,243sentences.owl,55,owl,owl
+184,"Its large orange eyes are downright creepy, and look like they could pierce right through you.",184,243sentences.184,243sentences,243sentences.owl,55,owl,owl
+185,"This owl hunts at night, flying swiftly and silently through the darkness.",185,243sentences.185,243sentences,243sentences.owl,55,owl,owl
+186,"While some owl species have become endangered, others are thriving.",186,243sentences.186,243sentences,243sentences.owl,56,owl,owl
+187,The barred owl has spread well beyond its previous habitat.,187,243sentences.187,243sentences,243sentences.owl,56,owl,owl
+188,Early findings suggest that logging may have facilitated the barred owl's invasion.,188,243sentences.188,243sentences,243sentences.owl,56,owl,owl
+189,The owl landed on a thick branch and gripped it with her talons.,189,243sentences.189,243sentences,243sentences.owl,57,owl,owl
+190,"She pressed her wings to her sides and settled down, half-closing an eye.",190,243sentences.190,243sentences,243sentences.owl,57,owl,owl
+191,She might have been a statue but for the glow of her eyes.,191,243sentences.191,243sentences,243sentences.owl,57,owl,owl
+192,It's unnerving to watch a polar bear stalk across floating sea ice.,192,243sentences.192,243sentences,243sentences.polar_bear,58,polar_bear,polar_bear
+193,It's even worse when you are submerged in the frigid waters directly beneath the huge animal.,193,243sentences.193,243sentences,243sentences.polar_bear,58,polar_bear,polar_bear
+194,"Overhead, giant paws set down on the ice as the polar bear pursued its prey.",194,243sentences.194,243sentences,243sentences.polar_bear,58,polar_bear,polar_bear
+195,"As part of the film crew for a polar bear documentary, I spent months capturing these shots.",195,243sentences.195,243sentences,243sentences.polar_bear,58,polar_bear,polar_bear
+196,Polar bears are one of the few animals that will attack people for reasons other than fear or confusion.,196,243sentences.196,243sentences,243sentences.polar_bear,59,polar_bear,polar_bear
+197,They may attack out of hunger because they live in a food-scarce environment.,197,243sentences.197,243sentences,243sentences.polar_bear,59,polar_bear,polar_bear
+198,"They will sneak up on people slowly, careful to conserve their energy.",198,243sentences.198,243sentences,243sentences.polar_bear,59,polar_bear,polar_bear
+199,The seal is an important part of the polar bear's diet.,199,243sentences.199,243sentences,243sentences.polar_bear,60,polar_bear,polar_bear
+200,"When hunting, they will wait by a seal's breathing hole, or stalk seals that are basking on the ice.",200,243sentences.200,243sentences,243sentences.polar_bear,60,polar_bear,polar_bear
+201,The polar bear will crawl quietly forward and freeze in place when the seal looks around.,201,243sentences.201,243sentences,243sentences.polar_bear,60,polar_bear,polar_bear
+202,The medieval castle was not a structure built primarily for defense.,202,243sentences.202,243sentences,243sentences.castle,61,castle,castle
+203,Its purpose was to dominate its surroundings.,203,243sentences.203,243sentences,243sentences.castle,61,castle,castle
+204,A castle could easily control lands within a day's walk.,204,243sentences.204,243sentences,243sentences.castle,61,castle,castle
+205,"During times of attack, peasants, livestock, and property could be brought inside the castle's walls for protection.",205,243sentences.205,243sentences,243sentences.castle,61,castle,castle
+206,Spectacular castles in dramatic locations provide a record of the stormy history of many regions.,206,243sentences.206,243sentences,243sentences.castle,62,castle,castle
+207,"Today, they stand atop rocky cliffs overlooking beautiful landscapes and quaint villages.",207,243sentences.207,243sentences,243sentences.castle,62,castle,castle
+208,"In the past, they were home to battles, plots and intrigue.",208,243sentences.208,243sentences,243sentences.castle,62,castle,castle
+209,Upon leaving the train station we saw our hotel looming above:  a magnificent castle built on a cliff.,209,243sentences.209,243sentences,243sentences.castle,63,castle,castle
+210,The thick outside walls sheltered an inner courtyard hundreds of feet above the river.,210,243sentences.210,243sentences,243sentences.castle,63,castle,castle
+211,Our tower rooms had an incredible but slightly scary view.,211,243sentences.211,243sentences,243sentences.castle,63,castle,castle
+212,"After climbing fifty feet up the side of the pyramid, the man gestured me into a small black entranceway.",212,243sentences.212,243sentences,243sentences.pyramid,64,pyramid,pyramid
+213,This led into the chamber at the pyramid's center.,213,243sentences.213,243sentences,243sentences.pyramid,64,pyramid,pyramid
+214,"I followed him down the steep, dark, narrow Passage.",214,243sentences.214,243sentences,243sentences.pyramid,64,pyramid,pyramid
+215,The smell inside the pyramid was chalky and the air was thick.,215,243sentences.215,243sentences,243sentences.pyramid,64,pyramid,pyramid
+216,"More than just the tomb of the king, pyramids represented the pride of the nation.",216,243sentences.216,243sentences,243sentences.pyramid,65,pyramid,pyramid
+217,The care that the pyramid builders took in their craft is evident.,217,243sentences.217,243sentences,243sentences.pyramid,65,pyramid,pyramid
+218,The stones covering the pyramid were precisely fitted together and polished until the structure gleamed.,218,243sentences.218,243sentences,243sentences.pyramid,65,pyramid,pyramid
+219,Architects are still working to solve the mysteries of how pyramids were constructed.,219,243sentences.219,243sentences,243sentences.pyramid,66,pyramid,pyramid
+220,Some think ramps were built inside the pyramid's walls to raise stone blocks.,220,243sentences.220,243sentences,243sentences.pyramid,66,pyramid,pyramid
+221,Others speculate that ramps zigzagged up the exterior walls of the pyramid.,221,243sentences.221,243sentences,243sentences.pyramid,66,pyramid,pyramid
+222,Even beginner rock climbing takes courage and strength.,222,243sentences.222,243sentences,243sentences.rock_climbing,67,rock_climbing,rock_climbing
+223,Climbers who are learning the sport can try scrambling on large boulders.,223,243sentences.223,243sentences,243sentences.rock_climbing,67,rock_climbing,rock_climbing
+224,"Once they're comfortable with that, they can begin using ropes to safely climb vertical rock faces.",224,243sentences.224,243sentences,243sentences.rock_climbing,67,rock_climbing,rock_climbing
+225,All of the boys on the trip were new to rock climbing.,225,243sentences.225,243sentences,243sentences.rock_climbing,68,rock_climbing,rock_climbing
+226,Many were afraid of heights.,226,243sentences.226,243sentences,243sentences.rock_climbing,68,rock_climbing,rock_climbing
+227,Having someone else check their knots and harnesses helped them calm down.,227,243sentences.227,243sentences,243sentences.rock_climbing,68,rock_climbing,rock_climbing
+228,The adults set up climbing routes appropriate for beginners.,228,243sentences.228,243sentences,243sentences.rock_climbing,68,rock_climbing,rock_climbing
+229,Free-climbing is one particular style of rock climbing.,229,243sentences.229,243sentences,243sentences.rock_climbing,69,rock_climbing,rock_climbing
+230,The climber relies solely on her skill and physical strength to ascend a rock face.,230,243sentences.230,243sentences,243sentences.rock_climbing,69,rock_climbing,rock_climbing
+231,Rope and bolts are the only equipment used.,231,243sentences.231,243sentences,243sentences.rock_climbing,69,rock_climbing,rock_climbing
+232,They are meant only to stop the climber if she falls.,232,243sentences.232,243sentences,243sentences.rock_climbing,69,rock_climbing,rock_climbing
+233,I hesitantly skied down the steep trail that my buddies convinced me to try.,233,243sentences.233,243sentences,243sentences.skiing,70,skiing,skiing
+234,I made a bad turn and I found myself tumbling down.,234,243sentences.234,243sentences,243sentences.skiing,70,skiing,skiing
+235,I finally came to a stop at a flat part of the slope.,235,243sentences.235,243sentences,243sentences.skiing,70,skiing,skiing
+236,My skis were nowhere to be found and my poles were lodged in a snow drift up the hill.,236,243sentences.236,243sentences,243sentences.skiing,70,skiing,skiing
+237,A major strength of professional skiers is how they use ski poles.,237,243sentences.237,243sentences,243sentences.skiing,71,skiing,skiing
+238,Proper use of ski poles improves their balance and adds flair to their skiing.,238,243sentences.238,243sentences,243sentences.skiing,71,skiing,skiing
+239,It minimizes the need for upper body movements to regain lost balance while skiing.,239,243sentences.239,243sentences,243sentences.skiing,71,skiing,skiing
+240,New ski designs and stiffer boots let skiers turn more quickly.,240,243sentences.240,243sentences,243sentences.skiing,72,skiing,skiing
+241,But faster and tighter turns increase the twisting force on the legs.,241,243sentences.241,243sentences,243sentences.skiing,72,skiing,skiing
+242,"This has led to more injuries, particularly to ligaments in the skier's knee.",242,243sentences.242,243sentences,243sentences.skiing,72,skiing,skiing
+243,An accordion is a portable musical instrument with two keyboards.,0,384sentences.0,384sentences,384sentences.music,1,Accordion,music
+244,"One keyboard is used for individual notes, the other for chords.",1,384sentences.1,384sentences,384sentences.music,1,Accordion,music
+245,Accordions produce sound with bellows that blow air through reeds.,2,384sentences.2,384sentences,384sentences.music,1,Accordion,music
+246,An accordionist plays both keyboards while opening and closing the bellows.,3,384sentences.3,384sentences,384sentences.music,1,Accordion,music
+247,An apartment is a self-contained home that is part of a building.,4,384sentences.4,384sentences,384sentences.dwelling,2,Apartment,dwelling
+248,"An apartment may have one or more rooms, as well as a kitchen and a bathroom.",5,384sentences.5,384sentences,384sentences.dwelling,2,Apartment,dwelling
+249,"Some apartments are for single people, others for families.",6,384sentences.6,384sentences,384sentences.dwelling,2,Apartment,dwelling
+250,"The building can have a garage, a laundry facility or extra storage space.",7,384sentences.7,384sentences,384sentences.dwelling,2,Apartment,dwelling
+251,"An apple is a fruit that can be green, red or yellow.",8,384sentences.8,384sentences,384sentences.fruit,3,Apple,fruit
+252,"Apples have thin skin, a crisp, sweet pulp and seeds inside.",9,384sentences.9,384sentences,384sentences.fruit,3,Apple,fruit
+253,Some very tart apples are used to make cider.,10,384sentences.10,384sentences,384sentences.fruit,3,Apple,fruit
+254,"Apples can be eaten raw, roasted or baked in pies.",11,384sentences.11,384sentences,384sentences.fruit,3,Apple,fruit
+255,Arson is the criminal act of burning a building or wildland.,12,384sentences.12,384sentences,384sentences.crime,4,Arson,crime
+256,A fire investigation determines if a fire was caused by accident or arson.,13,384sentences.13,384sentences,384sentences.crime,4,Arson,crime
+257,Arson can be done to cause damage to others or collect insurance.,14,384sentences.14,384sentences,384sentences.crime,4,Arson,crime
+258,The severity of the crime depends on whether people were harmed.,15,384sentences.15,384sentences,384sentences.crime,4,Arson,crime
+259,"An automobile, or car, is a wheeled vehicle for transporting passengers.",16,384sentences.16,384sentences,384sentences.vehicles_transport,5,Automobile,vehicles_transport
+260,A car can be powered by a gasoline or electric engine.,17,384sentences.17,384sentences,384sentences.vehicles_transport,5,Automobile,vehicles_transport
+261,"The driver steers the car on roads, other passengers just sit.",18,384sentences.18,384sentences,384sentences.vehicles_transport,5,Automobile,vehicles_transport
+262,"Automobiles vary in size, number of doors and the type of trunk.",19,384sentences.19,384sentences,384sentences.vehicles_transport,5,Automobile,vehicles_transport
+263,The axe is a tool used to split and cut wood.,20,384sentences.20,384sentences,384sentences.weapon,6,Axe,weapon
+264,The axe usually consists of a head attached to a handle.,21,384sentences.21,384sentences,384sentences.weapon,6,Axe,weapon
+265,"Historically, axe heads were made of stone and then metal.",22,384sentences.22,384sentences,384sentences.weapon,6,Axe,weapon
+266,Axes are used by woodcutters and firemen entering buildings.,23,384sentences.23,384sentences,384sentences.weapon,6,Axe,weapon
+267,"A banana is a long fruit that grows in bunchs, with a soft edible inside.",24,384sentences.24,384sentences,384sentences.fruit,7,Banana,fruit
+268,"A banana when ripe can be yellow, purple or red and have small brown spots.",25,384sentences.25,384sentences,384sentences.fruit,7,Banana,fruit
+269,"The greatest producers are tropical countries, such as India or Ecuador.",26,384sentences.26,384sentences,384sentences.fruit,7,Banana,fruit
+270,Unripe bananas and plantains are staple foods and often cooked like potatoes.,27,384sentences.27,384sentences,384sentences.fruit,7,Banana,fruit
+271,A bed is a piece of furniture used as a place to sleep or have sex in.,28,384sentences.28,384sentences,384sentences.furniture,8,Bed,furniture
+272,"A bed is made of a mattress and a box spring, plus sheets, pillows and covers.",29,384sentences.29,384sentences,384sentences.furniture,8,Bed,furniture
+273,"In waterbeds the mattress is filled with water, and in airbeds it is filled with air.",30,384sentences.30,384sentences,384sentences.furniture,8,Bed,furniture
+274,"Another type of bed is the hammock, a fabric sling suspended above the ground.",31,384sentences.31,384sentences,384sentences.furniture,8,Bed,furniture
+275,"A bee is a flying insect, with a black and yellow body and six legs.",32,384sentences.32,384sentences,384sentences.insect,9,Bee,insect
+276,Bees spread pollen between flowers as they collect nectar to make honey.,33,384sentences.33,384sentences,384sentences.insect,9,Bee,insect
+277,Bees are social insects and live together in a colony located in a hive.,34,384sentences.34,384sentences,384sentences.insect,9,Bee,insect
+278,Many bees have stingers and can attack if they feel threatened.,35,384sentences.35,384sentences,384sentences.insect,9,Bee,insect
+279,A bicycle is a vehicle with two wheels and pedals on a frame.,36,384sentences.36,384sentences,384sentences.vehicles_transport,10,Bicycle,vehicles_transport
+280,A bicycle is propelled by the pedalling of a cyclist on the saddle.,37,384sentences.37,384sentences,384sentences.vehicles_transport,10,Bicycle,vehicles_transport
+281,The wheels have rubber tires with an inner tube full of air.,38,384sentences.38,384sentences,384sentences.vehicles_transport,10,Bicycle,vehicles_transport
+282,"People use bicycles for transportation, recreation and racing.",39,384sentences.39,384sentences,384sentences.vehicles_transport,10,Bicycle,vehicles_transport
+283,A blacksmith creates objects by forging iron or steel.,40,384sentences.40,384sentences,384sentences.profession,11,Blacksmith,profession
+284,A blacksmith hammers and bends hot iron on an anvil to change its shape.,41,384sentences.41,384sentences,384sentences.profession,11,Blacksmith,profession
+285,Blacksmiths wears a thick apron and handle the metal with tongs.,42,384sentences.42,384sentences,384sentences.profession,11,Blacksmith,profession
+286,"Blacksmiths make objects like weapons, horse shoes or iron furniture.",43,384sentences.43,384sentences,384sentences.profession,11,Blacksmith,profession
+287,A blender is a kitchen appliance used to mix ingredients or puree food.,44,384sentences.44,384sentences,384sentences.appliance,12,Blender,appliance
+288,Blenders have a glass or plastic container with a rotating blade in the bottom.,45,384sentences.45,384sentences,384sentences.appliance,12,Blender,appliance
+289,Blenders are used to make milk shakes and fruit smoothies.,46,384sentences.46,384sentences,384sentences.appliance,12,Blender,appliance
+290,Blenders are also used to make cold alcoholic drinks with crushed ice.,47,384sentences.47,384sentences,384sentences.appliance,12,Blender,appliance
+291,A boy is a young male child who has not undergone puberty.,48,384sentences.48,384sentences,384sentences.human,13,Boy,human
+292,The term is used to indicate sex distinctions relative to girls.,49,384sentences.49,384sentences,384sentences.human,13,Boy,human
+293,Traditionally boys like to play rough games and fight with each other.,50,384sentences.50,384sentences,384sentences.human,13,Boy,human
+294,An adult male behaving immaturely is often referred to as a boy.,51,384sentences.51,384sentences,384sentences.human,13,Boy,human
+295,Broccoli is a plant in the cabbage family.,52,384sentences.52,384sentences,384sentences.vegetable,14,Broccoli,vegetable
+296,"Broccoli has a green flower head and a thick, tough stalk.",53,384sentences.53,384sentences,384sentences.vegetable,14,Broccoli,vegetable
+297,"Broccoli is high in vitamins, fiber and other nutrients.",54,384sentences.54,384sentences,384sentences.vegetable,14,Broccoli,vegetable
+298,"Broccoli can be boiled, stir-fried or eaten raw.",55,384sentences.55,384sentences,384sentences.vegetable,14,Broccoli,vegetable
+299,A butterfly is a flying insect with four large wings.,56,384sentences.56,384sentences,384sentences.insect,15,Butterfly,insect
+300,The wings of butterflies can be very colorful and patterned.,57,384sentences.57,384sentences,384sentences.insect,15,Butterfly,insect
+301,Metamorphosis is the transformation of a caterpillar into a butterfly.,58,384sentences.58,384sentences,384sentences.insect,15,Butterfly,insect
+302,Some people collect butterflies because of their colorful wings.,59,384sentences.59,384sentences,384sentences.insect,15,Butterfly,insect
+303,A carpenter is an artist or manual laborer who works with wood.,60,384sentences.60,384sentences,384sentences.profession,16,Carpenter,profession
+304,"Carpenters build and repair houses, furniture, boats and other objects.",61,384sentences.61,384sentences,384sentences.profession,16,Carpenter,profession
+305,"Carpenters use tools such as hammers, saws, pliers and planes.",62,384sentences.62,384sentences,384sentences.profession,16,Carpenter,profession
+306,A luthier is a carpenter that makes and repairs musical instruments.,63,384sentences.63,384sentences,384sentences.profession,16,Carpenter,profession
+307,Cats are small furry animals with four legs and a tail.,64,384sentences.64,384sentences,384sentences.animal,17,Cat,animal
+308,Cats like to groom themselves by licking their fur.,65,384sentences.65,384sentences,384sentences.animal,17,Cat,animal
+309,"Cats can hunt mice or birds, but are often fed by their owners.",66,384sentences.66,384sentences,384sentences.animal,17,Cat,animal
+310,The claws of cats are retractable so that they keep sharp.,67,384sentences.67,384sentences,384sentences.animal,17,Cat,animal
+311,A chair is a piece of furniture designed for people to sit on.,68,384sentences.68,384sentences,384sentences.furniture,18,Chair,furniture
+312,"Chairs consist of a seat raised above floor level, supported by legs.",69,384sentences.69,384sentences,384sentences.furniture,18,Chair,furniture
+313,"Chairs can also have back and arm rests, as well as a cushion.",70,384sentences.70,384sentences,384sentences.furniture,18,Chair,furniture
+314,Seats are fixed chairs located in vehicles or in places like cinemas.,71,384sentences.71,384sentences,384sentences.furniture,18,Chair,furniture
+315,A clarinet is a woodwind musical instrument.,72,384sentences.72,384sentences,384sentences.music,19,Clarinet,music
+316,A clarinet is a long black tube with a flare at the bottom.,73,384sentences.73,384sentences,384sentences.music,19,Clarinet,music
+317,The player chooses notes by pressing keys and holes.,74,384sentences.74,384sentences,384sentences.music,19,Clarinet,music
+318,The clarinet is used both in jazz and classical music.,75,384sentences.75,384sentences,384sentences.music,19,Clarinet,music
+319,A cod is a fish that lives in the colder areas of the Atlantic.,76,384sentences.76,384sentences,384sentences.fish,20,Cod,fish
+320,"Cod flesh is white and mild-tasting, and flakes easily when cooked.",77,384sentences.77,384sentences,384sentences.fish,20,Cod,fish
+321,"Fresh cod is used for fish and chips, salted cod for elaborate dishes.",78,384sentences.78,384sentences,384sentences.fish,20,Cod,fish
+322,"Cod has been caught, salted and traded since the time of the Vikings.",79,384sentences.79,384sentences,384sentences.fish,20,Cod,fish
+323,"Coffee is made from coffee beans, the seeds of the coffee plant.",80,384sentences.80,384sentences,384sentences.drink_non_alcoholic,21,Coffee,drink_non_alcoholic
+324,"Coffee is a popular drink in many countries, and usually served hot.",81,384sentences.81,384sentences,384sentences.drink_non_alcoholic,21,Coffee,drink_non_alcoholic
+325,Coffee contains a mild drug called caffeine that keeps people awake.,82,384sentences.82,384sentences,384sentences.drink_non_alcoholic,21,Coffee,drink_non_alcoholic
+326,Coffee is the world's seventh-largest legal agricultural export.,83,384sentences.83,384sentences,384sentences.drink_non_alcoholic,21,Coffee,drink_non_alcoholic
+327,A desert is a natural environment where almost no rain falls.,84,384sentences.84,384sentences,384sentences.landscape,22,Desert,landscape
+328,Hot deserts are usually filled with sand dunes or rocks.,85,384sentences.85,384sentences,384sentences.landscape,22,Desert,landscape
+329,Some animals and plants have adapted to live in deserts.,86,384sentences.86,384sentences,384sentences.landscape,22,Desert,landscape
+330,The biggest hot desert is the Sahara in northern Africa.,87,384sentences.87,384sentences,384sentences.landscape,22,Desert,landscape
+331,"A desk is a piece of furniture used for working at, sometimes with a computer.",88,384sentences.88,384sentences,384sentences.furniture,23,Desk,furniture
+332,"A desk has a flat surface and can be made of wood, plastic or metal.",89,384sentences.89,384sentences,384sentences.furniture,23,Desk,furniture
+333,A desk may have drawers to store supplies and papers.,90,384sentences.90,384sentences,384sentences.furniture,23,Desk,furniture
+334,A cubicle consists of a desk surrounded by partitions on three sides.,91,384sentences.91,384sentences,384sentences.furniture,23,Desk,furniture
+335,A door is a movable barrier to entrance or exit from an enclosed area.,92,384sentences.92,384sentences,384sentences.building_part,24,Door,building_part
+336,Most doors have locks to control who gets to pass through them.,93,384sentences.93,384sentences,384sentences.building_part,24,Door,building_part
+337,Most doors are opened by pushing or pulling a handle after they are unlocked.,94,384sentences.94,384sentences,384sentences.building_part,24,Door,building_part
+338,Other types of doors can slide or consist of a revolving chamber.,95,384sentences.95,384sentences,384sentences.building_part,24,Door,building_part
+339,A dress is a piece of clothing that women sometimes wear.,96,384sentences.96,384sentences,384sentences.clothing,25,Dress,clothing
+340,"A dress is like a shirt attached to a long, matching skirt.",97,384sentences.97,384sentences,384sentences.clothing,25,Dress,clothing
+341,"A dress is usually worn at formal occasions, such as a wedding or a dance.",98,384sentences.98,384sentences,384sentences.clothing,25,Dress,clothing
+342,It can be hard to climb stairs or ride a bike in a dress.,99,384sentences.99,384sentences,384sentences.clothing,25,Dress,clothing
+343,Drunk driving is the act of driving under the effects of alcohol.,100,384sentences.100,384sentences,384sentences.crime,26,Driving_under_the_influence,crime
+344,Drunk driving of any vehicle is a crime in most of the world.,101,384sentences.101,384sentences,384sentences.crime,26,Driving_under_the_influence,crime
+345,It plays a role in almost half of all vehicle-related deaths.,102,384sentences.102,384sentences,384sentences.crime,26,Driving_under_the_influence,crime
+346,Drunk drivers are caught by field sobriety and breathing tests.,103,384sentences.103,384sentences,384sentences.crime,26,Driving_under_the_influence,crime
+347,A drought is a persistent shortage of the water supply caused by lack of rain.,104,384sentences.104,384sentences,384sentences.disaster,27,Drought,disaster
+348,Drought will cause crops and plants to stop growing and die.,105,384sentences.105,384sentences,384sentences.disaster,27,Drought,disaster
+349,Extreme drought will eventually turn areas into desert and cause famine.,106,384sentences.106,384sentences,384sentences.disaster,27,Drought,disaster
+350,Large numbers of people have to migrate away from dust bowls.,107,384sentences.107,384sentences,384sentences.disaster,27,Drought,disaster
+351,Eagles are large birds of prey that hunt during the day and have very good eyesight.,108,384sentences.108,384sentences,384sentences.bird,28,Eagle,bird
+352,"Eagles have hooked beaks for tearing flesh, strong legs and sharp talons.",109,384sentences.109,384sentences,384sentences.bird,28,Eagle,bird
+353,Eagles live in eyries and some species eat fish and others small mammals.,110,384sentences.110,384sentences,384sentences.bird,28,Eagle,bird
+354,The bald eagle has a bright white head and is the national bird of the United States.,111,384sentences.111,384sentences,384sentences.bird,28,Eagle,bird
+355,Earthquakes shake the ground and can knock down buildings and other structures.,112,384sentences.112,384sentences,384sentences.disaster,29,Earthquake,disaster
+356,The shaking can also trigger landslides and volcanic activity.,113,384sentences.113,384sentences,384sentences.disaster,29,Earthquake,disaster
+357,Most earthquakes are caused by the release of energy in the Earth's crust.,114,384sentences.114,384sentences,384sentences.disaster,29,Earthquake,disaster
+358,An earthquake at sea can displace the seabed and cause a tsunami.,115,384sentences.115,384sentences,384sentences.disaster,29,Earthquake,disaster
+359,"Elephants are the largest kind of land mammal, weighing several tons.",116,384sentences.116,384sentences,384sentences.animal,30,Elephant,animal
+360,"An elephant has a long nose called a trunk, which can grab things or food.",117,384sentences.117,384sentences,384sentences.animal,30,Elephant,animal
+361,"The elephant has a pair of ivory tusks, for moving objects or digging into trees.",118,384sentences.118,384sentences,384sentences.animal,30,Elephant,animal
+362,The elephant flaps its large ears to cool the blood in them and its body.,119,384sentences.119,384sentences,384sentences.animal,30,Elephant,animal
+363,The eye is an organ for sensing light and coding it for the visual cortex.,120,384sentences.120,384sentences,384sentences.body_part,31,Eye,body_part
+364,"Most animals have complex eyes which can detect color, motion and texture.",121,384sentences.121,384sentences,384sentences.body_part,31,Eye,body_part
+365,The fovea is the center of the human eye and the most sensitive part of it.,122,384sentences.122,384sentences,384sentences.body_part,31,Eye,body_part
+366,Insects have compound eyes made up of eye units facing in many directions.,123,384sentences.123,384sentences,384sentences.body_part,31,Eye,body_part
+367,A farm is land used to grow plants or raise animals for food.,124,384sentences.124,384sentences,384sentences.place,32,Farm,place
+368,Farmers are the people who run the farm and decide what to produce.,125,384sentences.125,384sentences,384sentences.place,32,Farm,place
+369,"Farms usually have a house for farmers, a silo and a barn.",126,384sentences.126,384sentences,384sentences.place,32,Farm,place
+370,A cooperative is a farm where many farmers share the land and equipment.,127,384sentences.127,384sentences,384sentences.place,32,Farm,place
+371,Primates usually have four fingers and a thumb on each hand.,128,384sentences.128,384sentences,384sentences.body_part,33,Finger,body_part
+372,"Fingers are used for grasping, writing, grooming and other activities.",129,384sentences.129,384sentences,384sentences.body_part,33,Finger,body_part
+373,"The fingertips are sensitive to temperature, pressure and vibration.",130,384sentences.130,384sentences,384sentences.body_part,33,Finger,body_part
+374,The nail protects the tip of the finger and can be grown or decorated.,131,384sentences.131,384sentences,384sentences.body_part,33,Finger,body_part
+375,A flood is an overflow of an expanse of water that submerges inhabited land.,132,384sentences.132,384sentences,384sentences.disaster,34,Flood,disaster
+376,"Flood can be caused by heavy rain or rapid snow melt, as well as earthquakes at sea.",133,384sentences.133,384sentences,384sentences.disaster,34,Flood,disaster
+377,In a flood a river will flow out of its channel or break dams and levees.,134,384sentences.134,384sentences,384sentences.disaster,34,Flood,disaster
+378,During a flood people evacuate and the contaminated water causes diseases.,135,384sentences.135,384sentences,384sentences.disaster,34,Flood,disaster
+379,"A floor is a horizontal surface inside a building, used for walking on.",136,384sentences.136,384sentences,384sentences.building_part,35,Floor,building_part
+380,"Floors may be made of bare concrete, tile, linoleum or wooden floorboards.",137,384sentences.137,384sentences,384sentences.building_part,35,Floor,building_part
+381,"People often put carpets on a floor, for comfort and to dampen noise.",138,384sentences.138,384sentences,384sentences.building_part,35,Floor,building_part
+382,In buildings the floor often has pipes and electrical wiring under it.,139,384sentences.139,384sentences,384sentences.building_part,35,Floor,building_part
+383,A foot is a body part on the end of a leg. ,140,384sentences.140,384sentences,384sentences.body_part,36,Foot,body_part
+384,"People use their feet when walking, running or standing straight.",141,384sentences.141,384sentences,384sentences.body_part,36,Foot,body_part
+385,"People also use their feet to kick, in both fighting and sports.",142,384sentences.142,384sentences,384sentences.body_part,36,Foot,body_part
+386,Many cultures have rules for behavior related to feet.,143,384sentences.143,384sentences,384sentences.body_part,36,Foot,body_part
+387,A forest is an area with a high density of trees and canopy cover.,144,384sentences.144,384sentences,384sentences.landscape,37,Forest,landscape
+388,The type of forest depends on temperature and rainfall in its location.,145,384sentences.145,384sentences,384sentences.landscape,37,Forest,landscape
+389,"A forest ecosystem has various types of trees and animals, as well as ground plants.",146,384sentences.146,384sentences,384sentences.landscape,37,Forest,landscape
+390,Deforestation is the cutting down of forests disregarding regeneration.,147,384sentences.147,384sentences,384sentences.landscape,37,Forest,landscape
+391,"A fork is a tool for eating solid foods, with a handle and several tines.",148,384sentences.148,384sentences,384sentences.kitchen_utensil,38,Fork,kitchen_utensil
+392,"Forks are usually  made of metal, or plastic, if disposable.",149,384sentences.149,384sentences,384sentences.kitchen_utensil,38,Fork,kitchen_utensil
+393,Forks are used to lift food to the mouth or to hold food in place while cutting.,150,384sentences.150,384sentences,384sentences.kitchen_utensil,38,Fork,kitchen_utensil
+394,"Forks are used in Western cultures, and there are special kinds for various foods.",151,384sentences.151,384sentences,384sentences.kitchen_utensil,38,Fork,kitchen_utensil
+395,A frying pan is a small pan with sloping sides and a handle.,152,384sentences.152,384sentences,384sentences.kitchen_utensil,39,Frying_pan,kitchen_utensil
+396,"A frying pan is used to fry, sear and brown food.",153,384sentences.153,384sentences,384sentences.kitchen_utensil,39,Frying_pan,kitchen_utensil
+397,The food is cooked on oil covering the bottom of the pan.,154,384sentences.154,384sentences,384sentences.kitchen_utensil,39,Frying_pan,kitchen_utensil
+398,Frying pans are made of iron or teflon-clad steel.,155,384sentences.155,384sentences,384sentences.kitchen_utensil,39,Frying_pan,kitchen_utensil
+399,A girl is a female human who has not yet reached maturity.,156,384sentences.156,384sentences,384sentences.human,40,Girl,human
+400,At puberty the body of a girl develops into that of a woman.,157,384sentences.157,384sentences,384sentences.human,40,Girl,human
+401,Girls often like playing with dolls and social games.,158,384sentences.158,384sentences,384sentences.human,40,Girl,human
+402,Girls sometimes grow long hair and wear dresses and skirts.,159,384sentences.159,384sentences,384sentences.human,40,Girl,human
+403,A glove is a piece of clothing that covers the hand and fingers.,160,384sentences.160,384sentences,384sentences.clothing,41,Glove,clothing
+404,Gloves to protect against cold are made of wool or lined waterproof material.,161,384sentences.161,384sentences,384sentences.clothing,41,Glove,clothing
+405,Disposable rubber or latex gloves are used to shield hands from germs or chemicals.,162,384sentences.162,384sentences,384sentences.clothing,41,Glove,clothing
+406,A mitten is a kind of glove where the four fingers are covered together.,163,384sentences.163,384sentences,384sentences.clothing,41,Glove,clothing
+407,A hammer is a tool used to deliver an impact to an object.,164,384sentences.164,384sentences,384sentences.tool,42,Hammer,tool
+408,A hammer is most often used to drive nails into wood.,165,384sentences.165,384sentences,384sentences.tool,42,Hammer,tool
+409,The claw on the head can be used to remove nails.,166,384sentences.166,384sentences,384sentences.tool,42,Hammer,tool
+410,Hammers vary in the shape of the head and handle length.,167,384sentences.167,384sentences,384sentences.tool,42,Hammer,tool
+411,A hand grenade is an explosive used as a weapon against people.,168,384sentences.168,384sentences,384sentences.weapon,43,Hand_grenade,weapon
+412,Hand grenades are thrown and timed to explode a bit after that.,169,384sentences.169,384sentences,384sentences.weapon,43,Hand_grenade,weapon
+413,Grenades can also be fired from rifles or shoulder launchers.,170,384sentences.170,384sentences,384sentences.weapon,43,Hand_grenade,weapon
+414,Tear gas grenades are thrown into the middle of a mob to disperse it.,171,384sentences.171,384sentences,384sentences.weapon,43,Hand_grenade,weapon
+415,"A horse is a large hoofed mammal with four long, muscular legs.",172,384sentences.172,384sentences,384sentences.animal,44,Horse,animal
+416,"A horse has a tail and a mane on its neck, and is usually gray or brown.",173,384sentences.173,384sentences,384sentences.animal,44,Horse,animal
+417,"Horses have been used for draft work, travel and entertainment.",174,384sentences.174,384sentences,384sentences.animal,44,Horse,animal
+418,"A human can ride a horse while it walks, trots or gallops.",175,384sentences.175,384sentences,384sentences.animal,44,Horse,animal
+419,People go to hospitals to be healed when they are sick or injured.,176,384sentences.176,384sentences,384sentences.place,45,Hospital,place
+420,"Hospitals are staffed by professional physicians, surgeons, and nurses.",177,384sentences.177,384sentences,384sentences.place,45,Hospital,place
+421,"Some patients go there for specialist diagnosis or therapy, leaving the same day.",178,384sentences.178,384sentences,384sentences.place,45,Hospital,place
+422,For some operations or treatments patients have to stay for several weeks.,179,384sentences.179,384sentences,384sentences.place,45,Hospital,place
+423,A house is a permanent building or structure for people or families to live in.,180,384sentences.180,384sentences,384sentences.dwelling,46,House,dwelling
+424,"A house has a roof and walls to keep out cold and rain, and windows to let light in.",181,384sentences.181,384sentences,384sentences.dwelling,46,House,dwelling
+425,"A house can have rooms for purposes like sleeping, cooking or washing.",182,384sentences.182,384sentences,384sentences.dwelling,46,House,dwelling
+426,Most people leave the house to work and come back at night to eat and sleep.,183,384sentences.183,384sentences,384sentences.dwelling,46,House,dwelling
+427,An igloo is a type of shelter made from blocks of snow by Inuit.,184,384sentences.184,384sentences,384sentences.dwelling,47,Igloo,dwelling
+428,Igloos are built in places where snow covers the land most of the time.,185,384sentences.185,384sentences,384sentences.dwelling,47,Igloo,dwelling
+429,"Igloos are often built in the shape of a dome, with an entrance tunnel.",186,384sentences.186,384sentences,384sentences.dwelling,47,Igloo,dwelling
+430,"Air pockets in snow insulate the space, and body heat warms igloos.",187,384sentences.187,384sentences,384sentences.dwelling,47,Igloo,dwelling
+431,A knife is a tool with a sharp edge that is used to cut things.,188,384sentences.188,384sentences,384sentences.kitchen_utensil,48,Knife,kitchen_utensil
+432,"Modern knives consist of a handle and a blade, usually made of metal.",189,384sentences.189,384sentences,384sentences.kitchen_utensil,48,Knife,kitchen_utensil
+433,Knives have also been used as weapons and instruments in rituals.,190,384sentences.190,384sentences,384sentences.kitchen_utensil,48,Knife,kitchen_utensil
+434,"A knife can be used to attack by slashing, stabbing or throwing. ",191,384sentences.191,384sentences,384sentences.kitchen_utensil,48,Knife,kitchen_utensil
+435,Lentils are the seeds of a plant of the legume family.,192,384sentences.192,384sentences,384sentences.vegetable,49,Lentil,vegetable
+436,"Lentils can be red, green, brown, black or yellow.",193,384sentences.193,384sentences,384sentences.vegetable,49,Lentil,vegetable
+437,Lentils are commonly used in Indian and Mediterranean cuisines.,194,384sentences.194,384sentences,384sentences.vegetable,49,Lentil,vegetable
+438,Lentils are cooked by boiling and are a great source of protein.,195,384sentences.195,384sentences,384sentences.vegetable,49,Lentil,vegetable
+439,Lettuce is a biennial plant often grown in temperate climates as a leaf vegetable.,196,384sentences.196,384sentences,384sentences.vegetable,50,Lettuce,vegetable
+440,"Lettuce can be eaten cold and raw, in salads and other dishes, or cooked.",197,384sentences.197,384sentences,384sentences.vegetable,50,Lettuce,vegetable
+441,Lettuce is considered fairly easy to grow and a suitable crop for beginners.,198,384sentences.198,384sentences,384sentences.vegetable,50,Lettuce,vegetable
+442,"Most lettuce leaves taste bitter, but some are bred to remove the bitterness.",199,384sentences.199,384sentences,384sentences.vegetable,50,Lettuce,vegetable
+443,"A library is a place where a collection of books, documents and media is kept.",200,384sentences.200,384sentences,384sentences.place,51,Library,place
+444,Librarians work at libraries and are experts at finding and organizing information.,201,384sentences.201,384sentences,384sentences.place,51,Library,place
+445,People can go to public libraries and borrow books to take home for several weeks.,202,384sentences.202,384sentences,384sentences.place,51,Library,place
+446,Academic libraries support scholarly research and have specialized books.,203,384sentences.203,384sentences,384sentences.place,51,Library,place
+447,A log cabin is a small house built from round logs.,204,384sentences.204,384sentences,384sentences.dwelling,52,Log_cabin,dwelling
+448,Log cabin is a symbol of American frontier life and humble origins.,205,384sentences.205,384sentences,384sentences.dwelling,52,Log_cabin,dwelling
+449,Log cabins were used as first shelters by european settlers.,206,384sentences.206,384sentences,384sentences.dwelling,52,Log_cabin,dwelling
+450,Log cabins were built using logs with notch joints at the ends.,207,384sentences.207,384sentences,384sentences.dwelling,52,Log_cabin,dwelling
+451,A man is a male human adult.,208,384sentences.208,384sentences,384sentences.human,53,Man,human
+452,A boy becomes a man after passing through puberty.,209,384sentences.209,384sentences,384sentences.human,53,Man,human
+453,Manhood is associated with masculinity and virility.,210,384sentences.210,384sentences,384sentences.human,53,Man,human
+454,"Men differ from women in height, weight, and body structure.",211,384sentences.211,384sentences,384sentences.human,53,Man,human
+455,Milk is a white liquid produced by female mammals to feed their young.,212,384sentences.212,384sentences,384sentences.drink_non_alcoholic,54,Milk,drink_non_alcoholic
+456,Newborn animals must be fed milk before they can eat solid food.,213,384sentences.213,384sentences,384sentences.drink_non_alcoholic,54,Milk,drink_non_alcoholic
+457,Dairy products such as cheese and butter are made from milk.,214,384sentences.214,384sentences,384sentences.drink_non_alcoholic,54,Milk,drink_non_alcoholic
+458,Liquid produced from soybeans and coconuts is sometimes called milk.,215,384sentences.215,384sentences,384sentences.drink_non_alcoholic,54,Milk,drink_non_alcoholic
+459,"Mosquitos are thin, small flying insects that emit a high-pitched sound.",216,384sentences.216,384sentences,384sentences.insect,55,Mosquito,insect
+460,Mosquitoes have mouthparts for piercing the skin of plants and animals.,217,384sentences.217,384sentences,384sentences.insect,55,Mosquito,insect
+461,Female mosquitoes bite people and animals and suck their blood for protein.,218,384sentences.218,384sentences,384sentences.insect,55,Mosquito,insect
+462,"Mosquito bites can spread yellow fever, malaria and other parasite diseases.",219,384sentences.219,384sentences,384sentences.insect,55,Mosquito,insect
+463,A mountain is a landform that rises steeply above surrounding land.,220,384sentences.220,384sentences,384sentences.landscape,56,Mountain,landscape
+464,Mountains rise higher than hills and sometimes have snow at the top.,221,384sentences.221,384sentences,384sentences.landscape,56,Mountain,landscape
+465,A range of mountains forms due to tectonic plate collision.,222,384sentences.222,384sentences,384sentences.landscape,56,Mountain,landscape
+466,Mountaineers are people who climb or hike up mountains.,223,384sentences.223,384sentences,384sentences.landscape,56,Mountain,landscape
+467,The mouth is the face cavity we put food in when we eat.,224,384sentences.224,384sentences,384sentences.body_part,57,Mouth,body_part
+468,The mouth has teeth to chew food and mix it with saliva.,225,384sentences.225,384sentences,384sentences.body_part,57,Mouth,body_part
+469,The mouth is also used for kissing and talking.,226,384sentences.226,384sentences,384sentences.body_part,57,Mouth,body_part
+470,Speech sounds are controlled by tongue placement in the mouth.,227,384sentences.227,384sentences,384sentences.body_part,57,Mouth,body_part
+471,A mug is a sturdy cup with a handle for drinking hot liquids.,228,384sentences.228,384sentences,384sentences.kitchen_utensil,58,Mug,kitchen_utensil
+472,"A mug is normally ceramic, but can also be made of metal or glass.",229,384sentences.229,384sentences,384sentences.kitchen_utensil,58,Mug,kitchen_utensil
+473,A mug is thick and has a ring base for thermal insulation.,230,384sentences.230,384sentences,384sentences.kitchen_utensil,58,Mug,kitchen_utensil
+474,Mugs can be plain or have drawings imprinted or carved on them.,231,384sentences.231,384sentences,384sentences.kitchen_utensil,58,Mug,kitchen_utensil
+475,Murder is the unlawful killing of another human being with intent.,232,384sentences.232,384sentences,384sentences.crime,59,Murder,crime
+476,Murder a serious crime because it deprives the victim of their existence.,233,384sentences.233,384sentences,384sentences.crime,59,Murder,crime
+477,"Killing in self-defense, accidentally or in war is not considered murder.",234,384sentences.234,384sentences,384sentences.crime,59,Murder,crime
+478,A convicted murderer is often given a life sentence or the death penalty.,235,384sentences.235,384sentences,384sentences.crime,59,Murder,crime
+479,Orange juice is a drink made from the liquid in orange pulp.,236,384sentences.236,384sentences,384sentences.drink_non_alcoholic,60,Orange_juice,drink_non_alcoholic
+480,"Orange juice has a sweet, acid taste and contains a lot of vitamin C.",237,384sentences.237,384sentences,384sentences.drink_non_alcoholic,60,Orange_juice,drink_non_alcoholic
+481,Freshly squeezed orange juice often contains pulp as well.,238,384sentences.238,384sentences,384sentences.drink_non_alcoholic,60,Orange_juice,drink_non_alcoholic
+482,Orange juice is often drunk at breakfast from a glass.,239,384sentences.239,384sentences,384sentences.drink_non_alcoholic,60,Orange_juice,drink_non_alcoholic
+483,A parrot is a bird that lives in warm and tropical regions.,240,384sentences.240,384sentences,384sentences.bird,61,Parrot,bird
+484,"Parrots have brightly-colored feathers and a sharp, curved beak.",241,384sentences.241,384sentences,384sentences.bird,61,Parrot,bird
+485,Parrots can imitate the human voice if they hear it repeatedly.,242,384sentences.242,384sentences,384sentences.bird,61,Parrot,bird
+486,Their appearance and abilities makes them popular pets.,243,384sentences.243,384sentences,384sentences.bird,61,Parrot,bird
+487,A peach is an orange-yellow fruit with a characteristic smell.,244,384sentences.244,384sentences,384sentences.fruit,62,Peach,fruit
+488,"The skin of a peach is thin and covered in small, fine hairs.",245,384sentences.245,384sentences,384sentences.fruit,62,Peach,fruit
+489,"Peaches have a large, red-brown stone inside which contains the seed.",246,384sentences.246,384sentences,384sentences.fruit,62,Peach,fruit
+490,"Peaches are sweet and delicate, and must be harvested after ripening.",247,384sentences.247,384sentences,384sentences.fruit,62,Peach,fruit
+491,The piano is a popular musical instrument played by means of a keyboard.,248,384sentences.248,384sentences,384sentences.music,63,Piano,music
+492,Pressing a piano key causes a felt-tipped hammer to hit a vibrating steel string.,249,384sentences.249,384sentences,384sentences.music,63,Piano,music
+493,"The piano has an enormous note range, and pedals to change the sound quality.",250,384sentences.250,384sentences,384sentences.music,63,Piano,music
+494,The piano repertoire is large and famous pianists can give solo concerts.,251,384sentences.251,384sentences,384sentences.music,63,Piano,music
+495,"Piranhas are small, ferocious fish that live in South American rivers.",252,384sentences.252,384sentences,384sentences.fish,64,Piranha,fish
+496,Piranhas live and attack in schools and are most active during the day.,253,384sentences.253,384sentences,384sentences.fish,64,Piranha,fish
+497,Piranhas have very sharp teeth and are opportunistic carnivores.,254,384sentences.254,384sentences,384sentences.fish,64,Piranha,fish
+498,"Piranhas eat fish, insects, lizards, mammals and carrion.",255,384sentences.255,384sentences,384sentences.fish,64,Piranha,fish
+499,The raspberry is a fruit that grows in forest clearings or fields.,256,384sentences.256,384sentences,384sentences.fruit,65,Raspberry,fruit
+500,A single raspberry consists of many small fruits joined together.,257,384sentences.257,384sentences,384sentences.fruit,65,Raspberry,fruit
+501,Raspberries are eaten by themselves or cooked with sugar into jam.,258,384sentences.258,384sentences,384sentences.fruit,65,Raspberry,fruit
+502,Leaves of the raspberry are used fresh or dried in herbal teas.,259,384sentences.259,384sentences,384sentences.fruit,65,Raspberry,fruit
+503,A raven is a large black bird that thrives in many climates.,260,384sentences.260,384sentences,384sentences.bird,66,Raven,bird
+504,"Ravens feed on carrion, insects, berries or small animals. ",261,384sentences.261,384sentences,384sentences.bird,66,Raven,bird
+505,Ravens have large brains and are capable of problem solving.,262,384sentences.262,384sentences,384sentences.bird,66,Raven,bird
+506,In folklore ravens are birds of ill-omen and also tricksters. ,263,384sentences.263,384sentences,384sentences.bird,66,Raven,bird
+507,A refrigerator is a cooling device used to contain and preserve food.,264,384sentences.264,384sentences,384sentences.appliance,67,Refrigerator,appliance
+508,Some refrigerators can have a small compartment at freezing temperature.,265,384sentences.265,384sentences,384sentences.appliance,67,Refrigerator,appliance
+509,A refrigerator can have shelves and small compartments for different types of food.,266,384sentences.266,384sentences,384sentences.appliance,67,Refrigerator,appliance
+510,A refrigerator is generally white and people often put magnets on its surface.,267,384sentences.267,384sentences,384sentences.appliance,67,Refrigerator,appliance
+511,A rifle is a firearm that rests on the shoulder and has a barrel with twisting grooves.,268,384sentences.268,384sentences,384sentences.weapon,68,Rifle,weapon
+512,The grooves make the bullets spin around the rifle axis as they fly through the air.,269,384sentences.269,384sentences,384sentences.weapon,68,Rifle,weapon
+513,"Rifles are used in hunting and shooting sports, sometimes with scopes.",270,384sentences.270,384sentences,384sentences.weapon,68,Rifle,weapon
+514,Assault rifles can fire in bursts and are the standard infantry weapon.,271,384sentences.271,384sentences,384sentences.weapon,68,Rifle,weapon
+515,Salmon is a fish that migrates from fresh water to the ocean and back to spawn.,272,384sentences.272,384sentences,384sentences.fish,69,Salmon,fish
+516,Salmon flesh is orange or red and has high protein content and a nice taste.,273,384sentences.273,384sentences,384sentences.fish,69,Salmon,fish
+517,"Salmon can be eaten raw in sushi or cooked by grilling, poaching or in other ways.",274,384sentences.274,384sentences,384sentences.fish,69,Salmon,fish
+518,"Salmon is the most common farmed fish, though it can also be caught in the wild.",275,384sentences.275,384sentences,384sentences.fish,69,Salmon,fish
+519,A saw is a tool that uses a hard blade or abrasive wire to cut hard materials.,276,384sentences.276,384sentences,384sentences.tool,70,Saw,tool
+520,The small sharp points along the cutting side of the saw are called the teeth.,277,384sentences.277,384sentences,384sentences.tool,70,Saw,tool
+521,"Saws can be worked by hand, or powered by an electric motor or gas engine.",278,384sentences.278,384sentences,384sentences.tool,70,Saw,tool
+522,"Saws are used extensively in forestry, construction, carpentry and medicine.",279,384sentences.279,384sentences,384sentences.tool,70,Saw,tool
+523,A scientist studies and produces new knowledge about the physical world.,280,384sentences.280,384sentences,384sentences.profession,71,Scientist,profession
+524,A scientist creates hypotheses and does experiments to test them.,281,384sentences.281,384sentences,384sentences.profession,71,Scientist,profession
+525,"Physics, chemistry and biology are classic examples of sciences.",282,384sentences.282,384sentences,384sentences.profession,71,Scientist,profession
+526,Scientists publish their research in journals and conferences.,283,384sentences.283,384sentences,384sentences.profession,71,Scientist,profession
+527,Scissors are a two-bladed instrument used for cutting.,284,384sentences.284,384sentences,384sentences.tool,72,Scissors,tool
+528,"The blades are usually metallic, with plastic or metal handles.",285,384sentences.285,384sentences,384sentences.tool,72,Scissors,tool
+529,"Depending on the size and format, scissors can cut paper, hair or fabric.",286,384sentences.286,384sentences,384sentences.tool,72,Scissors,tool
+530,Shears are large scissors used for cutting shrubs or pieces of metal.,287,384sentences.287,384sentences,384sentences.tool,72,Scissors,tool
+531,A screwdriver is a tool for inserting and tightening screws into something.,288,384sentences.288,384sentences,384sentences.tool,73,Screwdriver,tool
+532,Screwdrivers can also be used to remove screws after they are inserted.,289,384sentences.289,384sentences,384sentences.tool,73,Screwdriver,tool
+533,The screwdriver tip applies the torque from rotating the handle.,290,384sentences.290,384sentences,384sentences.tool,73,Screwdriver,tool
+534,The two major types of screwdrivers are Phillips and flathead.,291,384sentences.291,384sentences,384sentences.tool,73,Screwdriver,tool
+535,A shark is a large fish with a cartilage skeleton.,292,384sentences.292,384sentences,384sentences.fish,74,Shark,fish
+536,"Sharks have streamlined bodies, with a large dorsal fin.",293,384sentences.293,384sentences,384sentences.fish,74,Shark,fish
+537,"Most sharks predate on fish and mammals, with powerful jaws.",294,384sentences.294,384sentences,384sentences.fish,74,Shark,fish
+538,Sharks have very keen senses and can detect electrical fields.,295,384sentences.295,384sentences,384sentences.fish,74,Shark,fish
+539,A ship is a large vehicle that floats and travels on water.,296,384sentences.296,384sentences,384sentences.vehicles_transport,75,Ship,vehicles_transport
+540,"A ship can be powered in the ocean by sails, steam, or diesel engines.",297,384sentences.297,384sentences,384sentences.vehicles_transport,75,Ship,vehicles_transport
+541,Ships are used to fish in the ocean and to transport cargo containers.,298,384sentences.298,384sentences,384sentences.vehicles_transport,75,Ship,vehicles_transport
+542,Cruise ships are floating hotels that take people between cities.,299,384sentences.299,384sentences,384sentences.vehicles_transport,75,Ship,vehicles_transport
+543,"A shoe is clothing for the foot, with a sole, an outsole and a heel.",300,384sentences.300,384sentences,384sentences.clothing,76,Shoe,clothing
+544,"Shoes are usually made of leather, canvas, rubber or plastic.",301,384sentences.301,384sentences,384sentences.clothing,76,Shoe,clothing
+545,Women's shoes often have high heels and come in many styles and colors.,302,384sentences.302,384sentences,384sentences.clothing,76,Shoe,clothing
+546,A sneaker is a shoe for sports and athletic activity.,303,384sentences.303,384sentences,384sentences.clothing,76,Shoe,clothing
+547,A soldier is a member of the national armed forces who fights on land.,304,384sentences.304,384sentences,384sentences.profession,77,Soldier,profession
+548,"A soldier in the militia must wear a uniform, usually camouflage.",305,384sentences.305,384sentences,384sentences.profession,77,Soldier,profession
+549,"In a volunteer army, a soldier is paid for his or her work.",306,384sentences.306,384sentences,384sentences.profession,77,Soldier,profession
+550,A soldier fights using weapons such as rifles and grenades.,307,384sentences.307,384sentences,384sentences.profession,77,Soldier,profession
+551,Spears are weapons that consist of a pole and sharpened head at one end.,308,384sentences.308,384sentences,384sentences.weapon,78,Spear,weapon
+552,Spears were the most common personal weapon before the advent of firearms.,309,384sentences.309,384sentences,384sentences.weapon,78,Spear,weapon
+553,Spears were used for stabbing or throwing when fighting in war.,310,384sentences.310,384sentences,384sentences.weapon,78,Spear,weapon
+554,Some native people still use the spear for hunting and fishing.,311,384sentences.311,384sentences,384sentences.weapon,78,Spear,weapon
+555,Spiders are insects with eight legs that make silk.,312,384sentences.312,384sentences,384sentences.insect,79,Spider,insect
+556,Spiders build webs with silk and use them to catch insects.,313,384sentences.313,384sentences,384sentences.insect,79,Spider,insect
+557,Spiders use venomous fangs to paralyse their stuck prey.,314,384sentences.314,384sentences,384sentences.insect,79,Spider,insect
+558,Spiders can be as small as a coin or as big as a bird.,315,384sentences.315,384sentences,384sentences.insect,79,Spider,insect
+559,"Swamps are low, spongy land subject to frequent inundation.",316,384sentences.316,384sentences,384sentences.landscape,80,Swamp,landscape
+560,"A swamp is covered with shallow water, mud and vegetation.",317,384sentences.317,384sentences,384sentences.landscape,80,Swamp,landscape
+561,Swamps are nesting and breeding grounds for birds and reptiles.,318,384sentences.318,384sentences,384sentences.landscape,80,Swamp,landscape
+562,Farmers often drain swamps to produce fertile arable land. ,319,384sentences.319,384sentences,384sentences.landscape,80,Swamp,landscape
+563,A sweater is a heavy garment worn on the torso for warmth.,320,384sentences.320,384sentences,384sentences.clothing,81,Sweater,clothing
+564,Sweaters are often knitted from wool but cotton is also common.,321,384sentences.321,384sentences,384sentences.clothing,81,Sweater,clothing
+565,A sweater that opens down the front is called a cardigan.,322,384sentences.322,384sentences,384sentences.clothing,81,Sweater,clothing
+566,"Sweaters differ in cut, collar and sleeve shape, as well as decoration.",323,384sentences.323,384sentences,384sentences.clothing,81,Sweater,clothing
+567,A table is a piece of furniture with a flat surface and legs.,324,384sentences.324,384sentences,384sentences.furniture,82,Table_(furniture),furniture
+568,There are usually chairs around a table for people to sit.,325,384sentences.325,384sentences,384sentences.furniture,82,Table_(furniture),furniture
+569,"People set cutlery, plates and food on a table to eat a meal together.",326,384sentences.326,384sentences,384sentences.furniture,82,Table_(furniture),furniture
+570,Tables are also used as surfaces to work or write on.,327,384sentences.327,384sentences,384sentences.furniture,82,Table_(furniture),furniture
+571,A television is an appliance with a screen that displays moving images.,328,384sentences.328,384sentences,384sentences.appliance,83,Television,appliance
+572,Televisions are mostly used for watching programs or films.,329,384sentences.329,384sentences,384sentences.appliance,83,Television,appliance
+573,They are used to play videogames when connected to a game console.,330,384sentences.330,384sentences,384sentences.appliance,83,Television,appliance
+574,Television content can be broadcast or received via cable or internet.,331,384sentences.331,384sentences,384sentences.appliance,83,Television,appliance
+575,Theft is the taking of person's property without their consent.,332,384sentences.332,384sentences,384sentences.crime,84,Theft,crime
+576,Thieves steal to own something or to sell it to receivers.,333,384sentences.333,384sentences,384sentences.crime,84,Theft,crime
+577,Theft is a crime and can be punishable with jail or fines.,334,384sentences.334,384sentences,384sentences.crime,84,Theft,crime
+578,Industrial espionage is theft of ideas and intellectual property.,335,384sentences.335,384sentences,384sentences.crime,84,Theft,crime
+579,A toaster is a kitchen appliance for toasting bread using heating elements.,336,384sentences.336,384sentences,384sentences.appliance,85,Toaster,appliance
+580,Pop-up toasters toast the bread placed in a slot and eject it once done.,337,384sentences.337,384sentences,384sentences.appliance,85,Toaster,appliance
+581,"Toaster ovens have a door on the side, a tray within and temperature control.",338,384sentences.338,384sentences,384sentences.appliance,85,Toaster,appliance
+582,They allow bread to be cooked with toppings like garlic or cheese.,339,384sentences.339,384sentences,384sentences.appliance,85,Toaster,appliance
+583,"The tomato is a shiny and smooth red fruit, with a savory taste.",340,384sentences.340,384sentences,384sentences.vegetable,86,Tomato,vegetable
+584,A tomato softens and changes color from green to red as it gets more ripe.,341,384sentences.341,384sentences,384sentences.vegetable,86,Tomato,vegetable
+585,"Tomatoes can be used to make salads, soup or ketchup, as well as sauce.",342,384sentences.342,384sentences,384sentences.vegetable,86,Tomato,vegetable
+586,"There are many varieties of tomato, with different sizes and tastes.",343,384sentences.343,384sentences,384sentences.vegetable,86,Tomato,vegetable
+587,A train is a connected series of cars that moves between stations on a track.,344,384sentences.344,384sentences,384sentences.vehicles_transport,87,Train,vehicles_transport
+588,"The train is pulled by a locomotive, powered by diesel or electricity.",345,384sentences.345,384sentences,384sentences.vehicles_transport,87,Train,vehicles_transport
+589,A freight train transports containers of goods or fuel over long distances.,346,384sentences.346,384sentences,384sentences.vehicles_transport,87,Train,vehicles_transport
+590,Commuter trains transport people between suburbs and stations inside a city.,347,384sentences.347,384sentences,384sentences.vehicles_transport,87,Train,vehicles_transport
+591,A train station is a place where passengers get on or off a train.,348,384sentences.348,384sentences,384sentences.place,88,Train_station,place
+592,Train stations have counters or machines for purchasing tickets.,349,384sentences.349,384sentences,384sentences.place,88,Train_station,place
+593,There are waiting rooms and places to eat in a station.,350,384sentences.350,384sentences,384sentences.place,88,Train_station,place
+594,Passengers or cargo trains enter from a platform next to the line.,351,384sentences.351,384sentences,384sentences.place,88,Train_station,place
+595,A tropical cyclone is a storm formed over warm tropical sea.,352,384sentences.352,384sentences,384sentences.disaster,89,Tropical_cyclone,disaster
+596,Cyclones can produce very powerful winds and torrential rain.,353,384sentences.353,384sentences,384sentences.disaster,89,Tropical_cyclone,disaster
+597,Tropical cyclone can also cause high waves and coastal flooding.,354,384sentences.354,384sentences,384sentences.disaster,89,Tropical_cyclone,disaster
+598,A tropical cyclone can move inland and seriously damage property.,355,384sentences.355,384sentences,384sentences.disaster,89,Tropical_cyclone,disaster
+599,The violin is an instrument with four strings that is played with a bow.,356,384sentences.356,384sentences,384sentences.music,90,Violin,music
+600,Violin is the smallest and highest pitched instrument in its family.,357,384sentences.357,384sentences,384sentences.music,90,Violin,music
+601,A violinist holds the instrument between the chin and the collarbone.,358,384sentences.358,384sentences,384sentences.music,90,Violin,music
+602,Different notes are made by fingering the neck with one hand while bowing.,359,384sentences.359,384sentences,384sentences.music,90,Violin,music
+603,"Vultures are scavenging birds, feeding mostly on the carcasses of dead animals.",360,384sentences.360,384sentences,384sentences.bird,91,Vulture,bird
+604,Many vultures have a bald head without feathers for losing heat.,361,384sentences.361,384sentences,384sentences.bird,91,Vulture,bird
+605,Vultures use their large wings to soar for miles without flapping.,362,384sentences.362,384sentences,384sentences.bird,91,Vulture,bird
+606,"Vultures seldom attack healthy animals, but may kill the wounded or sick.",363,384sentences.363,384sentences,384sentences.bird,91,Vulture,bird
+607,A wall is a solid structure that defines and sometimes protects an area.,364,384sentences.364,384sentences,384sentences.building_part,92,Wall,building_part
+608,"Walls delineate a building, support the roof, and divide the space into rooms.",365,384sentences.365,384sentences,384sentences.building_part,92,Wall,building_part
+609,"Walls are usually made of stone, brick, or cement, as well as drywall.",366,384sentences.366,384sentences,384sentences.building_part,92,Wall,building_part
+610,"Retaining walls provide a barrier to movement of earth, stone or water.",367,384sentences.367,384sentences,384sentences.building_part,92,Wall,building_part
+611,"Water is the most common liquid on Earth, covering 70% of its area.",368,384sentences.368,384sentences,384sentences.drink_non_alcoholic,93,Water,drink_non_alcoholic
+612,"Plants, animals and people must drink water in order to live.",369,384sentences.369,384sentences,384sentences.drink_non_alcoholic,93,Water,drink_non_alcoholic
+613,Water freezes at a low temperature and becomes solid ice.,370,384sentences.370,384sentences,384sentences.drink_non_alcoholic,93,Water,drink_non_alcoholic
+614,"Rain is water that falls from clouds in the sky, which are condensed vapor.",371,384sentences.371,384sentences,384sentences.drink_non_alcoholic,93,Water,drink_non_alcoholic
+615,A whale is a very large mammal that lives in the ocean.,372,384sentences.372,384sentences,384sentences.animal,94,Whale,animal
+616,Whales breathe through blowholes on their heads when surfacing.,373,384sentences.373,384sentences,384sentences.animal,94,Whale,animal
+617,The blubber in a whale serves as an energy reservoir and as insulation.,374,384sentences.374,384sentences,384sentences.animal,94,Whale,animal
+618,"Whales have been hunted for meat, whale oil and ambergris.",375,384sentences.375,384sentences,384sentences.animal,94,Whale,animal
+619,A window is a transparent opening in a wall to let light through.,376,384sentences.376,384sentences,384sentences.building_part,95,Window,building_part
+620,A typical window is made of sheets of glass held in place by frames.,377,384sentences.377,384sentences,384sentences.building_part,95,Window,building_part
+621,"When open, a window will also let air and sound through.",378,384sentences.378,384sentences,384sentences.building_part,95,Window,building_part
+622,Some windows have multiple panes to increase insulation inside.,379,384sentences.379,384sentences,384sentences.building_part,95,Window,building_part
+623,A woman is a female human adult.,380,384sentences.380,384sentences,384sentences.human,96,Woman,human
+624,A woman is stereotypically seen as a caregiver.,381,384sentences.381,384sentences,384sentences.human,96,Woman,human
+625,A woman can become pregnant and bear children.,382,384sentences.382,384sentences,384sentences.human,96,Woman,human
+626,A woman has different reproductive organs than a man.,383,384sentences.383,384sentences,384sentences.human,96,Woman,human
