@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import re
 import os
+import string
 
 stimuli_df_copy = pd.read_csv('chatGPT_csvs/Pereira2018_stimulus_set_20220209.csv')
 stimuli_gpt = pd.read_csv('chatGPT_csvs/chatGPT_perturbedNLP_paraphrase_compiled_for-manual-selection_GT_CK_merge.csv', encoding = "ISO-8859-1", index_col=0)
@@ -51,7 +52,38 @@ stimuli_gpt['diff_sentence_length_original_paraphrase'] = stimuli_gpt['sentence_
 
 
 # Strip, lower-case the sentence_paraphrase_post_inspection
-stimuli_gpt['sentence_paraphrase_post_inspection_stripped'] = stimuli_gpt['sentence_paraphrase_post_inspection'].apply(lambda sent: re.sub(r'[^\w\s]','',sent).lower())
+stimuli_gpt['sentence_paraphrase_post_inspection_stripped'] = stimuli_gpt['sentence_paraphrase_post_inspection'].apply(lambda sent: re.sub(r'[^\w\d\s\'\-\$\%]+', '', sent.lower()) + '.')
+# Also check whether other odd non-ascii chars have been introduced:
+# Count unique characters in sentence_paraphrase_post_inspection_stripped and how many there are of each
+unique_chars = set()
+for sent in stimuli_gpt['sentence_paraphrase_post_inspection_stripped'].values:
+    unique_chars.update(set(sent))
+
+# Also count how many there are of each
+unique_chars_count = {}
+for char in unique_chars:
+    unique_chars_count[char] = 0
+for sent in stimuli_gpt['sentence_paraphrase_post_inspection_stripped'].values:
+    for char in unique_chars:
+        unique_chars_count[char] += sent.count(char)
+
+# Print chars that are non-ascii
+non_ascii_chars = []
+for char in unique_chars:
+    if ord(char) > 128:
+        print(f'{char}: {unique_chars_count[char]}')
+        non_ascii_chars.append(char)
+
+# Find sentences that contain non-ascii chars
+for sent in stimuli_gpt['sentence_paraphrase_post_inspection_stripped'].values:
+    if any(char in sent for char in non_ascii_chars):
+        print(sent)
+
+# Replace with ' (single sentence)
+for char in non_ascii_chars:
+    stimuli_gpt['sentence_paraphrase_post_inspection_stripped'] = stimuli_gpt['sentence_paraphrase_post_inspection_stripped'].str.replace(char, "'")
+
+
 assert(stimuli_gpt['diff_abs_sentence_length_original_paraphrase']).max() == 3
 # assert that no sentences are identical after stripping and lower-casing
 assert(stimuli_gpt['sentence_paraphrase_post_inspection_stripped'].values not in stimuli_gpt['sentence_original_stripped'].values)
@@ -76,9 +108,13 @@ print(f'Number of sentences that were manually replaced: {stimuli_gpt["manual_re
 
 # Get stats on how many words are identical between original and paraphrase
 # Quantify unique overlapping words divided by unique words in both sentences (i.e. 1 means all words are identical)
-# First, get unique words in original and paraphrase
-stimuli_gpt['sentence_original_unique_words'] = stimuli_gpt['sentence_original_stripped'].apply(lambda sent: set(sent.split(' ')))
-stimuli_gpt['sentence_paraphrase_post_inspection_unique_words'] = stimuli_gpt['sentence_paraphrase_post_inspection_stripped'].apply(lambda sent: set(sent.split(' ')))
+# First, create version of sentence_original_stripped and sentence_paraphrase_post_inspection_stripped that are stripped for all punctuation
+stimuli_gpt['sentence_original_stripped_no_punctuation'] = stimuli_gpt['sentence_original_stripped'].apply(lambda sent: re.sub(r'[^\w\d\s]+', '', sent))
+stimuli_gpt['sentence_paraphrase_post_inspection_stripped_no_punctuation'] = stimuli_gpt['sentence_paraphrase_post_inspection_stripped'].apply(lambda sent: re.sub(r'[^\w\d\s]+', '', sent))
+
+# Second, get unique words in original and paraphrase
+stimuli_gpt['sentence_original_unique_words'] = stimuli_gpt['sentence_original_stripped_no_punctuation'].apply(lambda sent: set(sent.split(' ')))
+stimuli_gpt['sentence_paraphrase_post_inspection_unique_words'] = stimuli_gpt['sentence_paraphrase_post_inspection_stripped_no_punctuation'].apply(lambda sent: set(sent.split(' ')))
 # Then, get unique overlapping words
 stimuli_gpt['sentence_original_unique_words_overlap'] = stimuli_gpt.apply(lambda row: row['sentence_original_unique_words'].intersection(row['sentence_paraphrase_post_inspection_unique_words']), axis=1)
 # Then, get unique overlapping words divided by unique words in both sentences
@@ -89,6 +125,14 @@ stimuli_gpt['sentence_original_unique_words_unique_overlap_ratio'] = stimuli_gpt
 # Print min, max, mean, median, std of sentence_original_unique_words_overlap_ratio
 print(f'Mean/median fraction of overlapping words between original and paraphrase: {stimuli_gpt["sentence_original_unique_words_overlap_ratio"].mean():.2f}/{stimuli_gpt["sentence_original_unique_words_overlap_ratio"].median():.2f}')
 print(f'SD fraction of overlapping words between original and paraphrase: {stimuli_gpt["sentence_original_unique_words_overlap_ratio"].std():.2f} and min/max fraction of overlapping words between original and paraphrase: {stimuli_gpt["sentence_original_unique_words_overlap_ratio"].min():.2f}/{stimuli_gpt["sentence_original_unique_words_overlap_ratio"].max():.2f}')
+
+# Assert no non-ascii characters in paraphrase
+for sent in stimuli_gpt['sentence_paraphrase_post_inspection_stripped'].values:
+    if not all(ord(c) < 128 for c in sent):
+        print(sent)
+        raise ValueError('Non-ascii characters found in sentence_paraphrase_post_inspection_stripped')
+
+
 
 ## Save
 fname_save = 'Pereira2018_stimulus_set_chatGPT.csv'
