@@ -115,7 +115,7 @@ class SplitNew:
         else:
             splits = self._split.split(data_shape, *args)
 
-        return cross_validation_values, splits #return splits here, not list(splits)! Otherwise, the generator is exhausted.
+        return cross_validation_values, list(splits)
 
     @classmethod
     def aggregate(cls, values):
