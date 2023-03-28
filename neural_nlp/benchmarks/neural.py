@@ -511,7 +511,8 @@ class _PereiraBenchmarkScrambled(Benchmark):
                               'sentenceshuffle_random-topic-criteria': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-topic-criteria.pkl'),
                               'sentenceshuffle_random-topic-length-criteria': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-topic-length-criteria.pkl'),
                               'sentenceshuffle_passage': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-withinpassage.pkl'),
-                              'sentenceshuffle_topic': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-withintopic.pkl')
+                              'sentenceshuffle_topic': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-withintopic.pkl'),
+                              'chatgpt' : os.path.join(scrambled_data_dir, 'stimuli_chatGPT.pkl')
                               }
 
 
@@ -676,6 +677,12 @@ else:
     pereira_split_coord = 'stimulus_id'
 
 _logger.info(f"\nCross validation split coordinate is {pereira_split_coord}\n")
+
+#specify number of splits (can be used for teston:original, teston:random-wl, teston:sentenceshuffle_*)
+if os.getenv('TWO_SPLITS', '0') == '1':
+    nr_of_splits = 2
+else:
+    nr_of_splits = 5
 
 ###################################
 ##### ORIGINAL BENCHMARK
@@ -1079,6 +1086,22 @@ class PereiraEncoding_PerturbedShuffleWithinTopic(_PereiraBenchmarkScrambled): #
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncoding_PerturbedShuffleWithinTopic, self).ceiling
+    
+
+class PereiraEncoding_PerturbedChatGPT(_PereiraBenchmarkScrambled): #Sentences are shuffled within a topic
+
+    def __init__(self, scrambled_version="chatgpt", **kwargs):
+        metric = CrossRegressedCorrelation(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+        super(PereiraEncoding_PerturbedChatGPT, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-chatgpt
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_PerturbedChatGPT, self).ceiling
+    
 
 ###################################
 ##### CONTROL BENCHMARKS
@@ -1310,18 +1333,22 @@ class _PereiraBenchmarkTestOnPerturbed(Benchmark):
         expt = expt[0]
         identifier = np.unique(source_assembly_test.model.data)[0]
 
+        if "sentenceshuffle" in self.scrambled_version:
+            verbose = False
+        else:
+            verbose = True
         activations_matrix, flat_sentence_array, flat_sentence_num_array = load_activations_into_matrix(
             identifier=identifier,
             stimuli_identifier=stimuli_identifier,
             agg=agg,
             expt=expt,
             layer_identifier=layer_identifier,
-            path=path)
+            path=path, verbose=verbose)
 
         sentencelist_source = list(source_assembly_train.sentence.data)
 
         if self.scrambled_version == "Original":
-            assert all([a == b for a, b in zip(sentencelist, flat_sentence_array)])
+            assert all([a == b for a, b in zip(sentencelist_source, flat_sentence_array)])
 
         source_assembly_test.values = activations_matrix
 
@@ -1401,7 +1428,7 @@ class PereiraEncoding_Original_TestOnOriginal(_PereiraBenchmarkTestOnPerturbed):
         metric = CrossRegressedCorrelationPerturbed(
             regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
+            crossvalidation_kwargs=dict(splits=nr_of_splits, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
         super(PereiraEncoding_Original_TestOnOriginal, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-teston:original'
 
     @property
@@ -1523,7 +1550,7 @@ class PereiraEncoding_TestOnWordlistRandom(_PereiraBenchmarkTestOnPerturbed):
         metric = CrossRegressedCorrelationPerturbed(
             regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord,
+            crossvalidation_kwargs=dict(splits=nr_of_splits, kfold=True, split_coord=pereira_split_coord,
                                         stratification_coord=None))
         super(PereiraEncoding_TestOnWordlistRandom, self).__init__(metric=metric, scrambled_version=scrambled_version,
                                                                 **kwargs)  # identifier='Pereira2018-encoding-teston:random-wl'
@@ -1643,8 +1670,9 @@ class PereiraEncoding_TestOnRandomSentence(_PereiraBenchmarkTestOnPerturbed):
         metric = CrossRegressedCorrelationPerturbed(
             regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord,
-                                        stratification_coord=None))
+            crossvalidation_kwargs=dict(splits=nr_of_splits, kfold=True, split_coord=pereira_split_coord,
+                                        stratification_coord=None), scrambled_version=scrambled_version)
+        
         super(PereiraEncoding_TestOnRandomSentence, self).__init__(metric=metric,
                                                                              scrambled_version=scrambled_version,
                                                                              **kwargs)  # identifier='Pereira2018-encoding-teston:sentenceshuffle_random'
@@ -1663,8 +1691,8 @@ class PereiraEncoding_TestOnShuffleWithinPassage(
         metric = CrossRegressedCorrelationPerturbed(
             regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord,
-                                        stratification_coord=None))
+            crossvalidation_kwargs=dict(splits=nr_of_splits, kfold=True, split_coord=pereira_split_coord,
+                                        stratification_coord=None), scrambled_version=scrambled_version)
         super(PereiraEncoding_TestOnShuffleWithinPassage, self).__init__(metric=metric,
                                                                             scrambled_version=scrambled_version,
                                                                             **kwargs)  # identifier='Pereira2018-encoding-teston:sentenceshuffle_passage'
@@ -1681,8 +1709,9 @@ class PereiraEncoding_TestOnShuffleWithinTopic(_PereiraBenchmarkTestOnPerturbed)
         metric = CrossRegressedCorrelationPerturbed(
             regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
             correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord,
-                                        stratification_coord=None))
+            crossvalidation_kwargs=dict(splits=nr_of_splits, kfold=True, split_coord=pereira_split_coord,
+                                        stratification_coord=None), scrambled_version=scrambled_version)
+            
         super(PereiraEncoding_TestOnShuffleWithinTopic, self).__init__(metric=metric,
                                                                           scrambled_version=scrambled_version,
                                                                           **kwargs)  # identifier='Pereira2018-encoding-teston:sentenceshuffle_topic'
@@ -1691,6 +1720,23 @@ class PereiraEncoding_TestOnShuffleWithinTopic(_PereiraBenchmarkTestOnPerturbed)
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncoding_TestOnShuffleWithinTopic, self).ceiling
+    
+    
+class PereiraEncoding_TestOnChatGPT(_PereiraBenchmarkTestOnPerturbed):
+
+    def __init__(self, scrambled_version="chatgpt", **kwargs):
+        metric = CrossRegressedCorrelationPerturbed(
+            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
+            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
+            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord,
+                                        stratification_coord=None))
+        super(PereiraEncoding_TestOnChatGPT, self).__init__(metric=metric, scrambled_version=scrambled_version,
+                                                           **kwargs)  # identifier='Pereira2018-encoding-teston:chatgpt'
+
+    @property
+    @load_s3(key='Pereira2018-encoding-ceiling')
+    def ceiling(self):
+        return super(PereiraEncoding_TestOnChatGPT, self).ceiling
 
 
 class PereiraEncoding_TestOnLengthControl(_PereiraBenchmarkTestOnPerturbed):
@@ -1777,6 +1823,7 @@ benchmark_pool = [
     ('Pereira2018-encoding-perturb-sentenceshuffle_random-topic-length-criteria', PereiraEncoding_PerturbedRandomSentenceShuffle_TopicLengthCriteria), #randomly shuffle sentences across datasets/experiments, not from same topic, length-matched
     ('Pereira2018-encoding-perturb-sentenceshuffle_passage', PereiraEncoding_PerturbedShuffleWithinPassage), #shuffle sentences within passage
     ('Pereira2018-encoding-perturb-sentenceshuffle_topic', PereiraEncoding_PerturbedShuffleWithinTopic), #shuffle sentences within topic
+    ('Pereira2018-encoding-chatgpt', PereiraEncoding_PerturbedChatGPT),
     # train regression on scrambled-original, test it on activations for perturbed stimuli
     ('Pereira2018-encoding-teston:original', PereiraEncoding_Original_TestOnOriginal),
     ('Pereira2018-encoding-teston:scr1', PereiraEncoding_Original_TestOnScr1),
@@ -1796,6 +1843,7 @@ benchmark_pool = [
     ('Pereira2018-encoding-teston:sentenceshuffle_random', PereiraEncoding_TestOnRandomSentence),
     ('Pereira2018-encoding-teston:sentenceshuffle_passage', PereiraEncoding_TestOnShuffleWithinPassage),
     ('Pereira2018-encoding-teston:sentenceshuffle_topic', PereiraEncoding_TestOnShuffleWithinTopic),
+    ('Pereira2018-encoding-teston:chatgpt', PereiraEncoding_TestOnChatGPT),
     ('Pereira2018-encoding-teston:length-control', PereiraEncoding_TestOnLengthControl),
     ('Pereira2018-encoding-teston:constant-control', PereiraEncoding_TestOnConstantControl)
 ]

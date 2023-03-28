@@ -22,6 +22,7 @@ COND2LABEL = {
         "nouns" : "KeepN",
         "functionwords" : "KeepFunctionW",
         #
+        "chatgpt" : "ParaphraseChatGPT",
         "sent_passage" : "RandSentFromPassage",
         "sent_topic" : "RandSentFromTopic",
         "sent_random" : "RandSent",
@@ -72,7 +73,8 @@ def get_conditions(testonperturbed=False, randomnouns=False, length_control=Fals
     if length_control:
         conditions_control = [f'{to_prepend}length-control'] + conditions_control
 
-    conditions_perturb_meaning = [f'{to_prepend}sentenceshuffle_passage',
+    conditions_perturb_meaning = [f'{to_prepend}chatgpt',
+                                  f'{to_prepend}sentenceshuffle_passage',
                                   f'{to_prepend}sentenceshuffle_topic',
                                   f'{to_prepend}sentenceshuffle_random']
 
@@ -146,7 +148,7 @@ def get_max_score(matrix):
 #         lang_score_matrix.append(score.data)
 #     return lang_score_matrix
 
-def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sentence", testonperturbed=False, randomnouns=False, length_control=False):
+def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sentence", testonperturbed=False, randomnouns=False, length_control=False, nr_of_splits=5):
     """
     input: model_identifier, embedding context, split_coordinate & whether to test on perturbed sentence
     output: dataframe containing the maximum score and associated error per condition.
@@ -177,14 +179,23 @@ def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sen
         if not f"split_coord={split_coord}" in filename:
             continue
         
-        exclude_list = ["-control", "random-nouns"]
+        exclude_list = []
+        include_list = []
         
+        exclude_list = ["-control", "random-nouns"]
         if randomnouns:
             exclude_list = ["-control"]
         if length_control:
             include_list = ["original", "length-control", "random-wl"]
             
-        if length_control:
+            
+        # factor in number of splits!
+        if nr_of_splits == 5:
+            exclude_list.append("nr_of_splits=2")
+        elif nr_of_splits == 2:
+            include_list.append("nr_of_splits=2")
+            
+        if length_control or nr_of_splits==2:
             if all(x not in filename for x in include_list):
                 continue
         else:
@@ -279,6 +290,7 @@ def get_sample_stimuli(getall=False, randomnouns=False, length_control=False):
     ('nouns', 'nouns'),
     ('functionwords', 'functionwords'),
         #
+    ('chatGPT', 'chatgpt'),
     ('sentenceshuffle-withinpassage', 'sent_passage'),
     ('sentenceshuffle-withintopic', 'sent_topic'),
     ('sentenceshuffle-random', 'sent_random'),

@@ -10,8 +10,6 @@ import os
 
 from brainscore.metrics.transformations import extract_coord, standard_error_of_the_mean
 
-print("I AM USING THE NEW SPLIT FUNCTION")
-
 import torch
 import random
 
@@ -88,6 +86,10 @@ class SplitNew:
             #         f.write("%s\n" % repr(item))
             
         elif os.getenv("SPLIT_AT_TOPIC", "0") == "1":
+            print("printing the value and shape of #assembly.passage_category.data#. Check if by exp.")
+            print(list(assembly.passage_category.data))
+            print(len(list(assembly.passage_category.data)))
+            
             groups = list(assembly.passage_category.data)
             print("SPLITTING WITH GROUPS: {}!".format(groups))
             splits = self._split.split(data_shape, groups=groups, *args)

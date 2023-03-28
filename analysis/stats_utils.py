@@ -69,7 +69,7 @@ def get_passage_identifier(filename):
 
 
 def get_stats_df(model_identifier, emb_context="Passage", split_coord="Sentence", testonperturbed=False,
-                randomnouns=False,length_control=False):
+                randomnouns=False,length_control=False,nr_of_splits=5):
     """
     output: dataframe of subject-median'ed predicted scores of best layer
     """
@@ -102,13 +102,24 @@ def get_stats_df(model_identifier, emb_context="Passage", split_coord="Sentence"
             if not "teston:" in filename:
                 continue
 
+        exclude_list = []
+        include_list = []
+        
         exclude_list = ["-control", "random-nouns"]
         if randomnouns:
             exclude_list = ["-control"]
         if length_control:
             include_list = ["original", "length-control", "random-wl"]
             
-        if length_control:
+            
+        # factor in number of splits!
+        if nr_of_splits == 5:
+            exclude_list.append("nr_of_splits=2")
+        elif nr_of_splits == 2:
+            include_list.append("nr_of_splits=2")
+            
+            
+        if length_control or nr_of_splits==2:
             if all(x not in filename for x in include_list):
                 continue
         else:

@@ -81,9 +81,18 @@ def run(benchmark, model, layers=None, subsample=None):
 
     start = datetime.now()
     slurm_id = os.getenv('SLURM_JOB_ID')
+    
+    if os.getenv('TWO_SPLITS', '0') == '1':
+        if not any(x in benchmark for x in ["teston:sentenceshuffle", "teston:original", "teston:random-wl"]):
+            raise NotImplementedError
+        else:
+            nr_of_splits = 2
+    else:
+        nr_of_splits = 5
+    
     # Pass arguments on to score_function; these will be used for caching result
     score = score_function(model=model, layers=layers, subsample=subsample, benchmark=benchmark,
-                           emb_context=emb_context, split_coord=split_coord, slurm_id=slurm_id)
+                           emb_context=emb_context, split_coord=split_coord, nr_of_splits=nr_of_splits, slurm_id=slurm_id)
     end = datetime.now()
     print(score)
     print(f"Duration: {end - start}")
