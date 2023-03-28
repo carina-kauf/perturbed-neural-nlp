@@ -93,12 +93,19 @@ class SplitNew:
             groups = list(assembly.passage_category.data)
             print("SPLITTING WITH GROUPS: {}!".format(groups))
             splits = self._split.split(data_shape, groups=groups, *args)
-            print("THESE ARE MY CROSS-VALIDATION SPLITS:\n{}!".format(list(splits)))
-            
-            for i, (train_index, test_index) in enumerate(splits):
-                print("Fold {}:".format(i))
-                print("  Train: index={}, group={}".format(train_index, groups[train_index]))
-                print("  Test:  index={}, group={}".format(test_index, groups[test_index]))
+
+            # Why printing doesn't work here:
+            # When you evaluate a generator object as a list using the list() function,
+            # it exhausts the generator by requesting all the values in the sequence and putting them into a list.
+            # This means that once you evaluate a generator as a list, you have consumed all the values
+            # that the generator would produce, and the generator is empty.
+
+            # print("THESE ARE MY CROSS-VALIDATION SPLITS:\n{}!".format(list(splits)))
+            #
+            # for i, (train_index, test_index) in enumerate(splits):
+            #     print("Fold {}:".format(i))
+            #     print("  Train: index={}, group={}".format(train_index, groups[train_index]))
+            #     print("  Test:  index={}, group={}".format(test_index, groups[test_index]))
             
 #             savedir = "/om2/user/ckauf/perturbed-neural-nlp/bash_paper_202212" # leads to KeyError: 'z'
 #             with open(os.path.join(savedir, "TOPICsplits.txt"), "w") as f:
@@ -108,7 +115,7 @@ class SplitNew:
         else:
             splits = self._split.split(data_shape, *args)
 
-        return cross_validation_values, list(splits)
+        return cross_validation_values, splits #return splits here, not list(splits)! Otherwise, the generator is exhausted.
 
     @classmethod
     def aggregate(cls, values):

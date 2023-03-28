@@ -378,15 +378,7 @@ class CrossValidation(Transformation):
 
         split_scores = []
         for split_iterator, (train_indices, test_indices), done \
-                in tqdm(enumerate_done(splits), total=len(splits), desc='cross-validation'):
-            print(len(train_indices), len(test_indices)) #TODO take out again
-            print(cross_validation_values)
-            print(cross_validation_values[train_indices])
-            print(cross_validation_values[test_indices])
-            print("here")
-            print(len(train_source[self._split_coord]))
-            print(len(train_target[self._split_coord]))
-            print(subset(source_assembly, test_values, dims_must_match=False))
+                in tqdm(enumerate_done(splits), total=len(splits), desc='cross-validation'): #problem is that splits is [] at this point!
             train_values, test_values = cross_validation_values[train_indices], cross_validation_values[test_indices]
             train_source = subset(source_assembly, train_values, dims_must_match=False)
             train_target = subset(target_assembly, train_values, dims_must_match=False)
@@ -414,18 +406,13 @@ class CrossValidation(Transformation):
 #             with open(os.path.join(store_path, split_test_store_name), 'wb') as file:
 #                 pickle.dump(test_indices, file)
 
-            print("Getting split score")
-            print("Printing shapes of source & target arrays")
-            print(np.shape(train_source), np.shape(train_target), np.shape(test_source), np.shape(test_target))
             split_score = yield from self._get_result(train_source, train_target, test_source, test_target,
                                                       done=done)
-            print(f"split_score: \n{split_score}")
             split_score = split_score.expand_dims('split')
             split_score['split'] = [split_iterator]
             split_scores.append(split_score)
 
         split_scores = Score.merge(*split_scores)
-        print(f"split_scores: \n{split_scores}")
         yield split_scores
 
     def aggregate(self, score):
