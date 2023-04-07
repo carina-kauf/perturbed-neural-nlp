@@ -108,6 +108,7 @@ print(f'Number of sentences that were manually replaced: {stimuli_gpt["manual_re
 
 # Get stats on how many words are identical between original and paraphrase
 # Quantify unique overlapping words divided by unique words in both sentences (i.e. 1 means all words are identical)
+
 # First, create version of sentence_original_stripped and sentence_paraphrase_post_inspection_stripped that are stripped for all punctuation
 stimuli_gpt['sentence_original_stripped_no_punctuation'] = stimuli_gpt['sentence_original_stripped'].apply(lambda sent: re.sub(r'[^\w\d\s]+', '', sent))
 stimuli_gpt['sentence_paraphrase_post_inspection_stripped_no_punctuation'] = stimuli_gpt['sentence_paraphrase_post_inspection_stripped'].apply(lambda sent: re.sub(r'[^\w\d\s]+', '', sent))
@@ -117,10 +118,10 @@ stimuli_gpt['sentence_original_unique_words'] = stimuli_gpt['sentence_original_s
 stimuli_gpt['sentence_paraphrase_post_inspection_unique_words'] = stimuli_gpt['sentence_paraphrase_post_inspection_stripped_no_punctuation'].apply(lambda sent: set(sent.split(' ')))
 # Then, get unique overlapping words
 stimuli_gpt['sentence_original_unique_words_overlap'] = stimuli_gpt.apply(lambda row: row['sentence_original_unique_words'].intersection(row['sentence_paraphrase_post_inspection_unique_words']), axis=1)
-# Then, get unique overlapping words divided by unique words in both sentences
-stimuli_gpt['sentence_original_unique_words_overlap_ratio'] = stimuli_gpt.apply(lambda row: len(row['sentence_original_unique_words_overlap']) / (len(row['sentence_original_unique_words']) + len(row['sentence_paraphrase_post_inspection_unique_words'])), axis=1)
-stimuli_gpt['sentence_original_unique_words_unique_overlap_ratio'] = stimuli_gpt.apply(lambda row: len(row['sentence_original_unique_words_overlap']) / (np.unique(list(row['sentence_original_unique_words']) + list(row['sentence_paraphrase_post_inspection_unique_words']))).shape[0], axis=1)
 
+# Then, get unique overlapping words divided by unique words in both sentences
+# Method: (unique overlapping words) / (unique words in original + unique words in paraphrase)
+stimuli_gpt['sentence_original_unique_words_overlap_ratio'] = stimuli_gpt.apply(lambda row: len(row['sentence_original_unique_words_overlap']) / (len(row['sentence_original_unique_words']) + len(row['sentence_paraphrase_post_inspection_unique_words'])), axis=1)
 
 # Print min, max, mean, median, std of sentence_original_unique_words_overlap_ratio
 print(f'Mean/median fraction of overlapping words between original and paraphrase: {stimuli_gpt["sentence_original_unique_words_overlap_ratio"].mean():.2f}/{stimuli_gpt["sentence_original_unique_words_overlap_ratio"].median():.2f}')
