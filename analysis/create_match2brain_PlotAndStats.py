@@ -18,7 +18,7 @@ import math
 import plot_utils
 import stats_utils
 
-out_dir = os.path.abspath(os.path.join(os.getcwd(), 'results_paper/match2brain'))
+out_dir = os.path.abspath(os.path.join(os.getcwd(), 'results_paper_revision/match2brain'))
 add_stats = True
 
 
@@ -89,10 +89,10 @@ def get_ttest_results(approach, model_identifier, emb_context, split_coord, test
             original_scores = list(subdf[subdf['condition'] == 'original']["values"])
             cond_scores = list(subdf[subdf['condition'] == cond]["values"])
             random_scores = list(subdf[subdf['condition'] == 'random-wl']["values"])
-
+    
             # get ttest
-            ttest2orig, pval2orig = scipy.stats.ttest_ind(original_scores, cond_scores)
-            ttest2rand, pval2rand = scipy.stats.ttest_ind(random_scores, cond_scores)
+            ttest2orig, pval2orig = scipy.stats.ttest_rel(original_scores, cond_scores)
+            ttest2rand, pval2rand = scipy.stats.ttest_rel(random_scores, cond_scores)
 
             # get effect size
             cohensd2orig = stats_utils.cohens_d(original_scores, cond_scores)
@@ -109,8 +109,10 @@ def get_ttest_results(approach, model_identifier, emb_context, split_coord, test
         # correct for multiple comparisons
         # statsmodels.stats.multitest.fdrcorrection(pvals) = statsmodels.stats.multitest.multipletests(pvals, method='fdr_bh')
         # first output is list of Booleans indicating whether to reject null hypothesis or not
-        _, adjusted_pvals2original = statsmodels.stats.multitest.fdrcorrection(pvals2original)
-        _, adjusted_pvals2random = statsmodels.stats.multitest.fdrcorrection(pvals2random)
+#         _, adjusted_pvals2original = statsmodels.stats.multitest.fdrcorrection(pvals2original)
+#         _, adjusted_pvals2random = statsmodels.stats.multitest.fdrcorrection(pvals2random)
+        _, adjusted_pvals2original, _, _ = statsmodels.stats.multitest.multipletests(pvals2original, method='bonferroni')
+        _, adjusted_pvals2random, _, _ = statsmodels.stats.multitest.multipletests(pvals2random, method='bonferroni')
 
         # assign significance levels
         significance2original = stats_utils.assign_significance_labels(adjusted_pvals2original)
@@ -150,7 +152,7 @@ def get_ttest_results(approach, model_identifier, emb_context, split_coord, test
         randomnouns_scores = list(subdf[subdf['condition'] == 'random-nouns']["values"])
         functionword_scores = list(subdf[subdf['condition'] == 'functionwords']["values"])
         # get ttest
-        ttest, pval = scipy.stats.ttest_ind(randomnouns_scores, functionword_scores)
+        ttest, pval = scipy.stats.ttest_rel(randomnouns_scores, functionword_scores)
         # get effect size
         cohensd = stats_utils.cohens_d(randomnouns_scores, functionword_scores)
         print(f"RANDOM NOUNS vs. FUNCTIONWORDS \nttest: {ttest} \npval: {pval} \ncohen's d: {cohensd}", flush=True)
@@ -170,7 +172,7 @@ def get_colors(randomnouns):
         "word-order": sns.cubehelix_palette(7, start=.2, rot=-.25, dark=0.2, light=.9, reverse=True),
         "information-loss": sns.cubehelix_palette(5, start=2, rot=0, dark=0.2, light=.85, reverse=True),
         # cut off as last gradient color is similar across colors
-        "semantic-distance": sns.light_palette("maroon", 4, reverse=True)[:3],
+        "semantic-distance": sns.light_palette("maroon", 5, reverse=True)[:4], #5 here s.th. the last bar is visible!
         #
         "control": "lightgray"
     }
@@ -191,7 +193,7 @@ def adjust_name(cond):
     return cond
 
 
-def main_barplot(approach, full_df, full_stats_df, randomnouns, vertical=False):
+def main_barplot(config, approach, model_identifier, full_df, full_stats_df, randomnouns, vertical=False):
     """
     vertical determines if subplots are stacked vertically. Default is horizontal alignment.
     """
@@ -295,14 +297,65 @@ def main_barplot(approach, full_df, full_stats_df, randomnouns, vertical=False):
 
             colors[insert_at1:insert_at1] = insert_elements1
             colors[insert_at2:insert_at2] = insert_elements2
+            
+            
+        if vertical:
+    
+            f2_ax[-1].bar(x_pos, scores,
+            yerr=errors,
+            align='center',
+            alpha=0.9, #color intensity
+            ecolor='black',
+            capsize=5, #error-bar width
+            color=colors,
+            error_kw={'elinewidth': 2})
+        
+            # add scatter points for individual subject data
+            emb_context = config[approach]["emb_context"]
+            split_coord = config[approach]["split_coord"]
+            testonperturbed = config[approach]["testonperturbed"]
+            individual_subject_data_df = stats_utils.get_stats_df(model_identifier=model_identifier,
+                                                 emb_context=emb_context,
+                                                 split_coord=split_coord,
+                                                 testonperturbed=testonperturbed)
+            individual_subject_data_df['condition'] = individual_subject_data_df['condition'].map(plot_utils.COND2LABEL)
+            
+            
+            curr_subj_df = individual_subject_data_df.loc[individual_subject_data_df['category'] == current_category]
+            indiv_original_scores = list(individual_subject_data_df.loc[individual_subject_data_df['condition'] == 'Original']['values'])
+            indiv_randwordlist_scores = list(individual_subject_data_df.loc[individual_subject_data_df['condition'] == 'RandWordList']['values'])
+            indiv_category_scores = [list(curr_subj_df.loc[curr_subj_df['condition'] == cond]['values']) for cond in conditions
+                                    if cond not in ['Original', 'RandWordList']]
+            # merge score lists
+            indiv_category_scores.insert(0, indiv_original_scores)
+            indiv_category_scores.append(indiv_randwordlist_scores)
+            # add scatters at correct positions
+            scatter_xpos = []
+            scatter_ys = []
+            scatter_colors = []
+            positions = [i for i, score in enumerate(scores) if not np.isnan(score)]
+            for elm in positions:
+                for s in indiv_category_scores[elm]:
+                    scatter_xpos.append(elm)
+                    scatter_ys.append(s)
+                    scatter_colors.append(colors[elm])
 
-        f2_ax[-1].bar(x_pos, scores,
-                      yerr=errors,
-                      align='center',
-                      alpha=0.9,  # color intensity
-                      ecolor='black',
-                      capsize=5,  # error-bar width
-                      color=colors)
+            # generate random jitter values within (-0.05, 0.05)
+            jitter = np.random.uniform(low=-0.05, high=0.05, size=np.shape(scatter_xpos))
+            # add the jitter to x position array
+            scatter_xpos += jitter
+            # scatter plot
+            # f2_ax[-1].scatter(scatter_xpos, scatter_ys, color=scatter_colors, s=20, linewidth=0.2, edgecolors='black')
+            f2_ax[-1].scatter(scatter_xpos, scatter_ys, color='dimgray', s=20, linewidth=0.2, edgecolors='black')
+
+        else:
+            f2_ax[-1].bar(x_pos, scores,
+                          yerr=errors,
+                          align='center',
+                          alpha=0.9,  # color intensity
+                          ecolor='black',
+                          capsize=5,  # error-bar width
+                          color=colors)
 
         CAT2COND, COND2CAT = plot_utils.get_conditions()
 
@@ -323,7 +376,7 @@ def main_barplot(approach, full_df, full_stats_df, randomnouns, vertical=False):
                 # add stats annotations for comparison with original score
                 heights = [scores[0]] * len(positions)
                 # add height offset to annotations
-                height_offset = [0.1 * i for i in range(len(heights))]
+                height_offset = [0.05 * i for i in range(len(heights))]
                 heights = [sum(x) for x in zip(heights, height_offset)]
                 label = full_stats_df.loc[full_stats_df["condition"] == cond]["significance2original"].item()
                 stats_utils.barplot_annotate_brackets(0, ind_c + 1, data=label, center=positions, height=heights, fs=10)
@@ -331,7 +384,7 @@ def main_barplot(approach, full_df, full_stats_df, randomnouns, vertical=False):
                 # add stats annotations for comparison with random-wl score
                 heights = [0] * len(positions)
                 # add height offset to annotations
-                height_offset = [-0.1 * i for i in range(len(heights))]
+                height_offset = [-0.05 * i for i in range(len(heights))]
                 heights = [sum(x) for x in zip(heights, height_offset)]
                 label = full_stats_df.loc[full_stats_df["condition"] == cond]["significance2random"].item()
                 stats_utils.barplot_annotate_brackets(ind_c + 1, idx_random, data=label, center=positions, height=heights,
@@ -359,7 +412,6 @@ def main_barplot(approach, full_df, full_stats_df, randomnouns, vertical=False):
         if vertical:
             f2_ax[-1].legend(title=f'{current_category} manipulations', labels=stimuli, handles=patches,
                              bbox_to_anchor=(1.05, 0.5), loc='center left', title_fontsize=15, prop={'size': 13.5})
-            f2_ax[-1].set_ylim([-0.1 + -0.1 * num_bars[ind], 1.25 + 0.1 * num_bars[ind]])
         else:
             f2_ax[-1].legend(title='', labels=stimuli, handles=patches,
                              loc='upper center', bbox_to_anchor=(0.5, -0.7),
@@ -368,14 +420,17 @@ def main_barplot(approach, full_df, full_stats_df, randomnouns, vertical=False):
         # TICKS
         ## to get current ones: f2_ax[-1].get_yticks()
         if ind == 0:
-            yticks = [0, 0.25, 0.5, 0.75, 1]
+            yticks = [0, 0.1, 0.2, 0.3, 0.4] 
             f2_ax[-1].set_yticks(yticks)
+        else:
+            if vertical:
+                f2_ax[-1].set_yticks([])
         # set xticks
         f2_ax[-1].set_xticks(positions)
         xticknames = ["\nFrom".join(elm.split("From")) for elm in conditions]
         f2_ax[-1].set_xticklabels([x for x in xticknames if x], rotation=60, ha="right", rotation_mode="anchor")
 
-        f2_ax[-1].set_ylabel('Normalized predictivity')
+        f2_ax[-1].set_ylabel('Brain predictivity')
 
         if not vertical:
             f2_ax[-1].set_title(f"{current_category} manipulations", pad=0.5)
@@ -385,8 +440,8 @@ def main_barplot(approach, full_df, full_stats_df, randomnouns, vertical=False):
     plt.savefig(f'{out_dir}/{approach}.png', dpi=180, bbox_inches="tight")
 
     if vertical:
-        plt.savefig(f'{out_dir}/figure1.svg', dpi=180, bbox_inches="tight")
-        plt.savefig(f'{out_dir}/figure1.png', dpi=180, bbox_inches="tight")
+        plt.savefig(f'{out_dir}/figure2.svg', dpi=180, bbox_inches="tight")
+        plt.savefig(f'{out_dir}/figure2.png', dpi=180, bbox_inches="tight")
 
     plt.show()
 
@@ -429,7 +484,7 @@ def within_category_stats_and_plots(approach, model_identifier, emb_context, spl
                     cond2_scores = list(stats_df[stats_df['condition'] == cond2]["values"])
 
                     #get ttest
-                    ttest, pval = scipy.stats.ttest_ind(cond1_scores, cond2_scores)
+                    ttest, pval = scipy.stats.ttest_rel(cond1_scores, cond2_scores)
                     #get cohens d
                     cohensd = stats_utils.cohens_d(cond1_scores, cond2_scores)
 
@@ -441,7 +496,8 @@ def within_category_stats_and_plots(approach, model_identifier, emb_context, spl
 
                     already_tested.append(set([cond1, cond2]))
 
-        _, adjusted_pvals = statsmodels.stats.multitest.fdrcorrection(pvals)
+        _, adjusted_pvals, _, _ = statsmodels.stats.multitest.multipletests(pvals, method='bonferroni')
+        # _, adjusted_pvals = statsmodels.stats.multitest.fdrcorrection(pvals)
         adjusted_pvals = [round(x,3) for x in adjusted_pvals]
         pvals = [round(x,3) for x in pvals]
         cohens_d = [round(x,3) for x in cohens_d]
@@ -484,8 +540,10 @@ def run(config, approach, model_identifier, randomnouns):
                                  testonperturbed=testonperturbed, randomnouns=randomnouns)
 
     if approach == "TrainIntact-TestPerturbed:contextualized":
-        main_barplot(approach=approach, full_df=scores_stim_df, full_stats_df=stats_df, randomnouns=randomnouns, vertical=True)
-    main_barplot(approach=approach, full_df=scores_stim_df, full_stats_df=stats_df, randomnouns=randomnouns, vertical=False)
+        main_barplot(config=config, approach=approach, model_identifier=model_identifier,
+                     full_df=scores_stim_df, full_stats_df=stats_df, randomnouns=randomnouns, vertical=True)
+    main_barplot(config=config, approach=approach, model_identifier=model_identifier,
+                 full_df=scores_stim_df, full_stats_df=stats_df, randomnouns=randomnouns, vertical=False)
     
     ttest_df = within_category_stats_and_plots(approach=approach, model_identifier=model_identifier, emb_context=emb_context,
                                         split_coord=split_coord, testonperturbed=testonperturbed,

@@ -3,6 +3,7 @@ import re
 import pickle
 import numpy as np
 import pandas as pd
+from scipy import stats
 
 
 COND2LABEL = {
@@ -100,16 +101,56 @@ def get_conditions(testonperturbed=False, randomnouns=False, length_control=Fals
     return CAT2COND, COND2CAT
 
 
-def get_max_score(matrix):
+def get_max_score_ceiled(matrix):
     """
-    input: result = out['data'].values matrix (e.g. for distilgpt2 a matrix of dimensions 7x2)
+    input: result = out['data'] matrix
     output: maximum score and associated error for this matrix.
     """
+    matrix = matrix.values #values: (e.g. for distilgpt2 a matrix of dimensions 7x2)
     max_score, error = 0,0
     for i in range(len(matrix)):
         if matrix[i][0] > max_score:
             max_score = matrix[i][0]
             error = matrix[i][1]
+    return max_score, error
+
+
+def get_max_score(result):
+    """
+    Gets unnormalized values and mad errors for the best layer.
+    
+    input: result = out['data'] matrix
+    output: maximum score and associated error for this matrix.
+    """    
+    
+    # Get dictionary of subject scores by layer (unnormalized)
+    frames = []
+    for l in result.raw.raw.layer.data:
+        subject_scores = []
+        layerwise_scores = result.raw.raw.sel(layer=l)
+        subject_score = layerwise_scores.groupby('subject').median()
+        df = pd.DataFrame({
+        'subject_id' : subject_score.subject,
+        'subject_score' : subject_score,
+        'layer' : [l] * len(subject_score)
+        })
+        frames.append(df)
+    raw_brainscore_df = pd.concat(frames)
+    # per voxel, get median per layer per subject
+    brainscore_df = raw_brainscore_df.groupby(['subject_id', 'layer']).median().reset_index()
+    
+    brainscore_df_with_medians = brainscore_df.copy(deep=True)
+    for l in brainscore_df_with_medians.layer.unique():
+        # get median over subjects
+        score = brainscore_df_with_medians.loc[brainscore_df_with_medians['layer'] == l]['subject_score'].median()
+        subject_scores = list(brainscore_df_with_medians.loc[brainscore_df_with_medians['layer'] == l]['subject_score'])
+        error = stats.median_abs_deviation(subject_scores, scale='normal')
+        brainscore_df_with_medians.loc[brainscore_df_with_medians['layer'] == l, 'median_over_subjects'] = score
+        brainscore_df_with_medians.loc[brainscore_df_with_medians['layer'] == l, 'mad_over_subjects'] = error
+    brainscore_df_with_medians_sorted = brainscore_df_with_medians.sort_values(by='median_over_subjects', ascending=False)
+    # get first row of sorted dictionary
+    best_row = brainscore_df_with_medians_sorted.iloc[:1]
+    max_score, error = best_row['median_over_subjects'].item(), best_row['mad_over_subjects'].item()
     return max_score, error
 
 # from brainio_base.assemblies import DataAssembly, merge_data_arrays
@@ -156,7 +197,7 @@ def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sen
     
     working_dir = "/om2/user/ckauf/.result_caching/neural_nlp.score"
     
-    CAT2COND, COND2CAT = get_conditions(testonperturbed=testonperturbed, randomnouns=randomnouns, length_control= length_control)
+    CAT2COND, COND2CAT = get_conditions(testonperturbed=testonperturbed, randomnouns=randomnouns, length_control=length_control)
     
     conditions, categories = [], []
     max_scores, errors = [], []
@@ -192,11 +233,14 @@ def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sen
         # factor in number of splits!
         if nr_of_splits == 5:
             exclude_list.append("nr_of_splits=2")
-        elif nr_of_splits == 2:
-            include_list.append("nr_of_splits=2")
             
-        if length_control or nr_of_splits==2:
+        if length_control:
             if all(x not in filename for x in include_list):
+                continue 
+            if "nr_of_splits=2" in filename:
+                continue 
+        elif nr_of_splits == 2:
+            if "nr_of_splits=2" not in filename:
                 continue
         else:
             if any(x in filename for x in exclude_list):
@@ -210,6 +254,7 @@ def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sen
             continue
         
         if "model=" + model_identifier == model_name:
+            print(filename)
             
             condition = bm.split("benchmark=Pereira2018-encoding-")[-1]
                 
@@ -231,7 +276,7 @@ def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sen
                 out = pickle.load(f)
 #                 lang_score_matrix = get_lang_score(out)
 #                 max_score, error = get_max_score(lang_score_matrix)
-                result = out['data'].values
+                result = out['data']
 #                 #print(result, '\n\n')
                 max_score, error = get_max_score(result)
 
