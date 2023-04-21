@@ -1,4 +1,0 @@
-,RandSentFromPassage,RandSentFromTopic,RandSent,manipulation
-RandSentFromPassage,1.0,1.8941979195878308e-07,5.019771797820305e-10,semantic-distance
-RandSentFromTopic,1.8941979195878308e-07,1.0,1.5869340438622165e-05,semantic-distance
-RandSent,5.019771797820305e-10,1.5869340438622165e-05,1.0,semantic-distance

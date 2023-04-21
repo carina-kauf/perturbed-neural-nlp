@@ -20,39 +20,6 @@ import plot_utils as pu
 
 import warnings; warnings.simplefilter('ignore')
 
-working_dir = "/om2/user/ckauf/.result_caching/neural_nlp.score"
-
-def get_all_layers(model_identifier):
-    """
-    input: model_identifier of model of which we want to find the layers
-    output: np.array of all unique layer identifiers, ordered by position
-    """
-    for ind,filename in enumerate(os.listdir(working_dir)):
-        if "model=" + model_identifier in filename:
-            file = os.path.join(working_dir,filename)
-            with open(file, 'rb') as f:
-                result = pickle.load(f)
-            result = result['data']
-            layer_list = np.unique(result.layer)
-            #order double-digit layers at end of list
-            double_digits = [elm for elm in layer_list if 'encoder.h.' in elm and len(elm.split('.h.')[-1]) > 1]
-            layers = [e for e in layer_list if e not in double_digits] + double_digits
-            return layers
-            break
-
-def get_best_layer(matrix):
-    """
-    input: result = out['data'].values matrix (e.g. for distilgpt2 a matrix of dimensions 7x2)
-    output: index of the best-performing layer
-    """
-    max_score, error, best_layernr = 0, 0, 0
-    for i in range(len(matrix)):
-        if matrix[i][0] > max_score:
-            max_score = matrix[i][0]
-            error = matrix[i][1]
-            best_layernr = i
-    return best_layernr
-
 
 def get_passage_identifier(filename):
     """
@@ -66,129 +33,6 @@ def get_passage_identifier(filename):
     else:
         passage_identifier = passage
     return passage_identifier
-
-
-def get_stats_df(model_identifier, emb_context="Passage", split_coord="Sentence", testonperturbed=False,
-                randomnouns=False,length_control=False,nr_of_splits=5):
-    """
-    output: dataframe of subject-median'ed predicted scores of best layer
-    """
-    conditions, categories = [], []
-    raw_scores = []
-    subject_scores = []
-
-    subdict = {}
-
-    layers = get_all_layers(model_identifier)
-    #print(layers)
-
-    CAT2COND, COND2CAT = pu.get_conditions(testonperturbed=testonperturbed,
-                                           randomnouns=randomnouns,
-                                           length_control=length_control)
-
-    condition_order = list(COND2CAT.keys())
-
-    for filename in os.listdir(working_dir):
-        if os.path.isdir(os.path.join(working_dir,filename)):
-            continue
-
-        if not f"emb_context={emb_context},split_coord={split_coord}" in filename:
-            continue
-
-        if not testonperturbed:
-            if "teston:" in filename:
-                continue
-        else:
-            if not "teston:" in filename:
-                continue
-
-        exclude_list = []
-        include_list = []
-        
-        exclude_list = ["-control", "random-nouns"]
-        if randomnouns:
-            exclude_list = ["-control"]
-        if length_control:
-            include_list = ["original", "length-control", "random-wl"]
-            
-            
-        # factor in number of splits!
-        if nr_of_splits == 5:
-            exclude_list.append("nr_of_splits=2")
-        elif nr_of_splits == 2:
-            include_list.append("nr_of_splits=2")
-            
-            
-        if length_control or nr_of_splits==2:
-            if all(x not in filename for x in include_list):
-                continue
-        else:
-            if any(x in filename for x in exclude_list):
-                continue
-
-        model_name = filename.split(",")[1]
-        bm = filename.split(",")[0]
-
-        if bm == "benchmark=Pereira2018-encoding": #exclude old orignial bm in different format
-            continue
-
-        if "model=" + model_identifier == model_name:
-
-            condition = bm.split("benchmark=Pereira2018-encoding-")[-1]
-
-            #clean name
-            condition = re.sub("perturb-","",condition)
-            if not any(x in condition for x in ["1", "3", "5", "7"]):
-                condition = re.sub("scrambled-","",condition)
-
-            if testonperturbed:
-                condition = re.sub("scrambled","scr",condition)
-
-            file = os.path.join(working_dir,filename)
-            with open(file, 'rb') as f:
-                out = pickle.load(f)
-            result_all = out['data']
-            result = out['data'].values
-
-            best_layernr = get_best_layer(result)
-            best_layer = layers[best_layernr]
-
-            raw_score = result_all.raw.raw
-            best_layer_raw = raw_score[{"layer": [layer == best_layer for layer in raw_score["layer"]]}]
-            raw_scores.append(best_layer_raw.values)
-
-            subject_score = best_layer_raw.groupby('subject').median().values
-            subject_scores.append(subject_score)
-
-            # append to dict
-            subdict[condition] = subject_score #keeping variance across subjects here
-
-            conditions.append(condition)
-            categories.append(COND2CAT[condition])
-
-    # Transform subdict to statsmodel api form:
-    x = subdict.copy()
-    subdf = pd.DataFrame(x)
-    subdf = subdf.melt(var_name='condition', value_name='values')
-
-    subdf['condition'] = pd.Categorical(subdf['condition'], categories=condition_order, ordered=True)
-    subdf = subdf.sort_values('condition')
-
-    subdf['category'] = [COND2CAT[elm] for elm in list(subdf['condition'])]
-
-    #clean names
-    subdf['condition'] = subdf['condition'].str.replace("teston:","")
-    subdf['condition'] = subdf['condition'].replace(
-        {'sentenceshuffle_random': 'sent_random',
-    'sentenceshuffle_passage': 'sent_passage',
-    'sentenceshuffle_topic': 'sent_topic',
-    'scr1': 'scrambled1',
-    'scr3': 'scrambled3',
-    'scr5': 'scrambled5',
-    'scr7': 'scrambled7'}
-    )
-
-    return subdf
 
 
 def cohens_d(v1, v2):
@@ -280,3 +124,146 @@ def barplot_annotate_brackets(num1, num2, data, center, height, updown="up",yerr
         kwargs['fontsize'] = fs
 
     plt.text(*mid, text, **kwargs)
+    
+    
+import scipy
+import statsmodels
+
+# Benjamini/Hochberg corrected (NOL SUBMISSION)
+# Bonferroni corrected (REVISION)
+def get_ttest_results(model_identifier, emb_context="Passage", split_coord="Sentence",
+                testonperturbed=False, category=None, randomnouns=False, length_control=False):
+
+    stats_df = pu.get_best_scores_df(model_identifier=model_identifier,
+                                              emb_context=emb_context,
+                                              split_coord=split_coord,
+                                              testonperturbed=testonperturbed,
+                                              randomnouns=randomnouns,
+                                              length_control=length_control,
+                                              nr_of_splits=5,
+                                              which_df='stats') # output stats df
+    #stats_df.to_csv(f'{savedir}/approach={approach}_individual_scores.csv')
+
+    pvals2original, pvals2random = [], []
+    ttest2original, ttest2random = [], []
+    cohensd2original, cohensd2random = [], []
+    conds = []
+    
+    CAT2COND, COND2CAT = pu.get_conditions(testonperturbed=False,
+                                                   randomnouns = randomnouns,
+                                                   length_control=length_control)
+    for cond in CAT2COND[category]:
+        subdf = stats_df.loc[stats_df['category_group'] == category]
+        if length_control and "random-wl" in cond:
+            continue
+        
+        #adjust names for consistency
+        if cond == 'sentenceshuffle_random':
+            cond = 'sent_random'
+        elif cond == 'sentenceshuffle_passage':
+            cond = 'sent_passage'
+        elif cond == 'sentenceshuffle_topic':
+            cond = 'sent_topic'
+
+        #get subject scores
+        original_scores = list(subdf[subdf['condition'] == 'original']["values"])
+        cond_scores = list(subdf[subdf['condition'] == cond]["values"])
+        random_scores = list(subdf[subdf['condition'] == 'random-wl']["values"])
+        
+        #get ttest
+        ttest2orig, pval2orig = scipy.stats.ttest_rel(original_scores,cond_scores)#, alternative="greater")
+        ttest2rand, pval2rand = scipy.stats.ttest_rel(random_scores,cond_scores)#, alternative="less")
+        
+        # get effect size
+        cohensd2orig = cohens_d(original_scores, cond_scores)
+        cohensd2rand = cohens_d(random_scores, cond_scores)
+        
+        conds.append(cond)
+        pvals2original.append(pval2orig)
+        ttest2original.append(ttest2orig)
+        pvals2random.append(pval2rand)
+        ttest2random.append(ttest2rand)
+        cohensd2original.append(cohensd2orig)
+        cohensd2random.append(cohensd2rand)
+    
+    #
+    _, adjusted_pvals2original, _, _ = statsmodels.stats.multitest.multipletests(pvals2original, method='bonferroni')
+    _, adjusted_pvals2random, _, _ = statsmodels.stats.multitest.multipletests(pvals2random, method='bonferroni')
+    
+    #assign significance levels
+    significance2original = assign_significance_labels(adjusted_pvals2original)
+    significance2random = assign_significance_labels(adjusted_pvals2random)
+    
+    
+    stats_df = pd.DataFrame({
+        "condition": conds,
+        "ttest2original" : ttest2original,
+        "ttest2random" : ttest2random,
+        "adjusted_pvals2original" : adjusted_pvals2original,
+        "adjusted_pvals2random" : adjusted_pvals2random,
+        "cohensd2original" : cohensd2original,
+        "cohensd2random" : cohensd2random,
+        "significance2original" : significance2original,
+        "significance2random" : significance2random,
+        "pvals2original" : pvals2original,
+        "pvals2random" : pvals2random
+    })
+    
+    return stats_df
+
+
+import pandas as pd
+from scipy.stats import ttest_rel
+import statsmodels
+import pandas as pd
+
+def posthoc_ttest_dep(df, val_col=None, group_col=None, p_adjust=None):
+    """
+    Performs dependent t-tests between all pairs of columns in a pandas DataFrame,
+    stratified by a grouping column.
+
+    Parameters:
+    -----------
+    df : pandas DataFrame
+        The input DataFrame containing the values to be tested.
+    val_col : str, optional
+        The name of the column containing the values to be tested. If None, assumes the values are in all columns.
+        Default is None.
+    group_col : str, optional
+        The name of the column containing the group labels. If None, assumes all data are from the same group.
+        Default is None.
+
+    Returns:
+    --------
+    pandas DataFrame
+        A DataFrame containing the p-values of the dependent t-tests between all pairs of columns,
+        stratified by the grouping column.
+    """
+
+    # Initialize an empty DataFrame to store p-values
+    conditions = data[group_col].unique()
+    k = conditions.size
+    vs = np.zeros((k, k), dtype=float)
+    tri_upper = np.triu_indices(vs.shape[0], 1)
+    tri_lower = np.tril_indices(vs.shape[0], -1)
+
+    # Loop over all pairs of conditions
+    for i, cond1 in enumerate(conditions):
+        for j, cond2 in enumerate(conditions):
+            if i >= j:
+                continue
+            cond1_scores = list(data[data['condition'] == cond1][val_col])
+            cond2_scores = list(data[data['condition'] == cond2][val_col])
+            # Perform a dependent t-test between the two columns, stratified by the grouping column
+            t, p = ttest_rel(cond1_scores, cond2_scores)
+            # Store the minimum p-value for the pair of columns
+            vs[i, j] = p
+            vs[j, i] = p
+    
+    # Apply Bonferroni correction to unique comparisons
+    if p_adjust:
+        vs[tri_upper] = statsmodels.stats.multitest.multipletests(vs[tri_upper], method=p_adjust)[1]
+    vs[tri_lower] = np.transpose(vs)[tri_lower]
+    np.fill_diagonal(vs, 1)
+    
+    return pd.DataFrame(vs, index=conditions, columns=conditions)

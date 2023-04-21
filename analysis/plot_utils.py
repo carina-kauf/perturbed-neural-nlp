@@ -4,6 +4,26 @@ import pickle
 import numpy as np
 import pandas as pd
 from scipy import stats
+import seaborn as sns
+
+
+def get_colors(randomnouns=False):
+    # define colors
+    CAT2COLOR = {
+        "original": "dimgray",
+        #
+        "word-order": sns.cubehelix_palette(7, start=.2, rot=-.25, dark=0.2, light=.9, reverse=True),
+        "information-loss": sns.cubehelix_palette(5, start=2, rot=0, dark=0.2, light=.85, reverse=True),
+        # cut off as last gradient color is similar across colors
+        "semantic-distance": sns.light_palette("maroon", 5, reverse=True)[:4], #5 here s.th. the last bar is visible!
+        #
+        "control": "lightgray"
+    }
+
+    if randomnouns:
+        CAT2COLOR["information-loss"] = sns.cubehelix_palette(6, start=2, rot=0, dark=0.2, light=.85, reverse=True)
+
+    return CAT2COLOR
 
 
 COND2LABEL = {
@@ -23,7 +43,7 @@ COND2LABEL = {
         "nouns" : "KeepN",
         "functionwords" : "KeepFunctionW",
         #
-        "chatgpt" : "ParaphraseChatGPT",
+        "chatgpt" : "Paraphrase",
         "sent_passage" : "RandSentFromPassage",
         "sent_topic" : "RandSentFromTopic",
         "sent_random" : "RandSent",
@@ -34,6 +54,22 @@ COND2LABEL = {
         "length-control" : "LengthControl",
         "concatenated-control" : "ConcatenatedControl"
     }
+
+
+def figure_setup():
+    #define global figure settings
+    import matplotlib
+    matplotlib.rcParams['pdf.fonttype'] = 42
+    matplotlib.rcParams['ps.fonttype'] = 42
+    matplotlib.rcParams['svg.fonttype'] = 'none'
+
+    custom_params = {"axes.spines.right": False,
+                     "axes.spines.top": False,
+                     'ytick.left': True,
+                     'xtick.bottom': True,
+                    'grid.linestyle': "" #gets rid of horizontal lines
+                    }
+    sns.set_theme(font_scale=1.4, style="white", rc=custom_params)
 
 
 def flatten_list(xss):
@@ -115,110 +151,59 @@ def get_max_score_ceiled(matrix):
     return max_score, error
 
 
-def get_max_score(result):
+def get_best_layer(matrix):
     """
-    Gets unnormalized values and mad errors for the best layer.
-    
-    input: result = out['data'] matrix
-    output: maximum score and associated error for this matrix.
-    """    
-    
-    # Get dictionary of subject scores by layer (unnormalized)
-    frames = []
-    for l in result.raw.raw.layer.data:
-        subject_scores = []
-        layerwise_scores = result.raw.raw.sel(layer=l)
-        subject_score = layerwise_scores.groupby('subject').median()
-        df = pd.DataFrame({
-        'subject_id' : subject_score.subject,
-        'subject_score' : subject_score,
-        'layer' : [l] * len(subject_score)
-        })
-        frames.append(df)
-    raw_brainscore_df = pd.concat(frames)
-    # per voxel, get median per layer per subject
-    brainscore_df = raw_brainscore_df.groupby(['subject_id', 'layer']).median().reset_index()
-    
-    brainscore_df_with_medians = brainscore_df.copy(deep=True)
-    for l in brainscore_df_with_medians.layer.unique():
-        # get median over subjects
-        score = brainscore_df_with_medians.loc[brainscore_df_with_medians['layer'] == l]['subject_score'].median()
-        subject_scores = list(brainscore_df_with_medians.loc[brainscore_df_with_medians['layer'] == l]['subject_score'])
-        error = stats.median_abs_deviation(subject_scores, scale='normal')
-        brainscore_df_with_medians.loc[brainscore_df_with_medians['layer'] == l, 'median_over_subjects'] = score
-        brainscore_df_with_medians.loc[brainscore_df_with_medians['layer'] == l, 'mad_over_subjects'] = error
-    brainscore_df_with_medians_sorted = brainscore_df_with_medians.sort_values(by='median_over_subjects', ascending=False)
-    # get first row of sorted dictionary
-    best_row = brainscore_df_with_medians_sorted.iloc[:1]
-    max_score, error = best_row['median_over_subjects'].item(), best_row['mad_over_subjects'].item()
-    return max_score, error
-
-# from brainio_base.assemblies import DataAssembly, merge_data_arrays
-# from brainscore.metrics import Score
-
-# from scipy.stats import median_abs_deviation
-
-# def aggregate_neuroid_scores(neuroid_scores, subject_column):
-#     subject_scores = neuroid_scores.groupby(subject_column).median()
-#     center = subject_scores.median(subject_column)
-#     subject_values = np.nan_to_num(subject_scores.values, nan=0)  # mad cannot deal with all-nan in one axis, treat as 0
-#     subject_axis = subject_scores.dims.index(subject_scores[subject_column].dims[0])
-#     error = median_abs_deviation(subject_values, axis=subject_axis, scale=1)
-#     score = Score([center, error], coords={'aggregation': ['center', 'error']}, dims=['aggregation'])
-#     score.attrs['raw'] = neuroid_scores
-#     score.attrs['description'] = "score aggregated by taking median of neuroids per subject, " \
-#                                  "then median of subject scores"
-#     return score
-
-#aggregation from pipeline
-# from brainscore.metrics.transformations import  apply_aggregate
-
-# def get_lang_score(content_of_picklefile):
-#     lang_score_matrix = []
-#     all_raw_scores = content_of_picklefile["data"].raw.raw.raw
-    
-#     # same as https://github.com/carina-kauf/perturbed-neural-nlp/blob/master/neural_nlp/benchmarks/neural.py#L173
-#     raw_neuroids = apply_aggregate(lambda values: values.mean('split').mean('experiment'), all_raw_scores)
-#     lang_neuroids = raw_neuroids.sel(atlas='language', _apply_raw=False)
-#     layers = list(lang_neuroids.layer.data)
-    
-#     for layer in layers:
-#         lang_neuroids.sel(layer=layer)
-#         score = aggregate_neuroid_scores(lang_neuroids.sel(layer=layer), "subject")
-# #         print(f"{layer} | Score: {score.data}")
-#         lang_score_matrix.append(score.data)
-#     return lang_score_matrix
-
-def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sentence", testonperturbed=False, randomnouns=False, length_control=False, nr_of_splits=5):
+    input: result = out['data'].values matrix (e.g. for distilgpt2 a matrix of dimensions 7x2)
+    output: index of the best-performing layer
     """
-    input: model_identifier, embedding context, split_coordinate & whether to test on perturbed sentence
-    output: dataframe containing the maximum score and associated error per condition.
+    max_score, error, best_layernr = 0, 0, 0
+    for i in range(len(matrix)):
+        if matrix[i][0] > max_score:
+            max_score = matrix[i][0]
+            error = matrix[i][1]
+            best_layernr = i
+    return best_layernr
+
+
+def get_all_layers(model_identifier):
     """
-    
+    input: model_identifier of model of which we want to find the layers
+    output: np.array of all unique layer identifiers, ordered by position
+    """
     working_dir = "/om2/user/ckauf/.result_caching/neural_nlp.score"
-    
-    CAT2COND, COND2CAT = get_conditions(testonperturbed=testonperturbed, randomnouns=randomnouns, length_control=length_control)
-    
-    conditions, categories = [], []
-    max_scores, errors = [], []
-    
+    for ind,filename in enumerate(os.listdir(working_dir)):
+        if "model=" + model_identifier in filename:
+            file = os.path.join(working_dir,filename)
+            with open(file, 'rb') as f:
+                result = pickle.load(f)
+            result = result['data']
+            layer_list = np.unique(result.layer)
+            #order double-digit layers at end of list
+            double_digits = [elm for elm in layer_list if 'encoder.h.' in elm and len(elm.split('.h.')[-1]) > 1]
+            layers = [e for e in layer_list if e not in double_digits] + double_digits
+            return layers
+            break
+
+
+def get_file(cond, testonperturbed=True, model_identifier="gpt2-xl", emb_context="Passage", split_coord="Sentence", randomnouns=False,
+             length_control=False, nr_of_splits=5, working_dir="/om2/user/ckauf/.result_caching/neural_nlp.score", return_best_layer=False):
     for filename in os.listdir(working_dir):
-        
-        if os.path.isdir(os.path.join(working_dir,filename)):
+        if os.path.isdir(filename):
             continue
             
-        if not testonperturbed:
-            if "teston:" in filename:
-                continue
-        else:
-            if not "teston:" in filename:
-                continue
-                
-        if not f"emb_context={emb_context}" in filename:
+        if not testonperturbed and "teston:" in filename:
             continue
-                
-        if not f"split_coord={split_coord}" in filename:
+        if testonperturbed and "teston:" not in filename:
             continue
+        
+        if not any(filename.startswith(x) for x in [f"benchmark=Pereira2018-encoding-{cond}",
+                                                   f"benchmark=Pereira2018-encoding-scrambled-{cond}",
+                                                   f"benchmark=Pereira2018-encoding-perturb-{cond}"]):
+            continue
+            
+        if not f"emb_context={emb_context},split_coord={split_coord}" in filename:
+            continue
+        
         
         exclude_list = []
         include_list = []
@@ -245,74 +230,131 @@ def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sen
         else:
             if any(x in filename for x in exclude_list):
                 continue
-                        
-
+                
+        if return_best_layer:
+            if not "original" in filename:
+                continue
+                
         model_name = filename.split(",")[1]
-        bm = filename.split(",")[0]
-        
-        if bm == "benchmark=Pereira2018-encoding": #exclude old orignial bm in different format
+        if model_name != f"model={model_identifier}":
             continue
+            
+        file_path = os.path.join(working_dir, filename)
+        return file_path
+
+
+def get_best_scores_df(model_identifier, emb_context="Passage", split_coord="Sentence", testonperturbed=False, randomnouns=False, length_control=False, nr_of_splits=5, return_best_layer=False, return_best_layer_score=False, best_layer=None, which_df='plot'):
+    """
+    input: model_identifier, embedding context, split_coordinate & whether to test on perturbed sentence
+    output: dataframe containing the maximum score and associated error per condition.
+    """
+    
+    working_dir = "/om2/user/ckauf/.result_caching/neural_nlp.score"
+    
+    CAT2COND, COND2CAT = get_conditions(testonperturbed=testonperturbed,
+                                        randomnouns=randomnouns, length_control=length_control)
+    
+    if not length_control:
+        category_groups = {cat : CAT2COND['original'] + CAT2COND[cat] + CAT2COND['control']
+                           for cat in CAT2COND.keys() if cat not in ['original', 'control']}
+    else:
+        category_groups = {'control' : CAT2COND['original'] + CAT2COND['control']}
+    
+    print(category_groups)
+    
+    if nr_of_splits == 2:
+        # create a new dictionary with only the 'name' key-value pair (exclude chatgpt here)
+        value = [elm for elm in category_groups['semantic-distance'] if not 'chatgpt' in elm]
+        category_groups = {'semantic-distance': value}
+
         
-        if "model=" + model_identifier == model_name:
-            print(filename)
+    frames = []
+    for cat_name in category_groups.keys():
+        no_files = False
+        cat_frames = []
+        for cond in category_groups[cat_name]:
+            file = get_file(cond=cond, testonperturbed=testonperturbed,
+                            model_identifier=model_identifier, emb_context=emb_context,
+                            split_coord=split_coord, randomnouns=randomnouns,
+                            length_control=length_control, nr_of_splits=nr_of_splits, working_dir=working_dir,
+                           return_best_layer=return_best_layer)
+            if file:
+                with open(file, 'rb') as f:
+                    out = pickle.load(f)
+            else:
+                no_files = True
+                break
+            result = out['data']
+            # get error (noise-corrected for within-category variance)
+            best_layernr = get_best_layer(result) #note2self: can keep this after moving to reporting raw scores, because the best layer remains the same
+            layers = get_all_layers(model_identifier)
+            best_layer_name = layers[best_layernr]
+            if return_best_layer:
+                return best_layer_name
+            raw_score = result.raw.raw
             
-            condition = bm.split("benchmark=Pereira2018-encoding-")[-1]
-                
-#             print(filename, sys.stdout.flush())
+            if return_best_layer_score:
+                assert best_layer
+                print(best_layer)
+                best_layer_raw = raw_score[{"layer": [layer == best_layer for layer in raw_score["layer"]]}]
+            else:
+                best_layer_raw = raw_score[{"layer": [layer == best_layer_name for layer in raw_score["layer"]]}]
+
+            subject_score_with_index = best_layer_raw.groupby('subject').median()
+            subject_score = subject_score_with_index.values
+            subject_index = subject_score_with_index.subject.values
+            df = pd.DataFrame({
+                'values' : subject_score,
+                'subject_index' : subject_index,
+            })
+            df['condition'] = cond
+            cat_frames.append(df)
+        
+        if no_files:
+            break
+        cat_df = pd.concat(cat_frames)
+        if which_df == 'plot':
+            piv = cat_df.pivot_table(index='subject_index', columns='condition', values='values')
+            conds = category_groups[cat_name]
+            categories = [COND2CAT[cond] for cond in conds]
+            # reindex according to condition order
+            piv_reindexed = piv[conds]
+            # get subject scores
+            score = piv_reindexed.median(axis=0)
+            # we subtract the mean across conditions within a subject
+            demeaned = piv_reindexed.subtract(piv_reindexed.mean(axis=1).values, axis=0)
+            yerr = stats.median_abs_deviation(demeaned.values.T, axis=1, scale='normal')
+            cat_df = pd.DataFrame({
+                'score' : score,
+                'error' : yerr,
+                'condition' : conds,
+                'category' : categories
+            })
+            cat_df['category_group'] = cat_name
+        elif which_df == 'stats': #if stats_df
+            cat_df['category'] = cat_df['condition'].map(COND2CAT)
+            cat_df['category_group'] = cat_name
+        else:
+            raise NotImplementedError
             
-            #clean name
-            condition = re.sub("perturb-","",condition)
-            if not any(x in condition for x in ["1", "3", "5", "7"]):
-                condition = re.sub("scrambled-","",condition)
+        frames.append(cat_df)
             
-            if testonperturbed:
-                condition = re.sub("scrambled","scr",condition)
-                
-#             print(condition)
-
-            #load scores
-            file = os.path.join(working_dir,filename)
-            with open(file, 'rb') as f:
-                out = pickle.load(f)
-#                 lang_score_matrix = get_lang_score(out)
-#                 max_score, error = get_max_score(lang_score_matrix)
-                result = out['data']
-#                 #print(result, '\n\n')
-                max_score, error = get_max_score(result)
-
-            conditions.append(condition)
-            categories.append(COND2CAT[condition])
-            max_scores.append(max_score)
-            errors.append(error)
-
-                
-    import pandas as pd
-    
-    index = conditions
-    condition_order = list(COND2CAT.keys())
-    
-    df = pd.DataFrame({
-        'score': max_scores,
-        'error': errors,
-        'condition': conditions,
-        'category': categories})
-    
-    df['condition'] = pd.Categorical(df['condition'], categories=condition_order, ordered=True)
-    scores_df = df.sort_values(by='condition').reset_index(drop=True)
-    
-    #clean names
-    scores_df['condition'] = scores_df['condition'].str.replace("teston:","")
-    scores_df['condition'] = scores_df['condition'].replace(
+    out_df = pd.concat(frames)
+    # clean names
+    out_df['condition'] = out_df['condition'].str.replace("teston:","")
+    out_df['condition'] = out_df['condition'].replace(
     {'sentenceshuffle_random': 'sent_random',
     'sentenceshuffle_passage': 'sent_passage',
     'sentenceshuffle_topic': 'sent_topic',
     'scr1': 'scrambled1',
     'scr3': 'scrambled3',
     'scr5': 'scrambled5',
-    'scr7': 'scrambled7'}
-    )
-    
-    return scores_df
+    'scr7': 'scrambled7'})
+    # get rid of categories as index
+    if which_df == 'plot':
+        out_df = out_df.reset_index(drop=True)
+    return out_df
+
 
 def get_sample_stimuli(getall=False, randomnouns=False, length_control=False):
     working_dir = "/om2/user/ckauf/perturbed-neural-nlp/ressources/scrambled_stimuli_dfs/"

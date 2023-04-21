@@ -1,7 +1,0 @@
-Experimental Design 1,Experimental Design 2,T-test statistic,Adjusted pvalue,Significance,Cohen's d,Unadjusted p value,Manipulation
-TrainIntact-TestPerturbed_contextualized,TrainIntact-TestPerturbed_decontextualized,0.905,0.453,n.s.,0.405,0.378,control
-TrainIntact-TestPerturbed_contextualized,TrainPerturbed-TestPerturbed_contextualized,-14.341,0.0,***,-6.414,0.0,control
-TrainIntact-TestPerturbed_contextualized,TrainPerturbed-TestPerturbed_decontextualized,-0.031,0.975,n.s.,-0.014,0.975,control
-TrainIntact-TestPerturbed_decontextualized,TrainPerturbed-TestPerturbed_contextualized,-15.107,0.0,***,-6.756,0.0,control
-TrainIntact-TestPerturbed_decontextualized,TrainPerturbed-TestPerturbed_decontextualized,-0.942,0.453,n.s.,-0.421,0.359,control
-TrainPerturbed-TestPerturbed_contextualized,TrainPerturbed-TestPerturbed_decontextualized,14.358,0.0,***,6.421,0.0,control
