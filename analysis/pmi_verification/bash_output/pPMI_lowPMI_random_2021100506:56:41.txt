@@ -1,5 +1,0 @@
-lowPMI_random
-/rdma/vast-rdma/vast/cpl/ckauf/perturbed-neural-nlp/analysis/pmi_verification/stimuli_csvs/stimuli_lowPMI_random.csv
-****************************** 
- LOADING STIMULI! 
- ******************************
