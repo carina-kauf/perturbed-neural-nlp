@@ -1,7 +1,7 @@
 
 # Lexical semantic content, not syntactic structure, is the main contributor to ANN-brain similarity of fMRI responses in the language network
 
-Code accompanying the paper [Lexical semantic content, not syntactic structure, is the main contributor to ANN-brain similarity of fMRI responses in the language network](https://www.biorxiv.org/content/10.1101/2023.05.05.539646v1) by Kauf, Tuckute, Levy, Andreas and Fedorenko.
+Code accompanying the paper [Lexical semantic content, not syntactic structure, is the main contributor to ANN-brain similarity of fMRI responses in the language network](https://www.biorxiv.org/content/10.1101/2023.05.05.539646v1) by Kauf*, Tuckute*, Levy, Andreas and Fedorenko.
 
 The pipeline is an extension of the [neural-nlp](https://github.com/mschrimpf/neural-nlp) (Schrimpf et al., 2021, *PNAS*). It builds on the [Brain-Score](www.Brain-Score.org) framework and can easily be extended with new models and datasets.
 
