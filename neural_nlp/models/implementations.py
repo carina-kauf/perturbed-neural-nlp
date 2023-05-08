@@ -19,7 +19,7 @@ from brainscore.utils import LazyLoad
 from neural_nlp.models.wrapper.core import ActivationsExtractorHelper
 from neural_nlp.models.wrapper.pytorch import PytorchWrapper
 
-_ressources_dir = (Path(__file__).parent / '..' / '..' / 'ressources' / 'models').resolve()
+_ressources_dir = os.path.abspath('../../ressources/models')
 
 _logger = logging.getLogger(__name__)
 
@@ -946,9 +946,6 @@ class _PytorchTransformerWrapper(BrainModel, TaskModel):
                     text[0] = self.tokenizer.cls_token + text[0]
                     text[-1] = text[-1] + self.tokenizer.sep_token
 
-            _logger.debug("\n Current input: \n")
-            _logger.debug("\n".join([sentence for sentence in text]))
-            _logger.debug("\n")
             # Tokenized input
             tokenized_sentences = [self.tokenizer.tokenize(sentence.strip()) for sentence in text] #2 sentences in Pereira have space after final period
             # chain

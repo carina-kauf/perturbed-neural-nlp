@@ -19,7 +19,6 @@ import pandas as pd
 from brainscore.benchmarks import Benchmark
 from brainscore.metrics import Score
 from brainscore.metrics.rdm import RDM, RDMSimilarity, RDMCrossValidated
-#from brainscore.metrics.cka import CKACrossValidated
 from brainscore.metrics.regression import linear_regression, pearsonr_correlation#, CrossRegressedCorrelation
 from brainscore.metrics.transformations import CartesianProduct, apply_aggregate#CrossValidation
 from brainscore.utils import LazyLoad
@@ -32,10 +31,9 @@ from neural_nlp.utils import ordered_set
 from result_caching import store
 from neural_nlp.benchmarks.new_crossregression import CrossRegressedCorrelationPerturbed, CrossRegressedCorrelation, CrossValidation
 
-ressources_dir = "/om2/user/ckauf/perturbed-neural-nlp/ressources" #(Path(os.getcwd()) / 'ressources').resolve()
+ressources_dir = os.path.abspath("../../ressources")
 
 _logger = logging.getLogger(__name__)
-_logger.info(f"\n RESSOURCES_DIR: {ressources_dir}") #TODO take out
 
 import pickle
 
@@ -480,12 +478,6 @@ class _PereiraBenchmarkScrambled(Benchmark):
         STIMULI_TO_PKL_MAP = {'Original': os.path.join(scrambled_data_dir, 'stimuli_Original.pkl'),
                               # control conditions
                               'length-control': os.path.join(scrambled_data_dir, 'stimuli_length_control.pkl'),
-                              'length-control-noun': os.path.join(scrambled_data_dir, 'stimuli_length_control_noun.pkl'),
-                              'length-control-oov': os.path.join(scrambled_data_dir, 'stimuli_length_control_oov.pkl'),
-                              'constant-control': os.path.join(scrambled_data_dir, 'stimuli_constant_control.pkl'),
-                              'constant-control-noun': os.path.join(scrambled_data_dir, 'stimuli_constant_control_noun.pkl'),
-                              'constant-control-oov': os.path.join(scrambled_data_dir, 'stimuli_constant_control_oov.pkl'),
-                              'concatenated-control' : os.path.join(scrambled_data_dir, 'stimuli_concatenated_control.pkl'),
                               # scrambling | word order manipulations
                               'Scr1': os.path.join(scrambled_data_dir, 'stimuli_Scr1.pkl'),
                               'Scr3': os.path.join(scrambled_data_dir, 'stimuli_Scr3.pkl'),
@@ -493,23 +485,18 @@ class _PereiraBenchmarkScrambled(Benchmark):
                               'Scr7': os.path.join(scrambled_data_dir, 'stimuli_Scr7.pkl'),
                               'backward': os.path.join(scrambled_data_dir, 'stimuli_backward.pkl'),
                               'random-wl': os.path.join(scrambled_data_dir, 'stimuli_random.pkl'),
-                              'random-wl-samepos': os.path.join(scrambled_data_dir, 'stimuli_random_poscontrolled.pkl'),
                               'lowPMI': os.path.join(scrambled_data_dir, 'stimuli_lowPMI.pkl'),
                               'lowPMI-random': os.path.join(scrambled_data_dir, 'stimuli_lowPMI_random.pkl'),
                               # perturbation | information loss manipulations
                               'contentwords': os.path.join(scrambled_data_dir, 'stimuli_contentwords.pkl'),
                               'nouns': os.path.join(scrambled_data_dir, 'stimuli_nouns.pkl'),
                               'random-nouns': os.path.join(scrambled_data_dir, 'stimuli_randomnouns.pkl'),
-                              'random-nouns-controlled': os.path.join(scrambled_data_dir, 'stimuli_randomnouns_controlled.pkl'),
                               'verbs': os.path.join(scrambled_data_dir, 'stimuli_verbs.pkl'),
                               'nounsverbs': os.path.join(scrambled_data_dir, 'stimuli_nounsverbs.pkl'),
                               'nounsverbsadj': os.path.join(scrambled_data_dir, 'stimuli_nounsverbsadj.pkl'),
                               'functionwords': os.path.join(scrambled_data_dir, 'stimuli_functionwords.pkl'),
-                              'nouns-delete50percent': os.path.join(scrambled_data_dir, 'stimuli_nouns_delete50percent.pkl'),
                               # perturbation | sentence meaning manipulations
                               'sentenceshuffle_random': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-random.pkl'),
-                              'sentenceshuffle_random-topic-criteria': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-topic-criteria.pkl'),
-                              'sentenceshuffle_random-topic-length-criteria': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-topic-length-criteria.pkl'),
                               'sentenceshuffle_passage': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-withinpassage.pkl'),
                               'sentenceshuffle_topic': os.path.join(scrambled_data_dir, 'stimuli_sentenceshuffle-withintopic.pkl'),
                               'chatgpt' : os.path.join(scrambled_data_dir, 'stimuli_chatGPT.pkl')
@@ -518,9 +505,8 @@ class _PereiraBenchmarkScrambled(Benchmark):
 
         for key in STIMULI_TO_PKL_MAP.keys():
             if scrambled_version == key:
-                _logger.debug(f"I AM USING THIS DATA VERSION: {key}")
                 stimuli = pd.read_pickle(STIMULI_TO_PKL_MAP[key])
-                if os.getenv('AVG_TOKEN_TRANSFORMERS', '0') == '1': #CK
+                if os.getenv('AVG_TOKEN_TRANSFORMERS', '0') == '1':
                     stimuli.name = f"Pereira2018-{scrambled_version}-avgtoken" #added this
                 else:
                     stimuli.name = f"Pereira2018-{scrambled_version}-lasttoken"  # added this
@@ -533,8 +519,7 @@ class _PereiraBenchmarkScrambled(Benchmark):
                     stimuli.name += ",emb_context=Passage"
 
         self._target_assembly.attrs['stimulus_set'] = stimuli
-        self._target_assembly.attrs['stimulus_set_name'] = stimuli.name #CK 2021-08-05, doesn't get reset otherwise as "Pereira2018" is stores as stimulus_set_name in the stored assembly
-        _logger.debug(f"THIS IS THE STIMULUS SET NAME: {self._target_assembly.attrs['stimulus_set'].name}") #e.g., Stimulus set name: Pereira2018-Original-lasttoken
+        self._target_assembly.attrs['stimulus_set_name'] = stimuli.name
 
         self._single_metric = metric
         self._ceiler = self.PereiraExtrapolationCeiling(subject_column='subject', num_bootstraps=100)
@@ -855,20 +840,6 @@ class PereiraEncoding_ScrWordlistRandom(_PereiraBenchmarkScrambled):
         return super(PereiraEncoding_ScrWordlistRandom, self).ceiling
 
 
-class PereiraEncoding_ScrRandomWLSamePOS(_PereiraBenchmarkScrambled):
-
-    def __init__(self, scrambled_version="random-wl-samepos", **kwargs):
-        metric = CrossRegressedCorrelation(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
-        super(PereiraEncoding_ScrRandomWLSamePOS, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-scrambled-random-wl-samepos'
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncoding_ScrRandomWLSamePOS, self).ceiling
-
 ###################################
 ##### PERTURBATION BENCHMARKS > information loss manipulations
 ###################################
@@ -918,21 +889,6 @@ class PereiraEncoding_PerturbedRandomN(_PereiraBenchmarkScrambled):
         return super(PereiraEncoding_PerturbedRandomN, self).ceiling
 
     
-class PereiraEncoding_PerturbedRandomNControlled(_PereiraBenchmarkScrambled):
-
-    def __init__(self, scrambled_version="random-nouns-controlled", **kwargs):
-        metric = CrossRegressedCorrelation(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
-        super(PereiraEncoding_PerturbedRandomNControlled, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-random-nouns-controlled'
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncoding_PerturbedRandomNControlled, self).ceiling
-
-    
     
 class PereiraEncoding_PerturbedV(_PereiraBenchmarkScrambled):
 
@@ -980,20 +936,6 @@ class PereiraEncoding_PerturbedNVA(_PereiraBenchmarkScrambled):
         return super(PereiraEncoding_PerturbedNVA, self).ceiling
     
 
-class PereiraEncoding_PerturbedNDel50Percent(_PereiraBenchmarkScrambled):
-
-    def __init__(self, scrambled_version="nouns-delete50percent", **kwargs):
-        metric = CrossRegressedCorrelation(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
-        super(PereiraEncoding_PerturbedNDel50Percent, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-nouns-delete50percent'
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncoding_PerturbedNDel50Percent, self).ceiling
-
 class PereiraEncoding_PerturbedFN(_PereiraBenchmarkScrambled):
 
     def __init__(self, scrambled_version="functionwords", **kwargs):
@@ -1026,36 +968,6 @@ class PereiraEncoding_PerturbedRandomSentenceShuffle(_PereiraBenchmarkScrambled)
     @load_s3(key='Pereira2018-encoding-ceiling')
     def ceiling(self):
         return super(PereiraEncoding_PerturbedRandomSentenceShuffle, self).ceiling
-
-
-class PereiraEncoding_PerturbedRandomSentenceShuffle_TopicCriteria(_PereiraBenchmarkScrambled):
-
-    def __init__(self, scrambled_version="sentenceshuffle_random-topic-criteria", **kwargs):
-        metric = CrossRegressedCorrelation(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
-        super(PereiraEncoding_PerturbedRandomSentenceShuffle_TopicCriteria, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-sentenceshuffle_random-topic-criteria'
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncoding_PerturbedRandomSentenceShuffle_TopicCriteria, self).ceiling
-
-
-class PereiraEncoding_PerturbedRandomSentenceShuffle_TopicLengthCriteria(_PereiraBenchmarkScrambled):
-
-    def __init__(self, scrambled_version="sentenceshuffle_random-topic-length-criteria", **kwargs):
-        metric = CrossRegressedCorrelation(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
-        super(PereiraEncoding_PerturbedRandomSentenceShuffle_TopicLengthCriteria, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-perturb-sentenceshuffle_random-topic-length-criteria'
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncoding_PerturbedRandomSentenceShuffle_TopicLengthCriteria, self).ceiling
 
 
 class PereiraEncoding_PerturbedShuffleWithinPassage(_PereiraBenchmarkScrambled): #Sentences are shuffled within a passage (i.e., sentences with the same passageID and same experiment)
@@ -1121,92 +1033,7 @@ class PereiraEncoding_LengthControl(_PereiraBenchmarkScrambled):
     def ceiling(self):
         return super(PereiraEncoding_LengthControl, self).ceiling
     
-class PereiraEncoding_LengthControl_Noun(_PereiraBenchmarkScrambled):
 
-    def __init__(self, scrambled_version="length-control-noun", **kwargs):
-        metric = CrossRegressedCorrelation(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
-        super(PereiraEncoding_LengthControl_Noun, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-length-control-noun'
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncoding_LengthControl_Noun, self).ceiling
-    
-class PereiraEncoding_LengthControl_OOV(_PereiraBenchmarkScrambled):
-
-    def __init__(self, scrambled_version="length-control-oov", **kwargs):
-        metric = CrossRegressedCorrelation(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
-        super(PereiraEncoding_LengthControl_OOV, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-length-control-oov'
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncoding_LengthControl_OOV, self).ceiling
-
-
-
-class PereiraEncoding_ConstantControl(_PereiraBenchmarkScrambled):
-
-    def __init__(self, scrambled_version="constant-control", **kwargs):
-        metric = CrossRegressedCorrelation(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
-        super(PereiraEncoding_ConstantControl, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-constant-control'
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncoding_ConstantControl, self).ceiling
-    
-class PereiraEncoding_ConstantControl_Noun(_PereiraBenchmarkScrambled):
-
-    def __init__(self, scrambled_version="constant-control-noun", **kwargs):
-        metric = CrossRegressedCorrelation(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
-        super(PereiraEncoding_ConstantControl_Noun, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-constant-control-noun'
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncoding_ConstantControl_Noun, self).ceiling 
-
-class PereiraEncoding_ConstantControl_OOV(_PereiraBenchmarkScrambled):
-
-    def __init__(self, scrambled_version="constant-control-oov", **kwargs):
-        metric = CrossRegressedCorrelation(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
-        super(PereiraEncoding_ConstantControl_OOV, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-constant-control-oov'
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncoding_ConstantControl_OOV, self).ceiling 
-    
-    
-class PereiraEncoding_ConcatenatedControl(_PereiraBenchmarkScrambled):
-
-    def __init__(self, scrambled_version="concatenated-control", **kwargs):
-        metric = CrossRegressedCorrelation(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord, stratification_coord=None))
-        super(PereiraEncoding_ConcatenatedControl, self).__init__(metric=metric, scrambled_version=scrambled_version, **kwargs) # identifier='Pereira2018-encoding-concatenated-control'
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncoding_ConcatenatedControl, self).ceiling 
 
 ###################################
 ##### END PERTURBATION BENCHMARKS
@@ -1757,46 +1584,13 @@ class PereiraEncoding_TestOnLengthControl(_PereiraBenchmarkTestOnPerturbed):
 
 
 
-class PereiraEncoding_TestOnConstantControl(_PereiraBenchmarkTestOnPerturbed):
-
-    def __init__(self, scrambled_version="constant-control", **kwargs):
-        metric = CrossRegressedCorrelationPerturbed(
-            regression=linear_regression(xarray_kwargs=dict(stimulus_coord='stimulus_id')),
-            correlation=pearsonr_correlation(xarray_kwargs=dict(correlation_coord='stimulus_id')),
-            crossvalidation_kwargs=dict(splits=5, kfold=True, split_coord=pereira_split_coord,
-                                        stratification_coord=None))
-        super(PereiraEncoding_TestOnConstantControl, self).__init__(metric=metric, scrambled_version=scrambled_version,
-                                                              **kwargs)  # identifier='Pereira2018-teston:constant-control'
-
-    @property
-    @load_s3(key='Pereira2018-encoding-ceiling')
-    def ceiling(self):
-        return super(PereiraEncoding_TestOnConstantControl, self).ceiling
-
-
 #########################################
-# All benchmarks can be run in 2*3*3 = 18 ways:
-# 1. sequence summary %in% {avg_token|last_token}
-# 2. embedding contextualization %in% {sentence|passage|topic}
-# 3. split_coord %in% {sentence|passage|topic}
 
 benchmark_pool = [
     # primary benchmarks
     ('Pereira2018-encoding', PereiraEncoding),
-    # secondary benchmarks
-    ('Pereira2018-rdm', PereiraRDM),
-    # ('Pereira2018-cka', PereiraCKA),
     #control benchmarks
     ('Pereira2018-encoding-length-control', PereiraEncoding_LengthControl), #length control (#words-many 'the's), no sentence-internal punctuation but final period.
-    ('Pereira2018-encoding-length-control-noun', PereiraEncoding_LengthControl_Noun), #length control (#words-many 'house's), no sentence-internal punctuation but final period.
-    ('Pereira2018-encoding-length-control-oov', PereiraEncoding_LengthControl_OOV), #length control (#words-many 'jdfh's), no sentence-internal punctuation but final period.
-    ('Pereira2018-encoding-constant-control', PereiraEncoding_ConstantControl), #sentences are all just 'the.'
-    #scrambling benchmarks > word order manipulations
-    ('Pereira2018-encoding-constant-control-noun', PereiraEncoding_ConstantControl_Noun), #sentences are all just 'house.'
-    #scrambling benchmarks > word order manipulations
-    ('Pereira2018-encoding-constant-control-oov', PereiraEncoding_ConstantControl_OOV), #sentences are all just 'jdfh.'
-    #scrambling benchmarks > word order manipulations
-    ('Pereira2018-encoding-concatenated-control', PereiraEncoding_ConcatenatedControl), #every sentence 5 times
     ('Pereira2018-encoding-scrambled-original', PereiraEncoding_ScrOriginal), #lower-cased, no sentence-internal punctuation but final period. (keeps hyphens, apostrophe, currency & units)
     ('Pereira2018-encoding-scrambled1', PereiraEncoding_Scr1),
     ('Pereira2018-encoding-scrambled3', PereiraEncoding_Scr3),
@@ -1806,21 +1600,16 @@ benchmark_pool = [
     ('Pereira2018-encoding-scrambled-lowpmi-random', PereiraEncoding_ScrLowPMIRandom), #lowPMI random word shuffling within sentence
     ('Pereira2018-encoding-scrambled-backward', PereiraEncoding_ScrBackwardSent),
     ('Pereira2018-encoding-scrambled-random-wl', PereiraEncoding_ScrWordlistRandom),
-    ('Pereira2018-encoding-scrambled-random-wl-samepos', PereiraEncoding_ScrRandomWLSamePOS), #random wordlist bm, same pos distribution as original sentence
     #perturbation benchmarks > information loss manipulations
     ('Pereira2018-encoding-perturb-nouns', PereiraEncoding_PerturbedN), #keep only nouns
     ('Pereira2018-encoding-perturb-random-nouns', PereiraEncoding_PerturbedRandomN), #nouns in each sentence replaced by random nouns
-    ('Pereira2018-encoding-perturb-random-nouns-controlled', PereiraEncoding_PerturbedRandomNControlled), #nouns in each sentence replaced by random nouns, condition: nouns were not part of the original sentence
     ('Pereira2018-encoding-perturb-verbs', PereiraEncoding_PerturbedV), #currently not running
     ('Pereira2018-encoding-perturb-nounsverbs', PereiraEncoding_PerturbedNV),
     ('Pereira2018-encoding-perturb-nounsverbsadj', PereiraEncoding_PerturbedNVA),
     ('Pereira2018-encoding-perturb-contentwords', PereiraEncoding_PerturbedContentWords), #keep only content words (nouns, verbs, adj, adv)
-    ('Pereira2018-encoding-perturb-nouns-delete50percent', PereiraEncoding_PerturbedNDel50Percent), #keep only 50% (randomly selected) of nouns
     ('Pereira2018-encoding-perturb-functionwords', PereiraEncoding_PerturbedFN),
     #perturbation benchmarks > sentence meaning manipulations
     ('Pereira2018-encoding-perturb-sentenceshuffle_random', PereiraEncoding_PerturbedRandomSentenceShuffle), #randomly shuffle sentences across datasets/experiments
-    ('Pereira2018-encoding-perturb-sentenceshuffle_random-topic-criteria', PereiraEncoding_PerturbedRandomSentenceShuffle_TopicCriteria), #randomly shuffle sentences across datasets/experiments, not from same topic
-    ('Pereira2018-encoding-perturb-sentenceshuffle_random-topic-length-criteria', PereiraEncoding_PerturbedRandomSentenceShuffle_TopicLengthCriteria), #randomly shuffle sentences across datasets/experiments, not from same topic, length-matched
     ('Pereira2018-encoding-perturb-sentenceshuffle_passage', PereiraEncoding_PerturbedShuffleWithinPassage), #shuffle sentences within passage
     ('Pereira2018-encoding-perturb-sentenceshuffle_topic', PereiraEncoding_PerturbedShuffleWithinTopic), #shuffle sentences within topic
     ('Pereira2018-encoding-chatgpt', PereiraEncoding_PerturbedChatGPT),
@@ -1845,7 +1634,6 @@ benchmark_pool = [
     ('Pereira2018-encoding-teston:sentenceshuffle_topic', PereiraEncoding_TestOnShuffleWithinTopic),
     ('Pereira2018-encoding-teston:chatgpt', PereiraEncoding_TestOnChatGPT),
     ('Pereira2018-encoding-teston:length-control', PereiraEncoding_TestOnLengthControl),
-    ('Pereira2018-encoding-teston:constant-control', PereiraEncoding_TestOnConstantControl)
 ]
 
 benchmark_pool = {identifier: LazyLoad(lambda identifier=identifier, ctr=ctr: ctr(identifier=identifier))
