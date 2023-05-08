@@ -749,7 +749,6 @@ class Transformer(PytorchWrapper, BrainModel, TaskModel):
 
     def tokenize(self, text, vocab_size=None):
         assert not vocab_size or vocab_size == self.vocab_size
-        _logger.debug(text) #TODO take out
         words = text.split()
         tokens = [self.vocab_index[word] for word in tqdm(words, desc='tokenize') if word in self.vocab_index]
         return np.array(tokens)
@@ -960,7 +959,6 @@ class _PytorchTransformerWrapper(BrainModel, TaskModel):
                 max_num_words=max_num_words, additional_tokens=additional_tokens, use_special_tokens=use_special_tokens)
             encoded_layers = [[]] * len(self.layer_names)
             for context_ids in aligned_tokens:
-                # print("\n", len(context_ids), [self.tokenizer.convert_ids_to_tokens(elm) for elm in context_ids]) #TODO take out (check for token alignment)
                 # Convert inputs to PyTorch tensors
                 tokens_tensor = torch.tensor([context_ids])
                 tokens_tensor = tokens_tensor.to('cuda' if torch.cuda.is_available() else 'cpu')
