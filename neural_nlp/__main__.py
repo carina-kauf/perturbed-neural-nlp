@@ -33,16 +33,6 @@ def run(benchmark, model, layers=None, subsample=None):
     if torch.cuda.is_available():
         _logger.info(f"SLURM JOB ID: {os.getenv('SLURM_JOB_ID')}")
 
-    # 0. Whether or not to compute the ceiling #TODO DELETE!!
-#     if (os.getenv('COMPUTE_CEILING', '0') == '1') and (benchmark != "Pereira2018-encoding-scrambled-original"):
-#         raise NotImplementedError
-#     if os.getenv('COMPUTE_CEILING', '0') == '1':
-#         compute_ceiling = True
-#     else:
-#         compute_ceiling = False
-#     _logger.info(f"Environment variable COMPUTE_CEILING set to: {os.getenv('COMPUTE_CEILING')}")
-
-
     # 1. How to get model activations
     ## 1.a. Sequence summary (default for GPT-2 is last-token emb)
     _logger.info(f"Environment variable AVG_TOKEN_TRANSFORMERS set to: {os.getenv('AVG_TOKEN_TRANSFORMERS')}")
