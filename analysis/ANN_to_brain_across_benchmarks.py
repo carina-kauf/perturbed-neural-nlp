@@ -32,12 +32,17 @@ def get_plot_df(approach, model_identifier, emb_context, split_coord, testonpert
     """
     stimuli_df = plot_utils.get_sample_stimuli(randomnouns=randomnouns)
     scores_df = plot_utils.get_best_scores_df(model_identifier=model_identifier,
-                                              emb_context=emb_context,
-                                              split_coord=split_coord,
-                                              testonperturbed=testonperturbed,
-                                              randomnouns=randomnouns)
+                                          emb_context=emb_context,
+                                          split_coord=split_coord,
+                                          testonperturbed=testonperturbed,
+                                          randomnouns=randomnouns,
+                                          which_df = 'plot')
     # merge dataframes on condition
-    full_df = scores_df.merge(stimuli_df, on='condition', how='inner')
+    full_df = scores_df.copy(deep=True)
+    for ind in full_df.index.values:
+        cond = full_df.iloc[ind]['condition']
+        stimulus = stimuli_df.loc[stimuli_df['condition'] == cond]['stimulus'].item()
+        full_df.loc[ind, 'stimulus'] = stimulus
     # rename conditions according to new names:
     full_df['condition'] = full_df['condition'].map(plot_utils.COND2LABEL)
     # create legend label column
@@ -61,20 +66,25 @@ def get_ttest_results(approach, model_identifier, emb_context, split_coord, test
     """
     category_stats_frames = []
 
-    subdf = stats_utils.get_stats_df(model_identifier=model_identifier, emb_context=emb_context,
-                                     split_coord=split_coord, testonperturbed=testonperturbed,
-                                     randomnouns=randomnouns)
+    stats_df = plot_utils.get_best_scores_df(model_identifier=model_identifier,
+                                              emb_context=emb_context,
+                                              split_coord=split_coord,
+                                              testonperturbed=testonperturbed,
+                                              randomnouns=randomnouns,
+                                              which_df='stats') # output stats df
 
     CAT2COND, COND2CAT = plot_utils.get_conditions()  # always use default settings because "teston:" is stripped in different part of script
 
     for cat in CAT2COND.keys():
-        if cat in ["original", "random-wl"]:
+        if cat in ["original", "control"]:
             continue
 
         pvals2original, pvals2random = [], []
         ttest2original, ttest2random = [], []
         cohensd2original, cohensd2random = [], []
         conds = []
+        
+        subdf = stats_df.loc[stats_df['category_group'] == cat]
 
         for cond in CAT2COND[cat]:
             # adjust names for consistency
@@ -107,10 +117,6 @@ def get_ttest_results(approach, model_identifier, emb_context, split_coord, test
             cohensd2random.append(cohensd2rand)
 
         # correct for multiple comparisons
-        # statsmodels.stats.multitest.fdrcorrection(pvals) = statsmodels.stats.multitest.multipletests(pvals, method='fdr_bh')
-        # first output is list of Booleans indicating whether to reject null hypothesis or not
-#         _, adjusted_pvals2original = statsmodels.stats.multitest.fdrcorrection(pvals2original)
-#         _, adjusted_pvals2random = statsmodels.stats.multitest.fdrcorrection(pvals2random)
         _, adjusted_pvals2original, _, _ = statsmodels.stats.multitest.multipletests(pvals2original, method='bonferroni')
         _, adjusted_pvals2random, _, _ = statsmodels.stats.multitest.multipletests(pvals2random, method='bonferroni')
 
@@ -118,7 +124,7 @@ def get_ttest_results(approach, model_identifier, emb_context, split_coord, test
         significance2original = stats_utils.assign_significance_labels(adjusted_pvals2original)
         significance2random = stats_utils.assign_significance_labels(adjusted_pvals2random)
 
-        stats_df = pd.DataFrame({
+        stats_df_toappend = pd.DataFrame({
             "condition": conds,
             "ttest2original": ttest2original,
             "ttest2random": ttest2random,
@@ -132,17 +138,12 @@ def get_ttest_results(approach, model_identifier, emb_context, split_coord, test
             "pvals2random": pvals2random
         })
 
-        category_stats_frames.append(stats_df)
+        category_stats_frames.append(stats_df_toappend)
     full_stats_df = pd.concat(category_stats_frames)
 
     # rename conditions according to new names:
     full_stats_df['condition'] = full_stats_df['condition'].map(plot_utils.COND2LABEL)
 
-    # define stats dataframe to be saved to file
-#     to_save = full_stats_df[
-#         ['condition', 'ttest2original', 'adjusted_pvals2original', 'cohensd2original', 'ttest2random',
-#          'adjusted_pvals2random', 'cohensd2random']].T
-#     to_save, to_save.columns = to_save[1:], to_save.iloc[0]
     to_save = full_stats_df[
         ['condition', 'ttest2original', 'adjusted_pvals2original', 'cohensd2original', 'ttest2random',
          'adjusted_pvals2random', 'cohensd2random']]
@@ -219,6 +220,7 @@ def main_barplot(config, approach, model_identifier, full_df, full_stats_df, ran
     max_bars = max(num_bars)
     props = [1 + 0.2 * x for x in num_bars]
 
+    #figure(figsize=(WIDTH_SIZE,HEIGHT_SIZE))
     if vertical:
         nrows = len(categories)
         ncols = 1
@@ -233,6 +235,8 @@ def main_barplot(config, approach, model_identifier, full_df, full_stats_df, ran
             figsize = (7 * ncols, 15)
         height_ratios = None
 
+    print(f"Fig. size: {figsize}")
+    print(f"height_ratios: {height_ratios}")
     fig2 = plt.figure(constrained_layout=True, figsize=figsize, facecolor='white')
     spec2 = GridSpec(ncols=ncols, nrows=nrows, figure=fig2, height_ratios=height_ratios)
     f2_ax = []
@@ -249,8 +253,7 @@ def main_barplot(config, approach, model_identifier, full_df, full_stats_df, ran
             else:
                 f2_ax.append(fig2.add_subplot(spec2[0, ind], sharey=f2_ax[0]))
 
-        categories = ["original", current_category, "control"]
-        plot_df = full_df[full_df["category"].isin(categories)]
+        plot_df = full_df[full_df["category_group"]==current_category]
 
         colors = [CAT2COLOR["original"]] + CAT2COLOR[current_category] + [CAT2COLOR["control"]]
 
@@ -259,7 +262,7 @@ def main_barplot(config, approach, model_identifier, full_df, full_stats_df, ran
         errors = list(plot_df['error'])
         conditions = list(plot_df['condition'])
 
-        stimuli = [list(plot_df.loc[plot_df["category"] == cat]["labelname"]) for cat in categories]
+        stimuli = [list(plot_df.loc[plot_df["category_group"] == cat]["labelname"]) for cat in categories]
         stimuli = plot_utils.flatten_list(stimuli)
         from textwrap import fill
         stimuli = [fill(l, 75) for l in stimuli]
@@ -314,11 +317,13 @@ def main_barplot(config, approach, model_identifier, full_df, full_stats_df, ran
             emb_context = config[approach]["emb_context"]
             split_coord = config[approach]["split_coord"]
             testonperturbed = config[approach]["testonperturbed"]
-            individual_subject_data_df = stats_utils.get_stats_df(model_identifier=model_identifier,
-                                                 emb_context=emb_context,
-                                                 split_coord=split_coord,
-                                                 testonperturbed=testonperturbed)
+            individual_subject_data_df = plot_utils.get_best_scores_df(model_identifier=model_identifier,
+                                              emb_context=emb_context,
+                                              split_coord=split_coord,
+                                              testonperturbed=testonperturbed,
+                                              which_df='stats') # output stats df
             individual_subject_data_df['condition'] = individual_subject_data_df['condition'].map(plot_utils.COND2LABEL)
+            individual_subject_data_df = individual_subject_data_df[individual_subject_data_df["category_group"]==current_category]
             
             
             curr_subj_df = individual_subject_data_df.loc[individual_subject_data_df['category'] == current_category]
@@ -391,8 +396,8 @@ def main_barplot(config, approach, model_identifier, full_df, full_stats_df, ran
                                                       updown="down", fs=10)
 
         # add horizontal lines for original and random-wl
-        orig_score = full_df[full_df["category"] == "original"]["score"].item()
-        random_score = full_df[full_df["category"] == "control"]["score"].item()
+        orig_score = plot_df[plot_df["category"] == "original"]["score"].item()
+        random_score = plot_df[plot_df["category"] == "control"]["score"].item()
         f2_ax[-1].axhline(y=orig_score, color=CAT2COLOR["original"], linestyle=':', dashes=(5, 3), linewidth=1)
         f2_ax[-1].axhline(y=random_score, color=CAT2COLOR["control"], linestyle=":", dashes=(5, 3), linewidth=1)
 
@@ -415,16 +420,12 @@ def main_barplot(config, approach, model_identifier, full_df, full_stats_df, ran
         else:
             f2_ax[-1].legend(title='', labels=stimuli, handles=patches,
                              loc='upper center', bbox_to_anchor=(0.5, -0.7),
-                             title_fontsize=15, prop={'size': 12})             
+                             title_fontsize=15, prop={'size': 12}) 
 
         # TICKS
         ## to get current ones: f2_ax[-1].get_yticks()
-        if ind == 0:
-            yticks = [0, 0.1, 0.2, 0.3, 0.4] 
-            f2_ax[-1].set_yticks(yticks)
-        else:
-            if vertical:
-                f2_ax[-1].set_yticks([])
+        yticks = [0, 0.1, 0.2, 0.3, 0.4] 
+        f2_ax[-1].set_yticks(yticks)
         # set xticks
         f2_ax[-1].set_xticks(positions)
         xticknames = ["\nFrom".join(elm.split("From")) for elm in conditions]
@@ -447,10 +448,13 @@ def main_barplot(config, approach, model_identifier, full_df, full_stats_df, ran
 
 
 def within_category_stats_and_plots(approach, model_identifier, emb_context, split_coord, testonperturbed, randomnouns):
-    
-    stats_df = stats_utils.get_stats_df(model_identifier=model_identifier, emb_context=emb_context,
-                                        split_coord=split_coord, testonperturbed=testonperturbed,
-                                        randomnouns=randomnouns)
+
+    stats_df = plot_utils.get_best_scores_df(model_identifier=model_identifier,
+                                              emb_context=emb_context,
+                                              split_coord=split_coord,
+                                              testonperturbed=testonperturbed,
+                                              randomnouns=randomnouns,
+                                              which_df='stats') # output stats df
     
     CAT2COND, _ = plot_utils.get_conditions()
     categories = [x for x in CAT2COND.keys() if x not in ['original', 'control']]
@@ -542,6 +546,7 @@ def run(config, approach, model_identifier, randomnouns):
     if approach == "TrainIntact-TestPerturbed:contextualized":
         main_barplot(config=config, approach=approach, model_identifier=model_identifier,
                      full_df=scores_stim_df, full_stats_df=stats_df, randomnouns=randomnouns, vertical=True)
+        
     main_barplot(config=config, approach=approach, model_identifier=model_identifier,
                  full_df=scores_stim_df, full_stats_df=stats_df, randomnouns=randomnouns, vertical=False)
     

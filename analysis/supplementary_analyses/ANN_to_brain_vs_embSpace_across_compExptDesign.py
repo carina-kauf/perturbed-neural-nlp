@@ -16,8 +16,6 @@ import json
 import plot_utils
 import stats_utils
 
-print("CREATING CORRELATIONS2BRAINSCORE PLOT!", flush=True)
-
 out_dir = 'results_paper_revision'
 
 
@@ -241,10 +239,7 @@ def get_scores_dictionary(model_identifier, emb_context, split_coord, testonpert
             file = os.path.join(scores_dir, filename)
             with open(file, 'rb') as f:
                 out = pickle.load(f)
-#                 result = out['data'].values
-#                 scores = result[:, 0]
-#                 errors = result[:, 1]
-
+                
             scores, errors = [], []
             frames = []
             result = out['data']
@@ -331,8 +326,6 @@ def main_scatterplot(plot_df, approach, model_identifier,
     sm = plt.cm.ScalarMappable(cmap=mypalette, norm=norm)
     sm.set_array([])
 
-#     y0, y1 = ax.get_ylim()
-#     lims = [y0, y1]
     y0 = -0.05
     y1 = 0.38
     lims = [y0, y1]
@@ -363,9 +356,6 @@ def main_scatterplot(plot_df, approach, model_identifier,
               fancybox=True, shadow=False, ncol=4, title="perturbation manipulation condition", markerscale=2,
               title_fontsize=25)
 
-#     # make plot square
-#     if split_coord != "Passage":
-#         plt.axis('equal')
 
     # change fontsize of labels
     ax.set(xlabel="Degree of similarity in the embedding space to Original\n(Spearman’s rho)",
@@ -433,7 +423,6 @@ def run(config, approach, model_identifier, randomnouns):
 
     # merge
     plot_df = pd.merge(long_brainscores, long_correlations, how='inner', on='index')
-    # plot_df = plot_df.drop(["variable_y"])
     plot_df = plot_df.rename(columns={"variable_x": "condition"})
 
     if testonperturbed:
